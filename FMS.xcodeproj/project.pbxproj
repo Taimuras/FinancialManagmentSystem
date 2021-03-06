@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		521F37A425F0B45D00B3E7D2 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 521F37A325F0B45D00B3E7D2 /* OpenSans-Bold.ttf */; };
+		521F37A725F0B69000B3E7D2 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 521F37A625F0B69000B3E7D2 /* OpenSans-Regular.ttf */; };
+		521F37AA25F0B6AB00B3E7D2 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 521F37A925F0B6AB00B3E7D2 /* OpenSans-SemiBold.ttf */; };
 		5220E57C25EE2C470077EB07 /* MainCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5220E57A25EE2C470077EB07 /* MainCVC.swift */; };
 		5220E57D25EE2C470077EB07 /* MainCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5220E57B25EE2C470077EB07 /* MainCVC.xib */; };
 		5251A55A25EF566E00546F71 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251A55925EF566E00546F71 /* MainViewController.swift */; };
@@ -18,9 +21,14 @@
 		5252797025EDFE06001FF2CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5252796E25EDFE06001FF2CE /* Main.storyboard */; };
 		5252797225EDFE06001FF2CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5252797125EDFE06001FF2CE /* Assets.xcassets */; };
 		5252797525EDFE06001FF2CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5252797325EDFE06001FF2CE /* LaunchScreen.storyboard */; };
+		52E5090425F211F80086DF17 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5090325F211F80086DF17 /* LoginVC.swift */; };
+		52E5090725F212160086DF17 /* ForgotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5090625F212160086DF17 /* ForgotVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		521F37A325F0B45D00B3E7D2 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		521F37A625F0B69000B3E7D2 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		521F37A925F0B6AB00B3E7D2 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		5220E57A25EE2C470077EB07 /* MainCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCVC.swift; sourceTree = "<group>"; };
 		5220E57B25EE2C470077EB07 /* MainCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCVC.xib; sourceTree = "<group>"; };
 		5251A55925EF566E00546F71 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +42,8 @@
 		5252797125EDFE06001FF2CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5252797425EDFE06001FF2CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5252797625EDFE06001FF2CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52E5090325F211F80086DF17 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		52E5090625F212160086DF17 /* ForgotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +101,7 @@
 		5252796725EDFE06001FF2CE /* FMS */ = {
 			isa = PBXGroup;
 			children = (
+				52A3FB8C25F0AFC900FC98D8 /* Fonts */,
 				5252798125EDFE8D001FF2CE /* Screens */,
 				5252797F25EDFE7A001FF2CE /* Source */,
 				5252797E25EDFE58001FF2CE /* VIew */,
@@ -174,8 +185,20 @@
 		5252798525EDFEBF001FF2CE /* Login Screen */ = {
 			isa = PBXGroup;
 			children = (
+				52E5090325F211F80086DF17 /* LoginVC.swift */,
+				52E5090625F212160086DF17 /* ForgotVC.swift */,
 			);
 			path = "Login Screen";
+			sourceTree = "<group>";
+		};
+		52A3FB8C25F0AFC900FC98D8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				521F37A925F0B6AB00B3E7D2 /* OpenSans-SemiBold.ttf */,
+				521F37A625F0B69000B3E7D2 /* OpenSans-Regular.ttf */,
+				521F37A325F0B45D00B3E7D2 /* OpenSans-Bold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,7 +260,10 @@
 			files = (
 				5252797525EDFE06001FF2CE /* LaunchScreen.storyboard in Resources */,
 				5220E57D25EE2C470077EB07 /* MainCVC.xib in Resources */,
+				521F37AA25F0B6AB00B3E7D2 /* OpenSans-SemiBold.ttf in Resources */,
 				5252797225EDFE06001FF2CE /* Assets.xcassets in Resources */,
+				521F37A425F0B45D00B3E7D2 /* OpenSans-Bold.ttf in Resources */,
+				521F37A725F0B69000B3E7D2 /* OpenSans-Regular.ttf in Resources */,
 				5252797025EDFE06001FF2CE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +277,8 @@
 			files = (
 				5251A56925EF5D9600546F71 /* MainCVCModel.swift in Sources */,
 				5252796D25EDFE06001FF2CE /* ViewController.swift in Sources */,
+				52E5090725F212160086DF17 /* ForgotVC.swift in Sources */,
+				52E5090425F211F80086DF17 /* LoginVC.swift in Sources */,
 				5220E57C25EE2C470077EB07 /* MainCVC.swift in Sources */,
 				5252796925EDFE06001FF2CE /* AppDelegate.swift in Sources */,
 				5252796B25EDFE06001FF2CE /* SceneDelegate.swift in Sources */,

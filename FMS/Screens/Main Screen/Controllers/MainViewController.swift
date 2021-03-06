@@ -13,6 +13,16 @@ class MainViewController: UIViewController {
     
     var mainVCData: [MainCVCModel] = []
     
+    
+    //Design Fonts
+    @IBOutlet weak var lastChangesLabel: UILabel!
+    @IBOutlet weak var balansLabel: UILabel!
+    @IBOutlet weak var outcomeLabel: UILabel!
+    @IBOutlet weak var incomeLabel: UILabel!
+    @IBOutlet weak var journalLabel: UILabel!
+    @IBOutlet weak var tranzactionLabel: UILabel!
+    
+    
     //Top Panel labels with income, outcome and transfer
     @IBOutlet weak var incomeStateLabel: UILabel!
     @IBOutlet weak var outcomeStateLabel: UILabel!
@@ -28,6 +38,9 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         
         design()
         
@@ -49,10 +62,15 @@ class MainViewController: UIViewController {
         mainVCData.append(one)
         mainVCData.append(one)
         
+        
+        
     }
     
 
-
+    @IBAction func logOut(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 
@@ -71,9 +89,16 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.dateOfAction.text = index.date
         cell.actionValue.text = index.actionValue
         
-        
         return cell
     }
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 }
@@ -91,6 +116,21 @@ extension MainViewController{
     func design (){
         topPanelView.layer.cornerRadius = 10.0
         topPanelView.layer.masksToBounds = true
+        
+        //Fonts + sizes
+        tranzactionLabel.font = constants.fontBold34
+        lastChangesLabel.font = constants.fontSemiBold18
+        balansLabel.font = constants.fontRegular12
+        outcomeLabel.font = constants.fontRegular12
+        incomeLabel.font = constants.fontRegular12
+        journalLabel.font = constants.fontSemiBold17
+        
+        incomeStateLabel.font = constants.fontSemiBold18
+        outcomeStateLabel.font = constants.fontSemiBold18
+        transferStateLabel.font = constants.fontSemiBold18
+        
+        
+        
         
         transferPanelView.frame.size.width = topPanelView.frame.size.width / 3
         incomePanelView.frame.size.width = topPanelView.frame.size.width / 3
