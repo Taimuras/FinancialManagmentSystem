@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class LoginVC: UIViewController {
     
     let constants = Constants()
@@ -33,16 +34,18 @@ class LoginVC: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    @IBAction func logInButtonTapped(_ sender: UIButton) {
+        ApiCalling().logInApiCalling(email: loginTextField.text!, password: passwordTextField.text!)
+//        let vc = TabBarViewController()//change this to your class name
+//        self.present(vc, animated: true, completion: nil)
+        
+       
     }
-    */
-
+    
+    
+    
 }
 
 

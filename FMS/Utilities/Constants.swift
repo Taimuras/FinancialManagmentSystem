@@ -13,6 +13,7 @@ import UIKit
 class Constants {
     
     let mainScreenCollectionViewCellIdentifier = "MainCVC"
+    let tabBarViewIdintifier = "TabBarStoryBoardID"
     
     //Font Bold size
     let fontBold34 = UIFont(name: "OpenSans-Bold", size: 34)
@@ -34,5 +35,12 @@ class Constants {
     let fontRegular13 = UIFont(name: "OpenSans-Regular", size: 13)
     let fontRegular14 = UIFont(name: "OpenSans-Regular", size: 14)
     let fontRegular17 = UIFont(name: "OpenSans-Regular", size: 17)
+    
+    
+    
+    let server = "https://warm-escarpment-21852.herokuapp.com/"
+    let loginPart = "https://warm-escarpment-21852.herokuapp.com/account/api/token/"
+    
+    
     
 }
