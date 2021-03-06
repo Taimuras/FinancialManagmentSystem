@@ -37,16 +37,25 @@ class ApiCalling {
             self.userDefaults.setValue(refreshToken, forKey: "RefreshToken")
             
             
-            if let refTokUsDef = self.userDefaults.array(forKey: "RefreshToken"){
+            if let refTokUsDef = self.userDefaults.string(forKey: "RefreshToken"){
                 print(refTokUsDef)
             }
             
             print("\n")
             let accessToken = json["access"].stringValue
             self.userDefaults.setValue(accessToken, forKey: "AccessToken")
-//            if let accessTokUsDef = self.userDefaults.string(forKey: "AccessToken"){
-//                print(accessTokUsDef)
-//            }
+            if let accessTokUsDef = self.userDefaults.string(forKey: "AccessToken"){
+                print(accessTokUsDef)
+            }
+            
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+                
+                // This is to get the SceneDelegate object from your view controller
+                // then call the change root view controller function to change to main tab bar
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+            
             
             
 

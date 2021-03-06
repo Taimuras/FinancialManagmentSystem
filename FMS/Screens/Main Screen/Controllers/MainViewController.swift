@@ -14,6 +14,9 @@ class MainViewController: UIViewController {
     var mainVCData: [MainCVCModel] = []
     
     
+    let userDefaults = UserDefaults.standard
+    
+    
     //Design Fonts
     @IBOutlet weak var lastChangesLabel: UILabel!
     @IBOutlet weak var balansLabel: UILabel!
@@ -68,7 +71,19 @@ class MainViewController: UIViewController {
     
 
     @IBAction func logOut(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+//        dismiss(animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainTabBarController = storyboard.instantiateViewController(identifier: "LoginNavigationController")
+            
+            // This is to get the SceneDelegate object from your view controller
+            // then call the change root view controller function to change to main tab bar
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+        
+        
+//        if let refTokUsDef = self.userDefaults.string(forKey: "RefreshToken"){
+//            print(refTokUsDef)
+//        }
+        
     }
     
 }
