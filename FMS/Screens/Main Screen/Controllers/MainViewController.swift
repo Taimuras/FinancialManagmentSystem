@@ -42,6 +42,11 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        constants.tabBarIndex = 0
+        print(constants.tabBarIndex)
+        
+        self.tabBarController?.delegate = self
+        
         design()
         
         mainScreenCollectionView.delegate = self
@@ -98,16 +103,6 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         return cell
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
 
 
@@ -115,6 +110,22 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 76)
+    }
+}
+
+extension MainViewController: UITabBarControllerDelegate{
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        
+        if tabBarController.selectedIndex == 2{
+            tabBarController.selectedIndex = constants.tabBarIndex
+            
+            modalVC()
+        }
+    }
+    
+    func modalVC() {
+        let homeView = self.storyboard?.instantiateViewController(withIdentifier: constants.addingModalVC) as! AddingVC
+        present(homeView, animated: true, completion: nil)
     }
 }
 

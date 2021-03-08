@@ -11,9 +11,11 @@ import UIKit
 
 
 class Constants {
+    var tabBarIndex = 0
     
     let mainScreenCollectionViewCellIdentifier = "MainCVC"
     let tabBarViewIdintifier = "TabBarStoryBoardID"
+    let addingModalVC = "AddingModalVC"
     
     //Font Bold size
     let fontBold34 = UIFont(name: "OpenSans-Bold", size: 34)
