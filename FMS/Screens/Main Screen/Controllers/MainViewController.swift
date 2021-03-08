@@ -10,6 +10,7 @@ import UIKit
 class MainViewController: UIViewController {
     
     let constants = Constants()
+    let fetchingTransactions = FetchingTransactions()
     
     var mainVCData: [MainCVCModel] = []
     
@@ -67,6 +68,10 @@ class MainViewController: UIViewController {
         mainVCData.append(one)
         mainVCData.append(one)
         
+        
+        fetchingTransactions.fetchingTransactions(url: constants.fetchingAllTransactions) { (data) in
+            print(data)
+        }
         
         
     }

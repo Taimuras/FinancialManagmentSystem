@@ -27,6 +27,7 @@
 		5266438525F5D72C0032499D /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266438425F5D72C0032499D /* SettingsVC.swift */; };
 		5266438925F5D78C0032499D /* UsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266438825F5D78C0032499D /* UsersVC.swift */; };
 		5266438D25F5D7C90032499D /* AnaliticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266438C25F5D7C90032499D /* AnaliticsVC.swift */; };
+		5266439025F5DF100032499D /* FetchingTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266438F25F5DF100032499D /* FetchingTransactions.swift */; };
 		52CC2BB825F3656400DAA708 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC2BB725F3656400DAA708 /* TabBarViewController.swift */; };
 		52E5090425F211F80086DF17 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5090325F211F80086DF17 /* LoginVC.swift */; };
 		52E5090725F212160086DF17 /* ForgotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5090625F212160086DF17 /* ForgotVC.swift */; };
@@ -56,6 +57,7 @@
 		5266438425F5D72C0032499D /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		5266438825F5D78C0032499D /* UsersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersVC.swift; sourceTree = "<group>"; };
 		5266438C25F5D7C90032499D /* AnaliticsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnaliticsVC.swift; sourceTree = "<group>"; };
+		5266438F25F5DF100032499D /* FetchingTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchingTransactions.swift; sourceTree = "<group>"; };
 		52CC2BB725F3656400DAA708 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		52E5090325F211F80086DF17 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		52E5090625F212160086DF17 /* ForgotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotVC.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				5251A56825EF5D9600546F71 /* MainCVCModel.swift */,
+				5266438F25F5DF100032499D /* FetchingTransactions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				5266438925F5D78C0032499D /* UsersVC.swift in Sources */,
 				52CC2BB825F3656400DAA708 /* TabBarViewController.swift in Sources */,
 				52E5090725F212160086DF17 /* ForgotVC.swift in Sources */,
+				5266439025F5DF100032499D /* FetchingTransactions.swift in Sources */,
 				5225FE4225F347D700CF4009 /* ApiCalling.swift in Sources */,
 				5266437B25F5D69D0032499D /* AddingVC.swift in Sources */,
 				52E5090425F211F80086DF17 /* LoginVC.swift in Sources */,
