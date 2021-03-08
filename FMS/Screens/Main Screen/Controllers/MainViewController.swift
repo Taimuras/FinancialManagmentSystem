@@ -42,9 +42,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        
         design()
         
         mainScreenCollectionView.delegate = self
@@ -71,18 +68,13 @@ class MainViewController: UIViewController {
     
 
     @IBAction func logOut(_ sender: UIButton) {
-//        dismiss(animated: true, completion: nil)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainTabBarController = storyboard.instantiateViewController(identifier: "LoginNavigationController")
-            
-            // This is to get the SceneDelegate object from your view controller
-            // then call the change root view controller function to change to main tab bar
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
         
+        userDefaults.removeObject(forKey: "AccessToken")
+        userDefaults.removeObject(forKey: "RefreshToken")
         
-//        if let refTokUsDef = self.userDefaults.string(forKey: "RefreshToken"){
-//            print(refTokUsDef)
-//        }
         
     }
     

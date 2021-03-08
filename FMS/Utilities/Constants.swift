@@ -40,6 +40,7 @@ class Constants {
     
     let server = "https://warm-escarpment-21852.herokuapp.com/"
     let loginPart = "https://warm-escarpment-21852.herokuapp.com/account/api/token/"
+    let refreshToken = "https://warm-escarpment-21852.herokuapp.com/account/api/token/refresh/"
     
     
     
