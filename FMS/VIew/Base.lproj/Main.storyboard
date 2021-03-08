@@ -427,7 +427,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="u1w-Og-ADD">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabBarController" id="WSi-as-ECT" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" id="WSi-as-ECT" customClass="TabBarController" customModule="FMS" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="dB1-kf-LMy"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aS7-Jg-l5O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>

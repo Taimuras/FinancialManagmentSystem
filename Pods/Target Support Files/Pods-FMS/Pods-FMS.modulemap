@@ -1,0 +1,6 @@
+framework module Pods_FMS {
+  umbrella header "Pods-FMS-umbrella.h"
+
+  export *
+  module * { export * }
+}

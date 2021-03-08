@@ -44,9 +44,9 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         constants.tabBarIndex = 0
-        print(constants.tabBarIndex)
+//        print(constants.tabBarIndex)
         
-        self.tabBarController?.delegate = self
+//        self.tabBarController?.delegate = self
         
         design()
         
@@ -118,21 +118,21 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension MainViewController: UITabBarControllerDelegate{
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        
-        if tabBarController.selectedIndex == 2{
-            tabBarController.selectedIndex = constants.tabBarIndex
-            
-            modalVC()
-        }
-    }
-    
-    func modalVC() {
-        let homeView = self.storyboard?.instantiateViewController(withIdentifier: constants.addingModalVC) as! AddingVC
-        present(homeView, animated: true, completion: nil)
-    }
-}
+//extension MainViewController: UITabBarControllerDelegate{
+//    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+//
+//        if tabBarController.selectedIndex == 2{
+//            tabBarController.selectedIndex = constants.tabBarIndex
+//
+//            modalVC()
+//        }
+//    }
+//
+//    func modalVC() {
+//        let homeView = self.storyboard?.instantiateViewController(withIdentifier: constants.addingModalVC) as! AddingVC
+//        present(homeView, animated: true, completion: nil)
+//    }
+//}
 
 
 extension MainViewController{
