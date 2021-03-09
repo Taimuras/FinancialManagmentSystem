@@ -36,16 +36,5 @@ class ApiCalling {
         
     }
     
-    func updateAccessToken(){
-        let refreshToken = UserDefaults.standard.string(forKey: "RefreshToken")
-        let param = ["refresh" : refreshToken]
-        
-        
-        let requestTorefreshToken = AF.request(constants.refreshToken, method: .post, parameters: param as Parameters, encoding: JSONEncoding.default, headers: nil, interceptor: nil)
-        requestTorefreshToken.responseJSON { (response) in
-            let json = JSON(response.value!)
-            let accessToken = json["access"].stringValue
-            self.userDefaults.setValue(accessToken, forKey: "AccessToken")
-        }
-    }
+    
 }

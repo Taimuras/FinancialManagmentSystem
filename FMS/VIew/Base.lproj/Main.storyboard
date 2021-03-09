@@ -22,25 +22,26 @@
                                 <rect key="frame" x="20" y="0.0" width="374" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDZ-By-QjL">
-                                        <rect key="frame" x="356" y="9" width="18" height="22"/>
-                                        <state key="normal" image="Nav Bar History"/>
+                                        <rect key="frame" x="354" y="9" width="20" height="22"/>
+                                        <state key="normal" image="LogOut"/>
                                         <connections>
                                             <action selector="logOut:" destination="X2k-IO-ALE" eventType="touchUpInside" id="7BE-E5-arw"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Журнал" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nbl-es-fcd">
-                                        <rect key="frame" x="280.66666666666669" y="9.9999999999999982" width="63.333333333333314" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQe-Xe-A26">
+                                        <rect key="frame" x="306" y="11" width="18" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="hNl-3n-wzI"/>
+                                            <constraint firstAttribute="width" constant="18" id="paJ-hO-ZAB"/>
+                                        </constraints>
+                                        <state key="normal" image="Nav Bar History"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="UDZ-By-QjL" firstAttribute="centerY" secondItem="eGh-jh-K5Q" secondAttribute="centerY" id="0W2-FA-MsK"/>
-                                    <constraint firstItem="Nbl-es-fcd" firstAttribute="centerY" secondItem="eGh-jh-K5Q" secondAttribute="centerY" id="IWg-x4-7hw"/>
-                                    <constraint firstItem="Nbl-es-fcd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eGh-jh-K5Q" secondAttribute="leading" id="OMm-ad-FDd"/>
-                                    <constraint firstItem="UDZ-By-QjL" firstAttribute="leading" secondItem="Nbl-es-fcd" secondAttribute="trailing" constant="12" id="ocp-ue-Ac2"/>
+                                    <constraint firstItem="kQe-Xe-A26" firstAttribute="centerY" secondItem="eGh-jh-K5Q" secondAttribute="centerY" id="CC8-Ow-eLT"/>
+                                    <constraint firstItem="UDZ-By-QjL" firstAttribute="leading" secondItem="kQe-Xe-A26" secondAttribute="trailing" constant="30" id="mqw-8W-Z3K"/>
                                     <constraint firstAttribute="height" constant="40" id="q8H-hE-nGz"/>
                                     <constraint firstAttribute="trailing" secondItem="UDZ-By-QjL" secondAttribute="trailing" id="r3g-tL-Q6T"/>
                                 </constraints>
@@ -289,7 +290,6 @@
                         <outlet property="incomeLabel" destination="CYb-5M-Zd7" id="R0q-WV-pQa"/>
                         <outlet property="incomePanelView" destination="vbP-nG-gdQ" id="xPD-x1-FJa"/>
                         <outlet property="incomeStateLabel" destination="vHd-mG-Mbq" id="7QZ-nN-1AL"/>
-                        <outlet property="journalLabel" destination="Nbl-es-fcd" id="Uas-BO-KkD"/>
                         <outlet property="lastChangesLabel" destination="ffv-29-Z8L" id="Wbg-vO-IjN"/>
                         <outlet property="mainScreenCollectionView" destination="Kax-fR-dkJ" id="aD5-Vl-RBP"/>
                         <outlet property="outcomeLabel" destination="2d7-4i-IZa" id="9T7-Mg-VQF"/>
@@ -380,7 +380,7 @@
                                     <constraint firstAttribute="height" constant="50" id="7vm-b1-bFR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ywu-b5-z9F"/>
@@ -638,6 +638,7 @@
     <resources>
         <image name="Add TB Icon" width="37" height="36"/>
         <image name="Analitics TB Icon" width="21" height="22"/>
+        <image name="LogOut" width="20" height="19"/>
         <image name="Main Filter" width="18" height="12"/>
         <image name="Main TB Icon" width="25" height="24"/>
         <image name="Nav Bar History" width="18" height="19"/>

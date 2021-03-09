@@ -11,7 +11,7 @@ class UsersVC: UIViewController {
     let constants = Constants()
     override func viewDidLoad() {
         super.viewDidLoad()
-        constants.tabBarIndex = 3
+        
         
         // Do any additional setup after loading the view.
     }

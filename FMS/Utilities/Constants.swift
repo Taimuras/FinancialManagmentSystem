@@ -7,11 +7,13 @@
 
 import Foundation
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 
 
 class Constants {
-    var tabBarIndex = 0
+    let userDefaults = UserDefaults.standard
     
     let mainScreenCollectionViewCellIdentifier = "MainCVC"
     let tabBarViewIdintifier = "TabBarStoryBoardID"
@@ -40,11 +42,25 @@ class Constants {
     
     
     
-    let server = "https://warm-escarpment-21852.herokuapp.com/"
-    let loginPart = "https://warm-escarpment-21852.herokuapp.com/account/api/token/"
-    let refreshToken = "https://warm-escarpment-21852.herokuapp.com/account/api/token/refresh/"
-    let fetchingAllTransactions = "https://warm-escarpment-21852.herokuapp.com/transaction/"
+    let server = "https://neobis-finance-sistem.herokuapp.com/"
+    let loginPart = "https://neobis-finance-sistem.herokuapp.com/account/api/token/"
+    let refreshTokenApi = "https://neobis-finance-sistem.herokuapp.com/account/api/token/refresh/"
+    let fetchingAllTransactions = "https://neobis-finance-sistem.herokuapp.com/transaction/"
+    let mainScreenFetchIncOutTrans = "https://neobis-finance-sistem.herokuapp.com/profit_consumption_balance/"
     
     
+    
+    func updateAccessToken(){
+        let refreshToken = UserDefaults.standard.string(forKey: "RefreshToken")
+        let param = ["refresh" : refreshToken]
+        
+        
+        let requestTorefreshToken = AF.request(refreshTokenApi, method: .post, parameters: param as Parameters, encoding: JSONEncoding.default, headers: nil, interceptor: nil)
+        requestTorefreshToken.responseJSON { (response) in
+            let json = JSON(response.value!)
+            let accessToken = json["access"].stringValue
+            self.userDefaults.setValue(accessToken, forKey: "AccessToken")
+        }
+    }
     
 }

@@ -10,7 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    let apiCalling = ApiCalling()
+    
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if UserDefaults.standard.string(forKey: "AccessToken") != nil {
                 let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
                 window?.rootViewController = mainTabBarController
-                apiCalling.updateAccessToken()
+                
             } else {
                 let loginNavController = storyboard.instantiateViewController(identifier: "LoginNavigationController")
                 window?.rootViewController = loginNavController

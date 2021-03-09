@@ -11,7 +11,7 @@ class AnaliticsVC: UIViewController {
     let constants = Constants()
     override func viewDidLoad() {
         super.viewDidLoad()
-        constants.tabBarIndex = 4
+      
         
         // Do any additional setup after loading the view.
     }

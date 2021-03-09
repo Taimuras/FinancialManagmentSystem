@@ -23,7 +23,6 @@ class MainViewController: UIViewController {
     @IBOutlet weak var balansLabel: UILabel!
     @IBOutlet weak var outcomeLabel: UILabel!
     @IBOutlet weak var incomeLabel: UILabel!
-    @IBOutlet weak var journalLabel: UILabel!
     @IBOutlet weak var tranzactionLabel: UILabel!
     
     
@@ -43,18 +42,11 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        constants.tabBarIndex = 0
-//        print(constants.tabBarIndex)
-        
-//        self.tabBarController?.delegate = self
-        
         design()
+        collectionViewDelegates()
+        registerCWCell()
         
-        mainScreenCollectionView.delegate = self
-        mainScreenCollectionView.dataSource = self
         
-        //CollectionViewCell Nib Registration
-        mainScreenCollectionView.register(UINib(nibName: constants.mainScreenCollectionViewCellIdentifier, bundle: .main), forCellWithReuseIdentifier: constants.mainScreenCollectionViewCellIdentifier)
 
         let one: MainCVCModel = MainCVCModel(actionIconName: "Income", companyName: "Breez Pro", bankName: "Optima Bank", date: "12.12.2012", actionValue: "12345,12")
         mainVCData.append(one)
@@ -78,12 +70,38 @@ class MainViewController: UIViewController {
     
 
     @IBAction func logOut(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainTabBarController = storyboard.instantiateViewController(identifier: "LoginNavigationController")
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
         
-        userDefaults.removeObject(forKey: "AccessToken")
-        userDefaults.removeObject(forKey: "RefreshToken")
+        
+        
+        let dialogMessage = UIAlertController(title: "Confirm", message: "Are you sure you want to quit?", preferredStyle: .alert)
+        
+        
+        
+        // Create Cancel button with action handlder
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+            print("Cancel button tapped")
+        }
+        
+        // Create OK button with action handler
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+             print("Ok button tapped")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainTabBarController = storyboard.instantiateViewController(identifier: "LoginNavigationController")
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+
+            self.userDefaults.removeObject(forKey: "AccessToken")
+            self.userDefaults.removeObject(forKey: "RefreshToken")
+             
+        })
+        
+        //Add OK and Cancel button to dialog message
+        dialogMessage.addAction(ok)
+        dialogMessage.addAction(cancel)
+        
+        
+        // Present dialog message to user
+        self.present(dialogMessage, animated: true, completion: nil)
+   
         
         
     }
@@ -92,6 +110,16 @@ class MainViewController: UIViewController {
 
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+    func collectionViewDelegates(){
+        mainScreenCollectionView.delegate = self
+        mainScreenCollectionView.dataSource = self
+    }
+    
+    func registerCWCell (){
+        //CollectionViewCell Nib Registration
+        mainScreenCollectionView.register(UINib(nibName: constants.mainScreenCollectionViewCellIdentifier, bundle: .main), forCellWithReuseIdentifier: constants.mainScreenCollectionViewCellIdentifier)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return mainVCData.count
     }
@@ -118,21 +146,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-//extension MainViewController: UITabBarControllerDelegate{
-//    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-//
-//        if tabBarController.selectedIndex == 2{
-//            tabBarController.selectedIndex = constants.tabBarIndex
-//
-//            modalVC()
-//        }
-//    }
-//
-//    func modalVC() {
-//        let homeView = self.storyboard?.instantiateViewController(withIdentifier: constants.addingModalVC) as! AddingVC
-//        present(homeView, animated: true, completion: nil)
-//    }
-//}
+
 
 
 extension MainViewController{
@@ -146,7 +160,7 @@ extension MainViewController{
         balansLabel.font = constants.fontRegular12
         outcomeLabel.font = constants.fontRegular12
         incomeLabel.font = constants.fontRegular12
-        journalLabel.font = constants.fontSemiBold17
+        
         
         incomeStateLabel.font = constants.fontSemiBold18
         outcomeStateLabel.font = constants.fontSemiBold18
