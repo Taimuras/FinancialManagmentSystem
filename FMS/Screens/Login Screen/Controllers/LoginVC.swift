@@ -35,17 +35,9 @@ class LoginVC: UIViewController {
         textFieldsDelegate()
     }
     
-    
-    
-
-    
-    
     @IBAction func logInButtonTapped(_ sender: UIButton) {
         ApiCalling().logInApiCalling(email: loginTextField.text!, password: passwordTextField.text!)
     }
-    
-    
-    
 }
 
 extension LoginVC: UITextFieldDelegate {

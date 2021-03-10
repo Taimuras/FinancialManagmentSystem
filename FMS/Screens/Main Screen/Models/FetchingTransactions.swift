@@ -12,13 +12,27 @@ import SwiftyJSON
 
 class FetchingTransactions {
     let constants = Constants()
+    let userDefaults = UserDefaults.standard
     
-    func fetchingTransactions(url: String, completion: @escaping (JSON) -> ()){
-        var swiftyJsonVar: JSON = []
-        AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil, interceptor: nil).response { (data) in
-            let json = JSON(data.value! as Any)
-            swiftyJsonVar = json["results"]
-            completion(swiftyJsonVar)
+        
+    
+    func fetchingTransactions(url: String, completion: @escaping (String) -> ()){
+//        var swiftyJsonVar: JSON = []
+        var sss: String = ""
+        let accessToken = userDefaults.string(forKey: "AccessToken")!
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(accessToken)"
+        ]
+        
+        
+        let requestAPI = AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+        
+        requestAPI.responseJSON { (response) in
+            let json = JSON(response.value!)
+//            print(json["count"])
+            sss = json["count"].stringValue
+            completion(sss)
         }
     }
 }

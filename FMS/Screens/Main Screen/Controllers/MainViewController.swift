@@ -60,13 +60,18 @@ class MainViewController: UIViewController {
         mainVCData.append(one)
         mainVCData.append(one)
         
-        
-        fetchingTransactions.fetchingTransactions(url: constants.fetchingAllTransactions) { (data) in
-            print(data)
-        }
+
+        fetchData()
         
         
     }
+    func fetchData () {
+        fetchingTransactions.fetchingTransactions(url: constants.fetchingAllTransactions) { (data) in
+            print(data)
+//            print("MainVC Data Received!!!")
+        }
+    }
+    
     
 
     @IBAction func logOut(_ sender: UIButton) {
@@ -83,7 +88,7 @@ class MainViewController: UIViewController {
         }
         
         // Create OK button with action handler
-        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+        let ok = UIAlertAction(title: "OK", style: .destructive, handler: { (action) -> Void in
              print("Ok button tapped")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let mainTabBarController = storyboard.instantiateViewController(identifier: "LoginNavigationController")
