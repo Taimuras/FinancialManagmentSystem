@@ -1,10 +1,3 @@
-//
-//  AddingVC.swift
-//  FMS
-//
-//  Created by tami on 3/8/21.
-//
-
 import UIKit
 
 class AddingVC: UIViewController {
@@ -15,6 +8,7 @@ class AddingVC: UIViewController {
     let projects = ["Hamam","Building","AsiaMall","Vefa Center","Bishkek Park","Caravan","Palace","Bishkek City","Guard Hotel"]
     let wallets = ["DemirBank","OptimaBank","KazKomerc","Kyrgyzstan","NAC Bank"]
     
+    @IBOutlet weak var newTransactionLabel: UILabel!
     
     let constants = Constants()
 
@@ -36,6 +30,7 @@ class AddingVC: UIViewController {
     
     
     
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     let datePicker = UIDatePicker()
     
@@ -75,8 +70,6 @@ class AddingVC: UIViewController {
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-    
-    
 }
 
 
@@ -133,6 +126,7 @@ extension AddingVC{
     
     
     func transferDesign(){
+        
         directionTextField.placeholder = "С кошелька"
         categoryTextField.placeholder = "На кошелёк"
         
@@ -153,7 +147,6 @@ extension AddingVC{
 }
 
 // MARK: PickerView
-
 extension AddingVC: UIPickerViewDelegate, UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -280,6 +273,8 @@ extension AddingVC: UIPickerViewDelegate, UIPickerViewDataSource{
     }
 }
 
+
+
 // MARK: DatePicker
 extension AddingVC{
     func createDatePicker () {
@@ -287,12 +282,14 @@ extension AddingVC{
         //toolbar
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
+        toolbar.backgroundColor = UIColor(red: 102/255, green: 193/255, blue: 73/255, alpha: 1)
         
         let loc = Locale(identifier: "ru_RU")
         datePicker.locale = loc
         
         //bar Button
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        doneButton.tintColor = UIColor(red: 102/255, green: 193/255, blue: 73/255, alpha: 1)
         toolbar.setItems([doneButton], animated: true)
         datePicker.preferredDatePickerStyle = .wheels
         //assign toolbar
@@ -322,12 +319,15 @@ extension AddingVC: UITextFieldDelegate{
 }
 
 
+
+// MARK: Design Part
 extension AddingVC{
     func design (){
         
         saveButton.layer.cornerRadius = 10.0
         saveButton.layer.masksToBounds = true
         saveButton.titleLabel?.font = constants.fontSemiBold17
+        cancelButton.titleLabel?.font = constants.fontRegular17
         
         //Fonts + sizes
         
@@ -338,10 +338,6 @@ extension AddingVC{
         counterAgentTextField.font = constants.fontRegular17
         projectTextField.font = constants.fontRegular17
         walletTextField.font = constants.fontRegular17
-        
-
-        
-        
-        
+        newTransactionLabel.font = constants.fontSemiBold17
     }
 }

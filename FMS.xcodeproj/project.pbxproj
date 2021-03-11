@@ -31,6 +31,8 @@
 		52CC2BB825F3656400DAA708 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC2BB725F3656400DAA708 /* TabBarViewController.swift */; };
 		52E5090425F211F80086DF17 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5090325F211F80086DF17 /* LoginVC.swift */; };
 		52E5090725F212160086DF17 /* ForgotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5090625F212160086DF17 /* ForgotVC.swift */; };
+		52E8B6C025F9E199002D62A0 /* EditingTransactionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E8B6BF25F9E199002D62A0 /* EditingTransactionsVC.swift */; };
+		52E8B6C525F9E7C0002D62A0 /* EditingTransferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E8B6C425F9E7C0002D62A0 /* EditingTransferVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		52CC2BB725F3656400DAA708 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		52E5090325F211F80086DF17 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		52E5090625F212160086DF17 /* ForgotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotVC.swift; sourceTree = "<group>"; };
+		52E8B6BF25F9E199002D62A0 /* EditingTransactionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingTransactionsVC.swift; sourceTree = "<group>"; };
+		52E8B6C425F9E7C0002D62A0 /* EditingTransferVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingTransferVC.swift; sourceTree = "<group>"; };
 		C8ECD412727A2B75441A2A38 /* Pods-FMS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMS.release.xcconfig"; path = "Target Support Files/Pods-FMS/Pods-FMS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,7 +147,6 @@
 			children = (
 				52A3FB8C25F0AFC900FC98D8 /* Fonts */,
 				5252798125EDFE8D001FF2CE /* Screens */,
-				52178BA125F690ED001E9C14 /* TabBarController.swift */,
 				5252797F25EDFE7A001FF2CE /* Source */,
 				5252797E25EDFE58001FF2CE /* VIew */,
 				5252797D25EDFE51001FF2CE /* Utilities */,
@@ -157,6 +160,7 @@
 			children = (
 				5252797325EDFE06001FF2CE /* LaunchScreen.storyboard */,
 				5251A55E25EF5C0A00546F71 /* Constants.swift */,
+				52178BA125F690ED001E9C14 /* TabBarController.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -191,6 +195,7 @@
 		5252798125EDFE8D001FF2CE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				52E8B6BE25F9E177002D62A0 /* Edtiting Transactions Screens */,
 				5266437725F5D66C0032499D /* AddingScreen */,
 				5252798525EDFEBF001FF2CE /* Login Screen */,
 				5252798425EDFEB8001FF2CE /* Main Screen */,
@@ -334,6 +339,23 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		52E8B6BE25F9E177002D62A0 /* Edtiting Transactions Screens */ = {
+			isa = PBXGroup;
+			children = (
+				52E8B6C225F9E19E002D62A0 /* Controllers */,
+			);
+			path = "Edtiting Transactions Screens";
+			sourceTree = "<group>";
+		};
+		52E8B6C225F9E19E002D62A0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				52E8B6BF25F9E199002D62A0 /* EditingTransactionsVC.swift */,
+				52E8B6C425F9E7C0002D62A0 /* EditingTransferVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -463,10 +485,12 @@
 				5266437B25F5D69D0032499D /* AddingVC.swift in Sources */,
 				52E5090425F211F80086DF17 /* LoginVC.swift in Sources */,
 				5220E57C25EE2C470077EB07 /* MainCVC.swift in Sources */,
+				52E8B6C025F9E199002D62A0 /* EditingTransactionsVC.swift in Sources */,
 				5252796925EDFE06001FF2CE /* AppDelegate.swift in Sources */,
 				5252796B25EDFE06001FF2CE /* SceneDelegate.swift in Sources */,
 				5251A55A25EF566E00546F71 /* MainViewController.swift in Sources */,
 				5251A55F25EF5C0A00546F71 /* Constants.swift in Sources */,
+				52E8B6C525F9E7C0002D62A0 /* EditingTransferVC.swift in Sources */,
 				5266438D25F5D7C90032499D /* AnaliticsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

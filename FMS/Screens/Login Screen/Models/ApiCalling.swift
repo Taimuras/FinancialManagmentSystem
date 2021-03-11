@@ -31,7 +31,7 @@ class ApiCalling {
             let accessToken = json["access"].stringValue
 //            print("AccessToken \(accessToken) ")
             self.userDefaults.setValue(accessToken, forKey: "AccessToken")
-            print(userDefaults.string(forKey: "AccessToken")!)
+            
             
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

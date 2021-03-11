@@ -48,17 +48,18 @@ class MainViewController: UIViewController {
         
         
 
-        let one: MainCVCModel = MainCVCModel(actionIconName: "Income", companyName: "Breez Pro", bankName: "Optima Bank", date: "12.12.2012", actionValue: "12345,12")
+        let one: MainCVCModel = MainCVCModel(actionIconName: "Income", companyName: "Breez Pro", bankName: "1", date: "12.12.2012", actionValue: "12345,12")
+        let two: MainCVCModel = MainCVCModel(actionIconName: "Income", companyName: "Neobis", bankName: "2", date: "11.11.2000", actionValue: "12345,12")
         mainVCData.append(one)
+        mainVCData.append(two)
         mainVCData.append(one)
+        mainVCData.append(two)
         mainVCData.append(one)
+        mainVCData.append(two)
         mainVCData.append(one)
+        mainVCData.append(two)
         mainVCData.append(one)
-        mainVCData.append(one)
-        mainVCData.append(one)
-        mainVCData.append(one)
-        mainVCData.append(one)
-        mainVCData.append(one)
+        mainVCData.append(two)
         
 
         fetchData()
@@ -140,6 +141,17 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.actionValue.text = index.actionValue
         
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if mainVCData[indexPath.row].bankName == "1" {
+            let editingVC = self.storyboard?.instantiateViewController(withIdentifier: constants.editingTransactionsVC) as! EditingTransactionsVC
+            present(editingVC, animated: true, completion: nil)
+        } else if mainVCData[indexPath.row].bankName == "2" {
+            let edititngTransfer = self.storyboard?.instantiateViewController(withIdentifier: constants.editingTransferVC) as! EditingTransferVC
+            present(edititngTransfer, animated: true, completion: nil)
+        }
+        
     }
 }
 

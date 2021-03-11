@@ -1,10 +1,3 @@
-//
-//  LoginVC.swift
-//  FMS
-//
-//  Created by tami on 3/5/21.
-//
-
 import UIKit
 
 

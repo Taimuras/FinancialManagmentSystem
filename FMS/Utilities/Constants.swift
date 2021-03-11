@@ -18,6 +18,8 @@ class Constants {
     let mainScreenCollectionViewCellIdentifier = "MainCVC"
     let tabBarViewIdintifier = "TabBarStoryBoardID"
     let addingModalVC = "AddingModalVC"
+    let editingTransactionsVC = "EditingTransactionsVC"
+    let editingTransferVC = "EditingTransferVC"
     
     //Font Bold size
     let fontBold34 = UIFont(name: "OpenSans-Bold", size: 34)

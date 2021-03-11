@@ -30,6 +30,7 @@ class FetchingTransactions {
         
         requestAPI.responseJSON { (response) in
             let json = JSON(response.value!)
+            print(json)
             print(json["count"])
             sss = json["count"].stringValue
             completion(sss)
