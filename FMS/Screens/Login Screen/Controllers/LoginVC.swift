@@ -1,9 +1,11 @@
 import UIKit
-
+import Reachability
+import MBProgressHUD
 
 class LoginVC: UIViewController {
     
     let constants = Constants()
+    var reachability: Reachability?
     //Labels
     @IBOutlet weak var logoTextLabel: UILabel!
     @IBOutlet weak var welcomeTextLabel: UILabel!
@@ -29,7 +31,26 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func logInButtonTapped(_ sender: UIButton) {
-        ApiCalling().logInApiCalling(email: loginTextField.text!, password: passwordTextField.text!)
+        do {
+            try self.reachability = Reachability.init()
+        } catch  {
+            print("asd")
+        }
+        
+        if ((reachability!.connection) != .unavailable){
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            ApiCalling().logInApiCalling(email: loginTextField.text!, password: passwordTextField.text!)
+        } else {
+            
+            let alert  = UIAlertController(title: "Please check your internet connection", message: "", preferredStyle: .alert)
+            let closeAction = UIAlertAction(title: "Close", style: .cancel) { (action) in
+                print("Close")
+            }
+            
+            alert.addAction(closeAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+        
     }
 }
 

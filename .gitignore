@@ -1,6 +1,7 @@
 pods
-FMS.xcworkspace
-podfile
-podfile.lock
+*.xcworkspace
+Podfile
+Podfile.lock
+.gitignore
 
 

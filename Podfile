@@ -9,5 +9,8 @@ target 'FMS' do
 
 pod 'Alamofire'
 pod 'SwiftyJSON'
+pod 'ReachabilitySwift'
+pod 'MBProgressHUD'
+pod 'SDWebImage'
 
 end

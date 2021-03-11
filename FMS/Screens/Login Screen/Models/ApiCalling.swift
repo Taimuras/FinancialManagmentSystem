@@ -1,13 +1,17 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import Reachability
 
 
 class ApiCalling {
     let constants = Constants()
     let userDefaults = UserDefaults.standard
+    var reachability: Reachability?
     
     func logInApiCalling(email: String, password: String) {
+        
+        
         
         let param = [
             "email" : email as AnyObject,
@@ -21,6 +25,7 @@ class ApiCalling {
             //Tokens coming
 //            print(response.value!)
 //            print(response.description.description)
+            print(response.result)
             
             
             let json = JSON(response.value!)
