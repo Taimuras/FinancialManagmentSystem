@@ -48,7 +48,7 @@ class Constants {
     let loginPart = "https://neobis-finance-sistem.herokuapp.com/account/api/token/"
     let refreshTokenApi = "https://neobis-finance-sistem.herokuapp.com/account/api/token/refresh/"
     let fetchingAllTransactions = "https://neobis-finance-sistem.herokuapp.com/transaction/"
-    let mainScreenFetchIncOutTrans = "https://neobis-finance-sistem.herokuapp.com/profit_consumption_balance/"
+    let mainScreenFetchIncOutBalance = "https://neobis-finance-sistem.herokuapp.com/profit_consumption_balance/"
     
     
     

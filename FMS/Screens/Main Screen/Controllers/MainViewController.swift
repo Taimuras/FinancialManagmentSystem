@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
     let constants = Constants()
     let fetchingTransactions = FetchingTransactions()
     
-    var mainVCData: [MainCVCModel] = []
+    var mainVCData: [TransitionsModel] = []
     
     
     let userDefaults = UserDefaults.standard
@@ -48,18 +48,18 @@ class MainViewController: UIViewController {
         
         
 
-        let one: MainCVCModel = MainCVCModel(actionIconName: "Income", companyName: "Breez Pro", bankName: "1", date: "12.12.2012", actionValue: "12345,12")
-        let two: MainCVCModel = MainCVCModel(actionIconName: "Income", companyName: "Neobis", bankName: "2", date: "11.11.2000", actionValue: "12345,12")
-        mainVCData.append(one)
-        mainVCData.append(two)
-        mainVCData.append(one)
-        mainVCData.append(two)
-        mainVCData.append(one)
-        mainVCData.append(two)
-        mainVCData.append(one)
-        mainVCData.append(two)
-        mainVCData.append(one)
-        mainVCData.append(two)
+//        let one: MainCVCModel = MainCVCModel(actionIconName: "Income", companyName: "Breez Pro", bankName: "1", date: "12.12.2012", actionValue: "12345,12")
+//        let two: MainCVCModel = MainCVCModel(actionIconName: "Income", companyName: "Neobis", bankName: "2", date: "11.11.2000", actionValue: "12345,12")
+//        mainVCData.append(one)
+//        mainVCData.append(two)
+//        mainVCData.append(one)
+//        mainVCData.append(two)
+//        mainVCData.append(one)
+//        mainVCData.append(two)
+//        mainVCData.append(one)
+//        mainVCData.append(two)
+//        mainVCData.append(one)
+//        mainVCData.append(two)
         
 
         fetchData()
@@ -68,8 +68,23 @@ class MainViewController: UIViewController {
     }
     func fetchData () {
         fetchingTransactions.fetchingTransactions(url: constants.fetchingAllTransactions) { (data) in
-            print(data)
-//            print("MainVC Data Received!!!")
+//            print(data)
+            self.mainVCData = data
+            self.mainScreenCollectionView.reloadData()
+        }
+        
+        fetchingTransactions.fetchingIncomeOutcomeBalance(url: constants.mainScreenFetchIncOutBalance) { (data) in
+            
+            DispatchQueue.main.async {
+                self.incomeStateLabel.text = data[0]
+                self.outcomeStateLabel.text = data[1]
+                self.transferStateLabel.text = data[2]
+            }
+            
+            
+//            @IBOutlet weak var incomeStateLabel: UILabel!
+//            @IBOutlet weak var outcomeStateLabel: UILabel!
+//            @IBOutlet weak var transferStateLabel: UILabel!
         }
     }
     
@@ -135,23 +150,23 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let index = mainVCData[indexPath.row]
         
         cell.actionIcon.image = UIImage(named: index.actionIconName)
-        cell.bankName.text = index.bankName
-        cell.companyName.text = index.companyName
-        cell.dateOfAction.text = index.date
-        cell.actionValue.text = index.actionValue
+        cell.bankName.text = index.user
+        cell.companyName.text = index.actionIconName
+        cell.dateOfAction.text = index.date_join
+        cell.actionValue.text = String(index.sum)
         
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if mainVCData[indexPath.row].bankName == "1" {
-            let editingVC = self.storyboard?.instantiateViewController(withIdentifier: constants.editingTransactionsVC) as! EditingTransactionsVC
-            present(editingVC, animated: true, completion: nil)
-        } else if mainVCData[indexPath.row].bankName == "2" {
-            let edititngTransfer = self.storyboard?.instantiateViewController(withIdentifier: constants.editingTransferVC) as! EditingTransferVC
-            present(edititngTransfer, animated: true, completion: nil)
-        }
-        
+//        if mainVCData[indexPath.row].bankName == "1" {
+//            let editingVC = self.storyboard?.instantiateViewController(withIdentifier: constants.editingTransactionsVC) as! EditingTransactionsVC
+//            present(editingVC, animated: true, completion: nil)
+//        } else if mainVCData[indexPath.row].bankName == "2" {
+//            let edititngTransfer = self.storyboard?.instantiateViewController(withIdentifier: constants.editingTransferVC) as! EditingTransferVC
+//            present(edititngTransfer, animated: true, completion: nil)
+//        }
+//
     }
 }
 
