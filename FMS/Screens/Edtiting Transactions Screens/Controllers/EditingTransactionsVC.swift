@@ -28,6 +28,7 @@ class EditingTransactionsVC: UIViewController {
     @IBOutlet weak var counterAgentTextField: UITextField!
     @IBOutlet weak var projectTextField: UITextField!
     @IBOutlet weak var walletTextField: UITextField!
+    @IBOutlet weak var commentTextField: UITextField!
     
     
     let datePicker = UIDatePicker()
@@ -43,10 +44,12 @@ class EditingTransactionsVC: UIViewController {
         super.viewDidLoad()
         
         sumTextField.delegate = self
+        commentTextField.delegate = self
         
         createDatePicker()
         design()
         pickerViewDelegAndDataSorc()
+        keyBoardShowAndHide()
     }
    
     @IBAction func cancelTapped(_ sender: UIButton) {
@@ -237,4 +240,39 @@ extension EditingTransactionsVC{
         transactionLabel.font = constants.fontSemiBold17
         
     }
+}
+
+extension EditingTransactionsVC {
+    
+    
+    func keyBoardShowAndHide(){
+        NotificationCenter.default.addObserver(self, selector: #selector(EditingTransactionsVC.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        // call the 'keyboardWillHide' function when the view controlelr receive notification that keyboard is going to be hidden
+        NotificationCenter.default.addObserver(self, selector: #selector(EditingTransactionsVC.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            // if keyboard size is not available for some reason, dont do anything
+            return
+        }
+        
+        // move the root view up by the distance of keyboard height
+        if sumTextField.isEditing {
+            self.view.frame.origin.y = 0 - keyboardSize.height + 200
+        } else {
+            self.view.frame.origin.y = 0 - keyboardSize.height
+        }
+        
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        // move back the root view origin to zero
+        self.view.frame.origin.y = 0
+    }
+    
 }

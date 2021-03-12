@@ -15,11 +15,17 @@ import SwiftyJSON
 class Constants {
     let userDefaults = UserDefaults.standard
     
+    //Storyboard IDs
     let mainScreenCollectionViewCellIdentifier = "MainCVC"
     let tabBarViewIdintifier = "TabBarStoryBoardID"
     let addingModalVC = "AddingModalVC"
     let editingTransactionsVC = "EditingTransactionsVC"
     let editingTransferVC = "EditingTransferVC"
+    let filterVC = "FilterVC"
+    
+    
+    //Segues IDs
+    let filterSegue = "FilterSegue"
     
     //Font Bold size
     let fontBold34 = UIFont(name: "OpenSans-Bold", size: 34)
@@ -64,3 +70,4 @@ class Constants {
     }
     
 }
+

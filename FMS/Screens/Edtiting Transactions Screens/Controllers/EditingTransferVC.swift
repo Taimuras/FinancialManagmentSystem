@@ -19,6 +19,7 @@ class EditingTransferVC: UIViewController {
     @IBOutlet weak var sumTextField: UITextField!
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var toTextField: UITextField!
+    @IBOutlet weak var commentTextField: UITextField!
     
     
     @IBOutlet weak var saveButton: UIButton!
@@ -31,9 +32,11 @@ class EditingTransferVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         sumTextField.delegate = self
+        commentTextField.delegate = self
         design()
         createDatePicker()
         pickerViewDelegAndDataSorc()
+        keyBoardShowAndHide()
     }
     
 
@@ -167,4 +170,40 @@ extension EditingTransferVC{
         transactionLabel.font = constants.fontSemiBold17
         
     }
+}
+
+
+extension EditingTransferVC {
+    
+    
+    func keyBoardShowAndHide(){
+        NotificationCenter.default.addObserver(self, selector: #selector(EditingTransferVC.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        // call the 'keyboardWillHide' function when the view controlelr receive notification that keyboard is going to be hidden
+        NotificationCenter.default.addObserver(self, selector: #selector(EditingTransferVC.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            // if keyboard size is not available for some reason, dont do anything
+            return
+        }
+        
+        // move the root view up by the distance of keyboard height
+        if sumTextField.isEditing {
+            self.view.frame.origin.y = 0 - keyboardSize.height + 200
+        } else {
+            self.view.frame.origin.y = 0 - keyboardSize.height + 200    
+        }
+        
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        // move back the root view origin to zero
+        self.view.frame.origin.y = 0
+    }
+    
 }

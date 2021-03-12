@@ -159,14 +159,14 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-//        if mainVCData[indexPath.row].bankName == "1" {
-//            let editingVC = self.storyboard?.instantiateViewController(withIdentifier: constants.editingTransactionsVC) as! EditingTransactionsVC
-//            present(editingVC, animated: true, completion: nil)
-//        } else if mainVCData[indexPath.row].bankName == "2" {
-//            let edititngTransfer = self.storyboard?.instantiateViewController(withIdentifier: constants.editingTransferVC) as! EditingTransferVC
-//            present(edititngTransfer, animated: true, completion: nil)
-//        }
-//
+        if mainVCData[indexPath.row].id  % 2 == 0 {
+            let editingVC = self.storyboard?.instantiateViewController(withIdentifier: constants.editingTransactionsVC) as! EditingTransactionsVC
+            present(editingVC, animated: true, completion: nil)
+        } else if mainVCData[indexPath.row].id % 2 != 0 {
+            let edititngTransfer = self.storyboard?.instantiateViewController(withIdentifier: constants.editingTransferVC) as! EditingTransferVC
+            present(edititngTransfer, animated: true, completion: nil)
+        }
+
     }
 }
 

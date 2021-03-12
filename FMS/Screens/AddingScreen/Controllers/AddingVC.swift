@@ -20,13 +20,18 @@ class AddingVC: UIViewController {
     @IBOutlet weak var counterAgentTextField: UITextField!
     @IBOutlet weak var projectTextField: UITextField!
     @IBOutlet weak var walletTextField: UITextField!
+    @IBOutlet weak var commentTextField: UITextField!
+    @IBOutlet weak var transferCommentaryTextFiled: UITextField!
     
+    
+    @IBOutlet weak var commentaryView: UIView!
     
     //Dividers
     @IBOutlet weak var divider1: UIView!
     @IBOutlet weak var divider2: UIView!
     @IBOutlet weak var divider3: UIView!
     @IBOutlet weak var hiddenPartView: UIView!
+    @IBOutlet weak var divider4: UIView!
     
     
     
@@ -50,10 +55,14 @@ class AddingVC: UIViewController {
         super.viewDidLoad()
         
         summTextField.delegate = self
+        commentTextField.delegate = self
+        transferCommentaryTextFiled.delegate = self
         
+        keyBoardShowAndHide()
         createDatePicker()
         pickerViewDelegatesAndDataSource()
         design()
+        
         
         
     }
@@ -98,6 +107,11 @@ extension AddingVC{
         directionTextField.placeholder = "Направление"
         categoryTextField.placeholder = "Категория"
         
+//        directionTextField.text = ""
+//        categoryTextField.text = ""
+        commentTextField.isHidden = false
+        commentaryView.isHidden = true
+        transferCommentaryTextFiled.isHidden = true
         
         counterAgentTextField.isHidden = false
         projectTextField.isHidden = false
@@ -105,7 +119,8 @@ extension AddingVC{
         divider1.isHidden = false
         divider2.isHidden = false
         divider3.isHidden = false
-        
+        divider4.isHidden = false
+        hiddenPartView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
         
     }
     
@@ -113,6 +128,11 @@ extension AddingVC{
         directionTextField.placeholder = "Направление"
         categoryTextField.placeholder = "Категория"
         
+//        directionTextField.text = ""
+//        categoryTextField.text = ""
+        commentTextField.isHidden = false
+        commentaryView.isHidden = true
+        transferCommentaryTextFiled.isHidden = true
         
         counterAgentTextField.isHidden = false
         projectTextField.isHidden = false
@@ -120,7 +140,8 @@ extension AddingVC{
         divider1.isHidden = false
         divider2.isHidden = false
         divider3.isHidden = false
-        
+        divider4.isHidden = false
+        hiddenPartView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
         
     }
     
@@ -133,6 +154,11 @@ extension AddingVC{
         directionTextField.text = ""
         categoryTextField.text = ""
         
+        commentTextField.isHidden = true
+        commentaryView.isHidden = false
+        transferCommentaryTextFiled.isHidden = false
+       
+        
         
         counterAgentTextField.isHidden = true
         projectTextField.isHidden = true
@@ -140,6 +166,7 @@ extension AddingVC{
         divider1.isHidden = true
         divider2.isHidden = true
         divider3.isHidden = true
+        divider4.isHidden = true
         hiddenPartView.backgroundColor = UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1)
         
        
@@ -324,6 +351,12 @@ extension AddingVC: UITextFieldDelegate{
 extension AddingVC{
     func design (){
         
+        
+        commentTextField.isHidden = false
+        commentaryView.isHidden = true
+        transferCommentaryTextFiled.isHidden = true
+        
+        
         saveButton.layer.cornerRadius = 10.0
         saveButton.layer.masksToBounds = true
         saveButton.titleLabel?.font = constants.fontSemiBold17
@@ -339,5 +372,71 @@ extension AddingVC{
         projectTextField.font = constants.fontRegular17
         walletTextField.font = constants.fontRegular17
         newTransactionLabel.font = constants.fontSemiBold17
+        
     }
 }
+
+
+extension AddingVC {
+    
+    
+    func keyBoardShowAndHide(){
+        NotificationCenter.default.addObserver(self, selector: #selector(AddingVC.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        // call the 'keyboardWillHide' function when the view controlelr receive notification that keyboard is going to be hidden
+        NotificationCenter.default.addObserver(self, selector: #selector(AddingVC.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            // if keyboard size is not available for some reason, dont do anything
+            return
+        }
+        
+        // move the root view up by the distance of keyboard height
+        if datePickTextField.isEditing {
+            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3 + 50
+        } else if summTextField.isEditing {
+            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3
+        } else if directionTextField.isEditing {
+            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3
+        }else if categoryTextField.isEditing {
+            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3
+        }else if counterAgentTextField.isEditing  || transferCommentaryTextFiled.isEditing{
+            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3
+        }else if projectTextField.isEditing {
+            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3
+        }else if walletTextField.isEditing {
+            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3 - 100
+        }else if commentTextField.isEditing {
+            self.view.frame.origin.y = 0 - keyboardSize.height + 51
+        }
+        
+    }
+    
+//
+
+
+
+
+
+
+
+
+//    @IBOutlet weak var transferCommentaryTextFiled: UITextField!
+//
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        // move back the root view origin to zero
+        self.view.frame.origin.y = 0
+    }
+    
+}
+
+
+
+
+
