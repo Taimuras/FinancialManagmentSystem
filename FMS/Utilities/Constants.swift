@@ -56,7 +56,8 @@ class Constants {
     let fetchingAllTransactions = "https://neobis-finance-sistem.herokuapp.com/transaction/"
     let mainScreenFetchIncOutBalance = "https://neobis-finance-sistem.herokuapp.com/profit_consumption_balance/"
     let walletEndPoint = "https://neobis-finance-sistem.herokuapp.com/wallet/"
-    let counterAgentEndPoint = "https://neobis-finance-sistem.herokuapp.com/counterpart/"
+    let counterAgentEndPoint = "https://neobis-finance-sistem.herokuapp.com/contractor/"
+    let directionsEndPoint = "https://neobis-finance-sistem.herokuapp.com/section/"
     
     
     

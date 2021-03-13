@@ -167,7 +167,7 @@ extension AddingVC{
         divider2.isHidden = true
         divider3.isHidden = true
         divider4.isHidden = true
-        hiddenPartView.backgroundColor = UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1)
+        hiddenPartView.backgroundColor = UIColor(red: 229/255, green: 229/255, blue: 229/255, alpha: 1)
         
        
     }

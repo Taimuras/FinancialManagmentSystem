@@ -577,7 +577,9 @@
                                     <constraint firstAttribute="height" constant="18" id="9BR-Z8-wyV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="Забыли пароль?"/>
+                                <state key="normal" title="Забыли пароль?">
+                                    <color key="titleColor" name="BrandDarkGrey"/>
+                                </state>
                                 <connections>
                                     <segue destination="cb5-kb-gib" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="y7j-yH-edS"/>
                                 </connections>

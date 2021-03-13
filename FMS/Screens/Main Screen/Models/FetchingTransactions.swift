@@ -28,10 +28,10 @@ class FetchingTransactions {
         
         
         let requestAPI = AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-        
+                   //responseJSON = responseString
         requestAPI.responseJSON { (response) in
             let json = JSON(response.value!)
-//            print(response.result)
+//            print(response.value!)
 //            print(json["count"])
             
             

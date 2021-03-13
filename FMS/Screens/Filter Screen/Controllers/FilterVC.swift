@@ -70,6 +70,9 @@ extension FilterVC{
         fetchingData.fetchingCounterAgents(url: constants.counterAgentEndPoint) { (data) in
             self.counterAgents = data
         }
+        fetchingData.fetchingDirections(url: constants.directionsEndPoint) { (data) in
+            print("Data recieved")
+        }
     }
     
 }

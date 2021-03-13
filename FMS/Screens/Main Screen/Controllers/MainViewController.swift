@@ -54,8 +54,9 @@ class MainViewController: UIViewController {
         
         
 
-//        let one: MainCVCModel = MainCVCModel(actionIconName: "Income", companyName: "Breez Pro", bankName: "1", date: "12.12.2012", actionValue: "12345,12")
-//        let two: MainCVCModel = MainCVCModel(actionIconName: "Income", companyName: "Neobis", bankName: "2", date: "11.11.2000", actionValue: "12345,12")
+//        let one: TransitionsModel = TransitionsModel(id: 1235, sum: 123123, date_join: "12.03.2040", user: "Arstan", actionIconName: "Income")
+//        let two: TransitionsModel = TransitionsModel(id: 1000, sum: 10000, date_join: "1.12.2020", user: "Timur", actionIconName: "Income")
+//   
 //        mainVCData.append(one)
 //        mainVCData.append(two)
 //        mainVCData.append(one)
@@ -66,8 +67,11 @@ class MainViewController: UIViewController {
 //        mainVCData.append(two)
 //        mainVCData.append(one)
 //        mainVCData.append(two)
+//        
         
-
+        
+        
+        //Тут ловится
         fetchData()
         
         
@@ -95,32 +99,18 @@ class MainViewController: UIViewController {
                 self.outcomeStateLabel.text = data[1]
                 self.transferStateLabel.text = data[2]
             }
-            
-            
-//            @IBOutlet weak var incomeStateLabel: UILabel!
-//            @IBOutlet weak var outcomeStateLabel: UILabel!
-//            @IBOutlet weak var transferStateLabel: UILabel!
         }
     }
     
     
 
     @IBAction func logOut(_ sender: UIButton) {
-        
-        
-        
         let dialogMessage = UIAlertController(title: "Confirm", message: "Are you sure you want to quit?", preferredStyle: .alert)
-        
-        
-        
-        // Create Cancel button with action handlder
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
-            print("Cancel button tapped")
+//            print("Cancel button tapped")
         }
-        
-        // Create OK button with action handler
         let ok = UIAlertAction(title: "OK", style: .destructive, handler: { (action) -> Void in
-             print("Ok button tapped")
+//             print("Ok button tapped")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let mainTabBarController = storyboard.instantiateViewController(identifier: "LoginNavigationController")
             (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
@@ -137,9 +127,6 @@ class MainViewController: UIViewController {
         
         // Present dialog message to user
         self.present(dialogMessage, animated: true, completion: nil)
-   
-        
-        
     }
     
 }

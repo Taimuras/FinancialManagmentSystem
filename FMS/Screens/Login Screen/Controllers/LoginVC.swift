@@ -129,8 +129,8 @@ extension LoginVC {
     
     func textFieldBottomLine( textField: UITextField) {
         let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0, y: textField.frame.height - 2, width: textField.frame.width / 1.1195, height: 1)
-        bottomLine.backgroundColor = UIColor.init(red: 48/255, green: 173/255, blue: 90/255, alpha: 1).cgColor
+        bottomLine.frame = CGRect(x: 0, y: textField.frame.height - 2, width: textField.frame.width - 16, height: 1)
+        bottomLine.backgroundColor = UIColor.init(red: 199/255, green: 199/255, blue: 199/255, alpha: 1).cgColor
         textField.borderStyle = .none
         textField.layer.addSublayer(bottomLine)
     }
