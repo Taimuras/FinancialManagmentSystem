@@ -1,18 +1,22 @@
 import UIKit
 
 
-//protocol GetFilterRequest {
-//    func getFilterRequestParams( params: )
-//}
+protocol GetFilterRequestDelegate {
+    func getFilterRequestParams( params:  FilterModel)
+}
 
 class FilterVC: UIViewController {
     
+    var delegate: GetFilterRequestDelegate?
+    
     
     let directions = ["India","Belarus","Russia","Kyrgyzstan","China","Uzbekistan","SAR","Korea","USA","Canada"]
-    let counterAgents = ["Dima","Tima","Yrys","Malika","Arstan","Erlan","Saddam","Talgar","Aigul"]
-    let wallets = ["DemirBank","OptimaBank","KazKomerc","Kyrgyzstan","NAC Bank"]
+    var counterAgents: [CounterAgentsModel] = []
+    var wallets: [WalletModel] = []
     
     let constants = Constants()
+    
+    let fetchingData = FetchingDataFilterScreen()
     @IBOutlet weak var filtrationLabel: UILabel!
     
     @IBOutlet weak var cancelButton: UIButton!
@@ -44,7 +48,7 @@ class FilterVC: UIViewController {
         createDatePicker()
         pickerViewDelegatesAndDataSource()
         
-        
+        fetchData()
         
     }
     
@@ -56,6 +60,18 @@ class FilterVC: UIViewController {
 
     @IBAction func acceptButtonTapped(_ sender: UIButton) {
     }
+}
+
+extension FilterVC{
+    func fetchData(){
+        fetchingData.fetchingWallets(url: constants.walletEndPoint) { (data) in
+            self.wallets = data
+        }
+        fetchingData.fetchingCounterAgents(url: constants.counterAgentEndPoint) { (data) in
+            self.counterAgents = data
+        }
+    }
+    
 }
 
 
@@ -81,9 +97,9 @@ extension FilterVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch pickerView.tag {
         case 1:
-            return wallets[row]
+            return wallets[row].name
         case 2:
-            return counterAgents[row]
+            return counterAgents[row].name
         case 3:
             return directions[row]
         default:
@@ -95,10 +111,10 @@ extension FilterVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch pickerView.tag {
         case 1:
-            walletTextField.text = wallets[row]
+            walletTextField.text = wallets[row].name
             walletTextField.resignFirstResponder()
         case 2:
-            counterAgentTextField.text = counterAgents[row]
+            counterAgentTextField.text = counterAgents[row].name
             counterAgentTextField.resignFirstResponder()
         case 3:
             directionTextField.text = directions[row]
@@ -155,13 +171,24 @@ extension FilterVC{
 
 extension FilterVC{
     func createDatePicker () {
+        let currentDate = Date()
+        let dateMonthAgo = Calendar.current.date(byAdding: .month, value: -1, to: currentDate)
+        
+        let loc = Locale(identifier: "ru_RU")
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        formatter.locale = loc
+        
+        dateFromTextField.text = formatter.string(from: dateMonthAgo!)
+        dateToTextField.text = formatter.string(from: currentDate)
         
         //toolbar
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         toolbar.backgroundColor = UIColor(red: 102/255, green: 193/255, blue: 73/255, alpha: 1)
         
-        let loc = Locale(identifier: "ru_RU")
+        
         datePicker.locale = loc
         
         //bar Button

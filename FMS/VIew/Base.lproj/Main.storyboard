@@ -595,7 +595,7 @@
                                     <action selector="logInButtonTapped:" destination="VY2-CT-rqr" eventType="touchUpInside" id="jIx-gG-hR6"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="admin@mail.com" borderStyle="roundedRect" placeholder="Почта" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dfy-8J-2Yg">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="admin@mail.com" borderStyle="roundedRect" placeholder="Почта" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dfy-8J-2Yg">
                                 <rect key="frame" x="21" y="414" width="382" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -613,15 +613,15 @@
                             <constraint firstItem="Ywu-b5-z9F" firstAttribute="trailing" secondItem="FGG-9i-Ojc" secondAttribute="trailing" constant="16" id="Flw-pu-UrE"/>
                             <constraint firstItem="FlB-bw-p6Q" firstAttribute="leading" secondItem="Ywu-b5-z9F" secondAttribute="leading" constant="16" id="HAl-Jl-WA6"/>
                             <constraint firstItem="sBF-At-D52" firstAttribute="top" secondItem="1vC-GU-Rpm" secondAttribute="bottom" constant="8" id="HjD-b9-RqZ"/>
-                            <constraint firstItem="1vC-GU-Rpm" firstAttribute="top" secondItem="Dfy-8J-2Yg" secondAttribute="bottom" constant="16" id="Itw-3r-7tv"/>
+                            <constraint firstItem="1vC-GU-Rpm" firstAttribute="top" secondItem="Dfy-8J-2Yg" secondAttribute="bottom" constant="26" id="Itw-3r-7tv"/>
                             <constraint firstItem="FGG-9i-Ojc" firstAttribute="leading" secondItem="Ywu-b5-z9F" secondAttribute="leading" constant="16" id="KPa-Lf-NL9"/>
-                            <constraint firstItem="Dfy-8J-2Yg" firstAttribute="top" secondItem="FGG-9i-Ojc" secondAttribute="bottom" constant="45" id="L2A-Fo-lAD"/>
+                            <constraint firstItem="Dfy-8J-2Yg" firstAttribute="top" secondItem="FGG-9i-Ojc" secondAttribute="bottom" constant="35" id="L2A-Fo-lAD"/>
                             <constraint firstItem="Ywu-b5-z9F" firstAttribute="trailing" secondItem="1fM-V7-HbP" secondAttribute="trailing" constant="16" id="OVH-Lh-ZL2"/>
                             <constraint firstItem="FlB-bw-p6Q" firstAttribute="centerX" secondItem="BMw-id-vGY" secondAttribute="centerX" id="RaU-sE-YP6"/>
                             <constraint firstItem="Ywu-b5-z9F" firstAttribute="trailing" secondItem="1vC-GU-Rpm" secondAttribute="trailing" constant="16" id="TDf-M2-A9z"/>
-                            <constraint firstItem="Dfy-8J-2Yg" firstAttribute="leading" secondItem="Ywu-b5-z9F" secondAttribute="leading" constant="16" id="UGu-t4-cyH"/>
+                            <constraint firstItem="Dfy-8J-2Yg" firstAttribute="leading" secondItem="Ywu-b5-z9F" secondAttribute="leading" constant="21" id="UGu-t4-cyH"/>
                             <constraint firstItem="Ywu-b5-z9F" firstAttribute="trailing" secondItem="2tU-Of-pAm" secondAttribute="trailing" constant="16" id="Ulm-QC-rzG"/>
-                            <constraint firstItem="Ywu-b5-z9F" firstAttribute="trailing" secondItem="Dfy-8J-2Yg" secondAttribute="trailing" constant="16" id="Vnx-oO-Kuw"/>
+                            <constraint firstItem="Ywu-b5-z9F" firstAttribute="trailing" secondItem="Dfy-8J-2Yg" secondAttribute="trailing" constant="11" id="Vnx-oO-Kuw"/>
                             <constraint firstItem="1vC-GU-Rpm" firstAttribute="leading" secondItem="Ywu-b5-z9F" secondAttribute="leading" constant="16" id="ZoL-zB-Qd6"/>
                             <constraint firstItem="FGG-9i-Ojc" firstAttribute="top" secondItem="1fM-V7-HbP" secondAttribute="bottom" constant="8" id="bE6-9L-JKJ"/>
                             <constraint firstItem="Ywu-b5-z9F" firstAttribute="trailing" secondItem="sBF-At-D52" secondAttribute="trailing" constant="16" id="fp2-58-h3B"/>
@@ -1095,7 +1095,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="P4M-pc-dJe" firstAttribute="top" secondItem="lGp-Ck-DKv" secondAttribute="top" id="2pI-wg-1Vv"/>
                                             <constraint firstItem="FL6-on-4rg" firstAttribute="top" secondItem="JUw-HX-vhd" secondAttribute="bottom" id="7JG-6L-SwO"/>
@@ -1962,13 +1962,13 @@
         <image name="Settings TB Icon" width="25" height="24"/>
         <image name="Users TB Icon" width="21" height="18"/>
         <namedColor name="BrandColorGrey">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89800000190734863" green="0.89800000190734863" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BrandDarkGrey">
-            <color red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.50199997425079346" green="0.50199997425079346" blue="0.50199997425079346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Dividers Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77999997138977051" green="0.77999997138977051" blue="0.77999997138977051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

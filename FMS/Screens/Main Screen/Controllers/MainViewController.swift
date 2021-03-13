@@ -39,8 +39,14 @@ class MainViewController: UIViewController {
     @IBOutlet weak var mainScreenCollectionView: UICollectionView!
     
 
+    let controller = FilterVC()
+    
+    
+    // MARK: ViewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        controller.delegate = self
         
         design()
         collectionViewDelegates()
@@ -66,6 +72,15 @@ class MainViewController: UIViewController {
         
         
     }
+    
+    
+    // MARK: VIewWillAppear
+    override func viewWillAppear(_ animated: Bool) {
+        fetchData()
+    }
+    
+    
+    // MARK: Fetching Data first try
     func fetchData () {
         fetchingTransactions.fetchingTransactions(url: constants.fetchingAllTransactions) { (data) in
 //            print(data)
@@ -130,6 +145,22 @@ class MainViewController: UIViewController {
 }
 
 
+// MARK: Fetching Filtered Data
+extension MainViewController: GetFilterRequestDelegate{
+    
+    func getFilterRequestParams(params: FilterModel) {
+        fetchingTransactions.fetchingFilteredTransactions(url: "", params: params) { (data) in
+            self.mainVCData = []
+            self.mainVCData = data
+            self.mainScreenCollectionView.reloadData()
+        }
+    }
+    
+}
+
+
+
+// MARK: CollectionVIew Delegate and DataSource
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionViewDelegates(){
         mainScreenCollectionView.delegate = self
@@ -172,6 +203,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 
 
+
+// MARK: Collection View Layouts
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 76)
@@ -180,7 +213,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 
 
 
-
+// MARK: Design
 extension MainViewController{
     func design (){
         topPanelView.layer.cornerRadius = 10.0

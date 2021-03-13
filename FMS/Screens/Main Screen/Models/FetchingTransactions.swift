@@ -61,7 +61,7 @@ class FetchingTransactions {
 //            print(response.result)
             switch response.result{
                 case .success(let data):
-                    print(data)
+//                    print(data)
                     let json = JSON(data)
                     let profit = json["profit_sum"].stringValue
                     let wallets_sum = json["wallets_sum"].stringValue
@@ -74,13 +74,44 @@ class FetchingTransactions {
                     return print("Fail")
             }
             
+        }
+    }
+    
+    
+    
+    
+    func fetchingFilteredTransactions(url: String, params: FilterModel, completion: @escaping ([TransitionsModel]) -> ()){
+
+        
+        let params = [
+            "dateFrom" : params.dateFrom as AnyObject,
+            "dateTo" : params.dateTo as AnyObject,
+            "wallet" : params.wallet as AnyObject,
+            "counterAgent" : params.counterAgent as AnyObject,
+            "direction" : params.direction as AnyObject
+        ]
+        
+        let accessToken = userDefaults.string(forKey: "AccessToken")!
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(accessToken)"
+        ]
+        
+        
+        let requestAPI = AF.request(url, method: .get,parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+        
+        requestAPI.responseJSON { (response) in
+            let json = JSON(response.value!)
+//            print(response.result)
+//            print(json["count"])
             
             
+            for i in 0 ... json["count"].intValue{
+                let transition: TransitionsModel = TransitionsModel(id: Int(json["results"][i]["id"].intValue), sum: Int(json["results"][i]["sum"].intValue), date_join: String(json["results"][i]["date_join"].stringValue), user: String(json["results"][i]["id"].stringValue), actionIconName: "Income")
+                self.transitions.append(transition)
+            }
+            completion(self.transitions)
             
-            
-            
-            
-//            print(json)
             
         }
     }
