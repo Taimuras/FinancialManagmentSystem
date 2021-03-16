@@ -15,8 +15,11 @@ import SwiftyJSON
 class Constants {
     let userDefaults = UserDefaults.standard
     
-    //Storyboard IDs
+    //Cell's Identifier
+    let userScreenTableViewCellIdentifier = "UserTVCell"
     let mainScreenCollectionViewCellIdentifier = "MainCVC"
+    
+    //Storyboard IDs
     let tabBarViewIdintifier = "TabBarStoryBoardID"
     let addingModalVC = "AddingModalVC"
     let editingTransactionsVC = "EditingTransactionsVC"

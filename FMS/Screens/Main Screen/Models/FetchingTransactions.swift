@@ -14,6 +14,7 @@ class FetchingTransactions {
     let constants = Constants()
     let userDefaults = UserDefaults.standard
     var transitions: [TransitionsModel] = []
+    var filteredTransition: [FilteredModel] = []
     var incomeOutcomeBalance: [String] = []
         
     
@@ -33,8 +34,9 @@ class FetchingTransactions {
             switch response.result{
                 case .success(let data):
                     let json = JSON(data)
+                    print(json["count"])
                     for i in 0 ... json["count"].intValue{
-                        let transition: TransitionsModel = TransitionsModel(id: Int(json["results"][i]["id"].intValue), sum: Int(json["results"][i]["sum"].intValue), date_join: String(json["results"][i]["date_join"].stringValue), user: String(json["results"][i]["id"].stringValue), actionIconName: "IncomeSVG")
+                        let transition: TransitionsModel = TransitionsModel(id: Int(json["results"][i]["id"].intValue), sum: Int(json["results"][i]["sum"].intValue), date_join: String(json["results"][i]["date_join"].stringValue), user: String(json["results"][i]["id"].stringValue), actionIconName: "Income")
                         self.transitions.append(transition)
                     }
                     completion(self.transitions)
@@ -93,15 +95,18 @@ class FetchingTransactions {
         
         requestAPI.responseJSON { (response) in
             let json = JSON(response.value!)
-//            print(response.result)
-//            print(json["count"])
+            print("json count \(json["count"])")
             
-            
-            for i in 0 ... json["count"].intValue{
+            self.transitions.removeAll()
+            for i in 0 ..< json["count"].intValue{
                 let transition: TransitionsModel = TransitionsModel(id: Int(json["results"][i]["id"].intValue), sum: Int(json["results"][i]["sum"].intValue), date_join: String(json["results"][i]["date_join"].stringValue), user: String(json["results"][i]["id"].stringValue), actionIconName: "Income")
+                
                 self.transitions.append(transition)
             }
+            
             completion(self.transitions)
+            
+            
             
             
         }

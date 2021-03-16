@@ -15,6 +15,10 @@
 		5220E57C25EE2C470077EB07 /* MainCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5220E57A25EE2C470077EB07 /* MainCVC.swift */; };
 		5220E57D25EE2C470077EB07 /* MainCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5220E57B25EE2C470077EB07 /* MainCVC.xib */; };
 		5225FE4225F347D700CF4009 /* ApiCalling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225FE4125F347D700CF4009 /* ApiCalling.swift */; };
+		52271FEE260077BF00080BB2 /* UserCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52271FED260077BF00080BB2 /* UserCellModel.swift */; };
+		52396F4C26006FA300562103 /* UserTBCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52396F4A26006FA300562103 /* UserTBCell.swift */; };
+		52396F4D26006FA300562103 /* UserTBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52396F4B26006FA300562103 /* UserTBCell.xib */; };
+		523E38DD2600A94400F3A546 /* FilteredModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E38DC2600A94400F3A546 /* FilteredModel.swift */; };
 		5251A55A25EF566E00546F71 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251A55925EF566E00546F71 /* MainViewController.swift */; };
 		5251A55F25EF5C0A00546F71 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251A55E25EF5C0A00546F71 /* Constants.swift */; };
 		5251A56925EF5D9600546F71 /* MainCVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251A56825EF5D9600546F71 /* MainCVCModel.swift */; };
@@ -52,6 +56,10 @@
 		5220E57A25EE2C470077EB07 /* MainCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCVC.swift; sourceTree = "<group>"; };
 		5220E57B25EE2C470077EB07 /* MainCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCVC.xib; sourceTree = "<group>"; };
 		5225FE4125F347D700CF4009 /* ApiCalling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCalling.swift; sourceTree = "<group>"; };
+		52271FED260077BF00080BB2 /* UserCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserCellModel.swift; path = "FMS/Screens/Users Screen/TableView Cell/UserCellModel.swift"; sourceTree = SOURCE_ROOT; };
+		52396F4A26006FA300562103 /* UserTBCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTBCell.swift; sourceTree = "<group>"; };
+		52396F4B26006FA300562103 /* UserTBCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTBCell.xib; sourceTree = "<group>"; };
+		523E38DC2600A94400F3A546 /* FilteredModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredModel.swift; sourceTree = "<group>"; };
 		5251A55925EF566E00546F71 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5251A55E25EF5C0A00546F71 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5251A56825EF5D9600546F71 /* MainCVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCVCModel.swift; sourceTree = "<group>"; };
@@ -111,6 +119,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		52396F4926006F7E00562103 /* TableView Cell */ = {
+			isa = PBXGroup;
+			children = (
+				52396F4A26006FA300562103 /* UserTBCell.swift */,
+				52396F4B26006FA300562103 /* UserTBCell.xib */,
+			);
+			path = "TableView Cell";
+			sourceTree = "<group>";
+		};
 		5251A55C25EF5A9600546F71 /* MainCVCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +152,7 @@
 				5251A56825EF5D9600546F71 /* MainCVCModel.swift */,
 				5266438F25F5DF100032499D /* FetchingTransactions.swift */,
 				5266F09825FA1CE200403D22 /* TransitionsModel.swift */,
+				523E38DC2600A94400F3A546 /* FilteredModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -254,6 +272,7 @@
 		5252798225EDFE96001FF2CE /* Users Screen */ = {
 			isa = PBXGroup;
 			children = (
+				52396F4926006F7E00562103 /* TableView Cell */,
 				5266438125F5D7040032499D /* Models */,
 				5266438025F5D6FF0032499D /* Controllers */,
 			);
@@ -338,6 +357,7 @@
 		5266438125F5D7040032499D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				52271FED260077BF00080BB2 /* UserCellModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -464,6 +484,7 @@
 				5220E57D25EE2C470077EB07 /* MainCVC.xib in Resources */,
 				521F37AA25F0B6AB00B3E7D2 /* OpenSans-SemiBold.ttf in Resources */,
 				521F37A425F0B45D00B3E7D2 /* OpenSans-Bold.ttf in Resources */,
+				52396F4D26006FA300562103 /* UserTBCell.xib in Resources */,
 				5253A97D25FF5EC300449916 /* Assets.xcassets in Resources */,
 				521F37A725F0B69000B3E7D2 /* OpenSans-Regular.ttf in Resources */,
 				5252797025EDFE06001FF2CE /* Main.storyboard in Resources */,
@@ -519,7 +540,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52396F4C26006FA300562103 /* UserTBCell.swift in Sources */,
 				5251B42D25FB7374008A2E22 /* FilterVC.swift in Sources */,
+				52271FEE260077BF00080BB2 /* UserCellModel.swift in Sources */,
 				5266438525F5D72C0032499D /* SettingsVC.swift in Sources */,
 				5251A56925EF5D9600546F71 /* MainCVCModel.swift in Sources */,
 				5266438925F5D78C0032499D /* UsersVC.swift in Sources */,
@@ -531,6 +554,7 @@
 				5266F09925FA1CE200403D22 /* TransitionsModel.swift in Sources */,
 				5225FE4225F347D700CF4009 /* ApiCalling.swift in Sources */,
 				5253A97225FF2C5B00449916 /* DirectionModel.swift in Sources */,
+				523E38DD2600A94400F3A546 /* FilteredModel.swift in Sources */,
 				5266437B25F5D69D0032499D /* AddingVC.swift in Sources */,
 				52E5090425F211F80086DF17 /* LoginVC.swift in Sources */,
 				5220E57C25EE2C470077EB07 /* MainCVC.swift in Sources */,

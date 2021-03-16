@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserTVCell" rowHeight="68" id="KGk-i7-Jjw" customClass="UserTBCell" customModule="FMS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="376" height="68"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="376" height="68"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B1Y-Ti-UG8">
+                        <rect key="frame" x="0.0" y="0.0" width="376" height="68"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 10" translatesAutoresizingMaskIntoConstraints="NO" id="aMA-Qr-nY3">
+                                <rect key="frame" x="16" y="11" width="46" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="QEp-WP-apw"/>
+                                    <constraint firstAttribute="height" constant="46" id="kkv-Ed-NlF"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="IQf-7N-j9X">
+                                <rect key="frame" x="74" y="12" width="262" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Христофориди Д.И." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elP-FR-kIz">
+                                        <rect key="frame" x="0.0" y="0.0" width="262" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="lfE-5S-Mhy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <color key="textColor" name="BrandBlackTEXT"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dimitrios.khristoforidi@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOL-Ez-ctk">
+                                        <rect key="frame" x="0.0" y="28" width="262" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" name="BrandBlackTEXT"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="elP-FR-kIz" firstAttribute="leading" secondItem="IQf-7N-j9X" secondAttribute="leading" id="3X8-mN-jmv"/>
+                                    <constraint firstItem="WOL-Ez-ctk" firstAttribute="leading" secondItem="IQf-7N-j9X" secondAttribute="leading" id="6SS-R9-6hh"/>
+                                    <constraint firstItem="WOL-Ez-ctk" firstAttribute="top" secondItem="elP-FR-kIz" secondAttribute="bottom" id="J1u-tb-etL"/>
+                                    <constraint firstAttribute="trailing" secondItem="WOL-Ez-ctk" secondAttribute="trailing" id="Wqo-lv-T1g"/>
+                                    <constraint firstAttribute="trailing" secondItem="elP-FR-kIz" secondAttribute="trailing" id="hGe-f0-H4D"/>
+                                    <constraint firstItem="elP-FR-kIz" firstAttribute="top" secondItem="IQf-7N-j9X" secondAttribute="top" id="n0A-o7-9N9"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Users Screen ArrowSVG" translatesAutoresizingMaskIntoConstraints="NO" id="vHz-vk-n87">
+                                <rect key="frame" x="336" y="22" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="jPG-Kk-2YL"/>
+                                    <constraint firstAttribute="width" constant="24" id="tJP-U6-g7b"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aMA-Qr-nY3" firstAttribute="leading" secondItem="B1Y-Ti-UG8" secondAttribute="leading" constant="16" id="7Nz-xi-WbD"/>
+                            <constraint firstItem="IQf-7N-j9X" firstAttribute="top" secondItem="B1Y-Ti-UG8" secondAttribute="top" constant="12" id="EJ3-Z7-NfC"/>
+                            <constraint firstItem="aMA-Qr-nY3" firstAttribute="centerY" secondItem="B1Y-Ti-UG8" secondAttribute="centerY" id="HOZ-eM-X33"/>
+                            <constraint firstAttribute="bottom" secondItem="IQf-7N-j9X" secondAttribute="bottom" constant="12" id="JxN-sa-5rD"/>
+                            <constraint firstItem="IQf-7N-j9X" firstAttribute="centerY" secondItem="B1Y-Ti-UG8" secondAttribute="centerY" id="TcZ-Lj-dep"/>
+                            <constraint firstAttribute="height" constant="68" id="XbJ-yX-POD"/>
+                            <constraint firstItem="IQf-7N-j9X" firstAttribute="leading" secondItem="aMA-Qr-nY3" secondAttribute="trailing" constant="12" id="eSK-cJ-Bkc"/>
+                            <constraint firstAttribute="trailing" secondItem="vHz-vk-n87" secondAttribute="trailing" constant="16" id="gGI-zG-km8"/>
+                            <constraint firstItem="vHz-vk-n87" firstAttribute="leading" secondItem="IQf-7N-j9X" secondAttribute="trailing" id="s9q-Mn-Y2N"/>
+                            <constraint firstItem="vHz-vk-n87" firstAttribute="centerY" secondItem="B1Y-Ti-UG8" secondAttribute="centerY" id="uzo-E7-Wb1"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="B1Y-Ti-UG8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Guf-CF-9aZ"/>
+                    <constraint firstAttribute="trailing" secondItem="B1Y-Ti-UG8" secondAttribute="trailing" id="WWr-KL-MB7"/>
+                    <constraint firstItem="B1Y-Ti-UG8" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xwb-Lu-LBz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="AvatarImageView" destination="aMA-Qr-nY3" id="P48-Ud-O3l"/>
+                <outlet property="emailLabel" destination="WOL-Ez-ctk" id="bwQ-Ub-Tk0"/>
+                <outlet property="nameLabel" destination="elP-FR-kIz" id="SIa-xn-gnF"/>
+            </connections>
+            <point key="canvasLocation" x="153.62318840579712" y="111.49553571428571"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Rectangle 10" width="46" height="46"/>
+        <image name="Users Screen ArrowSVG" width="24" height="24"/>
+        <namedColor name="BrandBlackTEXT">
+            <color red="0.23100000619888306" green="0.23899999260902405" blue="0.31000000238418579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

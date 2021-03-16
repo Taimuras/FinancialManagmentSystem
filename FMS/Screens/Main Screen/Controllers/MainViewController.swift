@@ -9,10 +9,13 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    var isFiltering: Bool = false
+    
     let constants = Constants()
     let fetchingTransactions = FetchingTransactions()
     
     var mainVCData: [TransitionsModel] = []
+    var filteredTransitions: [FilteredModel] = []
     
     
     let userDefaults = UserDefaults.standard
@@ -56,8 +59,8 @@ class MainViewController: UIViewController {
         refreshMainCVC()
         
 
-        let one: TransitionsModel = TransitionsModel(id: 1235, sum: 123123, date_join: "12.03.2040", user: "Arstan", actionIconName: "IncomeSVG")
-        let two: TransitionsModel = TransitionsModel(id: 1000, sum: 10000, date_join: "1.12.2020", user: "Timur", actionIconName: "IncomeSVG")
+        let one: TransitionsModel = TransitionsModel(id: 1235, sum: 123123, date_join: "12.03.2040", user: "Arstan", actionIconName: "Income")
+        let two: TransitionsModel = TransitionsModel(id: 1000, sum: 10000, date_join: "1.12.2020", user: "Timur", actionIconName: "Income")
    
         mainVCData.append(one)
         mainVCData.append(two)
@@ -74,16 +77,21 @@ class MainViewController: UIViewController {
         
         
         //Тут ловится
-        fetchData()
+        
+            
+        
+        
         
         
     }
+    
     
     
     // MARK: VIewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         fetchData()
     }
+    
     
     
     @IBAction func filterButtonTapped(_ sender: UIButton) {
@@ -98,8 +106,6 @@ class MainViewController: UIViewController {
     // MARK: Fetching Data first try
     func fetchData () {
         fetchingTransactions.fetchingTransactions(url: constants.transitionsEndPoint) { (data) in
-//            print(data)
-            
             DispatchQueue.main.async {
                 self.mainVCData.removeAll()
                 self.mainVCData = data
@@ -150,13 +156,14 @@ class MainViewController: UIViewController {
 
 extension MainViewController{
     func refreshMainCVC(){
-        
+        mainVCData.removeAll()
         refreshControl.addTarget(self, action: #selector(didPullToRefresh(_:)), for: .valueChanged)
         mainScreenCollectionView.alwaysBounceVertical = true
         mainScreenCollectionView.refreshControl = refreshControl // i
     }
     
     @objc private func didPullToRefresh(_ sender: Any) {
+        
         fetchData()
         refreshControl.endRefreshing()
     }
@@ -171,22 +178,29 @@ extension MainViewController: FilterVCDelegate{
     
     
     func getFilteredUrl(url: String) {
-        self.dismiss(animated: true) {
-            let endPoint = self.constants.transitionsEndPoint + url
+        
+        self.dismiss(animated: true,completion: nil) 
             
-            self.fetchingTransactions.fetchingFilteredTransactions(url: endPoint) { (data) in
+        
+        let endPoint = self.constants.transitionsEndPoint + url
+        
+        
+        self.fetchingTransactions.fetchingFilteredTransactions(url: endPoint) { (responseData) in
+            
+            
+            DispatchQueue.main.async {
                 
-//                print(data)
-                DispatchQueue.main.async {
-                    self.mainVCData = []
-                    self.mainVCData = data
-//                    self.mainVCData.forEach { (data) in
-//                        print(data)
-//                    }
-                    self.mainScreenCollectionView.reloadData()
-                }
+                self.mainVCData.removeAll()
+                print("response data: \(responseData)")
+                
+                
+                self.mainVCData = responseData
+                
+                
+                self.mainScreenCollectionView.reloadData()
                 
             }
+            
         }
         
         
@@ -209,19 +223,23 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return mainVCData.count
+        
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = mainScreenCollectionView.dequeueReusableCell(withReuseIdentifier: constants.mainScreenCollectionViewCellIdentifier, for: indexPath) as! MainCVC
-        let index = mainVCData[indexPath.row]
         
-        cell.actionIcon.image = UIImage(named: index.actionIconName)
-        cell.bankName.text = index.user
-        cell.companyName.text = index.actionIconName
-        cell.dateOfAction.text = index.date_join
-        cell.actionValue.text = String(index.sum)
-        
+            let index = mainVCData[indexPath.row]
+            cell.actionIcon.image = UIImage(named: index.actionIconName)
+            cell.bankName.text = index.user
+            cell.companyName.text = index.actionIconName
+            cell.dateOfAction.text = index.date_join
+            cell.actionValue.text = String(index.sum)
+            
+       
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
