@@ -25,7 +25,7 @@ class ApiCalling {
             //Tokens coming
 //            print(response.value!)
 //            print(response.description.description)
-            print(response.result)
+//            print(response.result)
             
             
             let json = JSON(response.value!)

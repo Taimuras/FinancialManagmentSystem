@@ -22,8 +22,9 @@
 		5252796925EDFE06001FF2CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5252796825EDFE06001FF2CE /* AppDelegate.swift */; };
 		5252796B25EDFE06001FF2CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5252796A25EDFE06001FF2CE /* SceneDelegate.swift */; };
 		5252797025EDFE06001FF2CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5252796E25EDFE06001FF2CE /* Main.storyboard */; };
-		5252797225EDFE06001FF2CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5252797125EDFE06001FF2CE /* Assets.xcassets */; };
 		5252797525EDFE06001FF2CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5252797325EDFE06001FF2CE /* LaunchScreen.storyboard */; };
+		5253A97225FF2C5B00449916 /* DirectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253A97125FF2C5B00449916 /* DirectionModel.swift */; };
+		5253A97D25FF5EC300449916 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5253A97C25FF5EC200449916 /* Assets.xcassets */; };
 		5266437B25F5D69D0032499D /* AddingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266437A25F5D69D0032499D /* AddingVC.swift */; };
 		5266438525F5D72C0032499D /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266438425F5D72C0032499D /* SettingsVC.swift */; };
 		5266438925F5D78C0032499D /* UsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266438825F5D78C0032499D /* UsersVC.swift */; };
@@ -59,9 +60,10 @@
 		5252796825EDFE06001FF2CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5252796A25EDFE06001FF2CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5252796F25EDFE06001FF2CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5252797125EDFE06001FF2CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5252797425EDFE06001FF2CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5252797625EDFE06001FF2CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5253A97125FF2C5B00449916 /* DirectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionModel.swift; sourceTree = "<group>"; };
+		5253A97C25FF5EC200449916 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5266437A25F5D69D0032499D /* AddingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingVC.swift; sourceTree = "<group>"; };
 		5266438425F5D72C0032499D /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		5266438825F5D78C0032499D /* UsersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersVC.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				5284800425FCB91D00D82D8F /* FetchingDataFilterScreen.swift */,
 				5284800725FCBB8100D82D8F /* WalletModel.swift */,
 				5284800A25FCBEB600D82D8F /* CounterAgentsModel.swift */,
+				5253A97125FF2C5B00449916 /* DirectionModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -217,9 +220,9 @@
 		5252797F25EDFE7A001FF2CE /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				5253A97C25FF5EC200449916 /* Assets.xcassets */,
 				5252796825EDFE06001FF2CE /* AppDelegate.swift */,
 				5252796A25EDFE06001FF2CE /* SceneDelegate.swift */,
-				5252797125EDFE06001FF2CE /* Assets.xcassets */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -460,8 +463,8 @@
 				5252797525EDFE06001FF2CE /* LaunchScreen.storyboard in Resources */,
 				5220E57D25EE2C470077EB07 /* MainCVC.xib in Resources */,
 				521F37AA25F0B6AB00B3E7D2 /* OpenSans-SemiBold.ttf in Resources */,
-				5252797225EDFE06001FF2CE /* Assets.xcassets in Resources */,
 				521F37A425F0B45D00B3E7D2 /* OpenSans-Bold.ttf in Resources */,
+				5253A97D25FF5EC300449916 /* Assets.xcassets in Resources */,
 				521F37A725F0B69000B3E7D2 /* OpenSans-Regular.ttf in Resources */,
 				5252797025EDFE06001FF2CE /* Main.storyboard in Resources */,
 			);
@@ -527,6 +530,7 @@
 				5266439025F5DF100032499D /* FetchingTransactions.swift in Sources */,
 				5266F09925FA1CE200403D22 /* TransitionsModel.swift in Sources */,
 				5225FE4225F347D700CF4009 /* ApiCalling.swift in Sources */,
+				5253A97225FF2C5B00449916 /* DirectionModel.swift in Sources */,
 				5266437B25F5D69D0032499D /* AddingVC.swift in Sources */,
 				52E5090425F211F80086DF17 /* LoginVC.swift in Sources */,
 				5220E57C25EE2C470077EB07 /* MainCVC.swift in Sources */,

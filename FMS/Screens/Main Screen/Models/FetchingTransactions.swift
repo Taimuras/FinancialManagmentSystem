@@ -30,17 +30,17 @@ class FetchingTransactions {
         let requestAPI = AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
                    //responseJSON = responseString
         requestAPI.responseJSON { (response) in
-            let json = JSON(response.value!)
-//            print(response.value!)
-//            print(json["count"])
-            
-            
-            for i in 0 ... json["count"].intValue{
-                let transition: TransitionsModel = TransitionsModel(id: Int(json["results"][i]["id"].intValue), sum: Int(json["results"][i]["sum"].intValue), date_join: String(json["results"][i]["date_join"].stringValue), user: String(json["results"][i]["id"].stringValue), actionIconName: "Income")
-                self.transitions.append(transition)
+            switch response.result{
+                case .success(let data):
+                    let json = JSON(data)
+                    for i in 0 ... json["count"].intValue{
+                        let transition: TransitionsModel = TransitionsModel(id: Int(json["results"][i]["id"].intValue), sum: Int(json["results"][i]["sum"].intValue), date_join: String(json["results"][i]["date_join"].stringValue), user: String(json["results"][i]["id"].stringValue), actionIconName: "IncomeSVG")
+                        self.transitions.append(transition)
+                    }
+                    completion(self.transitions)
+                default:
+                    return print("Fail")
             }
-            completion(self.transitions)
-            
             
         }
     }
@@ -80,17 +80,8 @@ class FetchingTransactions {
     
     
     
-    func fetchingFilteredTransactions(url: String, params: FilterModel, completion: @escaping ([TransitionsModel]) -> ()){
+    func fetchingFilteredTransactions(url: String, completion: @escaping ([TransitionsModel]) -> ()){
 
-        
-        let params = [
-            "dateFrom" : params.dateFrom as AnyObject,
-            "dateTo" : params.dateTo as AnyObject,
-            "wallet" : params.wallet as AnyObject,
-            "counterAgent" : params.counterAgent as AnyObject,
-            "direction" : params.direction as AnyObject
-        ]
-        
         let accessToken = userDefaults.string(forKey: "AccessToken")!
         
         let headers: HTTPHeaders = [
@@ -98,7 +89,7 @@ class FetchingTransactions {
         ]
         
         
-        let requestAPI = AF.request(url, method: .get,parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+        let requestAPI = AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         
         requestAPI.responseJSON { (response) in
             let json = JSON(response.value!)

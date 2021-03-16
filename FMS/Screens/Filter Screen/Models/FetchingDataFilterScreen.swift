@@ -16,6 +16,7 @@ class FetchingDataFilterScreen{
     
     var wallets: [WalletModel] = []
     var counterAgents: [CounterAgentsModel] = []
+    var directions: [DirectionModel] = []
     
     func fetchingWallets(url: String, completion: @escaping ([WalletModel]) -> ()) {
         let accessToken = userDefaults.string(forKey: "AccessToken")!
@@ -82,7 +83,7 @@ class FetchingDataFilterScreen{
         }
     }
     
-    func fetchingDirections(url: String, completion: @escaping ([WalletModel]) -> ()) {
+    func fetchingDirections(url: String, completion: @escaping ([DirectionModel]) -> ()) {
         let accessToken = userDefaults.string(forKey: "AccessToken")!
         
         let headers: HTTPHeaders = [
@@ -93,24 +94,25 @@ class FetchingDataFilterScreen{
         requestAPI.responseJSON { (response) in
             
             
-            let json = JSON(response.value!)
-//            print(json)
-//            switch response.result{
-//            case .success(let data):
-//                //                    print(data)
-//                let json = JSON(data)
-//                //                    let profit = json["profit_sum"].stringValue
-//                for i in 0 ... json["results"].count{
+            
+
+            
+            switch response.result{
+            case .success(let data):
+                
+                let json = JSON(data)
+                
+                for i in 0 ... json["results"].count{
 //                    let balance = json["results"][i]["balance"].intValue
 //                    let id = json["results"][i]["id"].intValue
-//                    let name = json["results"][i]["name"].stringValue
-//                    let wallet = WalletModel(balance: balance, id: id, name: name)
-//                    self.wallets.append(wallet)
-//                    completion(self.wallets)
-//                }
-//            default:
-//                return print("Fail")
-//            }
+                    let name = json["results"][i]["name"].stringValue
+                    let direction = DirectionModel(name: name)
+                    self.directions.append(direction)
+                    completion(self.directions)
+                }
+            default:
+                return print("Fail")
+            }
             
         }
     }

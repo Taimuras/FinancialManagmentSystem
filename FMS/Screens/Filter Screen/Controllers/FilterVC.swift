@@ -1,16 +1,16 @@
 import UIKit
 
 
-protocol GetFilterRequestDelegate {
-    func getFilterRequestParams( params:  FilterModel)
+protocol FilterVCDelegate {
+    func getFilteredUrl(url: String)
 }
 
 class FilterVC: UIViewController {
     
-    var delegate: GetFilterRequestDelegate?
+    var delegate: FilterVCDelegate?
     
     
-    let directions = ["India","Belarus","Russia","Kyrgyzstan","China","Uzbekistan","SAR","Korea","USA","Canada"]
+    var directions: [DirectionModel] = []
     var counterAgents: [CounterAgentsModel] = []
     var wallets: [WalletModel] = []
     
@@ -27,6 +27,10 @@ class FilterVC: UIViewController {
     @IBOutlet weak var walletTextField: UITextField!
     @IBOutlet weak var counterAgentTextField: UITextField!
     @IBOutlet weak var directionTextField: UITextField!
+    
+    var walletID: Int = 0
+    var counterAgentID: Int = 0
+    var directionID: Int = 0
     
     
     @IBOutlet weak var acceptButton: UIButton!
@@ -59,7 +63,29 @@ class FilterVC: UIViewController {
     
 
     @IBAction func acceptButtonTapped(_ sender: UIButton) {
+        
+        func returnUrl(wallet: String, counterAgent: String) -> String{ //, direction: String
+            var url = "?"
+            
+            if !counterAgent.isEmpty && wallet.isEmpty{
+                url = url + "counterpart=\(counterAgentID)"
+                return url
+            }else if counterAgent.isEmpty && !wallet.isEmpty {
+                url = url + "wallet=\(walletID)"
+                return url
+            } else if !counterAgent.isEmpty && !wallet.isEmpty {
+                url = url + "wallet=\(walletID)&counterpart=\(counterAgentID)"
+                return url
+            } else {
+                url = ""
+                return url
+            }
+            
+        }
+        delegate?.getFilteredUrl(url: returnUrl(wallet: walletTextField.text!, counterAgent: counterAgentTextField.text!))
+        dismiss(animated: true, completion: nil)
     }
+    
 }
 
 extension FilterVC{
@@ -71,7 +97,7 @@ extension FilterVC{
             self.counterAgents = data
         }
         fetchingData.fetchingDirections(url: constants.directionsEndPoint) { (data) in
-            print("Data recieved")
+            self.directions = data
         }
     }
     
@@ -87,11 +113,11 @@ extension FilterVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch pickerView.tag {
         case 1:
-            return wallets.count
+            return wallets.count - 1
         case 2:
-            return counterAgents.count
+            return counterAgents.count - 1
         case 3:
-            return directions.count
+            return directions.count - 1
         default:
             return 1
         }
@@ -104,7 +130,7 @@ extension FilterVC: UIPickerViewDelegate, UIPickerViewDataSource {
         case 2:
             return counterAgents[row].name
         case 3:
-            return directions[row]
+            return directions[row].name
         default:
             return "Data Not Found"
         }
@@ -115,12 +141,15 @@ extension FilterVC: UIPickerViewDelegate, UIPickerViewDataSource {
         switch pickerView.tag {
         case 1:
             walletTextField.text = wallets[row].name
+            walletID = wallets[row].id
             walletTextField.resignFirstResponder()
         case 2:
             counterAgentTextField.text = counterAgents[row].name
+            counterAgentID = counterAgents[row].id
             counterAgentTextField.resignFirstResponder()
         case 3:
-            directionTextField.text = directions[row]
+            directionTextField.text = directions[row].name
+//            directionID = directionsp[row].id
             directionTextField.resignFirstResponder()
         default:
             return

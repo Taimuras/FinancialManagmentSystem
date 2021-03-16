@@ -69,6 +69,11 @@ class AddingVC: UIViewController {
     
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
+        
+        
+        
+        
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func segmentedValueChanged(_ sender: UISegmentedControl) {

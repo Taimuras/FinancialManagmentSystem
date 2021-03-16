@@ -16,6 +16,7 @@ class MainViewController: UIViewController {
     
     
     let userDefaults = UserDefaults.standard
+    var refreshControl:UIRefreshControl = UIRefreshControl()
     
     
     //Design Fonts
@@ -39,35 +40,36 @@ class MainViewController: UIViewController {
     @IBOutlet weak var mainScreenCollectionView: UICollectionView!
     
 
-    let controller = FilterVC()
+    
     
     
     // MARK: ViewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        controller.delegate = self
+        
+        
         
         design()
         collectionViewDelegates()
         registerCWCell()
-        
+        refreshMainCVC()
         
 
-//        let one: TransitionsModel = TransitionsModel(id: 1235, sum: 123123, date_join: "12.03.2040", user: "Arstan", actionIconName: "Income")
-//        let two: TransitionsModel = TransitionsModel(id: 1000, sum: 10000, date_join: "1.12.2020", user: "Timur", actionIconName: "Income")
-//   
-//        mainVCData.append(one)
-//        mainVCData.append(two)
-//        mainVCData.append(one)
-//        mainVCData.append(two)
-//        mainVCData.append(one)
-//        mainVCData.append(two)
-//        mainVCData.append(one)
-//        mainVCData.append(two)
-//        mainVCData.append(one)
-//        mainVCData.append(two)
-//        
+        let one: TransitionsModel = TransitionsModel(id: 1235, sum: 123123, date_join: "12.03.2040", user: "Arstan", actionIconName: "IncomeSVG")
+        let two: TransitionsModel = TransitionsModel(id: 1000, sum: 10000, date_join: "1.12.2020", user: "Timur", actionIconName: "IncomeSVG")
+   
+        mainVCData.append(one)
+        mainVCData.append(two)
+        mainVCData.append(one)
+        mainVCData.append(two)
+        mainVCData.append(one)
+        mainVCData.append(two)
+        mainVCData.append(one)
+        mainVCData.append(two)
+        mainVCData.append(one)
+        mainVCData.append(two)
+        
         
         
         
@@ -84,12 +86,26 @@ class MainViewController: UIViewController {
     }
     
     
+    @IBAction func filterButtonTapped(_ sender: UIButton) {
+        
+        let filterVC = storyboard?.instantiateViewController(withIdentifier: constants.filterVC) as! FilterVC
+        filterVC.delegate = self
+        present(filterVC, animated: true, completion: nil)
+    }
+    
+    
+    
     // MARK: Fetching Data first try
     func fetchData () {
-        fetchingTransactions.fetchingTransactions(url: constants.fetchingAllTransactions) { (data) in
+        fetchingTransactions.fetchingTransactions(url: constants.transitionsEndPoint) { (data) in
 //            print(data)
-            self.mainVCData = data
-            self.mainScreenCollectionView.reloadData()
+            
+            DispatchQueue.main.async {
+                self.mainVCData.removeAll()
+                self.mainVCData = data
+                self.mainScreenCollectionView.reloadData()
+            }
+            
         }
         
         fetchingTransactions.fetchingIncomeOutcomeBalance(url: constants.mainScreenFetchIncOutBalance) { (data) in
@@ -105,11 +121,11 @@ class MainViewController: UIViewController {
     
 
     @IBAction func logOut(_ sender: UIButton) {
-        let dialogMessage = UIAlertController(title: "Confirm", message: "Are you sure you want to quit?", preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+        let dialogMessage = UIAlertController(title: "Выход", message: "Вы уверены, что хотите выйти?", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Отмена", style: .cancel) { (action) -> Void in
 //            print("Cancel button tapped")
         }
-        let ok = UIAlertAction(title: "OK", style: .destructive, handler: { (action) -> Void in
+        let ok = UIAlertAction(title: "Да", style: .destructive, handler: { (action) -> Void in
 //             print("Ok button tapped")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let mainTabBarController = storyboard.instantiateViewController(identifier: "LoginNavigationController")
@@ -132,15 +148,48 @@ class MainViewController: UIViewController {
 }
 
 
-// MARK: Fetching Filtered Data
-extension MainViewController: GetFilterRequestDelegate{
+extension MainViewController{
+    func refreshMainCVC(){
+        
+        refreshControl.addTarget(self, action: #selector(didPullToRefresh(_:)), for: .valueChanged)
+        mainScreenCollectionView.alwaysBounceVertical = true
+        mainScreenCollectionView.refreshControl = refreshControl // i
+    }
     
-    func getFilterRequestParams(params: FilterModel) {
-        fetchingTransactions.fetchingFilteredTransactions(url: "", params: params) { (data) in
-            self.mainVCData = []
-            self.mainVCData = data
-            self.mainScreenCollectionView.reloadData()
+    @objc private func didPullToRefresh(_ sender: Any) {
+        fetchData()
+        refreshControl.endRefreshing()
+    }
+    
+
+}
+
+
+// MARK: Fetching Filtered Data
+extension MainViewController: FilterVCDelegate{
+    
+    
+    
+    func getFilteredUrl(url: String) {
+        self.dismiss(animated: true) {
+            let endPoint = self.constants.transitionsEndPoint + url
+            
+            self.fetchingTransactions.fetchingFilteredTransactions(url: endPoint) { (data) in
+                
+//                print(data)
+                DispatchQueue.main.async {
+                    self.mainVCData = []
+                    self.mainVCData = data
+//                    self.mainVCData.forEach { (data) in
+//                        print(data)
+//                    }
+                    self.mainScreenCollectionView.reloadData()
+                }
+                
+            }
         }
+        
+        
     }
     
 }
@@ -178,10 +227,11 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if mainVCData[indexPath.row].id  % 2 == 0 {
-            let editingVC = self.storyboard?.instantiateViewController(withIdentifier: constants.editingTransactionsVC) as! EditingTransactionsVC
+            
+            let editingVC = storyboard?.instantiateViewController(withIdentifier: constants.editingTransactionsVC) as! EditingTransactionsVC
             present(editingVC, animated: true, completion: nil)
         } else if mainVCData[indexPath.row].id % 2 != 0 {
-            let edititngTransfer = self.storyboard?.instantiateViewController(withIdentifier: constants.editingTransferVC) as! EditingTransferVC
+            let edititngTransfer = storyboard?.instantiateViewController(withIdentifier: constants.editingTransferVC) as! EditingTransferVC
             present(edititngTransfer, animated: true, completion: nil)
         }
 
@@ -214,9 +264,9 @@ extension MainViewController{
         incomeLabel.font = constants.fontRegular12
         
         
-        incomeStateLabel.font = constants.fontSemiBold18
-        outcomeStateLabel.font = constants.fontSemiBold18
-        transferStateLabel.font = constants.fontSemiBold18
+        incomeStateLabel.font = constants.fontBold18
+        outcomeStateLabel.font = constants.fontBold18
+        transferStateLabel.font = constants.fontBold18
         
         
         
