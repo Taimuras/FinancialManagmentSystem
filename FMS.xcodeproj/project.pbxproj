@@ -12,6 +12,8 @@
 		521F37A425F0B45D00B3E7D2 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 521F37A325F0B45D00B3E7D2 /* OpenSans-Bold.ttf */; };
 		521F37A725F0B69000B3E7D2 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 521F37A625F0B69000B3E7D2 /* OpenSans-Regular.ttf */; };
 		521F37AA25F0B6AB00B3E7D2 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 521F37A925F0B6AB00B3E7D2 /* OpenSans-SemiBold.ttf */; };
+		52201E032601D89500334E21 /* UserAddingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52201E022601D89500334E21 /* UserAddingVC.swift */; };
+		52201E062601DDD100334E21 /* UserEditingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52201E052601DDD100334E21 /* UserEditingVC.swift */; };
 		5220E57C25EE2C470077EB07 /* MainCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5220E57A25EE2C470077EB07 /* MainCVC.swift */; };
 		5220E57D25EE2C470077EB07 /* MainCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5220E57B25EE2C470077EB07 /* MainCVC.xib */; };
 		5225FE4225F347D700CF4009 /* ApiCalling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225FE4125F347D700CF4009 /* ApiCalling.swift */; };
@@ -53,6 +55,8 @@
 		521F37A325F0B45D00B3E7D2 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		521F37A625F0B69000B3E7D2 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		521F37A925F0B6AB00B3E7D2 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		52201E022601D89500334E21 /* UserAddingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAddingVC.swift; sourceTree = "<group>"; };
+		52201E052601DDD100334E21 /* UserEditingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditingVC.swift; sourceTree = "<group>"; };
 		5220E57A25EE2C470077EB07 /* MainCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCVC.swift; sourceTree = "<group>"; };
 		5220E57B25EE2C470077EB07 /* MainCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCVC.xib; sourceTree = "<group>"; };
 		5225FE4125F347D700CF4009 /* ApiCalling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCalling.swift; sourceTree = "<group>"; };
@@ -350,6 +354,8 @@
 			isa = PBXGroup;
 			children = (
 				5266438825F5D78C0032499D /* UsersVC.swift */,
+				52201E022601D89500334E21 /* UserAddingVC.swift */,
+				52201E052601DDD100334E21 /* UserEditingVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -550,6 +556,7 @@
 				52E5090725F212160086DF17 /* ForgotVC.swift in Sources */,
 				5284800225FCACF900D82D8F /* FilterModel.swift in Sources */,
 				52178BA225F690ED001E9C14 /* TabBarController.swift in Sources */,
+				52201E032601D89500334E21 /* UserAddingVC.swift in Sources */,
 				5266439025F5DF100032499D /* FetchingTransactions.swift in Sources */,
 				5266F09925FA1CE200403D22 /* TransitionsModel.swift in Sources */,
 				5225FE4225F347D700CF4009 /* ApiCalling.swift in Sources */,
@@ -567,6 +574,7 @@
 				5251A55F25EF5C0A00546F71 /* Constants.swift in Sources */,
 				5284800825FCBB8100D82D8F /* WalletModel.swift in Sources */,
 				52E8B6C525F9E7C0002D62A0 /* EditingTransferVC.swift in Sources */,
+				52201E062601DDD100334E21 /* UserEditingVC.swift in Sources */,
 				5266438D25F5D7C90032499D /* AnaliticsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -54,6 +54,9 @@ class FilterVC: UIViewController {
         
         fetchData()
         
+        
+        self.hideKeyboardWhenTappedAround() 
+        
     }
     
 

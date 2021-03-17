@@ -13,6 +13,7 @@ class UsersVC: UIViewController {
     var users = [UserCellModel]()
     
     let constants = Constants()
+    let userDefaults = UserDefaults.standard
     
     
     @IBOutlet weak var usersLabel: UILabel!
@@ -37,6 +38,30 @@ class UsersVC: UIViewController {
         
     }
     
+    @IBAction func logOutTapped(_ sender: UIButton) {
+        let dialogMessage = UIAlertController(title: "Выход", message: "Вы уверены, что хотите выйти?", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Отмена", style: .cancel) { (action) -> Void in
+//            print("Cancel button tapped")
+        }
+        let ok = UIAlertAction(title: "Да", style: .destructive, handler: { (action) -> Void in
+//             print("Ok button tapped")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainTabBarController = storyboard.instantiateViewController(identifier: "LoginNavigationController")
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+
+            self.userDefaults.removeObject(forKey: "AccessToken")
+            self.userDefaults.removeObject(forKey: "RefreshToken")
+             
+        })
+        
+        //Add OK and Cancel button to dialog message
+        dialogMessage.addAction(ok)
+        dialogMessage.addAction(cancel)
+        
+        
+        // Present dialog message to user
+        self.present(dialogMessage, animated: true, completion: nil)
+    }
     @IBAction func addButtonTapped(_ sender: UIButton) {
         print("Add button Tapped")
     }

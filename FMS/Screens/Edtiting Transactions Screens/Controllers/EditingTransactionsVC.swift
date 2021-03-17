@@ -50,6 +50,7 @@ class EditingTransactionsVC: UIViewController {
         design()
         pickerViewDelegAndDataSorc()
         keyBoardShowAndHide()
+        self.hideKeyboardWhenTappedAround() 
     }
    
     @IBAction func cancelTapped(_ sender: UIButton) {

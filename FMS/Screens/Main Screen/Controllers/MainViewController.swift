@@ -76,6 +76,7 @@ class MainViewController: UIViewController {
         
         
         
+        
         //Тут ловится
         
             
@@ -292,5 +293,17 @@ extension MainViewController{
         transferPanelView.frame.size.width = topPanelView.frame.size.width / 3
         incomePanelView.frame.size.width = topPanelView.frame.size.width / 3
         outcomePanelView.frame.size.width = topPanelView.frame.size.width / 3
+    }
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

@@ -35,7 +35,7 @@ class FetchingTransactions {
                 case .success(let data):
                     let json = JSON(data)
                     print(json["count"])
-                    for i in 0 ... json["count"].intValue{
+                    for i in 0 ..< json["count"].intValue{
                         let transition: TransitionsModel = TransitionsModel(id: Int(json["results"][i]["id"].intValue), sum: Int(json["results"][i]["sum"].intValue), date_join: String(json["results"][i]["date_join"].stringValue), user: String(json["results"][i]["id"].stringValue), actionIconName: "Income")
                         self.transitions.append(transition)
                     }
@@ -94,17 +94,28 @@ class FetchingTransactions {
         let requestAPI = AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         
         requestAPI.responseJSON { (response) in
-            let json = JSON(response.value!)
-            print("json count \(json["count"])")
-            
-            self.transitions.removeAll()
-            for i in 0 ..< json["count"].intValue{
-                let transition: TransitionsModel = TransitionsModel(id: Int(json["results"][i]["id"].intValue), sum: Int(json["results"][i]["sum"].intValue), date_join: String(json["results"][i]["date_join"].stringValue), user: String(json["results"][i]["id"].stringValue), actionIconName: "Income")
+            switch response.result{
+            case .success(let data):
+                let json = JSON(data)
+                print("json count \(json["count"])")
                 
-                self.transitions.append(transition)
+                self.transitions.removeAll()
+                for i in 0 ..< json["count"].intValue{
+                    let transition: TransitionsModel = TransitionsModel(id: Int(json["results"][i]["id"].intValue), sum: Int(json["results"][i]["sum"].intValue), date_join: String(json["results"][i]["date_join"].stringValue), user: String(json["results"][i]["id"].stringValue), actionIconName: "Income")
+                    
+                    self.transitions.append(transition)
+                }
+                
+                completion(self.transitions)
+            default:
+                return print("Fail")
             }
             
-            completion(self.transitions)
+            
+            
+            
+            
+            
             
             
             

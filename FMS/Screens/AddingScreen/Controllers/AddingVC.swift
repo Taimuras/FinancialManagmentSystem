@@ -63,7 +63,7 @@ class AddingVC: UIViewController {
         pickerViewDelegatesAndDataSource()
         design()
         
-        
+        self.hideKeyboardWhenTappedAround() 
         
     }
     

@@ -37,6 +37,7 @@ class EditingTransferVC: UIViewController {
         createDatePicker()
         pickerViewDelegAndDataSorc()
         keyBoardShowAndHide()
+        self.hideKeyboardWhenTappedAround() 
     }
     
 
