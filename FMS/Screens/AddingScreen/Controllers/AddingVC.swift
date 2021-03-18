@@ -1,15 +1,17 @@
 import UIKit
+import MBProgressHUD
 
 class AddingVC: UIViewController {
     // Test Arrays
-    let directions = ["India","Belarus","Russia","Kyrgyzstan","China","Uzbekistan","SAR","Korea","USA","Canada"]
-    let categorys = ["Breez","Neobis","NeoLabs"]
-    let counterAgents = ["Dima","Tima","Yrys","Malika","Arstan","Erlan","Saddam","Talgar","Aigul"]
-    let projects = ["Hamam","Building","AsiaMall","Vefa Center","Bishkek Park","Caravan","Palace","Bishkek City","Guard Hotel"]
-    let wallets = ["DemirBank","OptimaBank","KazKomerc","Kyrgyzstan","NAC Bank"]
+    var directions: [DirectionModel] = []
+    var categorys: [CategoryModel] = []
+    var counterAgents: [CounterAgentsModel] = []
+    var projects: [ProjectModel] = []
+    var wallets: [WalletModel] = []
     
     @IBOutlet weak var newTransactionLabel: UILabel!
     
+    let fetchingData = FetchingDataFilterScreen()
     let constants = Constants()
 
     //TextFields Outlets
@@ -54,10 +56,15 @@ class AddingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+//        MBProgressHUD.showAdded(to: self.view, animated: true)
+        
         summTextField.delegate = self
         commentTextField.delegate = self
         transferCommentaryTextFiled.delegate = self
         
+        fetchData()
         keyBoardShowAndHide()
         createDatePicker()
         pickerViewDelegatesAndDataSource()
@@ -69,9 +76,6 @@ class AddingVC: UIViewController {
     
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
-        
-        
-        
         
         dismiss(animated: true, completion: nil)
     }
@@ -101,6 +105,55 @@ extension AddingVC {
             view.backgroundColor = UIColor.blue
         }
     }
+}
+
+extension AddingVC{
+    
+    func fetchData(){
+        fetchingData.fetchingWallets(url: constants.walletEndPoint) { (data) in
+            DispatchQueue.main.async {
+                print("Adding Screen Wallets: \(data)")
+                self.wallets.removeAll()
+                self.wallets = data
+            }
+            
+        }
+        fetchingData.fetchingCounterAgents(url: constants.counterAgentEndPoint) { (data) in
+            DispatchQueue.main.async {
+                self.counterAgents.removeAll()
+                self.counterAgents = data
+            }
+            
+        }
+        fetchingData.fetchingDirections(url: constants.directionsEndPoint) { (data) in
+            DispatchQueue.main.async {
+                self.directions.removeAll()
+                self.directions = data
+                MBProgressHUD.hide(for: self.view, animated: true)
+            }
+            
+        }
+        
+        fetchingData.fetchingCategories(url: constants.categoriesEndPoint) { (data) in
+            DispatchQueue.main.async {
+                self.categorys.removeAll()
+                self.categorys = data
+            }
+        }
+        
+        
+        fetchingData.fetchingProjects(url: constants.projectsEndPoint) { (data) in
+            DispatchQueue.main.async {
+                self.projects.removeAll()
+                self.projects = data
+            }
+        }
+    }
+    
+    
+    
+    
+    
 }
 
 
@@ -213,22 +266,22 @@ extension AddingVC: UIPickerViewDelegate, UIPickerViewDataSource{
         switch pickerView.tag {
         case 1:
             if segmentedOutler.selectedSegmentIndex != 2{
-                return directions[row]
+                return directions[row].name
             } else {
-                return wallets[row]
+                return wallets[row].name
             }
         case 2:
             if segmentedOutler.selectedSegmentIndex != 2{
-                return categorys[row]
+                return categorys[row].name
             } else {
-                return wallets[row]
+                return wallets[row].name
             }
         case 3:
-            return counterAgents[row]
+            return counterAgents[row].name
         case 4:
-            return projects[row]
+            return projects[row].name
         case 5:
-            return wallets[row]
+            return wallets[row].name
         default:
             return "Data not Found"
         }
@@ -237,29 +290,29 @@ extension AddingVC: UIPickerViewDelegate, UIPickerViewDataSource{
         switch pickerView.tag {
         case 1:
             if segmentedOutler.selectedSegmentIndex != 2 {
-                directionTextField.text = directions[row]
+                directionTextField.text = directions[row].name
                 directionTextField.resignFirstResponder()
             } else {
-                directionTextField.text = wallets[row]
+                directionTextField.text = wallets[row].name
                 directionTextField.resignFirstResponder()
             }
         case 2:
             if segmentedOutler.selectedSegmentIndex != 2 {
-                categoryTextField.text = categorys[row]
+                categoryTextField.text = categorys[row].name
                 categoryTextField.resignFirstResponder()
             } else {
-                categoryTextField.text = wallets[row]
+                categoryTextField.text = wallets[row].name
                 categoryTextField.resignFirstResponder()
             }
             
         case 3:
-            counterAgentTextField.text = counterAgents[row]
+            counterAgentTextField.text = counterAgents[row].name
             counterAgentTextField.resignFirstResponder()
         case 4:
-            projectTextField.text = projects[row]
+            projectTextField.text = projects[row].name
             projectTextField.resignFirstResponder()
         case 5:
-            walletTextField.text = wallets[row]
+            walletTextField.text = wallets[row].name
             walletTextField.resignFirstResponder()
         default:
             return
@@ -403,36 +456,24 @@ extension AddingVC {
         
         // move the root view up by the distance of keyboard height
         if datePickTextField.isEditing {
-            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3 + 50
+//            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3 + 50
         } else if summTextField.isEditing {
-            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3
+//            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3
         } else if directionTextField.isEditing {
-            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3
+//            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3
         }else if categoryTextField.isEditing {
-            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3
+//            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3
         }else if counterAgentTextField.isEditing  || transferCommentaryTextFiled.isEditing{
-            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3
+//            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3 - 50
         }else if projectTextField.isEditing {
-            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3
+            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3 - 51
         }else if walletTextField.isEditing {
-            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3 - 100
+            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3 - 102
         }else if commentTextField.isEditing {
-            self.view.frame.origin.y = 0 - keyboardSize.height + 51
+            self.view.frame.origin.y = 0 - keyboardSize.height / 3
         }
         
     }
-    
-//
-
-
-
-
-
-
-
-
-//    @IBOutlet weak var transferCommentaryTextFiled: UITextField!
-//
     
     @objc func keyboardWillHide(notification: NSNotification) {
         // move back the root view origin to zero

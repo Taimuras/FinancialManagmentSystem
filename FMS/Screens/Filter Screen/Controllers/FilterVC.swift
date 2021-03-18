@@ -1,5 +1,5 @@
 import UIKit
-
+import MBProgressHUD
 
 protocol FilterVCDelegate {
     func getFilteredUrl(url: String)
@@ -47,8 +47,11 @@ class FilterVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         design()
-        keyBoardShowAndHide()
+//        keyBoardShowAndHide()
         createDatePicker()
         pickerViewDelegatesAndDataSource()
         
@@ -94,13 +97,23 @@ class FilterVC: UIViewController {
 extension FilterVC{
     func fetchData(){
         fetchingData.fetchingWallets(url: constants.walletEndPoint) { (data) in
-            self.wallets = data
+            DispatchQueue.main.async {
+                self.wallets = data
+            }
+            
         }
         fetchingData.fetchingCounterAgents(url: constants.counterAgentEndPoint) { (data) in
-            self.counterAgents = data
+            DispatchQueue.main.async {
+                self.counterAgents = data
+            }
+            
         }
         fetchingData.fetchingDirections(url: constants.directionsEndPoint) { (data) in
-            self.directions = data
+            DispatchQueue.main.async {
+                self.directions = data
+                MBProgressHUD.hide(for: self.view, animated: true)
+            }
+            
         }
     }
     
@@ -116,11 +129,11 @@ extension FilterVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch pickerView.tag {
         case 1:
-            return wallets.count - 1
+            return wallets.count
         case 2:
-            return counterAgents.count - 1
+            return counterAgents.count
         case 3:
-            return directions.count - 1
+            return directions.count
         default:
             return 1
         }

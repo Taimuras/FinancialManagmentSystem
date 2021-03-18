@@ -1010,7 +1010,7 @@
                                             <constraint firstAttribute="height" constant="50" id="VHc-ye-qGN"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncE-Ta-6rP" userLabel="Divider">
                                         <rect key="frame" x="0.0" y="50" width="414" height="1"/>
@@ -1025,7 +1025,7 @@
                                             <constraint firstAttribute="height" constant="50" id="Iro-0w-nPl"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1V0-0d-4tZ" userLabel="Divider">
                                         <rect key="frame" x="0.0" y="101" width="414" height="1"/>
@@ -1040,7 +1040,7 @@
                                             <constraint firstAttribute="height" constant="50" id="BhL-L6-6q9"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ow-jd-Z9w" userLabel="Divider">
                                         <rect key="frame" x="0.0" y="152" width="414" height="1"/>
@@ -1055,7 +1055,7 @@
                                             <constraint firstAttribute="height" constant="50" id="Pbh-7P-W9O"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YDR-gx-x9u" userLabel="Divider">
                                         <rect key="frame" x="0.0" y="203" width="414" height="1"/>
@@ -1070,7 +1070,7 @@
                                             <constraint firstAttribute="height" constant="50" id="Aas-5q-jGs"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Mm-Dd-da0" userLabel="Divider">
                                         <rect key="frame" x="0.0" y="254" width="414" height="1"/>
@@ -2585,10 +2585,10 @@
             <color red="0.50199997425079346" green="0.50199997425079346" blue="0.50199997425079346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Dividers Color">
-            <color red="0.23137254901960785" green="0.23921568627450979" blue="0.30980392156862746" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23137254901960785" green="0.23921568627450981" blue="0.30980392156862746" alpha="0.28999999165534973" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SaveButtonColor">
-            <color red="0.40000000000000002" green="0.75686274509803919" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.40000000596046448" green="0.75700002908706665" blue="0.28600001335144043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

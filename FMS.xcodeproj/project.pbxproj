@@ -31,6 +31,8 @@
 		5252797525EDFE06001FF2CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5252797325EDFE06001FF2CE /* LaunchScreen.storyboard */; };
 		5253A97225FF2C5B00449916 /* DirectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253A97125FF2C5B00449916 /* DirectionModel.swift */; };
 		5253A97D25FF5EC300449916 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5253A97C25FF5EC200449916 /* Assets.xcassets */; };
+		5262BDC22603605400709939 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5262BDC12603605400709939 /* CategoryModel.swift */; };
+		5262BDC52603628700709939 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5262BDC42603628700709939 /* ProjectModel.swift */; };
 		5266437B25F5D69D0032499D /* AddingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266437A25F5D69D0032499D /* AddingVC.swift */; };
 		5266438525F5D72C0032499D /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266438425F5D72C0032499D /* SettingsVC.swift */; };
 		5266438925F5D78C0032499D /* UsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266438825F5D78C0032499D /* UsersVC.swift */; };
@@ -41,6 +43,7 @@
 		5284800525FCB91D00D82D8F /* FetchingDataFilterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284800425FCB91D00D82D8F /* FetchingDataFilterScreen.swift */; };
 		5284800825FCBB8100D82D8F /* WalletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284800725FCBB8100D82D8F /* WalletModel.swift */; };
 		5284800B25FCBEB600D82D8F /* CounterAgentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284800A25FCBEB600D82D8F /* CounterAgentsModel.swift */; };
+		52AE32BA260311490078D76F /* NetworkCreateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE32B9260311490078D76F /* NetworkCreateUser.swift */; };
 		52CC2BB825F3656400DAA708 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC2BB725F3656400DAA708 /* TabBarViewController.swift */; };
 		52E5090425F211F80086DF17 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5090325F211F80086DF17 /* LoginVC.swift */; };
 		52E5090725F212160086DF17 /* ForgotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5090625F212160086DF17 /* ForgotVC.swift */; };
@@ -76,6 +79,8 @@
 		5252797625EDFE06001FF2CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5253A97125FF2C5B00449916 /* DirectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionModel.swift; sourceTree = "<group>"; };
 		5253A97C25FF5EC200449916 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5262BDC12603605400709939 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		5262BDC42603628700709939 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
 		5266437A25F5D69D0032499D /* AddingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingVC.swift; sourceTree = "<group>"; };
 		5266438425F5D72C0032499D /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		5266438825F5D78C0032499D /* UsersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersVC.swift; sourceTree = "<group>"; };
@@ -86,6 +91,7 @@
 		5284800425FCB91D00D82D8F /* FetchingDataFilterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchingDataFilterScreen.swift; sourceTree = "<group>"; };
 		5284800725FCBB8100D82D8F /* WalletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletModel.swift; sourceTree = "<group>"; };
 		5284800A25FCBEB600D82D8F /* CounterAgentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAgentsModel.swift; sourceTree = "<group>"; };
+		52AE32B9260311490078D76F /* NetworkCreateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkCreateUser.swift; path = "FMS/Screens/Users Screen/Controllers/NetworkCreateUser.swift"; sourceTree = SOURCE_ROOT; };
 		52CC2BB725F3656400DAA708 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		52E5090325F211F80086DF17 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		52E5090625F212160086DF17 /* ForgotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotVC.swift; sourceTree = "<group>"; };
@@ -186,6 +192,8 @@
 				5284800725FCBB8100D82D8F /* WalletModel.swift */,
 				5284800A25FCBEB600D82D8F /* CounterAgentsModel.swift */,
 				5253A97125FF2C5B00449916 /* DirectionModel.swift */,
+				5262BDC12603605400709939 /* CategoryModel.swift */,
+				5262BDC42603628700709939 /* ProjectModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -364,6 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				52271FED260077BF00080BB2 /* UserCellModel.swift */,
+				52AE32B9260311490078D76F /* NetworkCreateUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -566,6 +575,7 @@
 				52E5090425F211F80086DF17 /* LoginVC.swift in Sources */,
 				5220E57C25EE2C470077EB07 /* MainCVC.swift in Sources */,
 				5284800B25FCBEB600D82D8F /* CounterAgentsModel.swift in Sources */,
+				52AE32BA260311490078D76F /* NetworkCreateUser.swift in Sources */,
 				52E8B6C025F9E199002D62A0 /* EditingTransactionsVC.swift in Sources */,
 				5284800525FCB91D00D82D8F /* FetchingDataFilterScreen.swift in Sources */,
 				5252796925EDFE06001FF2CE /* AppDelegate.swift in Sources */,
@@ -574,8 +584,10 @@
 				5251A55F25EF5C0A00546F71 /* Constants.swift in Sources */,
 				5284800825FCBB8100D82D8F /* WalletModel.swift in Sources */,
 				52E8B6C525F9E7C0002D62A0 /* EditingTransferVC.swift in Sources */,
+				5262BDC22603605400709939 /* CategoryModel.swift in Sources */,
 				52201E062601DDD100334E21 /* UserEditingVC.swift in Sources */,
 				5266438D25F5D7C90032499D /* AnaliticsVC.swift in Sources */,
+				5262BDC52603628700709939 /* ProjectModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
