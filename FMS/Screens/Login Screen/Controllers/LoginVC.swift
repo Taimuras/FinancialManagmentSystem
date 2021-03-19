@@ -40,7 +40,7 @@ class LoginVC: UIViewController {
         if ((reachability!.connection) != .unavailable){
             MBProgressHUD.showAdded(to: self.view, animated: true)
             ApiCalling().logInApiCalling(email: loginTextField.text!, password: passwordTextField.text!) { (data) in
-                print("User Auth: \(data)")
+//                print("User Auth: \(data)")
                 if data != 1 {
                     let dialogMessage = UIAlertController(title: "Авторизация не удалась", message: "Проверьте правильность набора личных данных!", preferredStyle: .alert)
                     let cancel = UIAlertAction(title: "Ок", style: .cancel) { (action) -> Void in
@@ -58,7 +58,7 @@ class LoginVC: UIViewController {
             MBProgressHUD.hide(for: self.view, animated: true)
             let alert  = UIAlertController(title: "Please check your internet connection", message: "", preferredStyle: .alert)
             let closeAction = UIAlertAction(title: "Close", style: .cancel) { (action) in
-                print("Close")
+//                print("Close")
             }
             
             alert.addAction(closeAction)

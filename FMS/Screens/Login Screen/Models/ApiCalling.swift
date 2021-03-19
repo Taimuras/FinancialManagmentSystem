@@ -26,17 +26,16 @@ class ApiCalling {
         requestAPI.responseJSON { [self] (response) in
             //Tokens coming
 //            print(response.value!)
-//            print(response.description)
-//            print(response.response?.statusCode)
+
+
             let statusCode = response.response?.statusCode ?? 0
             switch statusCode{
                 case 200:
                     let json = JSON(response.value!)
-        //            print("Json \(json)")
                     let refreshToken = json["refresh"].stringValue
                     self.userDefaults.setValue(refreshToken, forKey: "RefreshToken")
                     let accessToken = json["access"].stringValue
-        //            print("AccessToken \(accessToken) ")
+                    
                     self.userDefaults.setValue(accessToken, forKey: "AccessToken")
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")

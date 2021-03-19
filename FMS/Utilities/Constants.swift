@@ -57,13 +57,15 @@ class Constants {
     let logInEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/token/"
     let refreshTokenApi = "https://neobis-finance-sistem.herokuapp.com/account/api/token/refresh/"
     let transitionsEndPoint = "https://neobis-finance-sistem.herokuapp.com/transaction/"
+    let createTransactionEndPotin = "https://neobis-finance-sistem.herokuapp.com/transaction/"
     let mainScreenFetchIncOutBalance = "https://neobis-finance-sistem.herokuapp.com/profit_consumption_balance/"
     let walletEndPoint = "https://neobis-finance-sistem.herokuapp.com/wallet/"
     let counterAgentEndPoint = "https://neobis-finance-sistem.herokuapp.com/contractor/"
     let directionsEndPoint = "https://neobis-finance-sistem.herokuapp.com/section/"
-    let createUserEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/user/register/"
+    let createUserEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/user/"
     let categoriesEndPoint = "https://neobis-finance-sistem.herokuapp.com/category/"
     let projectsEndPoint = "https://neobis-finance-sistem.herokuapp.com/project/"
+    let allUsersEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/user/"
     
     
     

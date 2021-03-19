@@ -14,13 +14,14 @@ class NetworkCreateUser{
     var userAuth: Int = 0
     let constants = Constants()
     func createUser(email: String, first_name: String, last_name: String, password: String, completion: @escaping (Int) -> ()){
+        let isAdmin = false
         let param = [
             "email" : email as String,
             "first_name" : first_name as String,
             "last_name" : last_name as String,
-            "password" : password as String
-        
-        ]
+            "password" : password as String,
+            "is_admin" : isAdmin as Bool
+        ] as [String : Any]
         
         
         let accessToken = userDefaults.string(forKey: "AccessToken")!
@@ -31,13 +32,20 @@ class NetworkCreateUser{
         
         
         
-        let requestAPI = AF.request(constants.logInEndPoint, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+        let requestAPI = AF.request(constants.createUserEndPoint, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         
         
         requestAPI.responseJSON { (response) in
             let statusCode = response.response?.statusCode
+            print(response.description)
+            print(response.response!)
+//            print(response.response?.statusCode)
             switch statusCode{
             case 200:
+                self.userAuth = 1
+                completion(self.userAuth)
+                self.userAuth = 0
+            case 201:
                 self.userAuth = 1
                 completion(self.userAuth)
                 self.userAuth = 0

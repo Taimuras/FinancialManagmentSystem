@@ -35,10 +35,10 @@ class FetchingTransactions {
             switch response.result{
                 case .success(let data):
                     let json = JSON(data)
-                    print(json["count"])
+                    self.transitions.removeAll()
                     for i in 0 ..< json["count"].intValue{
                         let transition: TransitionsModel = TransitionsModel(id: Int(json["results"][i]["id"].intValue), sum: Int(json["results"][i]["sum"].intValue), date_join: String(json["results"][i]["date_join"].stringValue), user: String(json["results"][i]["id"].stringValue), actionIconName: "Income")
-                        self.transitions.insert(transition, at: 0)
+                        self.transitions.append(transition)
                     }
                     completion(self.transitions)
                 default:
@@ -111,15 +111,6 @@ class FetchingTransactions {
             default:
                 return print("Fail")
             }
-            
-            
-            
-            
-            
-            
-            
-            
-            
             
         }
     }

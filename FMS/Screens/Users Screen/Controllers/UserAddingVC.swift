@@ -61,6 +61,7 @@ class UserAddingVC: UIViewController {
                     // Present dialog message to user
                     self.present(dialogMessage, animated: true, completion: nil)
                 } else {
+                    print(data)
                     self.dismiss(animated: true, completion: nil)
                 }
             }

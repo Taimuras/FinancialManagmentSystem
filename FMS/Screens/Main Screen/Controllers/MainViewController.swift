@@ -79,7 +79,7 @@ class MainViewController: UIViewController {
         
         //Тут ловится
         
-            
+        fetchData()
         
         
         

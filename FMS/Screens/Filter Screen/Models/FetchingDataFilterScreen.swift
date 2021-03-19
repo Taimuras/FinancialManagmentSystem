@@ -106,7 +106,7 @@ class FetchingDataFilterScreen{
         
         requestAPI.responseJSON { (response) in
             
-            
+//            print(response.value!)
             
 
             
@@ -116,7 +116,7 @@ class FetchingDataFilterScreen{
                 let json = JSON(data)
 //                print(json["results"].count)
                 if json["results"].count == 0 {
-                    let direction = DirectionModel(name: "There is No Sections!")
+                    let direction = DirectionModel(id: 0, name: "There is No Sections!")
                     self.directions.append(direction)
                     completion(self.directions)
                 } else {
@@ -124,7 +124,8 @@ class FetchingDataFilterScreen{
                         //                    let balance = json["results"][i]["balance"].intValue
                         //                    let id = json["results"][i]["id"].intValue
                         let name = json["results"][i]["name"].stringValue
-                        let direction = DirectionModel(name: name)
+                        let id = json["results"][i]["id"].intValue
+                        let direction = DirectionModel(id: id, name: name)
                         self.directions.append(direction)
                         completion(self.directions)
                     }

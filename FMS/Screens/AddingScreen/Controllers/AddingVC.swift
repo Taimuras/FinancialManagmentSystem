@@ -13,6 +13,7 @@ class AddingVC: UIViewController {
     
     let fetchingData = FetchingDataFilterScreen()
     let constants = Constants()
+    let createTransaction = NetworkCreateTransaction()
 
     //TextFields Outlets
     @IBOutlet weak var datePickTextField: UITextField!
@@ -69,15 +70,92 @@ class AddingVC: UIViewController {
         createDatePicker()
         pickerViewDelegatesAndDataSource()
         design()
-        
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         self.hideKeyboardWhenTappedAround() 
         
     }
     
     
+    var sum = 0
+    var sectionID = 0
+    var categoryID = 0
+    var projectID = 0
+    var walletID = 0
+    var wallet_toID = 0
+    var contractorID = 0
+    var comment = ""
+    
     @IBAction func saveButtonTapped(_ sender: UIButton) {
+        if let summa = summTextField.text {
+            sum = Int(summa)!
+        }
+        if segmentedOutler.selectedSegmentIndex != 2 {
+            if let com = commentTextField.text {
+                comment = com
+            } else {
+                comment = ""
+            }
+        } else if segmentedOutler.selectedSegmentIndex == 2{
+            if let com = transferCommentaryTextFiled.text {
+                comment = com
+            } else {
+                comment = ""
+            }
+        }
+        if segmentedOutler.selectedSegmentIndex == 0 {
+            createTransaction.createIncomeTransaction(url: constants.createTransactionEndPotin, type: 1, section: sectionID, category: categoryID, project: projectID, sum: sum, wallet: walletID, contractor: contractorID, comment: comment) { (data) in
+                
+                if data != 1 {
+                    let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так. Транзакция не была создана!", preferredStyle: .alert)
+                    let cancel = UIAlertAction(title: "Ok", style: .cancel) { (action) -> Void in
+            //            print("Cancel button tapped")
+                    }
+                    
+                    dialogMessage.addAction(cancel)
+                    
+                    // Present dialog message to user
+                    self.present(dialogMessage, animated: true, completion: nil)
+                } else {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        } else if segmentedOutler.selectedSegmentIndex == 1 {
+            createTransaction.createOutComeTransaction(url: constants.createTransactionEndPotin, type: 2, section: sectionID, category: categoryID, project: projectID, sum: sum, wallet: walletID, contractor: contractorID, comment: comment) { (data) in
+                
+                if data != 1 {
+                    let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так. Транзакция не была создана!", preferredStyle: .alert)
+                    let cancel = UIAlertAction(title: "Ok", style: .cancel) { (action) -> Void in
+            //            print("Cancel button tapped")
+                    }
+                    
+                    dialogMessage.addAction(cancel)
+                    
+                    // Present dialog message to user
+                    self.present(dialogMessage, animated: true, completion: nil)
+                } else {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        } else {
+            createTransaction.createTransferTransaction(url: constants.createTransactionEndPotin, type: 3, sum: sum, wallet: walletID, wallet_to: wallet_toID,  comment: comment) { (data) in
+                
+                if data != 1 {
+                    let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так. Транзакция не была создана!", preferredStyle: .alert)
+                    let cancel = UIAlertAction(title: "Ok", style: .cancel) { (action) -> Void in
+            //            print("Cancel button tapped")
+                    }
+                    
+                    dialogMessage.addAction(cancel)
+                    
+                    // Present dialog message to user
+                    self.present(dialogMessage, animated: true, completion: nil)
+                } else {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
         
-        dismiss(animated: true, completion: nil)
+        
     }
     
     @IBAction func segmentedValueChanged(_ sender: UISegmentedControl) {
@@ -112,9 +190,9 @@ extension AddingVC{
     func fetchData(){
         fetchingData.fetchingWallets(url: constants.walletEndPoint) { (data) in
             DispatchQueue.main.async {
-                print("Adding Screen Wallets: \(data)")
                 self.wallets.removeAll()
                 self.wallets = data
+                self.checkData()
             }
             
         }
@@ -122,6 +200,7 @@ extension AddingVC{
             DispatchQueue.main.async {
                 self.counterAgents.removeAll()
                 self.counterAgents = data
+                self.checkData()
             }
             
         }
@@ -129,7 +208,7 @@ extension AddingVC{
             DispatchQueue.main.async {
                 self.directions.removeAll()
                 self.directions = data
-                MBProgressHUD.hide(for: self.view, animated: true)
+                self.checkData()
             }
             
         }
@@ -138,6 +217,7 @@ extension AddingVC{
             DispatchQueue.main.async {
                 self.categorys.removeAll()
                 self.categorys = data
+                self.checkData()
             }
         }
         
@@ -146,7 +226,15 @@ extension AddingVC{
             DispatchQueue.main.async {
                 self.projects.removeAll()
                 self.projects = data
+                self.checkData()
             }
+        }
+        
+    }
+    
+    func checkData(){
+        if wallets.count != 0 && counterAgents.count != 0 && directions.count != 0 && categorys.count != 0 && projects.count != 0 {
+            MBProgressHUD.hide(for: self.view, animated: true)
         }
     }
     
@@ -241,22 +329,22 @@ extension AddingVC: UIPickerViewDelegate, UIPickerViewDataSource{
         switch pickerView.tag {
         case 1:
             if segmentedOutler.selectedSegmentIndex != 2{
-                return directions.count
+                return directions.count - 1
             } else {
-                return wallets.count
+                return wallets.count - 1
             }
         case 2:
             if segmentedOutler.selectedSegmentIndex != 2{
-                return categorys.count
+                return categorys.count - 1
             } else {
-                return wallets.count
+                return wallets.count - 1
             }
         case 3:
-            return counterAgents.count
+            return counterAgents.count - 1
         case 4:
-            return projects.count
+            return projects.count - 1
         case 5:
-            return wallets.count
+            return wallets.count - 1
         default:
             return 1
         }
@@ -291,28 +379,35 @@ extension AddingVC: UIPickerViewDelegate, UIPickerViewDataSource{
         case 1:
             if segmentedOutler.selectedSegmentIndex != 2 {
                 directionTextField.text = directions[row].name
+                sectionID = directions[row].id
                 directionTextField.resignFirstResponder()
             } else {
                 directionTextField.text = wallets[row].name
+                walletID = wallets[row].id
                 directionTextField.resignFirstResponder()
             }
         case 2:
             if segmentedOutler.selectedSegmentIndex != 2 {
                 categoryTextField.text = categorys[row].name
+                categoryID = categorys[row].id
                 categoryTextField.resignFirstResponder()
             } else {
                 categoryTextField.text = wallets[row].name
+                walletID = wallets[row].id
                 categoryTextField.resignFirstResponder()
             }
             
         case 3:
             counterAgentTextField.text = counterAgents[row].name
+            contractorID = counterAgents[row].id
             counterAgentTextField.resignFirstResponder()
         case 4:
             projectTextField.text = projects[row].name
+            projectID = projects[row].id
             projectTextField.resignFirstResponder()
         case 5:
             walletTextField.text = wallets[row].name
+            walletID = wallets[row].id
             walletTextField.resignFirstResponder()
         default:
             return

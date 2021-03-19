@@ -10,10 +10,11 @@ import UIKit
 class UsersVC: UIViewController {
     
     
-    var users = [UserCellModel]()
+    var users = [AllUsersModel]()
     
     let constants = Constants()
     let userDefaults = UserDefaults.standard
+    let networkWorking = NetworkGetAllUsers()
     
     
     @IBOutlet weak var usersLabel: UILabel!
@@ -34,7 +35,8 @@ class UsersVC: UIViewController {
         
         userTableView.delegate = self
         userTableView.dataSource = self
-        zaglushkaDataCell()
+        
+        getData()
         
     }
     
@@ -66,12 +68,16 @@ class UsersVC: UIViewController {
         print("Add button Tapped")
     }
     
-    func zaglushkaDataCell() {
-        for _ in 1 ... 25 {
-            let user = UserCellModel(imageUrl: "", name: "Timur", email: "Avelonadreamer@gmail.com")
-            users.append(user)
+    
+    
+    func getData(){
+        networkWorking.getAllUsers(url: constants.allUsersEndPoint) { (data) in
+            DispatchQueue.main.async {
+                self.users.removeAll()
+                self.users = data
+                self.userTableView.reloadData()
+            }
         }
-        userTableView.reloadData()
     }
     
 
@@ -87,7 +93,7 @@ extension UsersVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: constants.userScreenTableViewCellIdentifier, for: indexPath) as! UserTBCell
         cell.frame.size.width = tableView.frame.size.width
-        cell.nameLabel.text = users[indexPath.row].name
+        cell.nameLabel.text = users[indexPath.row].first_name
         cell.emailLabel.text = users[indexPath.row].email
         
         
@@ -103,7 +109,7 @@ extension UsersVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = users[indexPath.row]
-        print("Name: \(user.name) \nEmail: \(user.email) \n")
+        print("Name: \(user.first_name) \nEmail: \(user.email) \n")
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
