@@ -9,9 +9,11 @@ import UIKit
 
 class ForgotVC: UIViewController {
     let constants = Constants()
-    @IBOutlet weak var logoLabel: UILabel!
+    @IBOutlet weak var logoImageView: UIImageView!
+    
     @IBOutlet weak var forgotUrPassLabel: UILabel!
     @IBOutlet weak var bigTextLabel: UILabel!
+    @IBOutlet weak var neoFinanceSystemLabel: UILabel!
     
     @IBOutlet weak var backButton: UIButton!
     
@@ -34,8 +36,10 @@ extension ForgotVC {
         
         backButton.layer.cornerRadius = 10.0
         backButton.layer.masksToBounds = true
+        logoImageView.layer.cornerRadius = 6.0
+        logoImageView.layer.masksToBounds = true
         
-        logoLabel.font = constants.fontSemiBold36
+        neoFinanceSystemLabel.font = constants.fontSemiBold20
         forgotUrPassLabel.font = constants.fontSemiBold20
         bigTextLabel.font = constants.fontRegular13
         

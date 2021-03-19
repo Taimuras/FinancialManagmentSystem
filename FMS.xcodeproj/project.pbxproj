@@ -18,12 +18,12 @@
 		5220E57D25EE2C470077EB07 /* MainCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5220E57B25EE2C470077EB07 /* MainCVC.xib */; };
 		5225FE4225F347D700CF4009 /* ApiCalling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225FE4125F347D700CF4009 /* ApiCalling.swift */; };
 		52271FEE260077BF00080BB2 /* UserCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52271FED260077BF00080BB2 /* UserCellModel.swift */; };
+		522A6ABA260507F000F638FB /* IncOutBalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522A6AB9260507F000F638FB /* IncOutBalModel.swift */; };
 		522B24EC26045696005BBFFC /* NetworkGetAllUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522B24EB26045696005BBFFC /* NetworkGetAllUsers.swift */; };
 		522B24EF2604575A005BBFFC /* AllUsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522B24EE2604575A005BBFFC /* AllUsersModel.swift */; };
 		522B24F22604659B005BBFFC /* NetworkCreateTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522B24F12604659B005BBFFC /* NetworkCreateTransaction.swift */; };
 		52396F4C26006FA300562103 /* UserTBCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52396F4A26006FA300562103 /* UserTBCell.swift */; };
 		52396F4D26006FA300562103 /* UserTBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52396F4B26006FA300562103 /* UserTBCell.xib */; };
-		523E38DD2600A94400F3A546 /* FilteredModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E38DC2600A94400F3A546 /* FilteredModel.swift */; };
 		5251A55A25EF566E00546F71 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251A55925EF566E00546F71 /* MainViewController.swift */; };
 		5251A55F25EF5C0A00546F71 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251A55E25EF5C0A00546F71 /* Constants.swift */; };
 		5251A56925EF5D9600546F71 /* MainCVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251A56825EF5D9600546F71 /* MainCVCModel.swift */; };
@@ -67,12 +67,12 @@
 		5220E57B25EE2C470077EB07 /* MainCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCVC.xib; sourceTree = "<group>"; };
 		5225FE4125F347D700CF4009 /* ApiCalling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCalling.swift; sourceTree = "<group>"; };
 		52271FED260077BF00080BB2 /* UserCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserCellModel.swift; path = "FMS/Screens/Users Screen/TableView Cell/UserCellModel.swift"; sourceTree = SOURCE_ROOT; };
-		522B24EB26045696005BBFFC /* NetworkGetAllUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkGetAllUsers.swift; path = "FMS/Screens/Filter Screen/Models/NetworkGetAllUsers.swift"; sourceTree = SOURCE_ROOT; };
+		522A6AB9260507F000F638FB /* IncOutBalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncOutBalModel.swift; sourceTree = "<group>"; };
+		522B24EB26045696005BBFFC /* NetworkGetAllUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkGetAllUsers.swift; path = "FMS/Screens/Users Screen/Networking/NetworkGetAllUsers.swift"; sourceTree = SOURCE_ROOT; };
 		522B24EE2604575A005BBFFC /* AllUsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllUsersModel.swift; path = "FMS/Screens/Filter Screen/Models/AllUsersModel.swift"; sourceTree = SOURCE_ROOT; };
 		522B24F12604659B005BBFFC /* NetworkCreateTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkCreateTransaction.swift; path = "FMS/Screens/Filter Screen/Models/NetworkCreateTransaction.swift"; sourceTree = SOURCE_ROOT; };
 		52396F4A26006FA300562103 /* UserTBCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTBCell.swift; sourceTree = "<group>"; };
 		52396F4B26006FA300562103 /* UserTBCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTBCell.xib; sourceTree = "<group>"; };
-		523E38DC2600A94400F3A546 /* FilteredModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredModel.swift; sourceTree = "<group>"; };
 		5251A55925EF566E00546F71 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5251A55E25EF5C0A00546F71 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5251A56825EF5D9600546F71 /* MainCVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCVCModel.swift; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 		5284800425FCB91D00D82D8F /* FetchingDataFilterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchingDataFilterScreen.swift; sourceTree = "<group>"; };
 		5284800725FCBB8100D82D8F /* WalletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletModel.swift; sourceTree = "<group>"; };
 		5284800A25FCBEB600D82D8F /* CounterAgentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAgentsModel.swift; sourceTree = "<group>"; };
-		52AE32B9260311490078D76F /* NetworkCreateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkCreateUser.swift; path = "FMS/Screens/Users Screen/Controllers/NetworkCreateUser.swift"; sourceTree = SOURCE_ROOT; };
+		52AE32B9260311490078D76F /* NetworkCreateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkCreateUser.swift; path = "FMS/Screens/Users Screen/Networking/NetworkCreateUser.swift"; sourceTree = SOURCE_ROOT; };
 		52CC2BB725F3656400DAA708 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		52E5090325F211F80086DF17 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		52E5090625F212160086DF17 /* ForgotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotVC.swift; sourceTree = "<group>"; };
@@ -135,6 +135,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		522A6ABC26050AB500F638FB /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				522B24EB26045696005BBFFC /* NetworkGetAllUsers.swift */,
+				52AE32B9260311490078D76F /* NetworkCreateUser.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		522A6ABD26050AEC00F638FB /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5284800425FCB91D00D82D8F /* FetchingDataFilterScreen.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		52396F4926006F7E00562103 /* TableView Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,9 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				5251A56825EF5D9600546F71 /* MainCVCModel.swift */,
-				5266438F25F5DF100032499D /* FetchingTransactions.swift */,
 				5266F09825FA1CE200403D22 /* TransitionsModel.swift */,
-				523E38DC2600A94400F3A546 /* FilteredModel.swift */,
+				522A6AB9260507F000F638FB /* IncOutBalModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -176,6 +192,7 @@
 		5251B42925FB7352008A2E22 /* Filter Screen */ = {
 			isa = PBXGroup;
 			children = (
+				522A6ABD26050AEC00F638FB /* Networking */,
 				5251B42B25FB7364008A2E22 /* Models */,
 				5251B42A25FB735C008A2E22 /* Controllers */,
 			);
@@ -194,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				5284800125FCACF900D82D8F /* FilterModel.swift */,
-				5284800425FCB91D00D82D8F /* FetchingDataFilterScreen.swift */,
 				5284800725FCBB8100D82D8F /* WalletModel.swift */,
 				5284800A25FCBEB600D82D8F /* CounterAgentsModel.swift */,
 				5253A97125FF2C5B00449916 /* DirectionModel.swift */,
@@ -290,6 +306,7 @@
 		5252798225EDFE96001FF2CE /* Users Screen */ = {
 			isa = PBXGroup;
 			children = (
+				522A6ABC26050AB500F638FB /* Networking */,
 				52396F4926006F7E00562103 /* TableView Cell */,
 				5266438125F5D7040032499D /* Models */,
 				5266438025F5D6FF0032499D /* Controllers */,
@@ -309,6 +326,7 @@
 		5252798425EDFEB8001FF2CE /* Main Screen */ = {
 			isa = PBXGroup;
 			children = (
+				52A3A4682604F243000EEF13 /* Networking */,
 				5251A56225EF5D5B00546F71 /* Models */,
 				5251A56125EF5D4F00546F71 /* Controllers */,
 				5251A55C25EF5A9600546F71 /* MainCVCell */,
@@ -379,8 +397,6 @@
 			isa = PBXGroup;
 			children = (
 				52271FED260077BF00080BB2 /* UserCellModel.swift */,
-				52AE32B9260311490078D76F /* NetworkCreateUser.swift */,
-				522B24EB26045696005BBFFC /* NetworkGetAllUsers.swift */,
 				522B24EE2604575A005BBFFC /* AllUsersModel.swift */,
 			);
 			path = Models;
@@ -416,6 +432,14 @@
 				5225FE4125F347D700CF4009 /* ApiCalling.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		52A3A4682604F243000EEF13 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5266438F25F5DF100032499D /* FetchingTransactions.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		52A3FB8C25F0AFC900FC98D8 /* Fonts */ = {
@@ -581,7 +605,6 @@
 				5266F09925FA1CE200403D22 /* TransitionsModel.swift in Sources */,
 				5225FE4225F347D700CF4009 /* ApiCalling.swift in Sources */,
 				5253A97225FF2C5B00449916 /* DirectionModel.swift in Sources */,
-				523E38DD2600A94400F3A546 /* FilteredModel.swift in Sources */,
 				5266437B25F5D69D0032499D /* AddingVC.swift in Sources */,
 				52E5090425F211F80086DF17 /* LoginVC.swift in Sources */,
 				5220E57C25EE2C470077EB07 /* MainCVC.swift in Sources */,
@@ -590,6 +613,7 @@
 				52AE32BA260311490078D76F /* NetworkCreateUser.swift in Sources */,
 				52E8B6C025F9E199002D62A0 /* EditingTransactionsVC.swift in Sources */,
 				5284800525FCB91D00D82D8F /* FetchingDataFilterScreen.swift in Sources */,
+				522A6ABA260507F000F638FB /* IncOutBalModel.swift in Sources */,
 				5252796925EDFE06001FF2CE /* AppDelegate.swift in Sources */,
 				5252796B25EDFE06001FF2CE /* SceneDelegate.swift in Sources */,
 				5251A55A25EF566E00546F71 /* MainViewController.swift in Sources */,

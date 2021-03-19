@@ -7,7 +7,8 @@ class LoginVC: UIViewController {
     let constants = Constants()
     var reachability: Reachability?
     //Labels
-    @IBOutlet weak var logoTextLabel: UILabel!
+    
+    @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var welcomeTextLabel: UILabel!
     @IBOutlet weak var continueLabel: UILabel!
     
@@ -123,7 +124,12 @@ extension LoginVC {
         loginButton.layer.cornerRadius = 10.0
         loginButton.layer.masksToBounds = true
         
-        logoTextLabel.font = constants.fontSemiBold36
+        
+        logoImageView.layer.cornerRadius = 6.0
+        logoImageView.layer.masksToBounds = true
+        
+        
+        
         welcomeTextLabel.font = constants.fontSemiBold20
         continueLabel.font = constants.fontRegular14
         

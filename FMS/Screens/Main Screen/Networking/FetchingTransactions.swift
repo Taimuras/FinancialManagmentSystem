@@ -14,8 +14,8 @@ class FetchingTransactions {
     let constants = Constants()
     let userDefaults = UserDefaults.standard
     var transitions: [TransitionsModel] = []
-    var filteredTransition: [FilteredModel] = []
-    var incomeOutcomeBalance: [String] = []
+    
+    var incomeOutcomeBalance: IncOutBalModel?
         
     
     func fetchingTransactions(url: String, completion: @escaping ([TransitionsModel]) -> ()){
@@ -35,9 +35,11 @@ class FetchingTransactions {
             switch response.result{
                 case .success(let data):
                     let json = JSON(data)
+                    
                     self.transitions.removeAll()
                     for i in 0 ..< json["count"].intValue{
-                        let transition: TransitionsModel = TransitionsModel(id: Int(json["results"][i]["id"].intValue), sum: Int(json["results"][i]["sum"].intValue), date_join: String(json["results"][i]["date_join"].stringValue), user: String(json["results"][i]["id"].stringValue), actionIconName: "Income")
+
+                        let transition: TransitionsModel = TransitionsModel(section: json["results"][i]["section"].stringValue, wallet: json["results"][i]["wallet"].stringValue, date_join: json["results"][i]["date_join"].stringValue, type: json["results"][i]["type"].stringValue, sum: json["results"][i]["sum"].intValue, id: json["results"][i]["id"].intValue)
                         self.transitions.append(transition)
                     }
                     completion(self.transitions)
@@ -49,7 +51,7 @@ class FetchingTransactions {
     }
     
     
-    func fetchingIncomeOutcomeBalance(url: String, completion: @escaping ([String]) -> ()) {
+    func fetchingIncomeOutcomeBalance(url: String, completion: @escaping (IncOutBalModel) -> ()) {
         let accessToken = userDefaults.string(forKey: "AccessToken")!
         
         let headers: HTTPHeaders = [
@@ -66,13 +68,13 @@ class FetchingTransactions {
                 case .success(let data):
 //                    print(data)
                     let json = JSON(data)
+                    
                     let profit = json["profit_sum"].stringValue
                     let wallets_sum = json["wallets_sum"].stringValue
                     let consumption_sum = json["consumption_sum"].stringValue
-                    self.incomeOutcomeBalance.append(profit)
-                    self.incomeOutcomeBalance.append(consumption_sum)
-                    self.incomeOutcomeBalance.append(wallets_sum)
-                    completion(self.incomeOutcomeBalance)
+                    self.incomeOutcomeBalance = IncOutBalModel(income: profit, outcome: wallets_sum, balance: consumption_sum)
+                    
+                    completion(self.incomeOutcomeBalance!)
                 default:
                     return print("Fail")
             }
@@ -98,13 +100,13 @@ class FetchingTransactions {
             switch response.result{
             case .success(let data):
                 let json = JSON(data)
-                print("json count \(json["count"])")
+                
                 
                 self.transitions.removeAll()
                 for i in 0 ..< json["count"].intValue{
-                    let transition: TransitionsModel = TransitionsModel(id: Int(json["results"][i]["id"].intValue), sum: Int(json["results"][i]["sum"].intValue), date_join: String(json["results"][i]["date_join"].stringValue), user: String(json["results"][i]["id"].stringValue), actionIconName: "Income")
+                    let transition: TransitionsModel = TransitionsModel(section: json["results"][i]["section"].stringValue, wallet: json["results"][i]["wallet"].stringValue, date_join: json["results"][i]["date_join"].stringValue, type: json["results"][i]["type"].stringValue, sum: json["results"][i]["sum"].intValue, id: json["results"][i]["id"].intValue)
+                    self.transitions.append(transition)
                     
-                    self.transitions.insert(transition, at: 0)
                 }
                 
                 completion(self.transitions)

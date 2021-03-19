@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import MBProgressHUD
+
 
 class MainViewController: UIViewController {
     
@@ -15,7 +17,7 @@ class MainViewController: UIViewController {
     let fetchingTransactions = FetchingTransactions()
     
     var mainVCData: [TransitionsModel] = []
-    var filteredTransitions: [FilteredModel] = []
+    
     
     
     let userDefaults = UserDefaults.standard
@@ -58,30 +60,10 @@ class MainViewController: UIViewController {
         registerCWCell()
         refreshMainCVC()
         
-
-        let one: TransitionsModel = TransitionsModel(id: 1235, sum: 123123, date_join: "12.03.2040", user: "Arstan", actionIconName: "Income")
-        let two: TransitionsModel = TransitionsModel(id: 1000, sum: 10000, date_join: "1.12.2020", user: "Timur", actionIconName: "Income")
-   
-        mainVCData.append(one)
-        mainVCData.append(two)
-        mainVCData.append(one)
-        mainVCData.append(two)
-        mainVCData.append(one)
-        mainVCData.append(two)
-        mainVCData.append(one)
-        mainVCData.append(two)
-        mainVCData.append(one)
-        mainVCData.append(two)
-        
-        
-        
-        
-        
-        //Тут ловится
         
         fetchData()
         
-        
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         
         
     }
@@ -111,6 +93,7 @@ class MainViewController: UIViewController {
                 self.mainVCData.removeAll()
                 self.mainVCData = data
                 self.mainScreenCollectionView.reloadData()
+                MBProgressHUD.hide(for: self.view, animated: true)
             }
             
         }
@@ -118,9 +101,9 @@ class MainViewController: UIViewController {
         fetchingTransactions.fetchingIncomeOutcomeBalance(url: constants.mainScreenFetchIncOutBalance) { (data) in
             
             DispatchQueue.main.async {
-                self.incomeStateLabel.text = data[0]
-                self.outcomeStateLabel.text = data[1]
-                self.transferStateLabel.text = data[2]
+                self.incomeStateLabel.text = data.income
+                self.outcomeStateLabel.text = data.outcome
+                self.transferStateLabel.text = data.balance
             }
         }
     }
@@ -233,23 +216,29 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = mainScreenCollectionView.dequeueReusableCell(withReuseIdentifier: constants.mainScreenCollectionViewCellIdentifier, for: indexPath) as! MainCVC
         
-            let index = mainVCData[indexPath.row]
-            cell.actionIcon.image = UIImage(named: index.actionIconName)
-            cell.bankName.text = index.user
-            cell.companyName.text = index.actionIconName
-            cell.dateOfAction.text = index.date_join
-            cell.actionValue.text = String(index.sum)
-            
-       
+        let index = mainVCData[indexPath.row]
+        if index.type == "Доход" {
+            cell.actionIcon.image = UIImage(named: "Income")
+        } else if index.type == "Расход" {
+            cell.actionIcon.image = UIImage(named: "Outcome")
+        }else if index.type == "Перевод" {
+            cell.actionIcon.image = UIImage(named: "Transfer")
+        }
+        
+        cell.bankName.text = index.wallet
+        cell.companyName.text = index.section
+        cell.dateOfAction.text = index.date_join
+        cell.actionValue.text = String(index.sum)
+        
+        
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if mainVCData[indexPath.row].id  % 2 == 0 {
-            
+        if mainVCData[indexPath.row].type == "Доход" || mainVCData[indexPath.row].type == "Расход"{
             let editingVC = storyboard?.instantiateViewController(withIdentifier: constants.editingTransactionsVC) as! EditingTransactionsVC
             present(editingVC, animated: true, completion: nil)
-        } else if mainVCData[indexPath.row].id % 2 != 0 {
+        } else if mainVCData[indexPath.row].type ==  "Перевод"{
             let edititngTransfer = storyboard?.instantiateViewController(withIdentifier: constants.editingTransferVC) as! EditingTransferVC
             present(edititngTransfer, animated: true, completion: nil)
         }
