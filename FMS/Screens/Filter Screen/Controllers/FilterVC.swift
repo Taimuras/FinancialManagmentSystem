@@ -89,7 +89,7 @@ class FilterVC: UIViewController {
             
         }
         delegate?.getFilteredUrl(url: returnUrl(wallet: walletTextField.text!, counterAgent: counterAgentTextField.text!))
-        dismiss(animated: true, completion: nil)
+//        dismiss(animated: true, completion: nil)
     }
     
 }

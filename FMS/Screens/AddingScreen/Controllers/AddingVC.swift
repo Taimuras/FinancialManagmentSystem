@@ -238,10 +238,6 @@ extension AddingVC{
         }
     }
     
-    
-    
-    
-    
 }
 
 
@@ -393,7 +389,7 @@ extension AddingVC: UIPickerViewDelegate, UIPickerViewDataSource{
                 categoryTextField.resignFirstResponder()
             } else {
                 categoryTextField.text = wallets[row].name
-                walletID = wallets[row].id
+                wallet_toID = wallets[row].id
                 categoryTextField.resignFirstResponder()
             }
             

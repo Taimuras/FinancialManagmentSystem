@@ -6,13 +6,17 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class EditingTransferVC: UIViewController {
-
+    
+    var idToUpdate: Int?
     let constants = Constants()
+    let fetchingTransfer = FetchingAndDeletingTransactions()
+    let fetchingData = FetchingDataFilterScreen()
     @IBOutlet weak var transactionLabel: UILabel!
     
-    let wallet = ["NAC RU","NAC US","NAC AU","NAC FR","NAC KR"]
+    var wallet: [WalletModel] = []
     
     
     @IBOutlet weak var dateTextField: UITextField!
@@ -33,6 +37,8 @@ class EditingTransferVC: UIViewController {
         super.viewDidLoad()
         sumTextField.delegate = self
         commentTextField.delegate = self
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        fetchData()
         design()
         createDatePicker()
         pickerViewDelegAndDataSorc()
@@ -45,11 +51,67 @@ class EditingTransferVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
+        let urlToFetchTransaction = constants.transactionByID + String(idToUpdate!)
+        fetchingTransfer.deletingTransaction(url: urlToFetchTransaction, id: idToUpdate!) { (response) in
+            if response{
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так!", preferredStyle: .alert)
+                let cancel = UIAlertAction(title: "Хорошо", style: .cancel) { (action) -> Void in
+        //            print("Cancel button tapped")
+                }
+                dialogMessage.addAction(cancel)
+                // Present dialog message to user
+                self.present(dialogMessage, animated: true, completion: nil)
+            }
+        }
+        
     }
     @IBAction func saveButtonTapped(_ sender: UIButton) {
     }
 }
 
+
+extension EditingTransferVC{
+    func fetchData(){
+        fetchingData.fetchingWallets(url: constants.walletEndPoint) { (data) in
+            DispatchQueue.main.async {
+                self.wallet.removeAll()
+                self.wallet = data
+                self.checkData()
+            }
+            
+        }
+    }
+    
+    func checkData(){
+        if wallet.count != 0 {
+            fetchTransaction()
+        }
+    }
+    
+    func fetchTransaction(){
+        let urlToFetchTransaction = constants.transactionByID + String(idToUpdate!)
+        fetchingTransfer.fetchingTransfer(url: urlToFetchTransaction) { (data) in
+            DispatchQueue.main.async {
+                self.sumTextField.text = String(data.sum)
+                
+                for i in self.wallet{
+                    if i.id == data.wallet {
+                        self.fromTextField.text = i.name
+                    }
+                }
+                for i in self.wallet{
+                    if i.id == data.wallet_to{
+                        self.toTextField.text = i.name
+                    }
+                }
+                MBProgressHUD.hide(for: self.view, animated: true)
+            }
+            
+        }
+    }
+}
 
 extension EditingTransferVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -59,9 +121,9 @@ extension EditingTransferVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch pickerView.tag {
         case 1:
-            return wallet.count
+            return wallet.count - 1
         case 2:
-            return wallet.count
+            return wallet.count - 1
         default:
             return 1
         }
@@ -69,9 +131,9 @@ extension EditingTransferVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch pickerView.tag {
         case 1:
-            return wallet[row]
+            return wallet[row].name
         case 2:
-            return wallet[row]
+            return wallet[row].name
         default:
             return "Data Not Found Edit Transfer"
         }
@@ -80,10 +142,10 @@ extension EditingTransferVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch pickerView.tag {
         case 1:
-            fromTextField.text = wallet[row]
+            fromTextField.text = wallet[row].name
             fromTextField.resignFirstResponder()
         case 2:
-            toTextField.text = wallet[row]
+            toTextField.text = wallet[row].name
             toTextField.resignFirstResponder()
         default:
             return

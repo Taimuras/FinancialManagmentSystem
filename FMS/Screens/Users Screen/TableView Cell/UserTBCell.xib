@@ -99,7 +99,7 @@
         <image name="Rectangle 10" width="46" height="46"/>
         <image name="Users Screen ArrowSVG" width="24" height="24"/>
         <namedColor name="BrandBlackTEXT">
-            <color red="0.23100000619888306" green="0.23899999260902405" blue="0.31000000238418579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23137254901960785" green="0.23921568627450981" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

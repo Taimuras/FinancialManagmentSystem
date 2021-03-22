@@ -34,6 +34,7 @@
 		5252797525EDFE06001FF2CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5252797325EDFE06001FF2CE /* LaunchScreen.storyboard */; };
 		5253A97225FF2C5B00449916 /* DirectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253A97125FF2C5B00449916 /* DirectionModel.swift */; };
 		5253A97D25FF5EC300449916 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5253A97C25FF5EC200449916 /* Assets.xcassets */; };
+		525C955F2608B2A400083965 /* TransferByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C955E2608B2A400083965 /* TransferByID.swift */; };
 		5262BDC22603605400709939 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5262BDC12603605400709939 /* CategoryModel.swift */; };
 		5262BDC52603628700709939 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5262BDC42603628700709939 /* ProjectModel.swift */; };
 		5266437B25F5D69D0032499D /* AddingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266437A25F5D69D0032499D /* AddingVC.swift */; };
@@ -41,7 +42,9 @@
 		5266438925F5D78C0032499D /* UsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266438825F5D78C0032499D /* UsersVC.swift */; };
 		5266438D25F5D7C90032499D /* AnaliticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266438C25F5D7C90032499D /* AnaliticsVC.swift */; };
 		5266439025F5DF100032499D /* FetchingTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266438F25F5DF100032499D /* FetchingTransactions.swift */; };
-		5266F09925FA1CE200403D22 /* TransitionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266F09825FA1CE200403D22 /* TransitionsModel.swift */; };
+		5266F09925FA1CE200403D22 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266F09825FA1CE200403D22 /* TransactionModel.swift */; };
+		527D60332608526F00620859 /* FetchingAndDeletingTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D60322608526F00620859 /* FetchingAndDeletingTransactions.swift */; };
+		527D603826085BEA00620859 /* TransactionByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D603726085BEA00620859 /* TransactionByID.swift */; };
 		5284800225FCACF900D82D8F /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284800125FCACF900D82D8F /* FilterModel.swift */; };
 		5284800525FCB91D00D82D8F /* FetchingDataFilterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284800425FCB91D00D82D8F /* FetchingDataFilterScreen.swift */; };
 		5284800825FCBB8100D82D8F /* WalletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284800725FCBB8100D82D8F /* WalletModel.swift */; };
@@ -85,6 +88,7 @@
 		5252797625EDFE06001FF2CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5253A97125FF2C5B00449916 /* DirectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionModel.swift; sourceTree = "<group>"; };
 		5253A97C25FF5EC200449916 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		525C955E2608B2A400083965 /* TransferByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferByID.swift; sourceTree = "<group>"; };
 		5262BDC12603605400709939 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		5262BDC42603628700709939 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
 		5266437A25F5D69D0032499D /* AddingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingVC.swift; sourceTree = "<group>"; };
@@ -92,7 +96,9 @@
 		5266438825F5D78C0032499D /* UsersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersVC.swift; sourceTree = "<group>"; };
 		5266438C25F5D7C90032499D /* AnaliticsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnaliticsVC.swift; sourceTree = "<group>"; };
 		5266438F25F5DF100032499D /* FetchingTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchingTransactions.swift; sourceTree = "<group>"; };
-		5266F09825FA1CE200403D22 /* TransitionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionsModel.swift; sourceTree = "<group>"; };
+		5266F09825FA1CE200403D22 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
+		527D60322608526F00620859 /* FetchingAndDeletingTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchingAndDeletingTransactions.swift; sourceTree = "<group>"; };
+		527D603726085BEA00620859 /* TransactionByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionByID.swift; sourceTree = "<group>"; };
 		5284800125FCACF900D82D8F /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
 		5284800425FCB91D00D82D8F /* FetchingDataFilterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchingDataFilterScreen.swift; sourceTree = "<group>"; };
 		5284800725FCBB8100D82D8F /* WalletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletModel.swift; sourceTree = "<group>"; };
@@ -183,7 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				5251A56825EF5D9600546F71 /* MainCVCModel.swift */,
-				5266F09825FA1CE200403D22 /* TransitionsModel.swift */,
+				5266F09825FA1CE200403D22 /* TransactionModel.swift */,
 				522A6AB9260507F000F638FB /* IncOutBalModel.swift */,
 			);
 			path = Models;
@@ -417,6 +423,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		527D60312608524100620859 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				527D603726085BEA00620859 /* TransactionByID.swift */,
+				525C955E2608B2A400083965 /* TransferByID.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		527D603626085BD800620859 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				527D60322608526F00620859 /* FetchingAndDeletingTransactions.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		5291ABA625F346D4005A2819 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -455,6 +478,8 @@
 		52E8B6BE25F9E177002D62A0 /* Edtiting Transactions Screens */ = {
 			isa = PBXGroup;
 			children = (
+				527D603626085BD800620859 /* Networking */,
+				527D60312608524100620859 /* Models */,
 				52E8B6C225F9E19E002D62A0 /* Controllers */,
 			);
 			path = "Edtiting Transactions Screens";
@@ -590,11 +615,14 @@
 			files = (
 				52396F4C26006FA300562103 /* UserTBCell.swift in Sources */,
 				522B24F22604659B005BBFFC /* NetworkCreateTransaction.swift in Sources */,
+				527D603826085BEA00620859 /* TransactionByID.swift in Sources */,
 				5251B42D25FB7374008A2E22 /* FilterVC.swift in Sources */,
 				52271FEE260077BF00080BB2 /* UserCellModel.swift in Sources */,
+				525C955F2608B2A400083965 /* TransferByID.swift in Sources */,
 				5266438525F5D72C0032499D /* SettingsVC.swift in Sources */,
 				5251A56925EF5D9600546F71 /* MainCVCModel.swift in Sources */,
 				5266438925F5D78C0032499D /* UsersVC.swift in Sources */,
+				527D60332608526F00620859 /* FetchingAndDeletingTransactions.swift in Sources */,
 				52CC2BB825F3656400DAA708 /* TabBarViewController.swift in Sources */,
 				52E5090725F212160086DF17 /* ForgotVC.swift in Sources */,
 				5284800225FCACF900D82D8F /* FilterModel.swift in Sources */,
@@ -602,7 +630,7 @@
 				52201E032601D89500334E21 /* UserAddingVC.swift in Sources */,
 				5266439025F5DF100032499D /* FetchingTransactions.swift in Sources */,
 				522B24EC26045696005BBFFC /* NetworkGetAllUsers.swift in Sources */,
-				5266F09925FA1CE200403D22 /* TransitionsModel.swift in Sources */,
+				5266F09925FA1CE200403D22 /* TransactionModel.swift in Sources */,
 				5225FE4225F347D700CF4009 /* ApiCalling.swift in Sources */,
 				5253A97225FF2C5B00449916 /* DirectionModel.swift in Sources */,
 				5266437B25F5D69D0032499D /* AddingVC.swift in Sources */,

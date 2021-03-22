@@ -8,6 +8,8 @@
 import UIKit
 
 class UserTBCell: UITableViewCell {
+    
+    let constants = Constants()
 
     @IBOutlet weak var AvatarImageView: UIImageView!
     
@@ -19,8 +21,25 @@ class UserTBCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        design()
     }
 
     
     
 }
+
+
+extension UserTBCell{
+    func design (){
+   
+
+        nameLabel.font = constants.fontSemiBold16
+        emailLabel.font = constants.fontRegular13
+        
+       
+        
+        
+    }
+}
+

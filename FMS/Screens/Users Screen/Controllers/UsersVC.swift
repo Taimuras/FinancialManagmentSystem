@@ -35,8 +35,12 @@ class UsersVC: UIViewController {
         
         userTableView.delegate = self
         userTableView.dataSource = self
-        
+        design()
         getData()
+        
+        
+        let footerView = UIView()
+        userTableView.tableFooterView = footerView
         
     }
     
@@ -124,4 +128,19 @@ extension UsersVC: UITableViewDelegate, UITableViewDataSource{
     
     
     
+}
+
+
+
+extension UsersVC{
+    func design(){
+   
+
+        usersLabel.font = constants.fontBold34
+        addLabel.font = constants.fontSemiBold16
+        
+       
+        
+        
+    }
 }

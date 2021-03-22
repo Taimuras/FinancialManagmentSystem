@@ -1,18 +1,29 @@
 //EditingTransactionsVC
 
 import UIKit
+import MBProgressHUD
+
+
+protocol EditingTransactionsVCDelegate {
+    func didFinishUpdatingTransaction(success: Bool)
+}
 
 class EditingTransactionsVC: UIViewController {
     
-    let direction = ["Bishkek","Astana","Moscow","Saint - Peterburg","Biejing","Melburn","Washington","New-York","Berlin","Paris"]
-    let category = ["Anvar $ CO","Heretic Brothers","Jing Jing corp."]
-    let counterAgent = ["Demis","Fransua","Nichlen","Michlen","Bob","Donald","Goofie","Batman","Joker"]
-    let project = ["Dubai Mall","Moscow Mall","AsiaMall","Vefa Center","Bishkek Park","Caravan","TCUM","GUM","Dordoi Plaza"]
-    let wallet = ["NAC RU","NAC US","NAC AU","NAC FR","NAC KR"]
+    var idToUpdate: Int?
+    var typeToUpdate: Int?
+    
+    var directions: [DirectionModel] = []
+    var categorys: [CategoryModel] = []
+    var counterAgents: [CounterAgentsModel] = []
+    var projects: [ProjectModel] = []
+    var wallets: [WalletModel] = []
 
     
     @IBOutlet weak var transactionLabel: UILabel!
     let constants = Constants()
+    let fetchingData = FetchingDataFilterScreen()
+    let fetchingTransaction = FetchingAndDeletingTransactions()
     
     @IBOutlet weak var segmentedOutlet: UISegmentedControl!
     
@@ -43,8 +54,20 @@ class EditingTransactionsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        segmentedOutlet.selectedSegmentIndex = typeToUpdate!
+        
+        
+        
+        
         sumTextField.delegate = self
         commentTextField.delegate = self
+        
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        
+        
+        fetchData()
+        
         
         createDatePicker()
         design()
@@ -65,10 +88,123 @@ class EditingTransactionsVC: UIViewController {
     }
     
     @IBAction func deleteIconButtonTapped(_ sender: UIButton) {
+        let urlToFetchTransaction = constants.transactionByID + String(idToUpdate!)
+        fetchingTransaction.deletingTransaction(url: urlToFetchTransaction, id: idToUpdate!) { (response) in
+            if response{
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так!", preferredStyle: .alert)
+                let cancel = UIAlertAction(title: "Хорошо", style: .cancel) { (action) -> Void in
+        //            print("Cancel button tapped")
+                }
+                
+                
+                dialogMessage.addAction(cancel)
+                
+                
+                // Present dialog message to user
+                self.present(dialogMessage, animated: true, completion: nil)
+            }
+        }
         print("Tap Tap")
     }
     
+    
+    // MARK: Fetch Transaction
+    func fetchTransaction(){
+        let urlToFetchTransaction = constants.transactionByID + String(idToUpdate!)
+        fetchingTransaction.fetchingTransactions(url: urlToFetchTransaction) { (data) in
+            DispatchQueue.main.async {
+                self.sumTextField.text = String(data.sum)
+                for i in self.directions{
+                    if i.id == data.section {
+                        self.directionTextField.text = i.name
+                    }
+                }
+                for i in self.categorys{
+                    if i.id == data.category {
+                        self.categoryTextField.text = i.name
+                    }
+                }
+                for i in self.counterAgents{
+                    if i.id == data.contractor {
+                        self.counterAgentTextField.text = i.name
+                    }
+                }
+                for i in self.projects{
+                    if i.id == data.project {
+                        self.projectTextField.text = i.name
+                    }
+                }
+                for i in self.wallets{
+                    if i.id == data.wallet {
+                        self.walletTextField.text = i.name
+                    }
+                }
+                MBProgressHUD.hide(for: self.view, animated: true)
+            }
+            
+        }
+    }
    
+}
+extension EditingTransactionsVC{
+    
+    func fetchData(){
+        fetchingData.fetchingWallets(url: constants.walletEndPoint) { (data) in
+            DispatchQueue.main.async {
+                self.wallets.removeAll()
+                self.wallets = data
+                self.checkData()
+            }
+            
+        }
+        fetchingData.fetchingCounterAgents(url: constants.counterAgentEndPoint) { (data) in
+            DispatchQueue.main.async {
+                self.counterAgents.removeAll()
+                self.counterAgents = data
+                self.checkData()
+            }
+            
+        }
+        fetchingData.fetchingDirections(url: constants.directionsEndPoint) { (data) in
+            DispatchQueue.main.async {
+                self.directions.removeAll()
+                self.directions = data
+                self.checkData()
+            }
+            
+        }
+        
+        fetchingData.fetchingCategories(url: constants.categoriesEndPoint) { (data) in
+            DispatchQueue.main.async {
+                self.categorys.removeAll()
+                self.categorys = data
+                self.checkData()
+            }
+        }
+        
+        
+        fetchingData.fetchingProjects(url: constants.projectsEndPoint) { (data) in
+            DispatchQueue.main.async {
+                self.projects.removeAll()
+                self.projects = data
+                self.checkData()
+            }
+        }
+        
+    }
+    
+    func checkData(){
+        if wallets.count != 0 && counterAgents.count != 0 && directions.count != 0 && categorys.count != 0 && projects.count != 0 {
+            fetchTransaction()
+//            MBProgressHUD.hide(for: self.view, animated: true)
+        }
+    }
+    
+    
+    
+    
 }
 
 
@@ -81,15 +217,15 @@ extension EditingTransactionsVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch pickerView.tag {
         case 1:
-            return direction.count
+            return directions.count - 1
         case 2:
-            return category.count
+            return categorys.count - 1
         case 3:
-            return counterAgent.count
+            return counterAgents.count - 1
         case 4:
-            return project.count
+            return projects.count - 1
         case 5:
-            return wallet.count
+            return wallets.count - 1
         default:
             return 1
         }
@@ -98,15 +234,15 @@ extension EditingTransactionsVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch pickerView.tag {
         case 1:
-            return direction[row]
+            return directions[row].name
         case 2:
-            return category[row]
+            return categorys[row].name
         case 3:
-            return counterAgent[row]
+            return counterAgents[row].name
         case 4:
-            return project[row]
+            return projects[row].name
         case 5:
-            return wallet[row]
+            return wallets[row].name
         default:
             return "Data Not FOund Editing"
         }
@@ -115,19 +251,19 @@ extension EditingTransactionsVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch pickerView.tag {
         case 1:
-            directionTextField.text = direction[row]
+            directionTextField.text = directions[row].name
             directionTextField.resignFirstResponder()
         case 2:
-            categoryTextField.text = category[row]
+            categoryTextField.text = categorys[row].name
             categoryTextField.resignFirstResponder()
         case 3:
-            counterAgentTextField.text = counterAgent[row]
+            counterAgentTextField.text = counterAgents[row].name
             counterAgentTextField.resignFirstResponder()
         case 4:
-            projectTextField.text = project[row]
+            projectTextField.text = projects[row].name
             projectTextField.resignFirstResponder()
         case 5:
-            walletTextField.text = wallet[row]
+            walletTextField.text = wallets[row].name
             walletTextField.resignFirstResponder()
         default:
             return

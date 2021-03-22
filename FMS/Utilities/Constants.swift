@@ -66,6 +66,8 @@ class Constants {
     let categoriesEndPoint = "https://neobis-finance-sistem.herokuapp.com/category/"
     let projectsEndPoint = "https://neobis-finance-sistem.herokuapp.com/project/"
     let allUsersEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/user/"
+    let transactionByID = "https://neobis-finance-sistem.herokuapp.com/transaction/"
+    let deleteTransactionByID = "https://neobis-finance-sistem.herokuapp.com/transaction/"
     
     
     

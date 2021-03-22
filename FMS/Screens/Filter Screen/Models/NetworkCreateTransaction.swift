@@ -17,16 +17,23 @@ class NetworkCreateTransaction{
     
     func createIncomeTransaction(url: String, type: Int, section: Int, category: Int, project: Int, sum: Int, wallet: Int, contractor: Int, comment: String, completion: @escaping (Int) -> ()){
 
-        let param = [
+        var param = [
+            "section": section as Any,
             "type" : type as Int,
             "category" : category as Int,
-            "project" : project as Int,
             "sum" : sum as Int,
             "wallet" : wallet as Int,
-            "contractor" : contractor as Int,
             "comment" : comment as String
         ] as [String : Any]
         
+        
+        if project != 0 {
+            param["project"] = project
+        }
+        
+        if contractor != 0{
+            param["contractor"] = contractor
+        }
         
         let accessToken = userDefaults.string(forKey: "AccessToken")!
         let headers: HTTPHeaders = [
@@ -61,15 +68,16 @@ class NetworkCreateTransaction{
     }
     
     
-    func createOutComeTransaction(url: String, type: Int, section: Int, category: Int, project: Int, sum: Int, wallet: Int, contractor: Int, comment: String, completion: @escaping (Int) -> ()){
+    func createOutComeTransaction(url: String, type: Int, section: Any, category: Any, project: Any, sum: Int, wallet: Any, contractor: Any, comment: String, completion: @escaping (Int) -> ()){
 
         let param = [
+            "section": section as Any,
             "type" : type as Int,
-            "category" : category as Int,
-            "project" : project as Int,
+            "category" : category as Any,
+            "project" : project as Any,
             "sum" : sum as Int,
-            "wallet" : wallet as Int,
-            "contractor" : contractor as Int,
+            "wallet" : wallet as Any,
+            "contractor" : contractor as Any,
             "comment" : comment as String
         ] as [String : Any]
         
@@ -87,7 +95,7 @@ class NetworkCreateTransaction{
         
         requestAPI.responseJSON { (response) in
             let statusCode = response.response?.statusCode
-            print(response.response?.statusCode)
+            
             print(response.description)
 
             switch statusCode{

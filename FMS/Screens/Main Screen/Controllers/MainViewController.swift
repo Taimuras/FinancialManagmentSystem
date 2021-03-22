@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
     let constants = Constants()
     let fetchingTransactions = FetchingTransactions()
     
-    var mainVCData: [TransitionsModel] = []
+    var mainVCData: [TransactionModel] = []
     
     
     
@@ -67,15 +67,6 @@ class MainViewController: UIViewController {
         
         
     }
-    
-    
-    
-    // MARK: VIewWillAppear
-    override func viewWillAppear(_ animated: Bool) {
-        fetchData()
-    }
-    
-    
     
     @IBAction func filterButtonTapped(_ sender: UIButton) {
         
@@ -163,7 +154,7 @@ extension MainViewController: FilterVCDelegate{
     
     func getFilteredUrl(url: String) {
         
-        self.dismiss(animated: true,completion: nil) 
+        
             
         
         let endPoint = self.constants.transitionsEndPoint + url
@@ -186,6 +177,7 @@ extension MainViewController: FilterVCDelegate{
             }
             
         }
+        self.dismiss(animated: true,completion: nil) 
         
         
     }
@@ -237,9 +229,18 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         if mainVCData[indexPath.row].type == "Доход" || mainVCData[indexPath.row].type == "Расход"{
             let editingVC = storyboard?.instantiateViewController(withIdentifier: constants.editingTransactionsVC) as! EditingTransactionsVC
+            editingVC.idToUpdate = mainVCData[indexPath.row].id
+            if mainVCData[indexPath.row].type == "Доход"{
+                
+                editingVC.typeToUpdate = 0
+            } else if mainVCData[indexPath.row].type == "Расход"{
+                
+                editingVC.typeToUpdate = 1
+            }
             present(editingVC, animated: true, completion: nil)
         } else if mainVCData[indexPath.row].type ==  "Перевод"{
             let edititngTransfer = storyboard?.instantiateViewController(withIdentifier: constants.editingTransferVC) as! EditingTransferVC
+            edititngTransfer.idToUpdate = mainVCData[indexPath.row].id
             present(edititngTransfer, animated: true, completion: nil)
         }
 

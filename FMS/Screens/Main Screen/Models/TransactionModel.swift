@@ -8,7 +8,8 @@
 import Foundation
 
 
-struct TransitionsModel{
+struct TransactionModel{
+    
     let section: String
     let wallet: String
     let date_join: String

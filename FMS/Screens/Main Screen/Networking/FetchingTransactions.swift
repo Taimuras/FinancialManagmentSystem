@@ -13,12 +13,12 @@ import SwiftyJSON
 class FetchingTransactions {
     let constants = Constants()
     let userDefaults = UserDefaults.standard
-    var transitions: [TransitionsModel] = []
+    var transitions: [TransactionModel] = []
     
     var incomeOutcomeBalance: IncOutBalModel?
         
     
-    func fetchingTransactions(url: String, completion: @escaping ([TransitionsModel]) -> ()){
+    func fetchingTransactions(url: String, completion: @escaping ([TransactionModel]) -> ()){
 
         
         let accessToken = userDefaults.string(forKey: "AccessToken")!
@@ -39,7 +39,7 @@ class FetchingTransactions {
                     self.transitions.removeAll()
                     for i in 0 ..< json["count"].intValue{
 
-                        let transition: TransitionsModel = TransitionsModel(section: json["results"][i]["section"].stringValue, wallet: json["results"][i]["wallet"].stringValue, date_join: json["results"][i]["date_join"].stringValue, type: json["results"][i]["type"].stringValue, sum: json["results"][i]["sum"].intValue, id: json["results"][i]["id"].intValue)
+                        let transition: TransactionModel = TransactionModel(section: json["results"][i]["section"].stringValue, wallet: json["results"][i]["wallet"].stringValue, date_join: json["results"][i]["date_join"].stringValue, type: json["results"][i]["type"].stringValue, sum: json["results"][i]["sum"].intValue, id: json["results"][i]["id"].intValue)
                         self.transitions.append(transition)
                     }
                     completion(self.transitions)
@@ -85,7 +85,7 @@ class FetchingTransactions {
     
     
     
-    func fetchingFilteredTransactions(url: String, completion: @escaping ([TransitionsModel]) -> ()){
+    func fetchingFilteredTransactions(url: String, completion: @escaping ([TransactionModel]) -> ()){
 
         let accessToken = userDefaults.string(forKey: "AccessToken")!
         
@@ -104,7 +104,7 @@ class FetchingTransactions {
                 
                 self.transitions.removeAll()
                 for i in 0 ..< json["count"].intValue{
-                    let transition: TransitionsModel = TransitionsModel(section: json["results"][i]["section"].stringValue, wallet: json["results"][i]["wallet"].stringValue, date_join: json["results"][i]["date_join"].stringValue, type: json["results"][i]["type"].stringValue, sum: json["results"][i]["sum"].intValue, id: json["results"][i]["id"].intValue)
+                    let transition: TransactionModel = TransactionModel(section: json["results"][i]["section"].stringValue, wallet: json["results"][i]["wallet"].stringValue, date_join: json["results"][i]["date_join"].stringValue, type: json["results"][i]["type"].stringValue, sum: json["results"][i]["sum"].intValue, id: json["results"][i]["id"].intValue)
                     self.transitions.append(transition)
                     
                 }
