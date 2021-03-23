@@ -25,6 +25,7 @@ class Constants {
     let editingTransactionsVC = "EditingTransactionsVC"
     let editingTransferVC = "EditingTransferVC"
     let filterVC = "FilterVC"
+    let userEditingVC = "UserEditingVC"
     
     
     //Segues IDs
@@ -66,10 +67,12 @@ class Constants {
     let categoriesEndPoint = "https://neobis-finance-sistem.herokuapp.com/category/"
     let projectsEndPoint = "https://neobis-finance-sistem.herokuapp.com/project/"
     let allUsersEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/user/"
-    let transactionByID = "https://neobis-finance-sistem.herokuapp.com/transaction/"
-    let deleteTransactionByID = "https://neobis-finance-sistem.herokuapp.com/transaction/"
-    let updateTransactionByID = "https://neobis-finance-sistem.herokuapp.com/transaction/"
-    
+    let transactionByIDEndPoint = "https://neobis-finance-sistem.herokuapp.com/transaction/"
+    let deleteTransactionByIDEndPoint = "https://neobis-finance-sistem.herokuapp.com/transaction/"
+    let updateTransactionByIDEndPoint = "https://neobis-finance-sistem.herokuapp.com/transaction/"
+    let getUserByEmailEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/change/user/"  // \(email.gmail.com)
+    let getSessionUserEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/session-user/"  // .post
+    let deleteUserEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/change/user/" // \(email@gmail.com)
     
     
     func updateAccessToken(){

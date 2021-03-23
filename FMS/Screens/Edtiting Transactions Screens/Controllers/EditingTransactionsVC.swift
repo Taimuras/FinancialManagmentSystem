@@ -102,7 +102,7 @@ class EditingTransactionsVC: UIViewController {
     }
     
     @IBAction func deleteIconButtonTapped(_ sender: UIButton) {
-        let urlToFetchTransaction = constants.transactionByID + String(idToUpdate!)
+        let urlToFetchTransaction = constants.transactionByIDEndPoint + String(idToUpdate!)
         fetchingTransaction.deletingTransaction(url: urlToFetchTransaction, id: idToUpdate!) { (response) in
             if response{
                 self.dismiss(animated: true, completion: nil)
@@ -120,14 +120,14 @@ class EditingTransactionsVC: UIViewController {
                 self.present(dialogMessage, animated: true, completion: nil)
             }
         }
-        print("Tap Tap")
+       
     }
     
     
     
     // MARK: Fetch Transaction
     func fetchTransaction(){
-        let urlToFetchTransaction = constants.transactionByID + String(idToUpdate!)
+        let urlToFetchTransaction = constants.transactionByIDEndPoint + String(idToUpdate!)
         fetchingTransaction.fetchingTransactions(url: urlToFetchTransaction) { (data) in
             DispatchQueue.main.async {
                 if data.comment != "null" {
@@ -176,7 +176,7 @@ class EditingTransactionsVC: UIViewController {
     
     
     func updateTransactionData() {
-        let urlToUpdateTransaction = constants.updateTransactionByID + String(idToUpdate!)
+        let urlToUpdateTransaction = constants.updateTransactionByIDEndPoint + String(idToUpdate!)
         if segmentedOutlet.selectedSegmentIndex == 0 {
             updateTransaction.updateIncomeTransaction(url: urlToUpdateTransaction, date_join: dateTextField.text!, type: 1, section: sectionID!, category: categoryID!, project: projectID ?? 0, sum: Int(sumTextField.text!)!, wallet: walletID!, contractor: contractorID ?? 0, comment: comment) { (data) in
                 if data != 1 {

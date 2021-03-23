@@ -108,8 +108,10 @@ extension UsersVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = users[indexPath.row]
-        print("Name: \(user.first_name) \nEmail: \(user.email) \n")
-        
+        let edititngUser = storyboard?.instantiateViewController(withIdentifier: constants.userEditingVC) as! UserEditingVC
+        edititngUser.userID = user.id
+        edititngUser.userEmail = user.email
+        present(edititngUser, animated: true, completion: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
