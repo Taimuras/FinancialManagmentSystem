@@ -306,7 +306,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="vHd-mG-Mbq" secondAttribute="trailing" constant="10" id="32c-KC-7g1"/>
                                                     <constraint firstItem="CYb-5M-Zd7" firstAttribute="centerX" secondItem="vbP-nG-gdQ" secondAttribute="centerX" id="AG4-QE-BI5"/>
@@ -355,7 +355,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="2d7-4i-IZa" firstAttribute="centerX" secondItem="3T6-ZM-ze2" secondAttribute="centerX" id="4cc-2u-dMe"/>
                                                     <constraint firstItem="2d7-4i-IZa" firstAttribute="top" secondItem="3T6-ZM-ze2" secondAttribute="top" constant="20" id="5xu-6B-X1P"/>
@@ -403,7 +403,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="uxa-ag-B0z" firstAttribute="leading" secondItem="d8d-IN-e5w" secondAttribute="leading" constant="10" id="3ai-Oa-alb"/>
                                                     <constraint firstAttribute="bottom" secondItem="uxa-ag-B0z" secondAttribute="bottom" constant="20" id="D9y-Z9-cr2"/>
@@ -936,6 +936,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="addLabel" destination="tmF-ZI-X0U" id="ucv-lA-dtU"/>
+                        <outlet property="createUserButtonView" destination="yo9-lt-Ess" id="lm7-OP-0Bk"/>
                         <outlet property="userImageView" destination="zFn-cb-f9f" id="Jik-Mj-muy"/>
                         <outlet property="userTableView" destination="ows-eo-8Qh" id="rHJ-Fb-GeH"/>
                         <outlet property="usersLabel" destination="vlO-cx-mj7" id="SxA-Yy-Hoh"/>
@@ -2590,7 +2591,7 @@
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BrandDarkGrey">
-            <color red="0.50199997425079346" green="0.50199997425079346" blue="0.50199997425079346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Dividers Color">
             <color red="0.23137254901960785" green="0.23921568627450981" blue="0.30980392156862746" alpha="0.28999999165534973" colorSpace="custom" customColorSpace="sRGB"/>

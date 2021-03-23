@@ -68,6 +68,7 @@ class Constants {
     let allUsersEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/user/"
     let transactionByID = "https://neobis-finance-sistem.herokuapp.com/transaction/"
     let deleteTransactionByID = "https://neobis-finance-sistem.herokuapp.com/transaction/"
+    let updateTransactionByID = "https://neobis-finance-sistem.herokuapp.com/transaction/"
     
     
     

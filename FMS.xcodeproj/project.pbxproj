@@ -24,6 +24,7 @@
 		522B24F22604659B005BBFFC /* NetworkCreateTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522B24F12604659B005BBFFC /* NetworkCreateTransaction.swift */; };
 		52396F4C26006FA300562103 /* UserTBCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52396F4A26006FA300562103 /* UserTBCell.swift */; };
 		52396F4D26006FA300562103 /* UserTBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52396F4B26006FA300562103 /* UserTBCell.xib */; };
+		524CF8112609B827000E3768 /* UpdatingTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CF8102609B827000E3768 /* UpdatingTransaction.swift */; };
 		5251A55A25EF566E00546F71 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251A55925EF566E00546F71 /* MainViewController.swift */; };
 		5251A55F25EF5C0A00546F71 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251A55E25EF5C0A00546F71 /* Constants.swift */; };
 		5251A56925EF5D9600546F71 /* MainCVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251A56825EF5D9600546F71 /* MainCVCModel.swift */; };
@@ -76,6 +77,7 @@
 		522B24F12604659B005BBFFC /* NetworkCreateTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkCreateTransaction.swift; path = "FMS/Screens/Filter Screen/Models/NetworkCreateTransaction.swift"; sourceTree = SOURCE_ROOT; };
 		52396F4A26006FA300562103 /* UserTBCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTBCell.swift; sourceTree = "<group>"; };
 		52396F4B26006FA300562103 /* UserTBCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTBCell.xib; sourceTree = "<group>"; };
+		524CF8102609B827000E3768 /* UpdatingTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatingTransaction.swift; sourceTree = "<group>"; };
 		5251A55925EF566E00546F71 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5251A55E25EF5C0A00546F71 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5251A56825EF5D9600546F71 /* MainCVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCVCModel.swift; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 			isa = PBXGroup;
 			children = (
 				527D60322608526F00620859 /* FetchingAndDeletingTransactions.swift */,
+				524CF8102609B827000E3768 /* UpdatingTransaction.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -643,6 +646,7 @@
 				5284800525FCB91D00D82D8F /* FetchingDataFilterScreen.swift in Sources */,
 				522A6ABA260507F000F638FB /* IncOutBalModel.swift in Sources */,
 				5252796925EDFE06001FF2CE /* AppDelegate.swift in Sources */,
+				524CF8112609B827000E3768 /* UpdatingTransaction.swift in Sources */,
 				5252796B25EDFE06001FF2CE /* SceneDelegate.swift in Sources */,
 				5251A55A25EF566E00546F71 /* MainViewController.swift in Sources */,
 				5251A55F25EF5C0A00546F71 /* Constants.swift in Sources */,

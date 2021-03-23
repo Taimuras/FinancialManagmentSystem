@@ -11,9 +11,21 @@ import MBProgressHUD
 class EditingTransferVC: UIViewController {
     
     var idToUpdate: Int?
+    var dateTime: String?
+    
+    var sectionID: Int?
+    var categoryID: Int?
+    var projectID: Int?
+    var walletID: Int?
+    var walletToID: Int?
+    var contractorID: Int?
+    var comment = ""
+    
+    
     let constants = Constants()
     let fetchingTransfer = FetchingAndDeletingTransactions()
     let fetchingData = FetchingDataFilterScreen()
+    let updateTransaction = UpdatingTransaction()
     @IBOutlet weak var transactionLabel: UILabel!
     
     var wallet: [WalletModel] = []
@@ -68,6 +80,30 @@ class EditingTransferVC: UIViewController {
         
     }
     @IBAction func saveButtonTapped(_ sender: UIButton) {
+        updateTransferData()
+    }
+    
+    
+    
+    func updateTransferData() {
+        let urlToUpdateTransaction = constants.updateTransactionByID + String(idToUpdate!)
+        
+        updateTransaction.updateTransferTransaction(url: urlToUpdateTransaction, date_join: dateTextField.text!, type: 3, sum: Int(sumTextField.text!)!, wallet: walletID!, wallet_to: walletToID!, comment: comment) { (data) in
+            if data != 1 {
+                let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так. Транзакция не была создана!", preferredStyle: .alert)
+                let cancel = UIAlertAction(title: "Ok", style: .cancel) { (action) -> Void in
+        //            print("Cancel button tapped")
+                }
+                
+                dialogMessage.addAction(cancel)
+                
+                // Present dialog message to user
+                self.present(dialogMessage, animated: true, completion: nil)
+            } else {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        
     }
 }
 
@@ -95,15 +131,18 @@ extension EditingTransferVC{
         fetchingTransfer.fetchingTransfer(url: urlToFetchTransaction) { (data) in
             DispatchQueue.main.async {
                 self.sumTextField.text = String(data.sum)
-                
+                self.commentTextField.text = data.comment
+                self.dateTextField.text = self.dateTime
                 for i in self.wallet{
                     if i.id == data.wallet {
                         self.fromTextField.text = i.name
+                        self.walletID = data.wallet
                     }
                 }
                 for i in self.wallet{
                     if i.id == data.wallet_to{
                         self.toTextField.text = i.name
+                        self.walletToID = data.wallet_to
                     }
                 }
                 MBProgressHUD.hide(for: self.view, animated: true)
@@ -143,9 +182,11 @@ extension EditingTransferVC: UIPickerViewDelegate, UIPickerViewDataSource {
         switch pickerView.tag {
         case 1:
             fromTextField.text = wallet[row].name
+            walletID = wallet[row].id
             fromTextField.resignFirstResponder()
         case 2:
             toTextField.text = wallet[row].name
+            walletToID = wallet[row].id
             toTextField.resignFirstResponder()
         default:
             return

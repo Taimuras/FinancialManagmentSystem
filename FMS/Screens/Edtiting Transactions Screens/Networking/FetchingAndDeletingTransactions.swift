@@ -28,7 +28,7 @@ class FetchingAndDeletingTransactions{
             switch response.result{
                 case .success(let data):
                     let json = JSON(data)
-                    print(data)
+//                    print(data)
 //                    json["results"]["date_join"].stringValue      ------------- date  ection: json["section"].stringValue
                     let transaction: TransactionByID = TransactionByID(category: json["category"].intValue, comment: json["comment"].stringValue, contractor: json["contractor"].intValue, id: json["id"].intValue, project: json["project"].intValue, section: json["section"].intValue, sum: json["sum"].intValue, wallet: json["wallet"].intValue)
 
@@ -39,6 +39,9 @@ class FetchingAndDeletingTransactions{
             
         }
     }
+    
+    
+    
     func fetchingTransfer(url: String, completion: @escaping (TransferByID) -> ()){
         let accessToken = userDefaults.string(forKey: "AccessToken")!
         
@@ -54,10 +57,10 @@ class FetchingAndDeletingTransactions{
             switch response.result{
                 case .success(let data):
                     let json = JSON(data)
-                    print(data)
+//                    print(data)
 //                    json["results"]["date_join"].stringValue      ------------- date  ection: json["section"].stringValue
                     let transaction: TransferByID = TransferByID(comment: json["comment"].stringValue, id: json["id"].intValue, sum: json["sum"].intValue, wallet: json["wallet"].intValue, wallet_to: json["wallet_to"].intValue)
-
+                    print(transaction)
                     completion(transaction)
                 default:
                     return print("Fail")

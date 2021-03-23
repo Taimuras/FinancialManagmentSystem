@@ -1,9 +1,3 @@
-//
-//  UsersVC.swift
-//  FMS
-//
-//  Created by tami on 3/8/21.
-//
 
 import UIKit
 
@@ -21,6 +15,7 @@ class UsersVC: UIViewController {
     @IBOutlet weak var addLabel: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
     
+    @IBOutlet weak var createUserButtonView: UIView!
     
     @IBOutlet weak var userTableView: UITableView!
     
@@ -31,7 +26,7 @@ class UsersVC: UIViewController {
         userTableView.register(UINib(nibName: "UserTBCell", bundle: nil), forCellReuseIdentifier: constants.userScreenTableViewCellIdentifier)
         
         
-        
+        createUserButtonView.frame = CGRect(x: 0, y: 110, width: Int(view.frame.width), height: 0)
         
         userTableView.delegate = self
         userTableView.dataSource = self

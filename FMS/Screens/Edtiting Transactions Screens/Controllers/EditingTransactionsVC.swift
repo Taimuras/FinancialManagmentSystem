@@ -12,6 +12,15 @@ class EditingTransactionsVC: UIViewController {
     
     var idToUpdate: Int?
     var typeToUpdate: Int?
+    var dateTime: String?
+    
+    var sectionID: Int?
+    var categoryID: Int?
+    var projectID: Int?
+    var walletID: Int?
+    var contractorID: Int?
+    var comment = ""
+    
     
     var directions: [DirectionModel] = []
     var categorys: [CategoryModel] = []
@@ -24,6 +33,7 @@ class EditingTransactionsVC: UIViewController {
     let constants = Constants()
     let fetchingData = FetchingDataFilterScreen()
     let fetchingTransaction = FetchingAndDeletingTransactions()
+    let updateTransaction = UpdatingTransaction()
     
     @IBOutlet weak var segmentedOutlet: UISegmentedControl!
     
@@ -51,11 +61,14 @@ class EditingTransactionsVC: UIViewController {
     let projectsPickerView = UIPickerView()
     let walletsPickerView = UIPickerView()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         segmentedOutlet.selectedSegmentIndex = typeToUpdate!
+        
         
         
         
@@ -85,6 +98,7 @@ class EditingTransactionsVC: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
+        updateTransactionData()
     }
     
     @IBAction func deleteIconButtonTapped(_ sender: UIButton) {
@@ -110,35 +124,46 @@ class EditingTransactionsVC: UIViewController {
     }
     
     
+    
     // MARK: Fetch Transaction
     func fetchTransaction(){
         let urlToFetchTransaction = constants.transactionByID + String(idToUpdate!)
         fetchingTransaction.fetchingTransactions(url: urlToFetchTransaction) { (data) in
             DispatchQueue.main.async {
+                if data.comment != "null" {
+                    self.commentTextField.text = data.comment
+                    self.comment = data.comment
+                }
+                self.dateTextField.text = self.dateTime
                 self.sumTextField.text = String(data.sum)
                 for i in self.directions{
                     if i.id == data.section {
                         self.directionTextField.text = i.name
+                        self.sectionID = data.section
                     }
                 }
                 for i in self.categorys{
                     if i.id == data.category {
                         self.categoryTextField.text = i.name
+                        self.categoryID = data.category
                     }
                 }
                 for i in self.counterAgents{
                     if i.id == data.contractor {
                         self.counterAgentTextField.text = i.name
+                        self.projectID = data.contractor
                     }
                 }
                 for i in self.projects{
                     if i.id == data.project {
                         self.projectTextField.text = i.name
+                        self.projectID = data.project
                     }
                 }
                 for i in self.wallets{
                     if i.id == data.wallet {
                         self.walletTextField.text = i.name
+                        self.walletID = data.wallet
                     }
                 }
                 MBProgressHUD.hide(for: self.view, animated: true)
@@ -146,8 +171,55 @@ class EditingTransactionsVC: UIViewController {
             
         }
     }
+    
+    
+    
+    
+    func updateTransactionData() {
+        let urlToUpdateTransaction = constants.updateTransactionByID + String(idToUpdate!)
+        if segmentedOutlet.selectedSegmentIndex == 0 {
+            updateTransaction.updateIncomeTransaction(url: urlToUpdateTransaction, date_join: dateTextField.text!, type: 1, section: sectionID!, category: categoryID!, project: projectID ?? 0, sum: Int(sumTextField.text!)!, wallet: walletID!, contractor: contractorID ?? 0, comment: comment) { (data) in
+                if data != 1 {
+                    let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так. Транзакция не была создана!", preferredStyle: .alert)
+                    let cancel = UIAlertAction(title: "Ok", style: .cancel) { (action) -> Void in
+            //            print("Cancel button tapped")
+                    }
+                    
+                    dialogMessage.addAction(cancel)
+                    
+                    // Present dialog message to user
+                    self.present(dialogMessage, animated: true, completion: nil)
+                } else {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        } else if segmentedOutlet.selectedSegmentIndex == 1 {
+            updateTransaction.updateIncomeTransaction(url: urlToUpdateTransaction, date_join: dateTextField.text!, type: 2, section: sectionID!, category: categoryID!, project: projectID ?? 0, sum: Int(sumTextField.text!)!, wallet: walletID!, contractor: contractorID ?? 0, comment: comment) { (data) in
+                if data != 1 {
+                    let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так. Транзакция не была создана!", preferredStyle: .alert)
+                    let cancel = UIAlertAction(title: "Ok", style: .cancel) { (action) -> Void in
+            //            print("Cancel button tapped")
+                    }
+                    
+                    dialogMessage.addAction(cancel)
+                    
+                    // Present dialog message to user
+                    self.present(dialogMessage, animated: true, completion: nil)
+                } else {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
+        
+    }
+    
+    
    
 }
+
+
+
+
 extension EditingTransactionsVC{
     
     func fetchData(){
@@ -252,18 +324,23 @@ extension EditingTransactionsVC: UIPickerViewDelegate, UIPickerViewDataSource {
         switch pickerView.tag {
         case 1:
             directionTextField.text = directions[row].name
+            sectionID = directions[row].id
             directionTextField.resignFirstResponder()
         case 2:
             categoryTextField.text = categorys[row].name
+            categoryID = categorys[row].id
             categoryTextField.resignFirstResponder()
         case 3:
             counterAgentTextField.text = counterAgents[row].name
+            contractorID = counterAgents[row].id
             counterAgentTextField.resignFirstResponder()
         case 4:
             projectTextField.text = projects[row].name
+            projectID = projects[row].id
             projectTextField.resignFirstResponder()
         case 5:
             walletTextField.text = wallets[row].name
+            walletID = wallets[row].id
             walletTextField.resignFirstResponder()
         default:
             return

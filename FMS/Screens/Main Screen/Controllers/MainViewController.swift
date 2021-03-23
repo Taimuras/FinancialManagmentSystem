@@ -233,14 +233,17 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             if mainVCData[indexPath.row].type == "Доход"{
                 
                 editingVC.typeToUpdate = 0
+                editingVC.dateTime = mainVCData[indexPath.row].date_join
             } else if mainVCData[indexPath.row].type == "Расход"{
                 
                 editingVC.typeToUpdate = 1
+                editingVC.dateTime = mainVCData[indexPath.row].date_join
             }
             present(editingVC, animated: true, completion: nil)
         } else if mainVCData[indexPath.row].type ==  "Перевод"{
             let edititngTransfer = storyboard?.instantiateViewController(withIdentifier: constants.editingTransferVC) as! EditingTransferVC
             edititngTransfer.idToUpdate = mainVCData[indexPath.row].id
+            edititngTransfer.dateTime = mainVCData[indexPath.row].date_join
             present(edititngTransfer, animated: true, completion: nil)
         }
 
