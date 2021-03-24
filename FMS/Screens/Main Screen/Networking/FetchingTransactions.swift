@@ -11,6 +11,11 @@ import SwiftyJSON
 
 
 class FetchingTransactions {
+    
+    
+    var date: String?
+    
+    
     let constants = Constants()
     let userDefaults = UserDefaults.standard
     var transitions: [TransactionModel] = []
@@ -35,14 +40,17 @@ class FetchingTransactions {
             switch response.result{
                 case .success(let data):
                     let json = JSON(data)
-                    print(data)
+//                    print(data)
+                    
+                    
                     self.transitions.removeAll()
                     for i in 0 ..< json["count"].intValue{
-
-                        let transition: TransactionModel = TransactionModel(section: json["results"][i]["section"].stringValue, wallet: json["results"][i]["wallet"].stringValue, date_join: json["results"][i]["date_join"].stringValue, type: json["results"][i]["type"].stringValue, sum: json["results"][i]["sum"].intValue, id: json["results"][i]["id"].intValue)
+                        
+                        let transition: TransactionModel = TransactionModel(section: json["results"][i]["section"].stringValue, wallet: json["results"][i]["wallet"].stringValue, date_join: json["results"][i]["date_join"].stringValue, type: json["results"][i]["type"].stringValue, sum: json["results"][i]["sum"].intValue, id: json["results"][i]["id"].intValue, wallet_to: json["results"][i]["wallet_to"].stringValue)
                         self.transitions.append(transition)
                     }
                     completion(self.transitions)
+                    
                 default:
                     return print("Fail")
             }
@@ -85,13 +93,25 @@ class FetchingTransactions {
     
     
     
-    func fetchingFilteredTransactions(url: String, completion: @escaping ([TransactionModel]) -> ()){
+    func fetchingFilteredTransactions(url: String, dateFrom: String, dateTo: String, completion: @escaping ([TransactionModel]) -> ()){
 
         let accessToken = userDefaults.string(forKey: "AccessToken")!
         
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(accessToken)"
         ]
+        
+//        let param = [
+//            "date_join": date_join as Any,
+//            "section": section as Any,
+//            "type" : type as Int,
+//            "category" : category as Any,
+//            "project" : project as Any,
+//            "sum" : sum as Int,
+//            "wallet" : wallet as Any,
+//            "contractor" : contractor as Any,
+//            "comment" : comment as String
+//        ] as [String : Any]
         
         
         let requestAPI = AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
@@ -104,7 +124,7 @@ class FetchingTransactions {
                 
                 self.transitions.removeAll()
                 for i in 0 ..< json["count"].intValue{
-                    let transition: TransactionModel = TransactionModel(section: json["results"][i]["section"].stringValue, wallet: json["results"][i]["wallet"].stringValue, date_join: json["results"][i]["date_join"].stringValue, type: json["results"][i]["type"].stringValue, sum: json["results"][i]["sum"].intValue, id: json["results"][i]["id"].intValue)
+                    let transition: TransactionModel = TransactionModel(section: json["results"][i]["section"].stringValue, wallet: json["results"][i]["wallet"].stringValue, date_join: json["results"][i]["date_join"].stringValue, type: json["results"][i]["type"].stringValue, sum: json["results"][i]["sum"].intValue, id: json["results"][i]["id"].intValue, wallet_to: json["results"][i]["wallet_to"].stringValue)
                     self.transitions.append(transition)
                     
                 }
@@ -116,4 +136,6 @@ class FetchingTransactions {
             
         }
     }
+    
+    
 }

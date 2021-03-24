@@ -16,4 +16,5 @@ struct TransactionModel{
     let type: String
     let sum: Int
     let id: Int
+    let wallet_to: String
 }

@@ -14,6 +14,7 @@ class EditingTransactionsVC: UIViewController {
     var typeToUpdate: Int?
     var dateTime: String?
     
+    var date_join: String?
     var sectionID: Int?
     var categoryID: Int?
     var projectID: Int?
@@ -68,6 +69,7 @@ class EditingTransactionsVC: UIViewController {
         
         
         segmentedOutlet.selectedSegmentIndex = typeToUpdate!
+        
         
         
         
@@ -130,12 +132,18 @@ class EditingTransactionsVC: UIViewController {
         let urlToFetchTransaction = constants.transactionByIDEndPoint + String(idToUpdate!)
         fetchingTransaction.fetchingTransactions(url: urlToFetchTransaction) { (data) in
             DispatchQueue.main.async {
+                
+                self.date_join = self.dateTime
+                self.dateTextField.text = self.constants.dateToString(date: self.constants.stringToDate(dateString: self.dateTime!))
+                
+                self.sumTextField.text = String(data.sum)
+                
+                
                 if data.comment != "null" {
                     self.commentTextField.text = data.comment
                     self.comment = data.comment
                 }
-                self.dateTextField.text = self.dateTime
-                self.sumTextField.text = String(data.sum)
+                
                 for i in self.directions{
                     if i.id == data.section {
                         self.directionTextField.text = i.name
@@ -178,7 +186,7 @@ class EditingTransactionsVC: UIViewController {
     func updateTransactionData() {
         let urlToUpdateTransaction = constants.updateTransactionByIDEndPoint + String(idToUpdate!)
         if segmentedOutlet.selectedSegmentIndex == 0 {
-            updateTransaction.updateIncomeTransaction(url: urlToUpdateTransaction, date_join: dateTextField.text!, type: 1, section: sectionID!, category: categoryID!, project: projectID ?? 0, sum: Int(sumTextField.text!)!, wallet: walletID!, contractor: contractorID ?? 0, comment: comment) { (data) in
+            updateTransaction.updateIncomeTransaction(url: urlToUpdateTransaction, date_join: date_join!, type: 1, section: sectionID!, category: categoryID!, project: projectID ?? 0, sum: Int(sumTextField.text!)!, wallet: walletID!, contractor: contractorID ?? 0, comment: comment) { (data) in
                 if data != 1 {
                     let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так. Транзакция не была создана!", preferredStyle: .alert)
                     let cancel = UIAlertAction(title: "Ok", style: .cancel) { (action) -> Void in
@@ -194,7 +202,7 @@ class EditingTransactionsVC: UIViewController {
                 }
             }
         } else if segmentedOutlet.selectedSegmentIndex == 1 {
-            updateTransaction.updateIncomeTransaction(url: urlToUpdateTransaction, date_join: dateTextField.text!, type: 2, section: sectionID!, category: categoryID!, project: projectID ?? 0, sum: Int(sumTextField.text!)!, wallet: walletID!, contractor: contractorID ?? 0, comment: comment) { (data) in
+            updateTransaction.updateIncomeTransaction(url: urlToUpdateTransaction, date_join: date_join!, type: 2, section: sectionID!, category: categoryID!, project: projectID ?? 0, sum: Int(sumTextField.text!)!, wallet: walletID!, contractor: contractorID ?? 0, comment: comment) { (data) in
                 if data != 1 {
                     let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так. Транзакция не была создана!", preferredStyle: .alert)
                     let cancel = UIAlertAction(title: "Ok", style: .cancel) { (action) -> Void in
@@ -399,13 +407,9 @@ extension EditingTransactionsVC{
     }
     
     @objc func donePressed() {
-        let loc = Locale(identifier: "ru_RU")
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        formatter.locale = loc
         
-        dateTextField.text = formatter.string(from: datePicker.date)
+        date_join = constants.dateToServer(date: datePicker.date)
+        dateTextField.text = constants.dateToString(date: datePicker.date)
         self.view.endEditing(true)
     }
 }
@@ -490,3 +494,5 @@ extension EditingTransactionsVC {
     }
     
 }
+
+

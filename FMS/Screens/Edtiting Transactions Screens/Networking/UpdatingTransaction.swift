@@ -52,7 +52,7 @@ class UpdatingTransaction{
         requestAPI.responseJSON { (response) in
             let statusCode = response.response?.statusCode
             
-            print(response.description)
+//            print(response.description)
 
             switch statusCode{
             case 200:
@@ -107,7 +107,7 @@ class UpdatingTransaction{
         requestAPI.responseJSON { (response) in
             let statusCode = response.response?.statusCode
             
-            print(response.description)
+//            print(response.description)
 
             switch statusCode{
             case 200:
@@ -151,7 +151,7 @@ class UpdatingTransaction{
         requestAPI.responseJSON { (response) in
             let statusCode = response.response?.statusCode
             
-            print(response.description)
+//            print(response.description)
 
             switch statusCode{
             case 200:

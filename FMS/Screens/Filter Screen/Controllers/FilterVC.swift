@@ -2,7 +2,7 @@ import UIKit
 import MBProgressHUD
 
 protocol FilterVCDelegate {
-    func getFilteredUrl(url: String)
+    func getFilteredUrl(url: String, dateFrom: String, dateTo: String)
 }
 
 class FilterVC: UIViewController {
@@ -31,6 +31,8 @@ class FilterVC: UIViewController {
     var walletID: Int = 0
     var counterAgentID: Int = 0
     var directionID: Int = 0
+    var dateFrom: String?
+    var dateTo: String?
     
     
     @IBOutlet weak var acceptButton: UIButton!
@@ -70,17 +72,29 @@ class FilterVC: UIViewController {
 
     @IBAction func acceptButtonTapped(_ sender: UIButton) {
         
-        func returnUrl(wallet: String, counterAgent: String) -> String{ //, direction: String
+        func returnUrl(wallet: String, counterAgent: String, section: String) -> String{ //, direction: String
             var url = "?"
             
-            if !counterAgent.isEmpty && wallet.isEmpty{
+            if !counterAgent.isEmpty && wallet.isEmpty && section.isEmpty{
                 url = url + "counterpart=\(counterAgentID)"
                 return url
-            }else if counterAgent.isEmpty && !wallet.isEmpty {
+            }else if counterAgent.isEmpty && !wallet.isEmpty && section.isEmpty{
                 url = url + "wallet=\(walletID)"
                 return url
-            } else if !counterAgent.isEmpty && !wallet.isEmpty {
+            } else if counterAgent.isEmpty && wallet.isEmpty && !section.isEmpty{
+                url = url + "section=\(directionID)"
+                return url
+            } else if !counterAgent.isEmpty && !wallet.isEmpty && section.isEmpty{
                 url = url + "wallet=\(walletID)&counterpart=\(counterAgentID)"
+                return url
+            }else if !counterAgent.isEmpty && wallet.isEmpty && !section.isEmpty{
+                url = url + "section=\(directionID)&counterpart=\(counterAgentID)"
+                return url
+            }else if counterAgent.isEmpty && !wallet.isEmpty && !section.isEmpty{
+                url = url + "wallet=\(walletID)&section=\(directionID)"
+                return url
+            }else if !counterAgent.isEmpty && !wallet.isEmpty && !section.isEmpty{
+                url = url + "wallet=\(walletID)&section=\(directionID)&counterpart=\(counterAgentID)"
                 return url
             } else {
                 url = ""
@@ -88,7 +102,7 @@ class FilterVC: UIViewController {
             }
             
         }
-        delegate?.getFilteredUrl(url: returnUrl(wallet: walletTextField.text!, counterAgent: counterAgentTextField.text!))
+        delegate?.getFilteredUrl(url: returnUrl(wallet: walletTextField.text!, counterAgent: counterAgentTextField.text!, section: directionTextField.text!), dateFrom: dateFrom!, dateTo: dateTo!)
 //        dismiss(animated: true, completion: nil)
     }
     
@@ -165,7 +179,7 @@ extension FilterVC: UIPickerViewDelegate, UIPickerViewDataSource {
             counterAgentTextField.resignFirstResponder()
         case 3:
             directionTextField.text = directions[row].name
-//            directionID = directionsp[row].id
+            directionID = directions[row].id
             directionTextField.resignFirstResponder()
         default:
             return
@@ -228,6 +242,14 @@ extension FilterVC{
         formatter.timeStyle = .none
         formatter.locale = loc
         
+        let local = Locale(identifier: "en_US_POSIX")
+        let form = DateFormatter()
+        form.dateFormat = "yyyy-MM-dd'T'hh:mm"
+        form.locale = local
+        self.dateFrom = form.string(from: dateMonthAgo!)
+        self.dateTo = form.string(from: currentDate)
+       
+        
         dateFromTextField.text = formatter.string(from: dateMonthAgo!)
         dateToTextField.text = formatter.string(from: currentDate)
         
@@ -256,26 +278,27 @@ extension FilterVC{
         datePicker.datePickerMode = .date
     }
     @objc func donePressed(){
-        let loc = Locale(identifier: "ru_RU")
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        formatter.locale = loc
+        
+        
+        
         
         if dateToTextField.isEditing{
-            dateToTextField.text = formatter.string(from: datePicker.date)
+            dateToTextField.text = constants.dateToString(date: datePicker.date)
+            
+            self.dateTo = constants.dateToServer(date: datePicker.date)
+           
             self.view.endEditing(true)
         } else if dateFromTextField.isEditing{
-            dateFromTextField.text = formatter.string(from: datePicker.date)
+            dateFromTextField.text = constants.dateToString(date: datePicker.date)
+            
+            self.dateFrom = constants.dateToServer(date: datePicker.date)
+            
             self.view.endEditing(true)
         }
         
     }
     
 }
-
-
-
 
 
 extension FilterVC {

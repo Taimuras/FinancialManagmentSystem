@@ -75,7 +75,7 @@ class AddingVC: UIViewController {
         
     }
     
-    
+    var date_join: String?
     var sum = 0
     var sectionID = 0
     var categoryID = 0
@@ -103,7 +103,7 @@ class AddingVC: UIViewController {
             }
         }
         if segmentedOutler.selectedSegmentIndex == 0 {
-            createTransaction.createIncomeTransaction(url: constants.createTransactionEndPotin, type: 1, section: sectionID, category: categoryID, project: projectID, sum: sum, wallet: walletID, contractor: contractorID, comment: comment) { (data) in
+            createTransaction.createIncomeTransaction(url: constants.createTransactionEndPotin, date_join: date_join!, type: 1, section: sectionID, category: categoryID, project: projectID, sum: sum, wallet: walletID, contractor: contractorID, comment: comment) { (data) in
                 
                 if data != 1 {
                     let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так. Транзакция не была создана!", preferredStyle: .alert)
@@ -120,7 +120,7 @@ class AddingVC: UIViewController {
                 }
             }
         } else if segmentedOutler.selectedSegmentIndex == 1 {
-            createTransaction.createOutComeTransaction(url: constants.createTransactionEndPotin, type: 2, section: sectionID, category: categoryID, project: projectID, sum: sum, wallet: walletID, contractor: contractorID, comment: comment) { (data) in
+            createTransaction.createOutComeTransaction(url: constants.createTransactionEndPotin, date_join: date_join!, type: 2, section: sectionID, category: categoryID, project: projectID, sum: sum, wallet: walletID, contractor: contractorID, comment: comment) { (data) in
                 
                 if data != 1 {
                     let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так. Транзакция не была создана!", preferredStyle: .alert)
@@ -137,7 +137,7 @@ class AddingVC: UIViewController {
                 }
             }
         } else {
-            createTransaction.createTransferTransaction(url: constants.createTransactionEndPotin, type: 3, sum: sum, wallet: walletID, wallet_to: wallet_toID,  comment: comment) { (data) in
+            createTransaction.createTransferTransaction(url: constants.createTransactionEndPotin, date_join: date_join!, type: 3, sum: sum, wallet: walletID, wallet_to: wallet_toID,  comment: comment) { (data) in
                 
                 if data != 1 {
                     let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так. Транзакция не была создана!", preferredStyle: .alert)
@@ -477,11 +477,18 @@ extension AddingVC{
     @objc func donePressed(){
         let loc = Locale(identifier: "ru_RU")
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
+        formatter.dateStyle = .long
         formatter.timeStyle = .none
         formatter.locale = loc
         
-        datePickTextField.text = formatter.string(from: datePicker.date)
+        datePickTextField.text = formatter.string(from: datePicker.date)   // datePicker.date = 2019-12-25 05:56:53 +0000
+        
+        
+        let local = Locale(identifier: "en_US_POSIX")
+        let form = DateFormatter()
+        form.dateFormat = "yyyy-MM-dd'T'hh:mm"
+        form.locale = local
+        self.date_join = form.string(from: datePicker.date)
         self.view.endEditing(true)
     }
     

@@ -13,6 +13,8 @@ class EditingTransferVC: UIViewController {
     var idToUpdate: Int?
     var dateTime: String?
     
+    
+    var date_join: String?
     var sectionID: Int?
     var categoryID: Int?
     var projectID: Int?
@@ -88,7 +90,7 @@ class EditingTransferVC: UIViewController {
     func updateTransferData() {
         let urlToUpdateTransaction = constants.updateTransactionByIDEndPoint + String(idToUpdate!)
         
-        updateTransaction.updateTransferTransaction(url: urlToUpdateTransaction, date_join: dateTextField.text!, type: 3, sum: Int(sumTextField.text!)!, wallet: walletID!, wallet_to: walletToID!, comment: comment) { (data) in
+        updateTransaction.updateTransferTransaction(url: urlToUpdateTransaction, date_join: date_join!, type: 3, sum: Int(sumTextField.text!)!, wallet: walletID!, wallet_to: walletToID!, comment: comment) { (data) in
             if data != 1 {
                 let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так. Транзакция не была создана!", preferredStyle: .alert)
                 let cancel = UIAlertAction(title: "Ok", style: .cancel) { (action) -> Void in
@@ -130,9 +132,16 @@ extension EditingTransferVC{
         let urlToFetchTransaction = constants.transactionByIDEndPoint + String(idToUpdate!)
         fetchingTransfer.fetchingTransfer(url: urlToFetchTransaction) { (data) in
             DispatchQueue.main.async {
+                
                 self.sumTextField.text = String(data.sum)
-                self.commentTextField.text = data.comment
-                self.dateTextField.text = self.dateTime
+                
+                self.date_join = self.dateTime
+                self.dateTextField.text = self.constants.dateToString(date: self.constants.stringToDate(dateString: self.dateTime!))
+                
+                if data.comment != "null" {
+                    self.commentTextField.text = data.comment
+                    self.comment = data.comment
+                }
                 for i in self.wallet{
                     if i.id == data.wallet {
                         self.fromTextField.text = i.name
@@ -237,13 +246,7 @@ extension EditingTransferVC{
     }
     
     @objc func donePressed() {
-        let loc = Locale(identifier: "ru_RU")
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        formatter.locale = loc
-        
-        dateTextField.text = formatter.string(from: datePicker.date)
+        dateTextField.text = constants.dateToString(date: datePicker.date)
         self.view.endEditing(true)
     }
 }

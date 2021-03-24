@@ -152,7 +152,7 @@ extension MainViewController: FilterVCDelegate{
     
     
     
-    func getFilteredUrl(url: String) {
+    func getFilteredUrl(url: String, dateFrom: String, dateTo: String) {
         
         
             
@@ -160,13 +160,13 @@ extension MainViewController: FilterVCDelegate{
         let endPoint = self.constants.transitionsEndPoint + url
         
         
-        self.fetchingTransactions.fetchingFilteredTransactions(url: endPoint) { (responseData) in
+        self.fetchingTransactions.fetchingFilteredTransactions(url: endPoint, dateFrom: dateFrom, dateTo: dateTo) { (responseData) in
             
             
             DispatchQueue.main.async {
                 
                 self.mainVCData.removeAll()
-                print("response data: \(responseData)")
+                
                 
                 
                 self.mainVCData = responseData
@@ -211,16 +211,25 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let index = mainVCData[indexPath.row]
         if index.type == "Доход" {
             cell.actionIcon.image = UIImage(named: "Income")
+            cell.bankName.text = index.wallet
+            cell.companyName.text = index.section
+            cell.dateOfAction.text = constants.dateToString(date: constants.stringToDate(dateString: index.date_join))
+            cell.actionValue.text = String(index.sum)
         } else if index.type == "Расход" {
             cell.actionIcon.image = UIImage(named: "Outcome")
+            cell.bankName.text = index.wallet
+            cell.companyName.text = index.section
+            cell.dateOfAction.text = constants.dateToString(date: constants.stringToDate(dateString: index.date_join))
+            cell.actionValue.text = String(index.sum)
         }else if index.type == "Перевод" {
             cell.actionIcon.image = UIImage(named: "Transfer")
+            cell.bankName.text = index.wallet_to
+            cell.companyName.text = index.wallet
+            cell.dateOfAction.text = constants.dateToString(date: constants.stringToDate(dateString: index.date_join))
+            cell.actionValue.text = String(index.sum)
         }
         
-        cell.bankName.text = index.wallet
-        cell.companyName.text = index.section
-        cell.dateOfAction.text = index.date_join
-        cell.actionValue.text = String(index.sum)
+        
         
         
         return cell

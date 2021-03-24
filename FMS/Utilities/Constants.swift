@@ -86,5 +86,29 @@ class Constants {
         }
     }
     
+    func dateToString(date: Date) -> String{
+        let loc = Locale(identifier: "ru_RU")
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        formatter.locale = loc
+        return formatter.string(from: date)
+    }
+    
+    func stringToDate(dateString: String) -> Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy' 'HH:mm"
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.locale = Locale.current
+        return dateFormatter.date(from: dateString)!
+    }
+    
+    func dateToServer(date: Date) -> String{
+        let local = Locale(identifier: "en_US_POSIX")
+        let form = DateFormatter()
+        form.dateFormat = "yyyy-MM-dd'T'hh:mm"
+        form.locale = local
+        return form.string(from: date)
+    }
 }
 

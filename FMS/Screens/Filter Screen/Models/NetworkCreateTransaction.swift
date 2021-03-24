@@ -14,10 +14,11 @@ class NetworkCreateTransaction{
     var userAuth: Int = 0
     let constants = Constants()
     
-    
-    func createIncomeTransaction(url: String, type: Int, section: Int, category: Int, project: Int, sum: Int, wallet: Int, contractor: Int, comment: String, completion: @escaping (Int) -> ()){
+//    date_Join:String,
+    func createIncomeTransaction(url: String, date_join:String, type: Int, section: Int, category: Int, project: Int, sum: Int, wallet: Int, contractor: Int, comment: String, completion: @escaping (Int) -> ()){
 
         var param = [
+            "date_join": date_join as Any,
             "section": section as Any,
             "type" : type as Int,
             "category" : category as Int,
@@ -68,9 +69,10 @@ class NetworkCreateTransaction{
     }
     
     
-    func createOutComeTransaction(url: String, type: Int, section: Any, category: Any, project: Any, sum: Int, wallet: Any, contractor: Any, comment: String, completion: @escaping (Int) -> ()){
+    func createOutComeTransaction(url: String, date_join:String, type: Int, section: Any, category: Any, project: Any, sum: Int, wallet: Any, contractor: Any, comment: String, completion: @escaping (Int) -> ()){
 
         let param = [
+            "date_join": date_join as Any,
             "section": section as Any,
             "type" : type as Int,
             "category" : category as Any,
@@ -114,9 +116,10 @@ class NetworkCreateTransaction{
         }
     }
     
-    func createTransferTransaction(url: String, type: Int,  sum: Int, wallet: Int, wallet_to: Int, comment: String, completion: @escaping (Int) -> ()){
+    func createTransferTransaction(url: String, date_join:String, type: Int,  sum: Int, wallet: Int, wallet_to: Int, comment: String, completion: @escaping (Int) -> ()){
 
         let param = [
+            "date_join": date_join as Any,
             "type" : type as Int,
             "sum" : sum as Int,
             "wallet" : wallet as Int,
@@ -138,7 +141,7 @@ class NetworkCreateTransaction{
         
         requestAPI.responseJSON { (response) in
             let statusCode = response.response?.statusCode
-            print(response.response?.statusCode)
+            
             print(response.description)
 
             switch statusCode{
