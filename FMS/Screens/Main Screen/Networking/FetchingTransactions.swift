@@ -35,7 +35,7 @@ class FetchingTransactions {
             switch response.result{
                 case .success(let data):
                     let json = JSON(data)
-                    
+                    print(data)
                     self.transitions.removeAll()
                     for i in 0 ..< json["count"].intValue{
 

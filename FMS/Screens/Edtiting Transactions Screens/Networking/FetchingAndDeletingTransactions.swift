@@ -28,7 +28,7 @@ class FetchingAndDeletingTransactions{
             switch response.result{
                 case .success(let data):
                     let json = JSON(data)
-//                    print(data)
+                    print("Transaction : \(data)")
 //                    json["results"]["date_join"].stringValue      ------------- date  ection: json["section"].stringValue
                     let transaction: TransactionByID = TransactionByID(category: json["category"].intValue, comment: json["comment"].stringValue, contractor: json["contractor"].intValue, id: json["id"].intValue, project: json["project"].intValue, section: json["section"].intValue, sum: json["sum"].intValue, wallet: json["wallet"].intValue)
 

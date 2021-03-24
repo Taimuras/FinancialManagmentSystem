@@ -2416,6 +2416,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="tMf-H9-6lu"/>
                                         </constraints>
+                                        <color key="textColor" name="BrandBlackTEXT"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
