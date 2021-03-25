@@ -1,27 +1,21 @@
-//
-//  NetworkCreateUser.swift
-//  FMS
-//
-//  Created by tami on 3/18/21.
-//
-
 import Foundation
 import Alamofire
 
 
-class NetworkCreateUser{
+class CreateCounterPart{
     let userDefaults = UserDefaults.standard
     var userAuth: Int = 0
     let constants = Constants()
-    func createUser(email: String, first_name: String, last_name: String, password: String, completion: @escaping (Int) -> ()){
-        let isAdmin = false
-        let param = [
-            "email" : email as String,
-            "first_name" : first_name as String,
-            "last_name" : last_name as String,
-            "password" : password as String,
-            "is_admin" : isAdmin as Bool
+    func createCounterPart(name: String, surname: String, patronymic: String, completion: @escaping (Int) -> ()){
+        
+        var param = [
+            "name" : name as String,
+            "surname" : surname as String
         ] as [String : Any]
+        
+        if patronymic != "" {
+            param["patronymic"] = patronymic
+        }
         
         
         let accessToken = userDefaults.string(forKey: "AccessToken")!
@@ -32,12 +26,13 @@ class NetworkCreateUser{
         
         
         
-        let requestAPI = AF.request(constants.createUserEndPoint, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+        let requestAPI = AF.request(constants.createCounterPartEndPoint, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         
         
         requestAPI.responseJSON { (response) in
+            
             let statusCode = response.response?.statusCode
-//            print(response.description)
+            print(response.description)
 //            print(response.response!)
 //            print(response.response?.statusCode)
             switch statusCode{

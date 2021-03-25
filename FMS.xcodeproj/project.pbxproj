@@ -30,6 +30,10 @@
 		524365D4260C77A2005A5D09 /* CounterPartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524365D3260C77A2005A5D09 /* CounterPartModel.swift */; };
 		524365D8260C7EB2005A5D09 /* GetAllCounterParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524365D7260C7EB2005A5D09 /* GetAllCounterParts.swift */; };
 		524365DE260C8260005A5D09 /* AddingCounterPartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524365DD260C8260005A5D09 /* AddingCounterPartVC.swift */; };
+		5244A6C1260C896A00F4C991 /* CreateCounterPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5244A6C0260C896A00F4C991 /* CreateCounterPart.swift */; };
+		5244A6C4260C90D200F4C991 /* EditingCounterPartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5244A6C3260C90D200F4C991 /* EditingCounterPartVC.swift */; };
+		5244A6C7260C94A800F4C991 /* GetCounterPartByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5244A6C6260C94A800F4C991 /* GetCounterPartByID.swift */; };
+		5244A6CA260C965000F4C991 /* DeleteCounterPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5244A6C9260C965000F4C991 /* DeleteCounterPart.swift */; };
 		524CF8112609B827000E3768 /* UpdatingTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CF8102609B827000E3768 /* UpdatingTransaction.swift */; };
 		524CF8142609DB2C000E3768 /* GetAndUpdateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CF8132609DB2C000E3768 /* GetAndUpdateUser.swift */; };
 		524CF8172609E300000E3768 /* GetSessionUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CF8162609E300000E3768 /* GetSessionUser.swift */; };
@@ -92,6 +96,10 @@
 		524365D3260C77A2005A5D09 /* CounterPartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterPartModel.swift; sourceTree = "<group>"; };
 		524365D7260C7EB2005A5D09 /* GetAllCounterParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllCounterParts.swift; sourceTree = "<group>"; };
 		524365DD260C8260005A5D09 /* AddingCounterPartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingCounterPartVC.swift; sourceTree = "<group>"; };
+		5244A6C0260C896A00F4C991 /* CreateCounterPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCounterPart.swift; sourceTree = "<group>"; };
+		5244A6C3260C90D200F4C991 /* EditingCounterPartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingCounterPartVC.swift; sourceTree = "<group>"; };
+		5244A6C6260C94A800F4C991 /* GetCounterPartByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCounterPartByID.swift; sourceTree = "<group>"; };
+		5244A6C9260C965000F4C991 /* DeleteCounterPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCounterPart.swift; sourceTree = "<group>"; };
 		524CF8102609B827000E3768 /* UpdatingTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatingTransaction.swift; sourceTree = "<group>"; };
 		524CF8132609DB2C000E3768 /* GetAndUpdateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAndUpdateUser.swift; sourceTree = "<group>"; };
 		524CF8162609E300000E3768 /* GetSessionUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSessionUser.swift; sourceTree = "<group>"; };
@@ -213,6 +221,7 @@
 			children = (
 				524365CA260C73E6005A5D09 /* CounterPartVC.swift */,
 				524365DD260C8260005A5D09 /* AddingCounterPartVC.swift */,
+				5244A6C3260C90D200F4C991 /* EditingCounterPartVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -238,6 +247,9 @@
 			isa = PBXGroup;
 			children = (
 				524365D7260C7EB2005A5D09 /* GetAllCounterParts.swift */,
+				5244A6C0260C896A00F4C991 /* CreateCounterPart.swift */,
+				5244A6C6260C94A800F4C991 /* GetCounterPartByID.swift */,
+				5244A6C9260C965000F4C991 /* DeleteCounterPart.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -701,9 +713,11 @@
 				5251B42D25FB7374008A2E22 /* FilterVC.swift in Sources */,
 				52271FEE260077BF00080BB2 /* UserCellModel.swift in Sources */,
 				524365CB260C73E6005A5D09 /* CounterPartVC.swift in Sources */,
+				5244A6CA260C965000F4C991 /* DeleteCounterPart.swift in Sources */,
 				525C955F2608B2A400083965 /* TransferByID.swift in Sources */,
 				5266438525F5D72C0032499D /* SettingsVC.swift in Sources */,
 				5251A56925EF5D9600546F71 /* MainCVCModel.swift in Sources */,
+				5244A6C1260C896A00F4C991 /* CreateCounterPart.swift in Sources */,
 				5266438925F5D78C0032499D /* UsersVC.swift in Sources */,
 				527D60332608526F00620859 /* FetchingAndDeletingTransactions.swift in Sources */,
 				52CC2BB825F3656400DAA708 /* TabBarViewController.swift in Sources */,
@@ -719,10 +733,12 @@
 				5266437B25F5D69D0032499D /* AddingVC.swift in Sources */,
 				52E5090425F211F80086DF17 /* LoginVC.swift in Sources */,
 				5220E57C25EE2C470077EB07 /* MainCVC.swift in Sources */,
+				5244A6C4260C90D200F4C991 /* EditingCounterPartVC.swift in Sources */,
 				522B24EF2604575A005BBFFC /* AllUsersModel.swift in Sources */,
 				524365DE260C8260005A5D09 /* AddingCounterPartVC.swift in Sources */,
 				5284800B25FCBEB600D82D8F /* CounterAgentsModel.swift in Sources */,
 				52AE32BA260311490078D76F /* NetworkCreateUser.swift in Sources */,
+				5244A6C7260C94A800F4C991 /* GetCounterPartByID.swift in Sources */,
 				52E8B6C025F9E199002D62A0 /* EditingTransactionsVC.swift in Sources */,
 				5284800525FCB91D00D82D8F /* FetchingDataFilterScreen.swift in Sources */,
 				522A6ABA260507F000F638FB /* IncOutBalModel.swift in Sources */,

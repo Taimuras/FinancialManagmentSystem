@@ -28,6 +28,7 @@ class Constants {
     let filterVC = "FilterVC"
     let userEditingVC = "UserEditingVC"
     let counterPartAddingVC = "CounterPartAddingVC"
+    let counterPartEditingVC = "EditingCounterPartVC"
     
     
     //Segues IDs
@@ -77,6 +78,7 @@ class Constants {
     let deleteUserEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/change/user/" // \(email@gmail.com)
     let updateUserEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/change/user/" // \(email@gmail.com)
     let getAllCounterPartsEndPoint = "https://neobis-finance-sistem.herokuapp.com/contractor/"
+    let createCounterPartEndPoint = "https://neobis-finance-sistem.herokuapp.com/contractor/"
     
     
     func updateAccessToken(){

@@ -34,9 +34,26 @@ class CounterPartVC: UIViewController {
         MBProgressHUD.showAdded(to: self.view, animated: true)
         fetchData()
         
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+        
+        // this is the replacement of implementing: "collectionView.addSubview(refreshControl)"
+        counterPartTableView.refreshControl = refreshControl
+        
     }
     
     @IBAction func addButtonTapped(_ sender: UIButton) {
+        print("CounterPart Adding Button Tapped!!!")
+    }
+    
+    
+    
+    @objc func pullToRefresh(refreshControl: UIRefreshControl) {
+        fetchData()
+
+        // somewhere in your code you might need to call:
+        refreshControl.endRefreshing()
     }
     
     func fetchData(){
@@ -63,7 +80,7 @@ extension CounterPartVC: UITableViewDelegate, UITableViewDataSource{
         cell.frame.size.width = tableView.frame.size.width
         
         
-        cell.lastAndFirstNameLabel.text = counterAgents[indexPath.row].surname + counterAgents[indexPath.row].name
+        cell.lastAndFirstNameLabel.text = counterAgents[indexPath.row].surname + "  " + counterAgents[indexPath.row].name
         
         
         //separator width = tableview.width
@@ -79,8 +96,8 @@ extension CounterPartVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let counterPart = counterAgents[indexPath.row]
-        let edititngCounterPart = storyboard?.instantiateViewController(withIdentifier: constants.counterPartAddingVC) as! AddingCounterPartVC
-        edititngCounterPart.counterPartID = counterPart.id
+        let edititngCounterPart = storyboard?.instantiateViewController(withIdentifier: constants.counterPartEditingVC) as! EditingCounterPartVC
+        edititngCounterPart.id = counterPart.id
 //        edititngUser.userEmail = user.email
         present(edititngCounterPart, animated: true, completion: nil)
         tableView.deselectRow(at: indexPath, animated: true)

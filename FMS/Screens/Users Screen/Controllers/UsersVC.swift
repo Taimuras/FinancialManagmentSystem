@@ -25,8 +25,9 @@ class UsersVC: UIViewController {
         
         userTableView.register(UINib(nibName: "UserTBCell", bundle: nil), forCellReuseIdentifier: constants.userScreenTableViewCellIdentifier)
         
-        
-        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+        userTableView.refreshControl = refreshControl
         
         userTableView.delegate = self
         userTableView.dataSource = self
@@ -69,6 +70,14 @@ class UsersVC: UIViewController {
         print("Add button Tapped")
     }
     
+    
+    
+    @objc func pullToRefresh(refreshControl: UIRefreshControl) {
+        
+        getData()
+        // somewhere in your code you might need to call:
+        refreshControl.endRefreshing()
+    }
     
     
     func getData(){
