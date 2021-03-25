@@ -17,6 +17,8 @@ class UpdatingTransaction{
     
     func updateIncomeTransaction(url: String, date_join: String, type: Int, section: Int, category: Int, project: Int, sum: Int, wallet: Int, contractor: Int, comment: String, completion: @escaping (Int) -> ()){
 
+//        print("updateIncome: \(date_join)")
+        
         var param = [
             "date_join": date_join as Any,
             "section": section as Any,
@@ -151,7 +153,7 @@ class UpdatingTransaction{
         requestAPI.responseJSON { (response) in
             let statusCode = response.response?.statusCode
             
-//            print(response.description)
+            print(response.description)
 
             switch statusCode{
             case 200:

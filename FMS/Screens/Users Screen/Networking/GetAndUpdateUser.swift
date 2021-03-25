@@ -74,15 +74,21 @@ class GetAndUpdateUser {
     
     
     
-    func createUser(email: String, first_name: String, last_name: String, password: String, completion: @escaping (Int) -> ()){
-        let isAdmin = false
-        let param = [
+    func updateUser(email: String, first_name: String, last_name: String, password: String, completion: @escaping (Int) -> ()){
+        
+        var param = [
             "email" : email as String,
-            "first_name" : first_name as String,
-            "last_name" : last_name as String,
-            "password" : password as String,
-            "is_admin" : isAdmin as Bool
         ] as [String : Any]
+        
+        if first_name != "" {
+            param["first_name"] = first_name
+        }
+        if last_name != "" {
+            param["last_name"] = last_name
+        }
+        if password != "" {
+            param["password"] = password
+        }
         
         
         let accessToken = userDefaults.string(forKey: "AccessToken")!
@@ -91,15 +97,14 @@ class GetAndUpdateUser {
         ]
         
         
-        
-        
-        let requestAPI = AF.request(constants.createUserEndPoint, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+        let url = constants.updateUserEndPoint + email
+        let requestAPI = AF.request(url, method: .patch, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         
         
         requestAPI.responseJSON { (response) in
             let statusCode = response.response?.statusCode
-            print(response.description)
-            print(response.response!)
+//            print(response.description)
+//            print(response.response!)
 //            print(response.response?.statusCode)
             switch statusCode{
             case 200:

@@ -73,28 +73,28 @@ class FilterVC: UIViewController {
     @IBAction func acceptButtonTapped(_ sender: UIButton) {
         
         func returnUrl(wallet: String, counterAgent: String, section: String) -> String{ //, direction: String
-            var url = "?"
+            var url = "?date_join_after=\(dateFrom!)&date_join_before=\(dateTo!)"
             
             if !counterAgent.isEmpty && wallet.isEmpty && section.isEmpty{
-                url = url + "counterpart=\(counterAgentID)"
+                url = url + "&counterpart=\(counterAgentID)"
                 return url
             }else if counterAgent.isEmpty && !wallet.isEmpty && section.isEmpty{
-                url = url + "wallet=\(walletID)"
+                url = url + "&wallet=\(walletID)"
                 return url
             } else if counterAgent.isEmpty && wallet.isEmpty && !section.isEmpty{
-                url = url + "section=\(directionID)"
+                url = url + "&section=\(directionID)"
                 return url
             } else if !counterAgent.isEmpty && !wallet.isEmpty && section.isEmpty{
-                url = url + "wallet=\(walletID)&counterpart=\(counterAgentID)"
+                url = url + "&wallet=\(walletID)&counterpart=\(counterAgentID)"
                 return url
             }else if !counterAgent.isEmpty && wallet.isEmpty && !section.isEmpty{
-                url = url + "section=\(directionID)&counterpart=\(counterAgentID)"
+                url = url + "&section=\(directionID)&counterpart=\(counterAgentID)"
                 return url
             }else if counterAgent.isEmpty && !wallet.isEmpty && !section.isEmpty{
-                url = url + "wallet=\(walletID)&section=\(directionID)"
+                url = url + "&wallet=\(walletID)&section=\(directionID)"
                 return url
             }else if !counterAgent.isEmpty && !wallet.isEmpty && !section.isEmpty{
-                url = url + "wallet=\(walletID)&section=\(directionID)&counterpart=\(counterAgentID)"
+                url = url + "&wallet=\(walletID)&section=\(directionID)&counterpart=\(counterAgentID)"
                 return url
             } else {
                 url = ""
@@ -103,7 +103,10 @@ class FilterVC: UIViewController {
             
         }
         delegate?.getFilteredUrl(url: returnUrl(wallet: walletTextField.text!, counterAgent: counterAgentTextField.text!, section: directionTextField.text!), dateFrom: dateFrom!, dateTo: dateTo!)
-//        dismiss(animated: true, completion: nil)
+        
+//        print("date From: \(dateFrom!)")
+//        print("date To: \(dateTo!)")
+
     }
     
 }
@@ -246,8 +249,10 @@ extension FilterVC{
         let form = DateFormatter()
         form.dateFormat = "yyyy-MM-dd'T'hh:mm"
         form.locale = local
-        self.dateFrom = form.string(from: dateMonthAgo!)
-        self.dateTo = form.string(from: currentDate)
+        self.dateFrom = constants.filteredDateToServer(date: dateMonthAgo!)
+        
+        self.dateTo = constants.filteredDateToServer(date: currentDate)
+            
        
         
         dateFromTextField.text = formatter.string(from: dateMonthAgo!)
@@ -285,13 +290,13 @@ extension FilterVC{
         if dateToTextField.isEditing{
             dateToTextField.text = constants.dateToString(date: datePicker.date)
             
-            self.dateTo = constants.dateToServer(date: datePicker.date)
+            self.dateTo = constants.filteredDateToServer(date: datePicker.date)
            
             self.view.endEditing(true)
         } else if dateFromTextField.isEditing{
             dateFromTextField.text = constants.dateToString(date: datePicker.date)
             
-            self.dateFrom = constants.dateToServer(date: datePicker.date)
+            self.dateFrom = constants.filteredDateToServer(date: datePicker.date)
             
             self.view.endEditing(true)
         }

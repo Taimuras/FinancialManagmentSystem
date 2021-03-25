@@ -135,7 +135,11 @@ extension EditingTransferVC{
                 
                 self.sumTextField.text = String(data.sum)
                 
-                self.date_join = self.dateTime
+                let strDate = self.constants.stringToDate(dateString: self.dateTime!)
+                let dateStr = self.constants.dateToServer(date: strDate)
+                print(dateStr)
+                self.date_join = dateStr
+//                self.date_join = self.constants.stringToDate(dateString: self.constants.dateToServer(date: self.dateTime))
                 self.dateTextField.text = self.constants.dateToString(date: self.constants.stringToDate(dateString: self.dateTime!))
                 
                 if data.comment != "null" {
@@ -247,6 +251,8 @@ extension EditingTransferVC{
     
     @objc func donePressed() {
         dateTextField.text = constants.dateToString(date: datePicker.date)
+        date_join = constants.dateToServer(date: datePicker.date)
+        print(date_join)
         self.view.endEditing(true)
     }
 }

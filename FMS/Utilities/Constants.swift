@@ -18,6 +18,7 @@ class Constants {
     //Cell's Identifier
     let userScreenTableViewCellIdentifier = "UserTVCell"
     let mainScreenCollectionViewCellIdentifier = "MainCVC"
+    let counterPartTableViewCellIdentifier = "CounterPartTBCell"
     
     //Storyboard IDs
     let tabBarViewIdintifier = "TabBarStoryBoardID"
@@ -26,6 +27,7 @@ class Constants {
     let editingTransferVC = "EditingTransferVC"
     let filterVC = "FilterVC"
     let userEditingVC = "UserEditingVC"
+    let counterPartAddingVC = "CounterPartAddingVC"
     
     
     //Segues IDs
@@ -73,6 +75,8 @@ class Constants {
     let getUserByEmailEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/change/user/"  // \(email.gmail.com)
     let getSessionUserEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/session-user/"  // .post
     let deleteUserEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/change/user/" // \(email@gmail.com)
+    let updateUserEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/change/user/" // \(email@gmail.com)
+    let getAllCounterPartsEndPoint = "https://neobis-finance-sistem.herokuapp.com/contractor/"
     
     
     func updateAccessToken(){
@@ -107,6 +111,14 @@ class Constants {
         let local = Locale(identifier: "en_US_POSIX")
         let form = DateFormatter()
         form.dateFormat = "yyyy-MM-dd'T'hh:mm"
+        form.locale = local
+        return form.string(from: date)
+    }
+    
+    func filteredDateToServer(date: Date) -> String{
+        let local = Locale(identifier: "en_US_POSIX")
+        let form = DateFormatter()
+        form.dateFormat = "yyyy-MM-dd"
         form.locale = local
         return form.string(from: date)
     }

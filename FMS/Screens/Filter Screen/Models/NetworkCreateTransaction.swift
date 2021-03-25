@@ -69,19 +69,26 @@ class NetworkCreateTransaction{
     }
     
     
-    func createOutComeTransaction(url: String, date_join:String, type: Int, section: Any, category: Any, project: Any, sum: Int, wallet: Any, contractor: Any, comment: String, completion: @escaping (Int) -> ()){
+    func createOutComeTransaction(url: String, date_join:String, type: Int, section: Int, category: Int, project: Int, sum: Int, wallet: Int, contractor: Int, comment: String, completion: @escaping (Int) -> ()){
 
-        let param = [
+        var param = [
             "date_join": date_join as Any,
             "section": section as Any,
             "type" : type as Int,
             "category" : category as Any,
-            "project" : project as Any,
             "sum" : sum as Int,
             "wallet" : wallet as Any,
-            "contractor" : contractor as Any,
             "comment" : comment as String
         ] as [String : Any]
+        
+        
+        if project != 0 {
+            param["project"] = project
+        }
+        
+        if contractor != 0{
+            param["contractor"] = contractor
+        }
         
         
         let accessToken = userDefaults.string(forKey: "AccessToken")!

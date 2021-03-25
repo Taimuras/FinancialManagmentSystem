@@ -16,6 +16,13 @@ class UserEditingVC: UIViewController {
     var userID: Int?
     var userEmail: String?
     
+    var emailToServer: String?
+    var firstNameToServer: String?
+    var lastNameToServer: String?
+    var newPasswordToServer: String?
+    
+    
+    
     @IBOutlet weak var userLabel: UILabel!
     
     
@@ -70,6 +77,23 @@ class UserEditingVC: UIViewController {
     
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
+        emailToServer = emailTextField.text!
+        firstNameToServer = firstNameTextField.text ?? ""
+        lastNameToServer = lastNameTextField.text ?? ""
+        newPasswordToServer = newPasswordTextField.text ?? ""
+        
+        getAndUpdateUser.updateUser(email: emailToServer!, first_name: firstNameToServer!, last_name: lastNameToServer!, password: newPasswordToServer!) { (response) in
+            if response == 1{
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так!", preferredStyle: .alert)
+                let cancel = UIAlertAction(title: "Хорошо", style: .cancel) { (action) -> Void in
+        //            print("Cancel button tapped")
+                }
+                dialogMessage.addAction(cancel)
+                self.present(dialogMessage, animated: true, completion: nil)
+            }
+        }
     }
     
     func getUser() {

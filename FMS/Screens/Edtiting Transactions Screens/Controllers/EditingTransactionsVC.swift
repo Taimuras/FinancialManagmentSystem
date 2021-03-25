@@ -133,7 +133,11 @@ class EditingTransactionsVC: UIViewController {
         fetchingTransaction.fetchingTransactions(url: urlToFetchTransaction) { (data) in
             DispatchQueue.main.async {
                 
-                self.date_join = self.dateTime
+                
+                let strDate = self.constants.stringToDate(dateString: self.dateTime!)
+                let dateStr = self.constants.dateToServer(date: strDate)
+//                print("V VC: \(dateStr)")
+                self.date_join = dateStr
                 self.dateTextField.text = self.constants.dateToString(date: self.constants.stringToDate(dateString: self.dateTime!))
                 
                 self.sumTextField.text = String(data.sum)

@@ -26,7 +26,7 @@ class UsersVC: UIViewController {
         userTableView.register(UINib(nibName: "UserTBCell", bundle: nil), forCellReuseIdentifier: constants.userScreenTableViewCellIdentifier)
         
         
-        createUserButtonView.frame = CGRect(x: 0, y: 110, width: Int(view.frame.width), height: 0)
+        
         
         userTableView.delegate = self
         userTableView.dataSource = self
@@ -63,6 +63,8 @@ class UsersVC: UIViewController {
         // Present dialog message to user
         self.present(dialogMessage, animated: true, completion: nil)
     }
+    
+    
     @IBAction func addButtonTapped(_ sender: UIButton) {
         print("Add button Tapped")
     }

@@ -159,7 +159,7 @@ extension MainViewController: FilterVCDelegate{
         
         let endPoint = self.constants.transitionsEndPoint + url
         
-        
+        print("Filtered End Point: \(endPoint)")
         self.fetchingTransactions.fetchingFilteredTransactions(url: endPoint, dateFrom: dateFrom, dateTo: dateTo) { (responseData) in
             
             
