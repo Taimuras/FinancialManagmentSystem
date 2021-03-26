@@ -72,7 +72,7 @@ class FetchingDataFilterScreen{
                 
                 
                 if json["results"].count == 0 {
-                    let counterAgent = CounterAgentsModel(id: 1, name: "There is no CounterParts!", surname: "", patronymic: "", photo: "")
+                    let counterAgent = CounterAgentsModel(id: 1, name: "There is no CounterParts!", surname: "", patronymic: "")
                     self.counterAgents.append(counterAgent)
                     completion(self.counterAgents)
                 } else {
@@ -81,8 +81,8 @@ class FetchingDataFilterScreen{
                         let id = json["results"][i]["id"].intValue
                         let surname = json["results"][i]["surname"].stringValue
                         let patr = json["results"][i]["patronymic"].stringValue
-                        let photo = json["results"][i]["photo"].stringValue
-                        let counterAgent = CounterAgentsModel(id: id, name: name, surname: surname, patronymic: patr, photo: photo)
+//                        let photo = json["results"][i]["photo"].stringValue
+                        let counterAgent = CounterAgentsModel(id: id, name: name, surname: surname, patronymic: patr)
                         self.counterAgents.append(counterAgent)
                         completion(self.counterAgents)
                     }

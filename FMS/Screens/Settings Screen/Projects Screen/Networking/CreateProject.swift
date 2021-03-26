@@ -2,20 +2,17 @@ import Foundation
 import Alamofire
 
 
-class CreateCounterPart{
+class CreateProject{
+    
+    
     let userDefaults = UserDefaults.standard
     var userAuth: Int = 0
     let constants = Constants()
-    func createCounterPart(name: String, surname: String, patronymic: String, completion: @escaping (Int) -> ()){
+    func createProject(name: String, completion: @escaping (Int) -> ()){
         
-        var param = [
-            "surname" : surname as String,
+        let param = [
             "name" : name as String
         ] as [String : Any]
-        
-        if patronymic != "" {
-            param["patronymic"] = patronymic
-        }
         
         
         let accessToken = userDefaults.string(forKey: "AccessToken")!
@@ -27,14 +24,14 @@ class CreateCounterPart{
         
         
         
-        let requestAPI = AF.request(constants.createCounterPartEndPoint, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+        let requestAPI = AF.request(constants.getAllProjects, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         
         
         requestAPI.responseJSON { (response) in
             
             let statusCode = response.response?.statusCode
 //            print(response.description)
-            print(response.response!)
+//            print(response.response!)
 //            print(response.response?.statusCode)
             switch statusCode{
             case 200:

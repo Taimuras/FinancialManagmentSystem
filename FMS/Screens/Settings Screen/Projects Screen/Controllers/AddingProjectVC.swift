@@ -1,66 +1,57 @@
 //
-//  AddingCounterPartVC.swift
+//  AddingProjectVC.swift
 //  FMS
 //
-//  Created by tami on 3/25/21.
+//  Created by tami on 3/26/21.
 //
 
 import UIKit
+import MBProgressHUD
 
-class AddingCounterPartVC: UIViewController {
+class AddingProjectVC: UIViewController {
+    
     let constants = Constants()
-
-    var counterPartID: Int?
     
-    let createCounterPartNetwork = CreateCounterPart()
+    let createProject = CreateProject()
     
-    @IBOutlet weak var counterPartLabel: UILabel!
+    @IBOutlet weak var projectLabel: UILabel!
     
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     
-    
-    
-    @IBOutlet weak var surnameTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var patronymicTextField: UITextField!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
         
         design()
         // Do any additional setup after loading the view.
         
         
-        
-        self.hideKeyboardWhenTappedAround() 
-        
-        
+        self.hideKeyboardWhenTappedAround()
+
     }
     
-    
+
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
     
+    
     @IBAction func saveButtonTapped(_ sender: UIButton) {
-        createCounterPart()
+        create()
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     
-    
-    func createCounterPart(){
-//        let name = nameTextField.text!
-//        let surname = surnameTextField.text!
-        let patronymic = patronymicTextField.text ?? ""
+    func create() {
         
-        if let name = nameTextField.text, let surname = surnameTextField.text{
-            createCounterPartNetwork.createCounterPart(name: name, surname: surname, patronymic: patronymic, completion: { (data) in
+        if let name = nameTextField.text{
+            createProject.createProject(name: name, completion: { (data) in
                 if data != 1 {
                     let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так. Пользователь не был создан!", preferredStyle: .alert)
                     let cancel = UIAlertAction(title: "Ok", style: .cancel) { (action) -> Void in
@@ -70,6 +61,7 @@ class AddingCounterPartVC: UIViewController {
                     dialogMessage.addAction(cancel)
                     
                     // Present dialog message to user
+                    MBProgressHUD.hide(for: self.view, animated: true)
                     self.present(dialogMessage, animated: true, completion: nil)
                 } else {
                     print(data)
@@ -77,7 +69,7 @@ class AddingCounterPartVC: UIViewController {
                 }
             })
         } else {
-            let dialogMessage = UIAlertController(title: "Поля не заполнены", message: "Имя и Фамилия должны быть заполнены!", preferredStyle: .alert)
+            let dialogMessage = UIAlertController(title: "Поля не заполнены", message: "Название проекта должно быть заполнено!", preferredStyle: .alert)
             let cancel = UIAlertAction(title: "Хорошо", style: .cancel) { (action) -> Void in
                 //            print("Cancel button tapped")
             }
@@ -85,6 +77,7 @@ class AddingCounterPartVC: UIViewController {
             dialogMessage.addAction(cancel)
             
             // Present dialog message to user
+            MBProgressHUD.hide(for: self.view, animated: true)
             self.present(dialogMessage, animated: true, completion: nil)
         }
     }
@@ -92,7 +85,9 @@ class AddingCounterPartVC: UIViewController {
 }
 
 
-extension AddingCounterPartVC{
+
+
+extension AddingProjectVC{
     func design (){
         
         
@@ -105,10 +100,12 @@ extension AddingCounterPartVC{
 
         //Fonts + sizes
 
-        surnameTextField.font = constants.fontRegular17
+        
         nameTextField.font = constants.fontRegular17
-        patronymicTextField.font = constants.fontRegular17
-        counterPartLabel.font = constants.fontSemiBold17
+        
+        
+        
+        projectLabel.font = constants.fontSemiBold17
        
         
         

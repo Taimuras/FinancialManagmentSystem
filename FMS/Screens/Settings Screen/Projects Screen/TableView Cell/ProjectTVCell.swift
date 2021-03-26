@@ -1,19 +1,24 @@
 //
-//  CounterPartTBCell.swift
+//  ProjectTVCell.swift
 //  FMS
 //
-//  Created by tami on 3/25/21.
+//  Created by tami on 3/26/21.
 //
 
 import UIKit
 
-class CounterPartTBCell: UITableViewCell {
-
+class ProjectTVCell: UITableViewCell {
+    
     let constants = Constants()
-    @IBOutlet weak var lastAndFirstNameLabel: UILabel!
+    
+    
+    @IBOutlet weak var projectName: UILabel!
+    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        lastAndFirstNameLabel.font = constants.fontSemiBold16
+        
+        projectName.font = constants.fontSemiBold16
         // Initialization code
     }
 

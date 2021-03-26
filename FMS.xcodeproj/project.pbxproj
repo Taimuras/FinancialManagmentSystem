@@ -48,6 +48,13 @@
 		5252797525EDFE06001FF2CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5252797325EDFE06001FF2CE /* LaunchScreen.storyboard */; };
 		5253A97225FF2C5B00449916 /* DirectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253A97125FF2C5B00449916 /* DirectionModel.swift */; };
 		5253A97D25FF5EC300449916 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5253A97C25FF5EC200449916 /* Assets.xcassets */; };
+		525464AB260DBE080089B03A /* UpdateCounterPartByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525464AA260DBE080089B03A /* UpdateCounterPartByID.swift */; };
+		525464B3260DC3B90089B03A /* ProjectsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525464B2260DC3B90089B03A /* ProjectsVC.swift */; };
+		525464B7260DC60C0089B03A /* ProjectTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525464B5260DC60C0089B03A /* ProjectTVCell.swift */; };
+		525464B8260DC60C0089B03A /* ProjectTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525464B6260DC60C0089B03A /* ProjectTVCell.xib */; };
+		525464C3260DC92D0089B03A /* GetAllProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525464C2260DC92D0089B03A /* GetAllProjects.swift */; };
+		525464C6260DDDAB0089B03A /* AddingProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525464C5260DDDAB0089B03A /* AddingProjectVC.swift */; };
+		525464C9260DE0D10089B03A /* CreateProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525464C8260DE0D10089B03A /* CreateProject.swift */; };
 		525C955F2608B2A400083965 /* TransferByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C955E2608B2A400083965 /* TransferByID.swift */; };
 		5262BDC22603605400709939 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5262BDC12603605400709939 /* CategoryModel.swift */; };
 		5262BDC52603628700709939 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5262BDC42603628700709939 /* ProjectModel.swift */; };
@@ -116,6 +123,13 @@
 		5252797625EDFE06001FF2CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5253A97125FF2C5B00449916 /* DirectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionModel.swift; sourceTree = "<group>"; };
 		5253A97C25FF5EC200449916 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		525464AA260DBE080089B03A /* UpdateCounterPartByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCounterPartByID.swift; sourceTree = "<group>"; };
+		525464B2260DC3B90089B03A /* ProjectsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsVC.swift; sourceTree = "<group>"; };
+		525464B5260DC60C0089B03A /* ProjectTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTVCell.swift; sourceTree = "<group>"; };
+		525464B6260DC60C0089B03A /* ProjectTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectTVCell.xib; sourceTree = "<group>"; };
+		525464C2260DC92D0089B03A /* GetAllProjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllProjects.swift; sourceTree = "<group>"; };
+		525464C5260DDDAB0089B03A /* AddingProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingProjectVC.swift; sourceTree = "<group>"; };
+		525464C8260DE0D10089B03A /* CreateProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProject.swift; sourceTree = "<group>"; };
 		525C955E2608B2A400083965 /* TransferByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferByID.swift; sourceTree = "<group>"; };
 		5262BDC12603605400709939 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		5262BDC42603628700709939 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
@@ -250,6 +264,7 @@
 				5244A6C0260C896A00F4C991 /* CreateCounterPart.swift */,
 				5244A6C6260C94A800F4C991 /* GetCounterPartByID.swift */,
 				5244A6C9260C965000F4C991 /* DeleteCounterPart.swift */,
+				525464AA260DBE080089B03A /* UpdateCounterPartByID.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -410,6 +425,7 @@
 		5252798325EDFEAD001FF2CE /* Settings Screen */ = {
 			isa = PBXGroup;
 			children = (
+				525464AD260DC3830089B03A /* Projects Screen */,
 				524365C7260C73BA005A5D09 /* CounterPart Screen */,
 				524365C6260C73A4005A5D09 /* Main Settings Screen */,
 			);
@@ -434,6 +450,51 @@
 				5291ABA625F346D4005A2819 /* Controllers */,
 			);
 			path = "Login Screen";
+			sourceTree = "<group>";
+		};
+		525464AD260DC3830089B03A /* Projects Screen */ = {
+			isa = PBXGroup;
+			children = (
+				525464B1260DC3A30089B03A /* Controllers */,
+				525464B0260DC39E0089B03A /* Models */,
+				525464AF260DC3940089B03A /* TableView Cell */,
+				525464AE260DC38E0089B03A /* Networking */,
+			);
+			path = "Projects Screen";
+			sourceTree = "<group>";
+		};
+		525464AE260DC38E0089B03A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				525464C2260DC92D0089B03A /* GetAllProjects.swift */,
+				525464C8260DE0D10089B03A /* CreateProject.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		525464AF260DC3940089B03A /* TableView Cell */ = {
+			isa = PBXGroup;
+			children = (
+				525464B5260DC60C0089B03A /* ProjectTVCell.swift */,
+				525464B6260DC60C0089B03A /* ProjectTVCell.xib */,
+			);
+			path = "TableView Cell";
+			sourceTree = "<group>";
+		};
+		525464B0260DC39E0089B03A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		525464B1260DC3A30089B03A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				525464B2260DC3B90089B03A /* ProjectsVC.swift */,
+				525464C5260DDDAB0089B03A /* AddingProjectVC.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		5266437725F5D66C0032499D /* AddingScreen */ = {
@@ -647,6 +708,7 @@
 				5252797525EDFE06001FF2CE /* LaunchScreen.storyboard in Resources */,
 				5220E57D25EE2C470077EB07 /* MainCVC.xib in Resources */,
 				521F37AA25F0B6AB00B3E7D2 /* OpenSans-SemiBold.ttf in Resources */,
+				525464B8260DC60C0089B03A /* ProjectTVCell.xib in Resources */,
 				521F37A425F0B45D00B3E7D2 /* OpenSans-Bold.ttf in Resources */,
 				52396F4D26006FA300562103 /* UserTBCell.xib in Resources */,
 				5253A97D25FF5EC300449916 /* Assets.xcassets in Resources */,
@@ -725,6 +787,7 @@
 				5284800225FCACF900D82D8F /* FilterModel.swift in Sources */,
 				52178BA225F690ED001E9C14 /* TabBarController.swift in Sources */,
 				52201E032601D89500334E21 /* UserAddingVC.swift in Sources */,
+				525464C6260DDDAB0089B03A /* AddingProjectVC.swift in Sources */,
 				5266439025F5DF100032499D /* FetchingTransactions.swift in Sources */,
 				522B24EC26045696005BBFFC /* NetworkGetAllUsers.swift in Sources */,
 				5266F09925FA1CE200403D22 /* TransactionModel.swift in Sources */,
@@ -733,6 +796,7 @@
 				5266437B25F5D69D0032499D /* AddingVC.swift in Sources */,
 				52E5090425F211F80086DF17 /* LoginVC.swift in Sources */,
 				5220E57C25EE2C470077EB07 /* MainCVC.swift in Sources */,
+				525464AB260DBE080089B03A /* UpdateCounterPartByID.swift in Sources */,
 				5244A6C4260C90D200F4C991 /* EditingCounterPartVC.swift in Sources */,
 				522B24EF2604575A005BBFFC /* AllUsersModel.swift in Sources */,
 				524365DE260C8260005A5D09 /* AddingCounterPartVC.swift in Sources */,
@@ -740,18 +804,22 @@
 				52AE32BA260311490078D76F /* NetworkCreateUser.swift in Sources */,
 				5244A6C7260C94A800F4C991 /* GetCounterPartByID.swift in Sources */,
 				52E8B6C025F9E199002D62A0 /* EditingTransactionsVC.swift in Sources */,
+				525464B7260DC60C0089B03A /* ProjectTVCell.swift in Sources */,
 				5284800525FCB91D00D82D8F /* FetchingDataFilterScreen.swift in Sources */,
 				522A6ABA260507F000F638FB /* IncOutBalModel.swift in Sources */,
 				5252796925EDFE06001FF2CE /* AppDelegate.swift in Sources */,
+				525464C9260DE0D10089B03A /* CreateProject.swift in Sources */,
 				524CF8112609B827000E3768 /* UpdatingTransaction.swift in Sources */,
 				524365D4260C77A2005A5D09 /* CounterPartModel.swift in Sources */,
 				5252796B25EDFE06001FF2CE /* SceneDelegate.swift in Sources */,
+				525464B3260DC3B90089B03A /* ProjectsVC.swift in Sources */,
 				524CF8172609E300000E3768 /* GetSessionUser.swift in Sources */,
 				5251A55A25EF566E00546F71 /* MainViewController.swift in Sources */,
 				5251A55F25EF5C0A00546F71 /* Constants.swift in Sources */,
 				5284800825FCBB8100D82D8F /* WalletModel.swift in Sources */,
 				52E8B6C525F9E7C0002D62A0 /* EditingTransferVC.swift in Sources */,
 				524365D0260C75A2005A5D09 /* CounterPartTBCell.swift in Sources */,
+				525464C3260DC92D0089B03A /* GetAllProjects.swift in Sources */,
 				524CF8142609DB2C000E3768 /* GetAndUpdateUser.swift in Sources */,
 				5262BDC22603605400709939 /* CategoryModel.swift in Sources */,
 				52201E062601DDD100334E21 /* UserEditingVC.swift in Sources */,

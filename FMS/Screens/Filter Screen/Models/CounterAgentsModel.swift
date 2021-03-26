@@ -13,5 +13,5 @@ struct CounterAgentsModel {
     let name: String
     let surname: String
     let patronymic: String
-    let photo: String
+//    let photo: String
 }

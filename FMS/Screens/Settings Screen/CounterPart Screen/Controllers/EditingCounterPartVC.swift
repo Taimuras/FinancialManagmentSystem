@@ -26,6 +26,7 @@ class EditingCounterPartVC: UIViewController {
     let constants = Constants()
     let deleteCounterPart = DeleteCounterPart()
     let getCounterPartByID = GetCounterPartByID()
+    let updateCounterPartByID = UpdateCounterPartByID()
     
     
     override func viewDidLoad() {
@@ -37,6 +38,9 @@ class EditingCounterPartVC: UIViewController {
         
         design()
         // Do any additional setup after loading the view.
+        
+        
+        self.hideKeyboardWhenTappedAround() 
     }
     
     
@@ -50,6 +54,7 @@ class EditingCounterPartVC: UIViewController {
     
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
+        update()
     }
     
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
@@ -84,6 +89,37 @@ class EditingCounterPartVC: UIViewController {
                 self.present(dialogMessage, animated: true, completion: nil)
             }
         }
+    }
+    
+    func update() {
+        if let name = nameTextField.text, let surname = surnameTextField.text {
+            updateCounterPartByID.updateCounterPart(id: id!, name: name, surname: surname, patronymic: patronymicTextField.text ?? "") { (response) in
+                if response != 1 {
+                    let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так. Пользователь не был создан!", preferredStyle: .alert)
+                    let cancel = UIAlertAction(title: "Ok", style: .cancel) { (action) -> Void in
+                        //            print("Cancel button tapped")
+                    }
+                    
+                    dialogMessage.addAction(cancel)
+                    
+                    // Present dialog message to user
+                    self.present(dialogMessage, animated: true, completion: nil)
+                } else {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        } else {
+            let dialogMessage = UIAlertController(title: "Поля не заполнены", message: "Имя и Фамилия должны быть заполнены!", preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "Хорошо", style: .cancel) { (action) -> Void in
+                //            print("Cancel button tapped")
+            }
+            
+            dialogMessage.addAction(cancel)
+            
+            // Present dialog message to user
+            self.present(dialogMessage, animated: true, completion: nil)
+        }
+        
     }
 }
 

@@ -19,6 +19,7 @@ class Constants {
     let userScreenTableViewCellIdentifier = "UserTVCell"
     let mainScreenCollectionViewCellIdentifier = "MainCVC"
     let counterPartTableViewCellIdentifier = "CounterPartTBCell"
+    let projectPartTableViewCellIdentifier = "ProjectTVCell"
     
     //Storyboard IDs
     let tabBarViewIdintifier = "TabBarStoryBoardID"
@@ -29,6 +30,7 @@ class Constants {
     let userEditingVC = "UserEditingVC"
     let counterPartAddingVC = "CounterPartAddingVC"
     let counterPartEditingVC = "EditingCounterPartVC"
+    
     
     
     //Segues IDs
@@ -79,6 +81,7 @@ class Constants {
     let updateUserEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/change/user/" // \(email@gmail.com)
     let getAllCounterPartsEndPoint = "https://neobis-finance-sistem.herokuapp.com/contractor/"
     let createCounterPartEndPoint = "https://neobis-finance-sistem.herokuapp.com/contractor/"
+    let getAllProjects = "https://neobis-finance-sistem.herokuapp.com/project/"
     
     
     func updateAccessToken(){

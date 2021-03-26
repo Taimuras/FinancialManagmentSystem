@@ -41,10 +41,13 @@ class CounterPartVC: UIViewController {
         // this is the replacement of implementing: "collectionView.addSubview(refreshControl)"
         counterPartTableView.refreshControl = refreshControl
         
+        
+        self.hideKeyboardWhenTappedAround() 
+        
     }
     
     @IBAction func addButtonTapped(_ sender: UIButton) {
-        print("CounterPart Adding Button Tapped!!!")
+//        print("CounterPart Adding Button Tapped!!!")
     }
     
     
@@ -80,7 +83,7 @@ extension CounterPartVC: UITableViewDelegate, UITableViewDataSource{
         cell.frame.size.width = tableView.frame.size.width
         
         
-        cell.lastAndFirstNameLabel.text = counterAgents[indexPath.row].surname + "  " + counterAgents[indexPath.row].name
+        cell.lastAndFirstNameLabel.text = counterAgents[indexPath.row].surname + " " + counterAgents[indexPath.row].name
         
         
         //separator width = tableview.width

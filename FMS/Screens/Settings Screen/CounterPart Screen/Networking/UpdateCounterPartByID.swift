@@ -1,12 +1,19 @@
+//
+//  UpdateCounterPartByID.swift
+//  FMS
+//
+//  Created by tami on 3/26/21.
+//
+
 import Foundation
 import Alamofire
 
 
-class CreateCounterPart{
+class UpdateCounterPartByID{
     let userDefaults = UserDefaults.standard
     var userAuth: Int = 0
     let constants = Constants()
-    func createCounterPart(name: String, surname: String, patronymic: String, completion: @escaping (Int) -> ()){
+    func updateCounterPart(id: Int, name: String, surname: String, patronymic: String, completion: @escaping (Int) -> ()){
         
         var param = [
             "surname" : surname as String,
@@ -26,15 +33,16 @@ class CreateCounterPart{
         
         
         
-        
-        let requestAPI = AF.request(constants.createCounterPartEndPoint, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+        let url = constants.createCounterPartEndPoint + String(id)
+        print("url to update: \(url)")
+        let requestAPI = AF.request(url, method: .patch, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         
         
         requestAPI.responseJSON { (response) in
             
             let statusCode = response.response?.statusCode
 //            print(response.description)
-            print(response.response!)
+//            print(response.response!)
 //            print(response.response?.statusCode)
             switch statusCode{
             case 200:
