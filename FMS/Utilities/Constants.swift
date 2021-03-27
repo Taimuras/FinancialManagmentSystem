@@ -30,6 +30,7 @@ class Constants {
     let userEditingVC = "UserEditingVC"
     let counterPartAddingVC = "CounterPartAddingVC"
     let counterPartEditingVC = "EditingCounterPartVC"
+    let projectPartEditingVC = "EditingProjectsVC"
     
     
     

@@ -94,7 +94,12 @@ extension ProjectsVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Tap tap")
+        let counterPart = projects[indexPath.row]
+        let edititngProject = storyboard?.instantiateViewController(withIdentifier: constants.projectPartEditingVC) as! EditingProjectsVC
+        edititngProject.id = counterPart.id
+
+        present(edititngProject, animated: true, completion: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
