@@ -9,6 +9,14 @@ import UIKit
 
 class TabBarController: UITabBarController {
     let constants = Constants()
+    
+    
+    let mainTabBarItem = MainViewController()
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
@@ -33,4 +41,5 @@ extension TabBarController: UITabBarControllerDelegate {
         }
         return true
     }
+   
 }

@@ -26,6 +26,16 @@
 		52372775260EF44500FA6247 /* UpdateProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52372774260EF44500FA6247 /* UpdateProject.swift */; };
 		52396F4C26006FA300562103 /* UserTBCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52396F4A26006FA300562103 /* UserTBCell.swift */; };
 		52396F4D26006FA300562103 /* UserTBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52396F4B26006FA300562103 /* UserTBCell.xib */; };
+		5242996B260F1BE00081293C /* WalletsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242996A260F1BE00081293C /* WalletsVC.swift */; };
+		5242996F260F1D910081293C /* WalletTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242996D260F1D910081293C /* WalletTVCell.swift */; };
+		52429970260F1D910081293C /* WalletTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5242996E260F1D910081293C /* WalletTVCell.xib */; };
+		52429973260F201F0081293C /* GetAllWallets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52429972260F201F0081293C /* GetAllWallets.swift */; };
+		52429976260F236B0081293C /* AddingWalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52429975260F236B0081293C /* AddingWalletVC.swift */; };
+		52429979260F25C70081293C /* CreateWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52429978260F25C70081293C /* CreateWallet.swift */; };
+		5242997C260F28FE0081293C /* EditingWalletsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242997B260F28FE0081293C /* EditingWalletsVC.swift */; };
+		5242997F260F2A5A0081293C /* GetSingleWalletByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242997E260F2A5A0081293C /* GetSingleWalletByID.swift */; };
+		52429983260F2CBD0081293C /* DeleteWalletByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52429982260F2CBD0081293C /* DeleteWalletByID.swift */; };
+		52429987260F2DA90081293C /* UpdateWalletByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52429986260F2DA90081293C /* UpdateWalletByID.swift */; };
 		524365CB260C73E6005A5D09 /* CounterPartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524365CA260C73E6005A5D09 /* CounterPartVC.swift */; };
 		524365D0260C75A2005A5D09 /* CounterPartTBCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524365CE260C75A2005A5D09 /* CounterPartTBCell.swift */; };
 		524365D1260C75A2005A5D09 /* CounterPartTBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524365CF260C75A2005A5D09 /* CounterPartTBCell.xib */; };
@@ -103,6 +113,16 @@
 		52372774260EF44500FA6247 /* UpdateProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProject.swift; sourceTree = "<group>"; };
 		52396F4A26006FA300562103 /* UserTBCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTBCell.swift; sourceTree = "<group>"; };
 		52396F4B26006FA300562103 /* UserTBCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTBCell.xib; sourceTree = "<group>"; };
+		5242996A260F1BE00081293C /* WalletsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsVC.swift; sourceTree = "<group>"; };
+		5242996D260F1D910081293C /* WalletTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTVCell.swift; sourceTree = "<group>"; };
+		5242996E260F1D910081293C /* WalletTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletTVCell.xib; sourceTree = "<group>"; };
+		52429972260F201F0081293C /* GetAllWallets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllWallets.swift; sourceTree = "<group>"; };
+		52429975260F236B0081293C /* AddingWalletVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingWalletVC.swift; sourceTree = "<group>"; };
+		52429978260F25C70081293C /* CreateWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWallet.swift; sourceTree = "<group>"; };
+		5242997B260F28FE0081293C /* EditingWalletsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingWalletsVC.swift; sourceTree = "<group>"; };
+		5242997E260F2A5A0081293C /* GetSingleWalletByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSingleWalletByID.swift; sourceTree = "<group>"; };
+		52429982260F2CBD0081293C /* DeleteWalletByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteWalletByID.swift; sourceTree = "<group>"; };
+		52429986260F2DA90081293C /* UpdateWalletByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateWalletByID.swift; sourceTree = "<group>"; };
 		524365CA260C73E6005A5D09 /* CounterPartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterPartVC.swift; sourceTree = "<group>"; };
 		524365CE260C75A2005A5D09 /* CounterPartTBCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterPartTBCell.swift; sourceTree = "<group>"; };
 		524365CF260C75A2005A5D09 /* CounterPartTBCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CounterPartTBCell.xib; sourceTree = "<group>"; };
@@ -216,6 +236,55 @@
 				52396F4B26006FA300562103 /* UserTBCell.xib */,
 			);
 			path = "TableView Cell";
+			sourceTree = "<group>";
+		};
+		52429965260F1B980081293C /* Wallets Screen */ = {
+			isa = PBXGroup;
+			children = (
+				52429969260F1BBA0081293C /* Networking */,
+				52429968260F1BAF0081293C /* TableViewCell */,
+				52429967260F1BA90081293C /* Models */,
+				52429966260F1BA30081293C /* Controllers */,
+			);
+			path = "Wallets Screen";
+			sourceTree = "<group>";
+		};
+		52429966260F1BA30081293C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5242996A260F1BE00081293C /* WalletsVC.swift */,
+				52429975260F236B0081293C /* AddingWalletVC.swift */,
+				5242997B260F28FE0081293C /* EditingWalletsVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		52429967260F1BA90081293C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		52429968260F1BAF0081293C /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5242996D260F1D910081293C /* WalletTVCell.swift */,
+				5242996E260F1D910081293C /* WalletTVCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		52429969260F1BBA0081293C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				52429972260F201F0081293C /* GetAllWallets.swift */,
+				52429978260F25C70081293C /* CreateWallet.swift */,
+				5242997E260F2A5A0081293C /* GetSingleWalletByID.swift */,
+				52429982260F2CBD0081293C /* DeleteWalletByID.swift */,
+				52429986260F2DA90081293C /* UpdateWalletByID.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		524365C6260C73A4005A5D09 /* Main Settings Screen */ = {
@@ -433,6 +502,7 @@
 		5252798325EDFEAD001FF2CE /* Settings Screen */ = {
 			isa = PBXGroup;
 			children = (
+				52429965260F1B980081293C /* Wallets Screen */,
 				525464AD260DC3830089B03A /* Projects Screen */,
 				524365C7260C73BA005A5D09 /* CounterPart Screen */,
 				524365C6260C73A4005A5D09 /* Main Settings Screen */,
@@ -717,6 +787,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52429970260F1D910081293C /* WalletTVCell.xib in Resources */,
 				5252797525EDFE06001FF2CE /* LaunchScreen.storyboard in Resources */,
 				5220E57D25EE2C470077EB07 /* MainCVC.xib in Resources */,
 				521F37AA25F0B6AB00B3E7D2 /* OpenSans-SemiBold.ttf in Resources */,
@@ -779,12 +850,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5242996F260F1D910081293C /* WalletTVCell.swift in Sources */,
 				52396F4C26006FA300562103 /* UserTBCell.swift in Sources */,
 				522B24F22604659B005BBFFC /* NetworkCreateTransaction.swift in Sources */,
 				527D603826085BEA00620859 /* TransactionByID.swift in Sources */,
 				524365D8260C7EB2005A5D09 /* GetAllCounterParts.swift in Sources */,
 				524CF81A2609E3C1000E3768 /* SingleUser.swift in Sources */,
 				5251B42D25FB7374008A2E22 /* FilterVC.swift in Sources */,
+				52429979260F25C70081293C /* CreateWallet.swift in Sources */,
 				52271FEE260077BF00080BB2 /* UserCellModel.swift in Sources */,
 				524365CB260C73E6005A5D09 /* CounterPartVC.swift in Sources */,
 				5244A6CA260C965000F4C991 /* DeleteCounterPart.swift in Sources */,
@@ -800,12 +873,14 @@
 				52178BA225F690ED001E9C14 /* TabBarController.swift in Sources */,
 				52201E032601D89500334E21 /* UserAddingVC.swift in Sources */,
 				525464C6260DDDAB0089B03A /* AddingProjectVC.swift in Sources */,
+				52429987260F2DA90081293C /* UpdateWalletByID.swift in Sources */,
 				5266439025F5DF100032499D /* FetchingTransactions.swift in Sources */,
 				522B24EC26045696005BBFFC /* NetworkGetAllUsers.swift in Sources */,
 				5266F09925FA1CE200403D22 /* TransactionModel.swift in Sources */,
 				5225FE4225F347D700CF4009 /* ApiCalling.swift in Sources */,
 				5253A97225FF2C5B00449916 /* DirectionModel.swift in Sources */,
 				5266437B25F5D69D0032499D /* AddingVC.swift in Sources */,
+				52429983260F2CBD0081293C /* DeleteWalletByID.swift in Sources */,
 				52372772260EF34900FA6247 /* DeleteProject.swift in Sources */,
 				52E5090425F211F80086DF17 /* LoginVC.swift in Sources */,
 				5220E57C25EE2C470077EB07 /* MainCVC.swift in Sources */,
@@ -820,7 +895,10 @@
 				52E8B6C025F9E199002D62A0 /* EditingTransactionsVC.swift in Sources */,
 				525464B7260DC60C0089B03A /* ProjectTVCell.swift in Sources */,
 				5284800525FCB91D00D82D8F /* FetchingDataFilterScreen.swift in Sources */,
+				52429973260F201F0081293C /* GetAllWallets.swift in Sources */,
+				5242996B260F1BE00081293C /* WalletsVC.swift in Sources */,
 				522A6ABA260507F000F638FB /* IncOutBalModel.swift in Sources */,
+				5242997F260F2A5A0081293C /* GetSingleWalletByID.swift in Sources */,
 				5252796925EDFE06001FF2CE /* AppDelegate.swift in Sources */,
 				525464C9260DE0D10089B03A /* CreateProject.swift in Sources */,
 				524CF8112609B827000E3768 /* UpdatingTransaction.swift in Sources */,
@@ -828,6 +906,7 @@
 				5252796B25EDFE06001FF2CE /* SceneDelegate.swift in Sources */,
 				525464B3260DC3B90089B03A /* ProjectsVC.swift in Sources */,
 				524CF8172609E300000E3768 /* GetSessionUser.swift in Sources */,
+				52429976260F236B0081293C /* AddingWalletVC.swift in Sources */,
 				5251A55A25EF566E00546F71 /* MainViewController.swift in Sources */,
 				5251A55F25EF5C0A00546F71 /* Constants.swift in Sources */,
 				5284800825FCBB8100D82D8F /* WalletModel.swift in Sources */,
@@ -836,6 +915,7 @@
 				525464C3260DC92D0089B03A /* GetAllProjects.swift in Sources */,
 				524CF8142609DB2C000E3768 /* GetAndUpdateUser.swift in Sources */,
 				524D6EFF260EEAFF0032CA07 /* EditingProjectsVC.swift in Sources */,
+				5242997C260F28FE0081293C /* EditingWalletsVC.swift in Sources */,
 				5262BDC22603605400709939 /* CategoryModel.swift in Sources */,
 				52201E062601DDD100334E21 /* UserEditingVC.swift in Sources */,
 				5266438D25F5D7C90032499D /* AnaliticsVC.swift in Sources */,

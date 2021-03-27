@@ -63,9 +63,16 @@ class MainViewController: UIViewController {
         
         fetchData()
         
-        MBProgressHUD.showAdded(to: self.view, animated: true)
         
         
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DispatchQueue.main.async {
+            self.fetchData()
+        }
     }
     
     @IBAction func filterButtonTapped(_ sender: UIButton) {
@@ -79,6 +86,7 @@ class MainViewController: UIViewController {
     
     // MARK: Fetching Data first try
     func fetchData () {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         fetchingTransactions.fetchingTransactions(url: constants.transitionsEndPoint) { (data) in
             DispatchQueue.main.async {
                 self.mainVCData.removeAll()
@@ -93,8 +101,8 @@ class MainViewController: UIViewController {
             
             DispatchQueue.main.async {
                 self.incomeStateLabel.text = data.income
-                self.outcomeStateLabel.text = data.outcome
-                self.transferStateLabel.text = data.balance
+                self.outcomeStateLabel.text = data.balance
+                self.transferStateLabel.text = data.outcome
             }
         }
     }

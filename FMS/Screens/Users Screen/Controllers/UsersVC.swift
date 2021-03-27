@@ -1,5 +1,8 @@
 
 import UIKit
+import MBProgressHUD
+
+
 
 class UsersVC: UIViewController {
     
@@ -38,6 +41,13 @@ class UsersVC: UIViewController {
         let footerView = UIView()
         userTableView.tableFooterView = footerView
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DispatchQueue.main.async {
+            self.getData()
+        }
     }
     
     @IBAction func logOutTapped(_ sender: UIButton) {
@@ -81,11 +91,13 @@ class UsersVC: UIViewController {
     
     
     func getData(){
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         networkWorking.getAllUsers(url: constants.allUsersEndPoint) { (data) in
             DispatchQueue.main.async {
                 self.users.removeAll()
                 self.users = data
                 self.userTableView.reloadData()
+                MBProgressHUD.hide(for: self.view, animated: true)
             }
         }
     }

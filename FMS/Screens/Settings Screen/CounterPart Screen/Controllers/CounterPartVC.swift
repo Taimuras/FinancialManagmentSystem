@@ -31,7 +31,7 @@ class CounterPartVC: UIViewController {
         let footerView = UIView()
         counterPartTableView.tableFooterView = footerView
         
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        
         fetchData()
         
         
@@ -45,6 +45,15 @@ class CounterPartVC: UIViewController {
         self.hideKeyboardWhenTappedAround() 
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DispatchQueue.main.async {
+            self.fetchData()
+        }
+    }
+    
+    
     
     @IBAction func addButtonTapped(_ sender: UIButton) {
 //        print("CounterPart Adding Button Tapped!!!")
@@ -60,6 +69,7 @@ class CounterPartVC: UIViewController {
     }
     
     func fetchData(){
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         getAllCounterParts.getAllCounterParts(url: constants.getAllCounterPartsEndPoint, completion: { (data) in
             DispatchQueue.main.async {
                 self.counterAgents.removeAll()
