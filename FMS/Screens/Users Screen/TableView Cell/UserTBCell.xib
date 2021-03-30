@@ -37,13 +37,13 @@
                                             <constraint firstAttribute="height" constant="22" id="lfE-5S-Mhy"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                        <color key="textColor" name="BrandBlackTEXT"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dimitrios.khristoforidi@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOL-Ez-ctk">
                                         <rect key="frame" x="0.0" y="28" width="262" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" name="BrandBlackTEXT"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -97,7 +97,7 @@
     <resources>
         <image name="Rectangle 10" width="46" height="46"/>
         <image name="Users Screen ArrowSVG" width="24" height="24"/>
-        <namedColor name="BrandBlackTEXT">
+        <namedColor name="Brand - Dark">
             <color red="0.23137254901960785" green="0.23921568627450981" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

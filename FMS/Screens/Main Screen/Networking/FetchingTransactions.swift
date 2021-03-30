@@ -10,6 +10,12 @@ import Alamofire
 import SwiftyJSON
 
 
+
+
+//let headers: HTTPHeaders = [
+//    "Authorization": "Bearer \(accessToken)"
+//]
+
 class FetchingTransactions {
     
     
@@ -21,26 +27,24 @@ class FetchingTransactions {
     var transitions: [TransactionModel] = []
     
     var incomeOutcomeBalance: IncOutBalModel?
+    let interceptor = JWTAccessTokenAdapter()
         
     
     func fetchingTransactions(url: String, completion: @escaping ([TransactionModel]) -> ()){
 
         
-        let accessToken = userDefaults.string(forKey: "AccessToken")!
-        
-        let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(accessToken)"
-        ]
+        let requestAPI = AF.request(url, method: .get, encoding: JSONEncoding.default, interceptor: interceptor)
         
         
-        let requestAPI = AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-                   //responseJSON = responseString
-        requestAPI.responseJSON { (response) in
+        requestAPI
+            .validate()
+            .responseJSON { (response) in
+            
             
             switch response.result{
                 case .success(let data):
                     let json = JSON(data)
-//                    print(data)
+
                     
                     
                     self.transitions.removeAll()
@@ -60,16 +64,13 @@ class FetchingTransactions {
     
     
     func fetchingIncomeOutcomeBalance(url: String, completion: @escaping (IncOutBalModel) -> ()) {
-        let accessToken = userDefaults.string(forKey: "AccessToken")!
-        
-        let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(accessToken)"
-        ]
         
         
-        let requestAPI = AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+        let requestAPI = AF.request(url, method: .get, encoding: JSONEncoding.default, interceptor: interceptor)
         
-        requestAPI.responseJSON { (response) in
+        requestAPI
+            .validate()
+            .responseJSON { (response) in
             
 //            print(response.result)
             switch response.result{
@@ -95,35 +96,18 @@ class FetchingTransactions {
     
     func fetchingFilteredTransactions(url: String, dateFrom: String, dateTo: String, completion: @escaping ([TransactionModel]) -> ()){
 
-        let accessToken = userDefaults.string(forKey: "AccessToken")!
-        
-        let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(accessToken)"
-        ]
-        
-//        let param = [
-//            "date_join": date_join as Any,
-//            "section": section as Any,
-//            "type" : type as Int,
-//            "category" : category as Any,
-//            "project" : project as Any,
-//            "sum" : sum as Int,
-//            "wallet" : wallet as Any,
-//            "contractor" : contractor as Any,
-//            "comment" : comment as String
-//        ] as [String : Any]
         
         
+        let requestAPI = AF.request(url, method: .get, encoding: JSONEncoding.default, interceptor: interceptor)
         
-        
-        let requestAPI = AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-        
-        requestAPI.responseJSON { (response) in
+        requestAPI
+            .validate()
+            .responseJSON { (response) in
+            
             switch response.result{
             case .success(let data):
                 let json = JSON(data)
-                print(url)
-                print(json)
+                
                 
                 
                 self.transitions.removeAll()

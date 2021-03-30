@@ -34,17 +34,23 @@ class UsersVC: UIViewController {
         
         userTableView.delegate = self
         userTableView.dataSource = self
-        design()
+        
+        
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+       
         getData()
         
         
         let footerView = UIView()
         userTableView.tableFooterView = footerView
         
+        
+        design()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         DispatchQueue.main.async {
             self.getData()
         }
@@ -91,7 +97,7 @@ class UsersVC: UIViewController {
     
     
     func getData(){
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        
         networkWorking.getAllUsers(url: constants.allUsersEndPoint) { (data) in
             DispatchQueue.main.async {
                 self.users.removeAll()

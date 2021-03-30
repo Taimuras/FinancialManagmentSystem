@@ -49,8 +49,8 @@ class NetworkCreateTransaction{
         
         requestAPI.responseJSON { (response) in
             let statusCode = response.response?.statusCode
-            print(response.response?.statusCode)
-            print(response.description)
+//            print(response.response?.statusCode)
+//            print(response.description)
 
             switch statusCode{
             case 200:
@@ -105,7 +105,7 @@ class NetworkCreateTransaction{
         requestAPI.responseJSON { (response) in
             let statusCode = response.response?.statusCode
             
-            print(response.description)
+//            print(response.description)
 
             switch statusCode{
             case 200:
@@ -149,7 +149,7 @@ class NetworkCreateTransaction{
         requestAPI.responseJSON { (response) in
             let statusCode = response.response?.statusCode
             
-            print(response.description)
+//            print(response.description)
 
             switch statusCode{
             case 200:

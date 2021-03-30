@@ -13,6 +13,7 @@ class FilterVC: UIViewController {
     var directions: [DirectionModel] = []
     var counterAgents: [CounterAgentsModel] = []
     var wallets: [WalletModel] = []
+    let type: [String] = ["Все", "Доход", "Расход", "Перевод"]
     
     let constants = Constants()
     
@@ -22,6 +23,7 @@ class FilterVC: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     
     // TextFields
+    @IBOutlet weak var typeTextField: UITextField!
     @IBOutlet weak var dateFromTextField: UITextField!
     @IBOutlet weak var dateToTextField: UITextField!
     @IBOutlet weak var walletTextField: UITextField!
@@ -31,6 +33,7 @@ class FilterVC: UIViewController {
     var walletID: Int = 0
     var counterAgentID: Int = 0
     var directionID: Int = 0
+    var typeID: Int = 0
     var dateFrom: String?
     var dateTo: String?
     
@@ -44,6 +47,7 @@ class FilterVC: UIViewController {
     let walletPickerView = UIPickerView()
     let counterAgentPickerView = UIPickerView()
     let directionPickerView = UIPickerView()
+    let typePickerView = UIPickerView()
     
     
     override func viewDidLoad() {
@@ -72,41 +76,43 @@ class FilterVC: UIViewController {
 
     @IBAction func acceptButtonTapped(_ sender: UIButton) {
         
-        func returnUrl(wallet: String, counterAgent: String, section: String) -> String{ //, direction: String
-            var url = "?date_join_after=\(dateFrom!)&date_join_before=\(dateTo!)"
-            
-            if !counterAgent.isEmpty && wallet.isEmpty && section.isEmpty{
-                url = url + "&counterpart=\(counterAgentID)"
-                return url
-            }else if counterAgent.isEmpty && !wallet.isEmpty && section.isEmpty{
-                url = url + "&wallet=\(walletID)"
-                return url
-            } else if counterAgent.isEmpty && wallet.isEmpty && !section.isEmpty{
-                url = url + "&section=\(directionID)"
-                return url
-            } else if !counterAgent.isEmpty && !wallet.isEmpty && section.isEmpty{
-                url = url + "&wallet=\(walletID)&counterpart=\(counterAgentID)"
-                return url
-            }else if !counterAgent.isEmpty && wallet.isEmpty && !section.isEmpty{
-                url = url + "&section=\(directionID)&counterpart=\(counterAgentID)"
-                return url
-            }else if counterAgent.isEmpty && !wallet.isEmpty && !section.isEmpty{
-                url = url + "&wallet=\(walletID)&section=\(directionID)"
-                return url
-            }else if !counterAgent.isEmpty && !wallet.isEmpty && !section.isEmpty{
-                url = url + "&wallet=\(walletID)&section=\(directionID)&counterpart=\(counterAgentID)"
-                return url
-            } else {
-                url = ""
-                return url
-            }
-            
-        }
-        delegate?.getFilteredUrl(url: returnUrl(wallet: walletTextField.text!, counterAgent: counterAgentTextField.text!, section: directionTextField.text!), dateFrom: dateFrom!, dateTo: dateTo!)
+        delegate?.getFilteredUrl(url: returnUrl(wallet: walletTextField.text!, counterAgent: counterAgentTextField.text!, section: directionTextField.text!, type: typeID), dateFrom: dateFrom!, dateTo: dateTo!)
         
-//        print("date From: \(dateFrom!)")
-//        print("date To: \(dateTo!)")
-
+    }
+    
+    func returnUrl(wallet: String, counterAgent: String, section: String, type: Int) -> String{ //, direction: String
+        
+        var url = "?date_join_after=\(dateFrom!)&date_join_before=\(dateTo!)"
+        
+        if typeID != 0 {
+            url = url + "&type=\(typeID)"
+        }
+        
+        if !counterAgent.isEmpty && wallet.isEmpty && section.isEmpty{
+            url = url + "&counterpart=\(counterAgentID)"
+            return url
+        }else if counterAgent.isEmpty && !wallet.isEmpty && section.isEmpty{
+            url = url + "&wallet=\(walletID)"
+            return url
+        } else if counterAgent.isEmpty && wallet.isEmpty && !section.isEmpty{
+            url = url + "&section=\(directionID)"
+            return url
+        } else if !counterAgent.isEmpty && !wallet.isEmpty && section.isEmpty{
+            url = url + "&wallet=\(walletID)&counterpart=\(counterAgentID)"
+            return url
+        }else if !counterAgent.isEmpty && wallet.isEmpty && !section.isEmpty{
+            url = url + "&section=\(directionID)&counterpart=\(counterAgentID)"
+            return url
+        }else if counterAgent.isEmpty && !wallet.isEmpty && !section.isEmpty{
+            url = url + "&wallet=\(walletID)&section=\(directionID)"
+            return url
+        }else if !counterAgent.isEmpty && !wallet.isEmpty && !section.isEmpty{
+            url = url + "&wallet=\(walletID)&section=\(directionID)&counterpart=\(counterAgentID)"
+            return url
+        }
+        
+        
+        return url
     }
     
 }
@@ -151,6 +157,8 @@ extension FilterVC: UIPickerViewDelegate, UIPickerViewDataSource {
             return counterAgents.count
         case 3:
             return directions.count
+        case 4:
+            return type.count
         default:
             return 1
         }
@@ -164,6 +172,8 @@ extension FilterVC: UIPickerViewDelegate, UIPickerViewDataSource {
             return counterAgents[row].name
         case 3:
             return directions[row].name
+        case 4:
+            return type[row]
         default:
             return "Data Not Found"
         }
@@ -184,6 +194,16 @@ extension FilterVC: UIPickerViewDelegate, UIPickerViewDataSource {
             directionTextField.text = directions[row].name
             directionID = directions[row].id
             directionTextField.resignFirstResponder()
+        case 4:
+            typeTextField.text = type[row]
+            if row == 1 {
+                typeID = 1
+            }else if row == 2 {
+                typeID = 2
+            }else if row == 3 {
+                typeID = 3
+            }
+            typeTextField.resignFirstResponder()
         default:
             return
         }
@@ -205,9 +225,14 @@ extension FilterVC: UIPickerViewDelegate, UIPickerViewDataSource {
         directionPickerView.dataSource = self
         directionTextField.inputView = directionPickerView
         
+        typePickerView.delegate = self
+        typePickerView.dataSource = self
+        typeTextField.inputView = typePickerView
+        
         walletPickerView.tag = 1
         counterAgentPickerView.tag = 2
         directionPickerView.tag = 3
+        typePickerView.tag = 4
         
     }
 }
@@ -224,6 +249,7 @@ extension FilterVC{
         
         //Fonts + sizes
         
+        typeTextField.font = constants.fontRegular17
         dateToTextField.font = constants.fontRegular17
         dateFromTextField.font = constants.fontRegular17
         directionTextField.font = constants.fontRegular17

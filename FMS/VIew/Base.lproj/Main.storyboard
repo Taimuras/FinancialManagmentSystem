@@ -29,7 +29,7 @@
                                             <constraint firstAttribute="height" constant="24" id="voN-Fp-fKp"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6j-eD-eUd">
@@ -39,7 +39,7 @@
                                             <constraint firstAttribute="width" constant="64" id="dJp-nO-cVe"/>
                                         </constraints>
                                         <state key="normal" title="Отмена">
-                                            <color key="titleColor" name="BrandDarkGrey"/>
+                                            <color key="titleColor" name="Brand - Dark"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelButtonTapped:" destination="S9F-mI-1OD" eventType="touchUpInside" id="wxi-J1-xaw"/>
@@ -56,81 +56,101 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Io7-Jw-Stv" userLabel="Central Part">
-                                <rect key="frame" x="0.0" y="50" width="414" height="255"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="306"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="С даты" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6z4-xh-FIo">
-                                        <rect key="frame" x="16" y="0.0" width="382" height="50"/>
+                                        <rect key="frame" x="16" y="51" width="382" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="f6Y-U6-z4M"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tev-lS-Mdb" userLabel="Divider">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="1"/>
+                                        <rect key="frame" x="0.0" y="101" width="414" height="1"/>
                                         <color key="backgroundColor" name="Dividers Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Cb1-b2-pTc"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="По дату" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nvo-Ro-12h">
-                                        <rect key="frame" x="16" y="51" width="382" height="50"/>
+                                        <rect key="frame" x="16" y="102" width="382" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="UAe-Ry-mdL"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hps-ze-1NS" userLabel="Divider">
-                                        <rect key="frame" x="0.0" y="101" width="414" height="1"/>
+                                        <rect key="frame" x="0.0" y="152" width="414" height="1"/>
                                         <color key="backgroundColor" name="Dividers Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="OBA-Ov-zBj"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Кошелек" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gza-rr-Byj">
-                                        <rect key="frame" x="16" y="102" width="382" height="50"/>
+                                        <rect key="frame" x="16" y="153" width="382" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="y7g-vd-CNw"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NLW-v0-NUF" userLabel="Divider">
-                                        <rect key="frame" x="0.0" y="152" width="414" height="1"/>
+                                        <rect key="frame" x="0.0" y="203" width="414" height="1"/>
                                         <color key="backgroundColor" name="Dividers Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="wtu-uF-3JX"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Контрагент" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u0G-bz-Tps">
-                                        <rect key="frame" x="16" y="153" width="382" height="50"/>
+                                        <rect key="frame" x="16" y="204" width="382" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="aQm-4F-9af"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nws-Zg-NeF" userLabel="Divider">
-                                        <rect key="frame" x="0.0" y="203" width="414" height="1"/>
+                                        <rect key="frame" x="0.0" y="254" width="414" height="1"/>
                                         <color key="backgroundColor" name="Dividers Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="fIK-ec-Ezi"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Направление" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="grj-Cq-CYV">
-                                        <rect key="frame" x="16" y="204" width="382" height="50"/>
+                                        <rect key="frame" x="16" y="255" width="382" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="fAO-fx-7B8"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7k-If-he0" userLabel="Divider">
-                                        <rect key="frame" x="0.0" y="254" width="414" height="1"/>
+                                        <rect key="frame" x="0.0" y="305" width="414" height="1"/>
                                         <color key="backgroundColor" name="Dividers Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="L12-EV-Q3b"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Тип: Все, Доход, Расход, Перевод" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gpG-3u-1Yo">
+                                        <rect key="frame" x="16" y="0.0" width="382" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Qjf-wY-Ak6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bl7-fi-bEc" userLabel="Divider">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="1"/>
+                                        <color key="backgroundColor" name="Dividers Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="OIE-Hl-oGi"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -138,10 +158,13 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="l7k-If-he0" secondAttribute="trailing" id="3bw-oM-w7B"/>
                                     <constraint firstItem="hps-ze-1NS" firstAttribute="leading" secondItem="Io7-Jw-Stv" secondAttribute="leading" id="5E4-Hy-DKb"/>
+                                    <constraint firstItem="6z4-xh-FIo" firstAttribute="top" secondItem="bl7-fi-bEc" secondAttribute="bottom" id="5yh-VU-2Af"/>
                                     <constraint firstItem="hps-ze-1NS" firstAttribute="top" secondItem="nvo-Ro-12h" secondAttribute="bottom" id="6Yn-Sx-0Hc"/>
                                     <constraint firstItem="NLW-v0-NUF" firstAttribute="top" secondItem="Gza-rr-Byj" secondAttribute="bottom" id="6hL-hg-hfG"/>
+                                    <constraint firstAttribute="trailing" secondItem="gpG-3u-1Yo" secondAttribute="trailing" constant="16" id="7sd-83-D2F"/>
                                     <constraint firstItem="u0G-bz-Tps" firstAttribute="leading" secondItem="Io7-Jw-Stv" secondAttribute="leading" constant="16" id="860-NT-9sm"/>
                                     <constraint firstAttribute="trailing" secondItem="nws-Zg-NeF" secondAttribute="trailing" id="86r-Zf-Abf"/>
+                                    <constraint firstItem="bl7-fi-bEc" firstAttribute="leading" secondItem="Io7-Jw-Stv" secondAttribute="leading" id="8bg-JR-oIM"/>
                                     <constraint firstItem="l7k-If-he0" firstAttribute="top" secondItem="grj-Cq-CYV" secondAttribute="bottom" id="Aij-UT-oQg"/>
                                     <constraint firstItem="tev-lS-Mdb" firstAttribute="leading" secondItem="Io7-Jw-Stv" secondAttribute="leading" id="Brk-qx-fwb"/>
                                     <constraint firstAttribute="trailing" secondItem="hps-ze-1NS" secondAttribute="trailing" id="C3r-mk-cAg"/>
@@ -152,19 +175,22 @@
                                     <constraint firstAttribute="trailing" secondItem="u0G-bz-Tps" secondAttribute="trailing" constant="16" id="HR5-Ot-LXK"/>
                                     <constraint firstItem="6z4-xh-FIo" firstAttribute="leading" secondItem="Io7-Jw-Stv" secondAttribute="leading" constant="16" id="RU0-iK-iTj"/>
                                     <constraint firstAttribute="trailing" secondItem="tev-lS-Mdb" secondAttribute="trailing" id="Rdj-hG-alu"/>
+                                    <constraint firstItem="gpG-3u-1Yo" firstAttribute="leading" secondItem="Io7-Jw-Stv" secondAttribute="leading" constant="16" id="Sjg-9B-ol9"/>
                                     <constraint firstItem="Gza-rr-Byj" firstAttribute="leading" secondItem="Io7-Jw-Stv" secondAttribute="leading" constant="16" id="Ucw-Qo-vCS"/>
                                     <constraint firstItem="Gza-rr-Byj" firstAttribute="top" secondItem="hps-ze-1NS" secondAttribute="bottom" id="VQj-kC-V4L"/>
                                     <constraint firstItem="nvo-Ro-12h" firstAttribute="top" secondItem="tev-lS-Mdb" secondAttribute="bottom" id="W6N-cq-Dxx"/>
                                     <constraint firstAttribute="trailing" secondItem="6z4-xh-FIo" secondAttribute="trailing" constant="16" id="ZXk-Ye-Ndl"/>
                                     <constraint firstItem="nws-Zg-NeF" firstAttribute="leading" secondItem="Io7-Jw-Stv" secondAttribute="leading" id="bd4-pI-naQ"/>
-                                    <constraint firstAttribute="height" constant="255" id="beQ-yK-waP"/>
-                                    <constraint firstItem="6z4-xh-FIo" firstAttribute="top" secondItem="Io7-Jw-Stv" secondAttribute="top" id="gEz-UD-zaK"/>
+                                    <constraint firstAttribute="height" constant="306" id="beQ-yK-waP"/>
                                     <constraint firstItem="tev-lS-Mdb" firstAttribute="top" secondItem="6z4-xh-FIo" secondAttribute="bottom" id="hGW-Wu-d4u"/>
                                     <constraint firstItem="NLW-v0-NUF" firstAttribute="leading" secondItem="Io7-Jw-Stv" secondAttribute="leading" id="irr-Hs-ZyN"/>
                                     <constraint firstAttribute="trailing" secondItem="grj-Cq-CYV" secondAttribute="trailing" constant="16" id="j6c-R8-bLE"/>
                                     <constraint firstItem="nws-Zg-NeF" firstAttribute="top" secondItem="u0G-bz-Tps" secondAttribute="bottom" id="qPC-AF-IhO"/>
+                                    <constraint firstAttribute="trailing" secondItem="bl7-fi-bEc" secondAttribute="trailing" id="uVs-iy-MDC"/>
+                                    <constraint firstItem="bl7-fi-bEc" firstAttribute="top" secondItem="gpG-3u-1Yo" secondAttribute="bottom" id="vld-xN-lRv"/>
                                     <constraint firstAttribute="trailing" secondItem="Gza-rr-Byj" secondAttribute="trailing" constant="16" id="wE6-Fm-vIi"/>
                                     <constraint firstItem="l7k-If-he0" firstAttribute="leading" secondItem="Io7-Jw-Stv" secondAttribute="leading" id="x7b-9m-iuM"/>
+                                    <constraint firstItem="gpG-3u-1Yo" firstAttribute="top" secondItem="Io7-Jw-Stv" secondAttribute="top" id="xl3-G0-tm7"/>
                                     <constraint firstItem="grj-Cq-CYV" firstAttribute="leading" secondItem="Io7-Jw-Stv" secondAttribute="leading" constant="16" id="xpa-qb-d6G"/>
                                     <constraint firstItem="grj-Cq-CYV" firstAttribute="top" secondItem="nws-Zg-NeF" secondAttribute="bottom" id="znN-TP-Ome"/>
                                 </constraints>
@@ -174,7 +200,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IaW-E6-uSO">
                                         <rect key="frame" x="16" y="15" width="382" height="50"/>
-                                        <color key="backgroundColor" name="SaveButtonColor"/>
+                                        <color key="backgroundColor" name="Brand - Green"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="sz1-Nn-bg4"/>
                                         </constraints>
@@ -218,12 +244,13 @@
                         <outlet property="dateToTextField" destination="nvo-Ro-12h" id="jER-Ic-FwV"/>
                         <outlet property="directionTextField" destination="grj-Cq-CYV" id="w30-bc-Yzo"/>
                         <outlet property="filtrationLabel" destination="sQH-c8-Ftl" id="hcg-Wv-Wk0"/>
+                        <outlet property="typeTextField" destination="gpG-3u-1Yo" id="nz7-mY-hgW"/>
                         <outlet property="walletTextField" destination="Gza-rr-Byj" id="nt8-1m-duY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9m6-OP-sah" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4220" y="234"/>
+            <point key="canvasLocation" x="-4220.289855072464" y="233.96739130434784"/>
         </scene>
         <!--Главная-->
         <scene sceneID="Qeh-Cz-iLI">
@@ -271,7 +298,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Транзакции" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dj8-U3-Joe">
                                         <rect key="frame" x="0.0" y="4.6666666666666643" width="182.66666666666666" height="40.666666666666664"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                        <color key="textColor" name="BrandBlackTEXT"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -296,13 +323,13 @@
                                                         <rect key="frame" x="10" y="20" width="106.66666666666667" height="14.333333333333336"/>
                                                         <color key="tintColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                        <color key="textColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" name="Brand - AOAOAO"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="103341,12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="vHd-mG-Mbq">
                                                         <rect key="frame" x="10" y="42.333333333333343" width="106.66666666666667" height="27.666666666666671"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <color key="textColor" red="0.23137254901960785" green="0.23921568627450979" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" name="Brand - Dark"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -345,13 +372,13 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Расход" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2d7-4i-IZa">
                                                         <rect key="frame" x="10" y="20" width="106.66666666666667" height="14.333333333333336"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                        <color key="textColor" red="0.62745098040000002" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" name="Brand - AOAOAO"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="121123,23" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="6Qu-dK-84A">
                                                         <rect key="frame" x="10" y="42.333333333333343" width="106.66666666666667" height="27.666666666666671"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <color key="textColor" red="0.23137254900000001" green="0.23921568630000001" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" name="Brand - Dark"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -393,13 +420,13 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Баланс" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMv-Pm-mVr">
                                                         <rect key="frame" x="10" y="20" width="106.66666666666667" height="14.333333333333336"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                        <color key="textColor" red="0.62745098040000002" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" name="Brand - AOAOAO"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+123345,12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="uxa-ag-B0z">
                                                         <rect key="frame" x="10" y="42.333333333333343" width="106.66666666666667" height="27.666666666666671"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <color key="textColor" red="0.23137254900000001" green="0.23921568630000001" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" name="Brand - Dark"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -440,7 +467,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Последние записи" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffv-29-Z8L">
                                         <rect key="frame" x="0.0" y="0.0" width="158" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RbW-P2-wVW">
@@ -545,7 +572,7 @@
                                     <constraint firstAttribute="height" constant="26" id="gQw-uW-nsu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="BrandBlackTEXT"/>
+                                <color key="textColor" name="Brand - Dark"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Войдите, чтобы продолжить" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGG-9i-Ojc">
@@ -554,7 +581,7 @@
                                     <constraint firstAttribute="height" constant="20" id="T0F-mv-4YL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="Brand - Dark"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1vC-GU-Rpm">
@@ -573,7 +600,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Забыли пароль?">
-                                    <color key="titleColor" name="BrandDarkGrey"/>
+                                    <color key="titleColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="cb5-kb-gib" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="y7j-yH-edS"/>
@@ -581,7 +608,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlB-bw-p6Q">
                                 <rect key="frame" x="16" y="590" width="382" height="46"/>
-                                <color key="backgroundColor" red="0.23137254901960785" green="0.23921568627450979" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="Brand - Dark"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="3yI-2a-Ga7"/>
                                 </constraints>
@@ -684,7 +711,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebf-iO-j73">
                                 <rect key="frame" x="16" y="586" width="382" height="50"/>
-                                <color key="backgroundColor" red="0.23137254900000001" green="0.23921568630000001" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="Brand - Dark"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bAf-vt-sr2"/>
                                 </constraints>
@@ -704,7 +731,7 @@
 
 Если вы являетесь администратором, то следует обратиться к супер администратору</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Забыли пароль?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yf-Pq-cKW">
@@ -713,7 +740,7 @@
                                     <constraint firstAttribute="height" constant="25" id="wBh-8q-irj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="MTV-uO-pNe">
@@ -729,7 +756,7 @@
                                     <constraint firstAttribute="height" constant="26" id="ZzH-Ca-C6s"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="BrandBlackTEXT"/>
+                                <color key="textColor" name="Brand - Dark"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -832,7 +859,7 @@
                                             <constraint firstAttribute="height" constant="50" id="Usa-ON-5v6"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                        <color key="textColor" name="BrandBlackTEXT"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -862,7 +889,7 @@
                                             <constraint firstAttribute="height" constant="22" id="SAz-6N-QPP"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZN-SZ-mVV">
@@ -964,7 +991,7 @@
                                             <constraint firstAttribute="width" constant="124" id="amB-CS-rMK"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <color key="textColor" name="BrandBlackTEXT"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1M-ZV-B3Z">
@@ -974,7 +1001,7 @@
                                             <constraint firstAttribute="width" constant="64" id="l0s-iT-QIu"/>
                                         </constraints>
                                         <state key="normal" title="Отмена">
-                                            <color key="titleColor" name="BrandBlackTEXT"/>
+                                            <color key="titleColor" name="Brand - Dark"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelButtonTapped:" destination="aZB-Ly-3QF" eventType="touchUpInside" id="Asc-ce-5DM"/>
@@ -1017,6 +1044,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="VHc-ye-qGN"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
@@ -1032,6 +1060,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Iro-0w-nPl"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
@@ -1047,6 +1076,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="BhL-L6-6q9"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
@@ -1062,6 +1092,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Pbh-7P-W9O"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
@@ -1077,6 +1108,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Aas-5q-jGs"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
@@ -1128,7 +1160,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HpQ-nI-kfM">
                                         <rect key="frame" x="16" y="15" width="382" height="50"/>
-                                        <color key="backgroundColor" name="SaveButtonColor"/>
+                                        <color key="backgroundColor" name="Brand - Green"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="rvY-Xp-mda"/>
                                         </constraints>
@@ -1227,7 +1259,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
-                                        <color key="textColor" name="BrandBlackTEXT"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -1392,7 +1424,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Отмена">
-                                            <color key="titleColor" name="BrandDarkGrey"/>
+                                            <color key="titleColor" name="Brand - Dark"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelButtonTapped:" destination="6En-VY-Lui" eventType="touchUpInside" id="Nyn-70-LkN"/>
@@ -1405,7 +1437,7 @@
                                             <constraint firstAttribute="width" constant="120" id="vxa-EW-zfB"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -1451,7 +1483,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kS3-eM-7Me">
                                         <rect key="frame" x="16" y="15" width="382" height="50"/>
-                                        <color key="backgroundColor" name="SaveButtonColor"/>
+                                        <color key="backgroundColor" name="Brand - Green"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="bVa-n9-FPm"/>
                                         </constraints>
@@ -1496,6 +1528,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="AFB-PJ-bql"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -1505,6 +1538,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="l54-5C-PdL"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="continue" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
@@ -1522,6 +1556,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="uQ4-ir-xX8"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -1531,6 +1566,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="i1k-F5-Tu0"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -1552,6 +1588,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Fec-Gd-s12"/>
                                                 </constraints>
+                                                <color key="textColor" name="Brand - Dark"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1582,6 +1619,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Lek-Ft-m5X"/>
                                                 </constraints>
+                                                <color key="textColor" name="Brand - Dark"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1602,6 +1640,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="GJ6-RC-Hmt"/>
                                                 </constraints>
+                                                <color key="textColor" name="Brand - Dark"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                             </textField>
@@ -1623,6 +1662,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="J3A-6e-TU9"/>
                                                 </constraints>
+                                                <color key="textColor" name="Brand - Dark"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1663,6 +1703,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="07t-gP-8tb"/>
                                                 </constraints>
+                                                <color key="textColor" name="Brand - Dark"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                             </textField>
@@ -1803,7 +1844,7 @@
                                             <constraint firstAttribute="height" constant="24" id="f0M-2e-xXd"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="un5-dz-V5f">
@@ -1814,7 +1855,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Отмена">
-                                            <color key="titleColor" name="BrandDarkGrey"/>
+                                            <color key="titleColor" name="Brand - Dark"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelTapped:" destination="c99-dl-qKU" eventType="touchUpInside" id="HK8-Wb-PNl"/>
@@ -1864,6 +1905,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="NJ2-Ta-0qP"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -1884,6 +1926,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="DqE-0i-q7V"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
@@ -1904,6 +1947,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="JoZ-nR-p7p"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -1924,6 +1968,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="6oi-bt-z11"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -1944,6 +1989,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="kh7-cy-rtU"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -1964,6 +2010,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="AEi-x2-9dG"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -1984,6 +2031,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="gTF-na-dEb"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -2004,6 +2052,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Awv-ti-TT1"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -2078,7 +2127,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsn-Jq-bEI">
                                         <rect key="frame" x="16" y="10" width="382" height="50"/>
-                                        <color key="backgroundColor" name="SaveButtonColor"/>
+                                        <color key="backgroundColor" name="Brand - Green"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="gfV-VB-tDL"/>
                                         </constraints>
@@ -2128,7 +2177,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Удалить">
-                                    <color key="titleColor" red="0.7568152547" green="0.2623270452" blue="0.25360554460000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" name="Brand - Red"/>
                                 </state>
                                 <connections>
                                     <action selector="deleteIconButtonTapped:" destination="c99-dl-qKU" eventType="touchUpInside" id="6Ee-OU-Qca"/>
@@ -2221,7 +2270,7 @@
                                             <constraint firstAttribute="height" constant="24" id="wtN-Ee-2Qe"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F44-04-MYt">
@@ -2232,7 +2281,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Отмена">
-                                            <color key="titleColor" name="BrandDarkGrey"/>
+                                            <color key="titleColor" name="Brand - Dark"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelButtonTapped:" destination="9BS-fa-XNm" eventType="touchUpInside" id="TCX-RL-V0g"/>
@@ -2257,6 +2306,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="azM-b6-gm7"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -2274,6 +2324,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="hn5-4p-twW"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
@@ -2291,6 +2342,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="W0B-dm-4Gw"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -2308,6 +2360,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="SWF-xf-dBb"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -2324,6 +2377,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="hDD-WC-ocF"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -2376,7 +2430,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubL-tv-lGj">
                                         <rect key="frame" x="16" y="15" width="382" height="50"/>
-                                        <color key="backgroundColor" name="SaveButtonColor"/>
+                                        <color key="backgroundColor" name="Brand - Green"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="vY0-kw-DrH"/>
                                         </constraints>
@@ -2426,7 +2480,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Удалить">
-                                    <color key="titleColor" red="0.7568152547" green="0.2623270452" blue="0.25360554460000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" name="Brand - Red"/>
                                 </state>
                                 <connections>
                                     <action selector="deleteButtonTapped:" destination="9BS-fa-XNm" eventType="touchUpInside" id="RdI-Lj-ZOx"/>
@@ -2500,7 +2554,7 @@
                                             <constraint firstAttribute="width" constant="124" id="Raa-QF-j7I"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <color key="textColor" name="BrandBlackTEXT"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpc-zG-MOl">
@@ -2510,7 +2564,7 @@
                                             <constraint firstAttribute="width" constant="64" id="lFF-Qo-Vyp"/>
                                         </constraints>
                                         <state key="normal" title="Отмена">
-                                            <color key="titleColor" name="BrandBlackTEXT"/>
+                                            <color key="titleColor" name="Brand - Dark"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelButtonTapped:" destination="1qA-Y2-tOI" eventType="touchUpInside" id="Taj-Cj-CdL"/>
@@ -2553,7 +2607,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="tMf-H9-6lu"/>
                                         </constraints>
-                                        <color key="textColor" name="BrandBlackTEXT"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -2569,6 +2623,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="tux-UR-QLb"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -2584,6 +2639,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="DxW-4m-Mzl"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -2599,6 +2655,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="YJF-Dt-cns"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -2614,6 +2671,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="ZGC-CG-f2D"/>
                                         </constraints>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -2665,7 +2723,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ux9-Fc-9Jb">
                                         <rect key="frame" x="16" y="15" width="382" height="50"/>
-                                        <color key="backgroundColor" name="SaveButtonColor"/>
+                                        <color key="backgroundColor" name="Brand - Green"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="stq-16-l3o"/>
                                         </constraints>
@@ -2709,7 +2767,7 @@
                                     <constraint firstAttribute="height" constant="50" id="PBK-o4-q1g"/>
                                 </constraints>
                                 <state key="normal" title="Удалить">
-                                    <color key="titleColor" red="0.7568152547" green="0.2623270452" blue="0.25360554460000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" name="Brand - Red"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZe-UQ-mEd">
@@ -2803,7 +2861,7 @@
                                             <constraint firstAttribute="height" constant="24" id="qyR-1a-POu"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="Brand - Dark 70"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebr-5q-6BD">
@@ -2882,7 +2940,7 @@
                                             <constraint firstAttribute="width" constant="64" id="j6f-vk-VUr"/>
                                         </constraints>
                                         <state key="normal" title="Отмена">
-                                            <color key="titleColor" name="BrandDarkGrey"/>
+                                            <color key="titleColor" name="Brand - Dark"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelButtonTapped:" destination="zmZ-gj-XKy" eventType="touchUpInside" id="yUi-54-SXc"/>
@@ -2895,7 +2953,7 @@
                                             <constraint firstAttribute="width" constant="120" id="Ebd-WM-ysw"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -2914,7 +2972,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Фамилия" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g9W-6d-0AU">
                                         <rect key="frame" x="16" y="0.0" width="382" height="50"/>
-                                        <color key="textColor" name="BrandBlackTEXT"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
@@ -2940,7 +2998,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dfd-a8-Kms">
                                         <rect key="frame" x="16" y="0.0" width="382" height="50"/>
-                                        <color key="textColor" name="BrandBlackTEXT"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
@@ -2966,7 +3024,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Отчество" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ios-q0-048">
                                         <rect key="frame" x="16" y="0.0" width="382" height="50"/>
-                                        <color key="textColor" name="BrandBlackTEXT"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
@@ -2992,7 +3050,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeY-WF-f2q">
                                         <rect key="frame" x="16" y="15" width="382" height="50"/>
-                                        <color key="backgroundColor" name="SaveButtonColor"/>
+                                        <color key="backgroundColor" name="Brand - Green"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="QCI-QM-LZ1"/>
                                         </constraints>
@@ -3085,7 +3143,7 @@
                                             <constraint firstAttribute="height" constant="24" id="Vdw-ja-TM3"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="Brand - Dark 70"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMg-lx-VBt">
@@ -3164,7 +3222,7 @@
                                             <constraint firstAttribute="width" constant="64" id="66n-Sn-Ky0"/>
                                         </constraints>
                                         <state key="normal" title="Отмена">
-                                            <color key="titleColor" name="BrandDarkGrey"/>
+                                            <color key="titleColor" name="Brand - Dark"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelButtonTapped:" destination="mCV-1h-zbl" eventType="touchUpInside" id="sko-TE-Vr1"/>
@@ -3177,7 +3235,7 @@
                                             <constraint firstAttribute="width" constant="120" id="KQ3-yR-n80"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="BrandBlackTEXT"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -3197,6 +3255,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Название" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PzN-nJ-Pe9">
                                         <rect key="frame" x="16" y="0.0" width="382" height="50"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -3222,7 +3281,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="il4-F4-lwq">
                                         <rect key="frame" x="16" y="15" width="382" height="50"/>
-                                        <color key="backgroundColor" name="SaveButtonColor"/>
+                                        <color key="backgroundColor" name="Brand - Green"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="end-in-Hj2"/>
                                         </constraints>
@@ -3272,20 +3331,106 @@
             </objects>
             <point key="canvasLocation" x="-4329" y="4646"/>
         </scene>
-        <!--View Controller-->
+        <!--SectionsVC-->
         <scene sceneID="IDK-Vg-hvH">
             <objects>
-                <viewController id="CnW-Bf-blZ" sceneMemberID="viewController">
+                <viewController id="CnW-Bf-blZ" customClass="SectionsVC" customModule="FMS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A6K-bg-dEP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="515"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ju7-Nm-K5h">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwu-ah-a70">
+                                        <rect key="frame" x="374" y="13" width="24" height="24"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="KAr-JU-HhL"/>
+                                            <constraint firstAttribute="width" constant="24" id="UW7-ct-IeX"/>
+                                        </constraints>
+                                        <state key="normal" image="Plus Sign SVG"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добавить" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YJ-gc-dS8">
+                                        <rect key="frame" x="16" y="13" width="348" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="fVv-nP-xa4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="Brand - Dark 70"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dG-GE-Evy">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <connections>
+                                            <action selector="addSectionButtonTapped:" destination="CnW-Bf-blZ" eventType="touchUpInside" id="BRz-9k-FWb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="7YJ-gc-dS8" firstAttribute="leading" secondItem="Ju7-Nm-K5h" secondAttribute="leading" constant="16" id="0hx-xO-BPH"/>
+                                    <constraint firstItem="Nwu-ah-a70" firstAttribute="leading" secondItem="7YJ-gc-dS8" secondAttribute="trailing" constant="10" id="7W8-oG-RDA"/>
+                                    <constraint firstItem="2dG-GE-Evy" firstAttribute="top" secondItem="Ju7-Nm-K5h" secondAttribute="top" id="K31-js-rxo"/>
+                                    <constraint firstItem="Nwu-ah-a70" firstAttribute="centerY" secondItem="Ju7-Nm-K5h" secondAttribute="centerY" id="Mqg-re-fNu"/>
+                                    <constraint firstAttribute="height" constant="50" id="PsD-9w-O9z"/>
+                                    <constraint firstAttribute="trailing" secondItem="Nwu-ah-a70" secondAttribute="trailing" constant="16" id="cSL-D8-Qv2"/>
+                                    <constraint firstItem="7YJ-gc-dS8" firstAttribute="centerY" secondItem="Ju7-Nm-K5h" secondAttribute="centerY" id="m7C-A5-StN"/>
+                                    <constraint firstAttribute="bottom" secondItem="2dG-GE-Evy" secondAttribute="bottom" id="qAg-JA-ZVD"/>
+                                    <constraint firstItem="2dG-GE-Evy" firstAttribute="leading" secondItem="Ju7-Nm-K5h" secondAttribute="leading" id="rGc-UA-GqJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="2dG-GE-Evy" secondAttribute="trailing" id="yQJ-l6-TFq"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5d-qi-Q01" userLabel="Divider">
+                                <rect key="frame" x="0.0" y="50" width="414" height="1"/>
+                                <color key="backgroundColor" name="Dividers Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="vgS-Sg-59L"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ROu-kC-jLO">
+                                <rect key="frame" x="0.0" y="51" width="414" height="464"/>
+                                <color key="backgroundColor" name="BrandColorGrey"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="jyt-vZ-1fS"/>
-                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <color key="backgroundColor" name="BrandColorGrey"/>
+                        <constraints>
+                            <constraint firstItem="Ju7-Nm-K5h" firstAttribute="leading" secondItem="jyt-vZ-1fS" secondAttribute="leading" id="9UN-nE-i8s"/>
+                            <constraint firstItem="Ju7-Nm-K5h" firstAttribute="top" secondItem="jyt-vZ-1fS" secondAttribute="top" id="IM9-3b-tDt"/>
+                            <constraint firstItem="jyt-vZ-1fS" firstAttribute="trailing" secondItem="Ju7-Nm-K5h" secondAttribute="trailing" id="Sei-xC-LR1"/>
+                            <constraint firstItem="ROu-kC-jLO" firstAttribute="top" secondItem="W5d-qi-Q01" secondAttribute="bottom" id="aMX-yw-nMp"/>
+                            <constraint firstItem="jyt-vZ-1fS" firstAttribute="bottom" secondItem="ROu-kC-jLO" secondAttribute="bottom" id="cgX-zi-CBa"/>
+                            <constraint firstItem="ROu-kC-jLO" firstAttribute="leading" secondItem="jyt-vZ-1fS" secondAttribute="leading" id="lK4-qw-0ID"/>
+                            <constraint firstItem="W5d-qi-Q01" firstAttribute="leading" secondItem="A6K-bg-dEP" secondAttribute="leading" id="lUT-YX-N33"/>
+                            <constraint firstItem="jyt-vZ-1fS" firstAttribute="trailing" secondItem="ROu-kC-jLO" secondAttribute="trailing" id="lVm-sK-Ete"/>
+                            <constraint firstAttribute="trailing" secondItem="W5d-qi-Q01" secondAttribute="trailing" id="sBC-XA-SuN"/>
+                            <constraint firstItem="W5d-qi-Q01" firstAttribute="top" secondItem="Ju7-Nm-K5h" secondAttribute="bottom" id="sRJ-sz-QlJ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addLabel" destination="7YJ-gc-dS8" id="jHS-lh-8H5"/>
+                        <outlet property="sectionsTableView" destination="ROu-kC-jLO" id="h9P-Gq-5an"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4O8-W9-xdw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-903" y="3910"/>
+            <point key="canvasLocation" x="-904.34782608695662" y="3909.3750000000005"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ycr-Ta-Neb">
+            <objects>
+                <viewController id="wGC-2K-YoC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x0v-FZ-ewG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ko1-3c-5RM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xjI-14-jXU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1426" y="4600"/>
         </scene>
         <!--Editing ProjectsVC-->
         <scene sceneID="XHh-Zc-2nH">
@@ -3304,7 +3449,7 @@
                                             <constraint firstAttribute="width" constant="64" id="ARn-ka-QWx"/>
                                         </constraints>
                                         <state key="normal" title="Отмена">
-                                            <color key="titleColor" name="BrandDarkGrey"/>
+                                            <color key="titleColor" name="Brand - Dark"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelButtonTapped:" destination="C12-iX-gW6" eventType="touchUpInside" id="uKZ-x9-ekw"/>
@@ -3317,7 +3462,7 @@
                                             <constraint firstAttribute="height" constant="50" id="yRi-vT-eB8"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="BrandBlackTEXT"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -3337,6 +3482,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Название" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QrH-ZH-Nyw">
                                         <rect key="frame" x="16" y="0.0" width="382" height="50"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -3355,7 +3501,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3v-8z-D9t">
                                         <rect key="frame" x="16" y="15" width="382" height="50"/>
-                                        <color key="backgroundColor" name="SaveButtonColor"/>
+                                        <color key="backgroundColor" name="Brand - Green"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="1ol-vq-Q30"/>
                                         </constraints>
@@ -3408,7 +3554,7 @@
                                             <constraint firstAttribute="width" constant="70" id="ckb-KX-xym"/>
                                         </constraints>
                                         <state key="normal" title="Удалить">
-                                            <color key="titleColor" name="BrandRed"/>
+                                            <color key="titleColor" name="Brand - Red"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLB-4O-F3w">
@@ -3495,7 +3641,7 @@
                                             <constraint firstAttribute="height" constant="24" id="pv9-X7-uoI"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                        <color key="textColor" name="BrandBlackTEXT"/>
+                                        <color key="textColor" name="Brand - Dark 70"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0n-I1-BmZ">
@@ -3574,7 +3720,7 @@
                                             <constraint firstAttribute="width" constant="120" id="S3r-q8-Yhz"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <color key="textColor" name="BrandBlackTEXT"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjN-fy-c6B">
@@ -3584,7 +3730,7 @@
                                             <constraint firstAttribute="height" constant="50" id="zdg-DR-mc5"/>
                                         </constraints>
                                         <state key="normal" title="Отмена">
-                                            <color key="titleColor" name="BrandBlackTEXT"/>
+                                            <color key="titleColor" name="Brand - Dark"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelButtonTapped:" destination="WxH-Ey-byy" eventType="touchUpInside" id="OjZ-7o-5fF"/>
@@ -3605,6 +3751,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Название" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rrg-7o-G7f">
                                         <rect key="frame" x="16" y="0.0" width="382" height="50"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -3623,7 +3770,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ti4-rt-qi1">
                                         <rect key="frame" x="16" y="15" width="382" height="50"/>
-                                        <color key="backgroundColor" name="SaveButtonColor"/>
+                                        <color key="backgroundColor" name="Brand - Green"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="bUf-I7-tXU"/>
                                         </constraints>
@@ -3663,6 +3810,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Сумма" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b33-SZ-TJH">
                                         <rect key="frame" x="16" y="0.0" width="382" height="50"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -3740,7 +3888,7 @@
                                             <constraint firstAttribute="width" constant="64" id="p4E-v4-yS0"/>
                                         </constraints>
                                         <state key="normal" title="Отмена">
-                                            <color key="titleColor" name="BrandDarkGrey"/>
+                                            <color key="titleColor" name="Brand - Dark"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelButtonTapped:" destination="uJt-zE-hFY" eventType="touchUpInside" id="BRs-16-a5E"/>
@@ -3753,7 +3901,7 @@
                                             <constraint firstAttribute="width" constant="120" id="ZH9-0a-D2r"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -3772,7 +3920,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Фамилия" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6tN-QN-4Hf">
                                         <rect key="frame" x="16" y="0.0" width="382" height="50"/>
-                                        <color key="textColor" name="BrandBlackTEXT"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
@@ -3798,7 +3946,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lgh-OC-Yj7">
                                         <rect key="frame" x="16" y="0.0" width="382" height="50"/>
-                                        <color key="textColor" name="BrandBlackTEXT"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
@@ -3824,7 +3972,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Отчество" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QYE-43-RLA">
                                         <rect key="frame" x="16" y="0.0" width="382" height="50"/>
-                                        <color key="textColor" name="BrandBlackTEXT"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
@@ -3850,7 +3998,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDO-Tw-Gpv">
                                         <rect key="frame" x="16" y="15" width="382" height="50"/>
-                                        <color key="backgroundColor" name="SaveButtonColor"/>
+                                        <color key="backgroundColor" name="Brand - Green"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="FUz-f8-Ycz"/>
                                         </constraints>
@@ -3900,7 +4048,7 @@
                                             <constraint firstAttribute="height" constant="50" id="twC-06-rGk"/>
                                         </constraints>
                                         <state key="normal" title="Удалить">
-                                            <color key="titleColor" red="0.7568152547" green="0.2623270452" blue="0.25360554460000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" name="Brand - Red"/>
                                         </state>
                                         <connections>
                                             <action selector="deleteButtonTapped:" destination="uJt-zE-hFY" eventType="touchUpInside" id="04m-PY-GmG"/>
@@ -3999,7 +4147,7 @@
                                             <constraint firstAttribute="height" constant="50" id="hAC-MG-O3p"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <color key="textColor" name="BrandBlackTEXT"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83N-5x-8JD">
@@ -4009,7 +4157,7 @@
                                             <constraint firstAttribute="height" constant="50" id="Ts0-iS-l95"/>
                                         </constraints>
                                         <state key="normal" title="Отмена">
-                                            <color key="titleColor" name="BrandBlackTEXT"/>
+                                            <color key="titleColor" name="Brand - Dark"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelButtonTapped:" destination="DqW-T6-r7b" eventType="touchUpInside" id="dU1-bw-2b9"/>
@@ -4030,6 +4178,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Название" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xHi-Ej-dhE">
                                         <rect key="frame" x="16" y="0.0" width="382" height="50"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -4048,7 +4197,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7w-sj-paB">
                                         <rect key="frame" x="16" y="15" width="382" height="50"/>
-                                        <color key="backgroundColor" name="SaveButtonColor"/>
+                                        <color key="backgroundColor" name="Brand - Green"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="g9f-F9-R6C"/>
                                         </constraints>
@@ -4088,6 +4237,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Сумма" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bJe-HD-jAM">
                                         <rect key="frame" x="16" y="0.0" width="382" height="50"/>
+                                        <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -4125,7 +4275,7 @@
                                             <constraint firstAttribute="width" constant="70" id="i9t-rk-9Fh"/>
                                         </constraints>
                                         <state key="normal" title="Удалить">
-                                            <color key="titleColor" name="BrandRed"/>
+                                            <color key="titleColor" name="Brand - Red"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PgQ-Tg-OHh">
@@ -4226,29 +4376,29 @@
         <image name="Users TB Enab IconSVG" width="25" height="24"/>
         <image name="Users TB IconSVG" width="25" height="24"/>
         <image name="Wallets" width="25" height="24"/>
-        <namedColor name="BrandBlackTEXT">
+        <namedColor name="Brand - AOAOAO">
+            <color red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Brand - Dark">
             <color red="0.23137254901960785" green="0.23921568627450981" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Brand - Dark 70">
+            <color red="0.23137254901960785" green="0.23921568627450981" blue="0.30980392156862746" alpha="0.69999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Brand - Green">
+            <color red="0.40000000000000002" green="0.75686274509803919" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Brand - Red">
+            <color red="0.74901960784313726" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BrandColorGrey">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="BrandDarkGrey">
-            <color red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="BrandRed">
-            <color red="0.74901960784313726" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Dividers Color">
             <color red="0.23137254901960785" green="0.23921568627450981" blue="0.30980392156862746" alpha="0.28999999165534973" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="SaveButtonColor">
-            <color red="0.40000000596046448" green="0.75700002908706665" blue="0.28600001335144043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

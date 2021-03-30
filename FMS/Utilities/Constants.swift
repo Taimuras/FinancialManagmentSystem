@@ -21,6 +21,7 @@ class Constants {
     let counterPartTableViewCellIdentifier = "CounterPartTBCell"
     let projectPartTableViewCellIdentifier = "ProjectTVCell"
     let walletPartTableViewCellIdentifier = "WalletTVCell"
+    let sectionsPartTableViewCellIdentifier = "SectionTVCell"
     
     //Storyboard IDs
     let tabBarViewIdintifier = "TabBarStoryBoardID"
@@ -79,7 +80,7 @@ class Constants {
     let deleteTransactionByIDEndPoint = "https://neobis-finance-sistem.herokuapp.com/transaction/"
     let updateTransactionByIDEndPoint = "https://neobis-finance-sistem.herokuapp.com/transaction/"
     let getUserByEmailEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/change/user/"  // \(email.gmail.com)
-    let getSessionUserEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/session-user/"  // .post
+    let getSessionUserEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/session-user/"  // .get
     let deleteUserEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/change/user/" // \(email@gmail.com)
     let updateUserEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/change/user/" // \(email@gmail.com)
     let getAllCounterPartsEndPoint = "https://neobis-finance-sistem.herokuapp.com/contractor/"

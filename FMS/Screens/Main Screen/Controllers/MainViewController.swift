@@ -60,16 +60,15 @@ class MainViewController: UIViewController {
         registerCWCell()
         refreshMainCVC()
         
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         
         fetchData()
-        
-        
-        
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         DispatchQueue.main.async {
             self.fetchData()
         }
@@ -86,7 +85,7 @@ class MainViewController: UIViewController {
     
     // MARK: Fetching Data first try
     func fetchData () {
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        
         fetchingTransactions.fetchingTransactions(url: constants.transitionsEndPoint) { (data) in
             DispatchQueue.main.async {
                 self.mainVCData.removeAll()
@@ -167,7 +166,7 @@ extension MainViewController: FilterVCDelegate{
         
         let endPoint = self.constants.transitionsEndPoint + url
         
-        print("Filtered End Point: \(endPoint)")
+//        print("Filtered End Point: \(endPoint)")
         self.fetchingTransactions.fetchingFilteredTransactions(url: endPoint, dateFrom: dateFrom, dateTo: dateTo) { (responseData) in
             
             

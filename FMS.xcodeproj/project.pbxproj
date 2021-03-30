@@ -36,6 +36,8 @@
 		5242997F260F2A5A0081293C /* GetSingleWalletByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242997E260F2A5A0081293C /* GetSingleWalletByID.swift */; };
 		52429983260F2CBD0081293C /* DeleteWalletByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52429982260F2CBD0081293C /* DeleteWalletByID.swift */; };
 		52429987260F2DA90081293C /* UpdateWalletByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52429986260F2DA90081293C /* UpdateWalletByID.swift */; };
+		52433D30261327A900633AA1 /* CategoryTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52433D2E261327A900633AA1 /* CategoryTVCell.swift */; };
+		52433D31261327A900633AA1 /* CategoryTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52433D2F261327A900633AA1 /* CategoryTVCell.xib */; };
 		524365CB260C73E6005A5D09 /* CounterPartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524365CA260C73E6005A5D09 /* CounterPartVC.swift */; };
 		524365D0260C75A2005A5D09 /* CounterPartTBCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524365CE260C75A2005A5D09 /* CounterPartTBCell.swift */; };
 		524365D1260C75A2005A5D09 /* CounterPartTBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524365CF260C75A2005A5D09 /* CounterPartTBCell.xib */; };
@@ -46,6 +48,10 @@
 		5244A6C4260C90D200F4C991 /* EditingCounterPartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5244A6C3260C90D200F4C991 /* EditingCounterPartVC.swift */; };
 		5244A6C7260C94A800F4C991 /* GetCounterPartByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5244A6C6260C94A800F4C991 /* GetCounterPartByID.swift */; };
 		5244A6CA260C965000F4C991 /* DeleteCounterPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5244A6C9260C965000F4C991 /* DeleteCounterPart.swift */; };
+		524CA54D2613138C006CFFF0 /* SectionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CA54C2613138C006CFFF0 /* SectionsVC.swift */; };
+		524CA55126131616006CFFF0 /* SectionTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CA54F26131616006CFFF0 /* SectionTVCell.swift */; };
+		524CA55226131616006CFFF0 /* SectionTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524CA55026131616006CFFF0 /* SectionTVCell.xib */; };
+		524CA5552613187A006CFFF0 /* GetAllSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CA5542613187A006CFFF0 /* GetAllSections.swift */; };
 		524CF8112609B827000E3768 /* UpdatingTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CF8102609B827000E3768 /* UpdatingTransaction.swift */; };
 		524CF8142609DB2C000E3768 /* GetAndUpdateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CF8132609DB2C000E3768 /* GetAndUpdateUser.swift */; };
 		524CF8172609E300000E3768 /* GetSessionUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CF8162609E300000E3768 /* GetSessionUser.swift */; };
@@ -84,6 +90,7 @@
 		5284800525FCB91D00D82D8F /* FetchingDataFilterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284800425FCB91D00D82D8F /* FetchingDataFilterScreen.swift */; };
 		5284800825FCBB8100D82D8F /* WalletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284800725FCBB8100D82D8F /* WalletModel.swift */; };
 		5284800B25FCBEB600D82D8F /* CounterAgentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284800A25FCBEB600D82D8F /* CounterAgentsModel.swift */; };
+		5297CE8326118B9E002AFA1A /* AdapterAndRetrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297CE8226118B9E002AFA1A /* AdapterAndRetrier.swift */; };
 		52AE32BA260311490078D76F /* NetworkCreateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE32B9260311490078D76F /* NetworkCreateUser.swift */; };
 		52CC2BB825F3656400DAA708 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC2BB725F3656400DAA708 /* TabBarViewController.swift */; };
 		52E5090425F211F80086DF17 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5090325F211F80086DF17 /* LoginVC.swift */; };
@@ -123,6 +130,8 @@
 		5242997E260F2A5A0081293C /* GetSingleWalletByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSingleWalletByID.swift; sourceTree = "<group>"; };
 		52429982260F2CBD0081293C /* DeleteWalletByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteWalletByID.swift; sourceTree = "<group>"; };
 		52429986260F2DA90081293C /* UpdateWalletByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateWalletByID.swift; sourceTree = "<group>"; };
+		52433D2E261327A900633AA1 /* CategoryTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTVCell.swift; sourceTree = "<group>"; };
+		52433D2F261327A900633AA1 /* CategoryTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTVCell.xib; sourceTree = "<group>"; };
 		524365CA260C73E6005A5D09 /* CounterPartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterPartVC.swift; sourceTree = "<group>"; };
 		524365CE260C75A2005A5D09 /* CounterPartTBCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterPartTBCell.swift; sourceTree = "<group>"; };
 		524365CF260C75A2005A5D09 /* CounterPartTBCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CounterPartTBCell.xib; sourceTree = "<group>"; };
@@ -133,6 +142,10 @@
 		5244A6C3260C90D200F4C991 /* EditingCounterPartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingCounterPartVC.swift; sourceTree = "<group>"; };
 		5244A6C6260C94A800F4C991 /* GetCounterPartByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCounterPartByID.swift; sourceTree = "<group>"; };
 		5244A6C9260C965000F4C991 /* DeleteCounterPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCounterPart.swift; sourceTree = "<group>"; };
+		524CA54C2613138C006CFFF0 /* SectionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsVC.swift; sourceTree = "<group>"; };
+		524CA54F26131616006CFFF0 /* SectionTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTVCell.swift; sourceTree = "<group>"; };
+		524CA55026131616006CFFF0 /* SectionTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionTVCell.xib; sourceTree = "<group>"; };
+		524CA5542613187A006CFFF0 /* GetAllSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllSections.swift; sourceTree = "<group>"; };
 		524CF8102609B827000E3768 /* UpdatingTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatingTransaction.swift; sourceTree = "<group>"; };
 		524CF8132609DB2C000E3768 /* GetAndUpdateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAndUpdateUser.swift; sourceTree = "<group>"; };
 		524CF8162609E300000E3768 /* GetSessionUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSessionUser.swift; sourceTree = "<group>"; };
@@ -173,6 +186,7 @@
 		5284800425FCB91D00D82D8F /* FetchingDataFilterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchingDataFilterScreen.swift; sourceTree = "<group>"; };
 		5284800725FCBB8100D82D8F /* WalletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletModel.swift; sourceTree = "<group>"; };
 		5284800A25FCBEB600D82D8F /* CounterAgentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAgentsModel.swift; sourceTree = "<group>"; };
+		5297CE8226118B9E002AFA1A /* AdapterAndRetrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterAndRetrier.swift; sourceTree = "<group>"; };
 		52AE32B9260311490078D76F /* NetworkCreateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkCreateUser.swift; path = "FMS/Screens/Users Screen/Networking/NetworkCreateUser.swift"; sourceTree = SOURCE_ROOT; };
 		52CC2BB725F3656400DAA708 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		52E5090325F211F80086DF17 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -287,6 +301,15 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		52433D2D2613276E00633AA1 /* CategoryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				52433D2E261327A900633AA1 /* CategoryTVCell.swift */,
+				52433D2F261327A900633AA1 /* CategoryTVCell.xib */,
+			);
+			path = CategoryTableViewCell;
+			sourceTree = "<group>";
+		};
 		524365C6260C73A4005A5D09 /* Main Settings Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +367,50 @@
 				525464AA260DBE080089B03A /* UpdateCounterPartByID.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		524CA54626131344006CFFF0 /* Sections Screen */ = {
+			isa = PBXGroup;
+			children = (
+				52433D2D2613276E00633AA1 /* CategoryTableViewCell */,
+				524CA54A26131366006CFFF0 /* SectionTableViewCell */,
+				524CA5492613135F006CFFF0 /* Networking */,
+				524CA5482613135A006CFFF0 /* Models */,
+				524CA54726131353006CFFF0 /* Controllers */,
+			);
+			path = "Sections Screen";
+			sourceTree = "<group>";
+		};
+		524CA54726131353006CFFF0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				524CA54C2613138C006CFFF0 /* SectionsVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		524CA5482613135A006CFFF0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		524CA5492613135F006CFFF0 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				524CA5542613187A006CFFF0 /* GetAllSections.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		524CA54A26131366006CFFF0 /* SectionTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				524CA54F26131616006CFFF0 /* SectionTVCell.swift */,
+				524CA55026131616006CFFF0 /* SectionTVCell.xib */,
+			);
+			path = SectionTableViewCell;
 			sourceTree = "<group>";
 		};
 		5251A55C25EF5A9600546F71 /* MainCVCell */ = {
@@ -439,6 +506,7 @@
 		5252797D25EDFE51001FF2CE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				5297CE8226118B9E002AFA1A /* AdapterAndRetrier.swift */,
 				5252797325EDFE06001FF2CE /* LaunchScreen.storyboard */,
 				5251A55E25EF5C0A00546F71 /* Constants.swift */,
 				52178BA125F690ED001E9C14 /* TabBarController.swift */,
@@ -502,6 +570,7 @@
 		5252798325EDFEAD001FF2CE /* Settings Screen */ = {
 			isa = PBXGroup;
 			children = (
+				524CA54626131344006CFFF0 /* Sections Screen */,
 				52429965260F1B980081293C /* Wallets Screen */,
 				525464AD260DC3830089B03A /* Projects Screen */,
 				524365C7260C73BA005A5D09 /* CounterPart Screen */,
@@ -788,6 +857,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52429970260F1D910081293C /* WalletTVCell.xib in Resources */,
+				524CA55226131616006CFFF0 /* SectionTVCell.xib in Resources */,
 				5252797525EDFE06001FF2CE /* LaunchScreen.storyboard in Resources */,
 				5220E57D25EE2C470077EB07 /* MainCVC.xib in Resources */,
 				521F37AA25F0B6AB00B3E7D2 /* OpenSans-SemiBold.ttf in Resources */,
@@ -795,6 +865,7 @@
 				521F37A425F0B45D00B3E7D2 /* OpenSans-Bold.ttf in Resources */,
 				52396F4D26006FA300562103 /* UserTBCell.xib in Resources */,
 				5253A97D25FF5EC300449916 /* Assets.xcassets in Resources */,
+				52433D31261327A900633AA1 /* CategoryTVCell.xib in Resources */,
 				524365D1260C75A2005A5D09 /* CounterPartTBCell.xib in Resources */,
 				521F37A725F0B69000B3E7D2 /* OpenSans-Regular.ttf in Resources */,
 				5252797025EDFE06001FF2CE /* Main.storyboard in Resources */,
@@ -852,6 +923,7 @@
 			files = (
 				5242996F260F1D910081293C /* WalletTVCell.swift in Sources */,
 				52396F4C26006FA300562103 /* UserTBCell.swift in Sources */,
+				524CA5552613187A006CFFF0 /* GetAllSections.swift in Sources */,
 				522B24F22604659B005BBFFC /* NetworkCreateTransaction.swift in Sources */,
 				527D603826085BEA00620859 /* TransactionByID.swift in Sources */,
 				524365D8260C7EB2005A5D09 /* GetAllCounterParts.swift in Sources */,
@@ -893,7 +965,9 @@
 				52AE32BA260311490078D76F /* NetworkCreateUser.swift in Sources */,
 				5244A6C7260C94A800F4C991 /* GetCounterPartByID.swift in Sources */,
 				52E8B6C025F9E199002D62A0 /* EditingTransactionsVC.swift in Sources */,
+				5297CE8326118B9E002AFA1A /* AdapterAndRetrier.swift in Sources */,
 				525464B7260DC60C0089B03A /* ProjectTVCell.swift in Sources */,
+				524CA55126131616006CFFF0 /* SectionTVCell.swift in Sources */,
 				5284800525FCB91D00D82D8F /* FetchingDataFilterScreen.swift in Sources */,
 				52429973260F201F0081293C /* GetAllWallets.swift in Sources */,
 				5242996B260F1BE00081293C /* WalletsVC.swift in Sources */,
@@ -914,6 +988,7 @@
 				524365D0260C75A2005A5D09 /* CounterPartTBCell.swift in Sources */,
 				525464C3260DC92D0089B03A /* GetAllProjects.swift in Sources */,
 				524CF8142609DB2C000E3768 /* GetAndUpdateUser.swift in Sources */,
+				524CA54D2613138C006CFFF0 /* SectionsVC.swift in Sources */,
 				524D6EFF260EEAFF0032CA07 /* EditingProjectsVC.swift in Sources */,
 				5242997C260F28FE0081293C /* EditingWalletsVC.swift in Sources */,
 				5262BDC22603605400709939 /* CategoryModel.swift in Sources */,
@@ -921,6 +996,7 @@
 				5266438D25F5D7C90032499D /* AnaliticsVC.swift in Sources */,
 				524D6F02260EEE630032CA07 /* GetSingleProjectByID.swift in Sources */,
 				5262BDC52603628700709939 /* ProjectModel.swift in Sources */,
+				52433D30261327A900633AA1 /* CategoryTVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
