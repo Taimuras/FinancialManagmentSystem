@@ -6,6 +6,7 @@ class LoginVC: UIViewController {
     
     let constants = Constants()
     var reachability: Reachability?
+    let getUser = GetSessionUser()
     //Labels
     
     @IBOutlet weak var logoImageView: UIImageView!
@@ -53,6 +54,25 @@ class LoginVC: UIViewController {
                     // Present dialog message to user
                     self.present(dialogMessage, animated: true, completion: nil)
                     MBProgressHUD.hide(for: self.view, animated: true)
+                } else {
+                    self.getUser.getSessionUser { (data) in
+                        if data == 1{
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+                            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+                        } else {
+                            let dialogMessage = UIAlertController(title: "Авторизация не удалась", message: "Проверьте правильность набора личных данных!", preferredStyle: .alert)
+                            let cancel = UIAlertAction(title: "Ок", style: .cancel) { (action) -> Void in
+                    //            print("Cancel button tapped")
+                            }
+                            dialogMessage.addAction(cancel)
+                            
+                            
+                            // Present dialog message to user
+                            self.present(dialogMessage, animated: true, completion: nil)
+                        }
+                    }
+                    
                 }
             }
         } else {

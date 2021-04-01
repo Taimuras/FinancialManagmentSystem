@@ -811,6 +811,7 @@
 		5291ABA725F346E3005A2819 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				524CF8162609E300000E3768 /* GetSessionUser.swift */,
 				5225FE4125F347D700CF4009 /* ApiCalling.swift */,
 			);
 			path = Models;
@@ -840,7 +841,6 @@
 			isa = PBXGroup;
 			children = (
 				5266438F25F5DF100032499D /* FetchingTransactions.swift */,
-				524CF8162609E300000E3768 /* GetSessionUser.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";

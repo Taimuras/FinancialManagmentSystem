@@ -37,9 +37,7 @@ class ApiCalling {
                     let accessToken = json["access"].stringValue
                     
                     self.userDefaults.setValue(accessToken, forKey: "AccessToken")
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
-                    (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+                    
                     userAuth = 1
                     completion(userAuth)
                     userAuth = 0

@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     
     let constants = Constants()
     let fetchingTransactions = FetchingTransactions()
+    let getUser = GetSessionUser()
     
     var mainVCData: [TransactionModel] = []
     
@@ -64,6 +65,10 @@ class MainViewController: UIViewController {
         
         fetchData()
         
+        
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -94,6 +99,7 @@ class MainViewController: UIViewController {
 
             self.userDefaults.removeObject(forKey: "AccessToken")
             self.userDefaults.removeObject(forKey: "RefreshToken")
+            self.userDefaults.removeObject(forKey: "Admin")
              
         })
         
@@ -140,6 +146,8 @@ extension MainViewController{
             }
         }
     }
+    
+    
 }
 
 

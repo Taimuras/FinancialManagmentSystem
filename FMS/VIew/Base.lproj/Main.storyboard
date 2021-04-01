@@ -966,7 +966,12 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="addLabel" destination="tmF-ZI-X0U" id="ucv-lA-dtU"/>
+                        <outlet property="addLabelHeight" destination="SAz-6N-QPP" id="MjR-hm-eOo"/>
+                        <outlet property="addViewHeight" destination="IW8-TO-Bn3" id="zsQ-y2-qp5"/>
                         <outlet property="createUserButtonView" destination="yo9-lt-Ess" id="lm7-OP-0Bk"/>
+                        <outlet property="plusSignButton" destination="xZN-SZ-mVV" id="XRk-WI-kwv"/>
+                        <outlet property="plusSignButtonHeight" destination="Lgl-Va-75F" id="XD0-Se-ZVC"/>
+                        <outlet property="userImageHeight" destination="Ns4-g8-f1u" id="9HQ-ix-1RE"/>
                         <outlet property="userImageView" destination="zFn-cb-f9f" id="Jik-Mj-muy"/>
                         <outlet property="userTableView" destination="ows-eo-8Qh" id="rHJ-Fb-GeH"/>
                         <outlet property="usersLabel" destination="vlO-cx-mj7" id="SxA-Yy-Hoh"/>

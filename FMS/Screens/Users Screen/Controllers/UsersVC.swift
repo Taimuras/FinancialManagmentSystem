@@ -15,16 +15,29 @@ class UsersVC: UIViewController {
     
     
     @IBOutlet weak var usersLabel: UILabel!
+    
     @IBOutlet weak var addLabel: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
-    
     @IBOutlet weak var createUserButtonView: UIView!
+    @IBOutlet weak var plusSignButton: UIButton!
+    
+    
+    @IBOutlet weak var userImageHeight: NSLayoutConstraint!
+    @IBOutlet weak var addLabelHeight: NSLayoutConstraint!
+    @IBOutlet weak var plusSignButtonHeight: NSLayoutConstraint!
+    @IBOutlet weak var addViewHeight: NSLayoutConstraint!
+    
+    
+    
     
     @IBOutlet weak var userTableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        userOptions()
+        
         
         userTableView.register(UINib(nibName: "UserTBCell", bundle: nil), forCellReuseIdentifier: constants.userScreenTableViewCellIdentifier)
         
@@ -54,6 +67,19 @@ class UsersVC: UIViewController {
         DispatchQueue.main.async {
             self.getData()
         }
+    }
+    
+    func userOptions(){
+//        @IBOutlet weak var userImageHeight: NSLayoutConstraint!
+//        @IBOutlet weak var addLabelHeight: NSLayoutConstraint!
+//        @IBOutlet weak var plusSignButtonHeight: NSLayoutConstraint!
+//        @IBOutlet weak var addViewHeight: NSLayoutConstraint!
+        
+        userImageHeight.constant = 0
+        addLabelHeight.constant = 0
+        plusSignButtonHeight.constant = 0
+        addViewHeight.constant = 0
+        
     }
     
     @IBAction func logOutTapped(_ sender: UIButton) {
