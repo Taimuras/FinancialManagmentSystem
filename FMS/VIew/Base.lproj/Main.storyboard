@@ -281,6 +281,9 @@
                                             <constraint firstAttribute="width" constant="24" id="paJ-hO-ZAB"/>
                                         </constraints>
                                         <state key="normal" image="Nav Bar HistorySVG"/>
+                                        <connections>
+                                            <action selector="historyButtonTapped:" destination="X2k-IO-ALE" eventType="touchUpInside" id="6Ar-Nv-jUe"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="BrandColorGrey"/>
@@ -1407,6 +1410,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <action selector="cancelButtonTapped:" destination="7kU-F2-Ups" eventType="touchUpInside" id="0JE-0Z-qNY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dcA-f7-8wp">
                                         <rect key="frame" x="318" y="0.0" width="80" height="56"/>
@@ -1424,6 +1430,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <action selector="deleteButtonTapped:" destination="7kU-F2-Ups" eventType="touchUpInside" id="ySY-MS-PIR"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="BrandColorGrey"/>
@@ -1440,7 +1449,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="osk-4i-cJK">
-                                <rect key="frame" x="0.0" y="66" width="414" height="670"/>
+                                <rect key="frame" x="16" y="66" width="382" height="670"/>
                                 <color key="backgroundColor" name="BrandColorGrey"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IIi-6h-Kag">
                                     <size key="itemSize" width="128" height="128"/>
@@ -1464,14 +1473,20 @@
                         <color key="backgroundColor" name="BrandColorGrey"/>
                         <constraints>
                             <constraint firstItem="MUH-Or-ei2" firstAttribute="top" secondItem="CNw-m6-mVt" secondAttribute="top" id="Ajw-bO-DC4"/>
-                            <constraint firstItem="CNw-m6-mVt" firstAttribute="trailing" secondItem="osk-4i-cJK" secondAttribute="trailing" id="GtT-9b-Glu"/>
+                            <constraint firstItem="CNw-m6-mVt" firstAttribute="trailing" secondItem="osk-4i-cJK" secondAttribute="trailing" constant="16" id="GtT-9b-Glu"/>
                             <constraint firstItem="MUH-Or-ei2" firstAttribute="leading" secondItem="CNw-m6-mVt" secondAttribute="leading" id="OLr-q5-DE9"/>
                             <constraint firstItem="CNw-m6-mVt" firstAttribute="trailing" secondItem="MUH-Or-ei2" secondAttribute="trailing" id="Ppa-i9-0wr"/>
-                            <constraint firstItem="osk-4i-cJK" firstAttribute="leading" secondItem="CNw-m6-mVt" secondAttribute="leading" id="RCe-Dm-i74"/>
+                            <constraint firstItem="osk-4i-cJK" firstAttribute="leading" secondItem="CNw-m6-mVt" secondAttribute="leading" constant="16" id="RCe-Dm-i74"/>
                             <constraint firstItem="osk-4i-cJK" firstAttribute="top" secondItem="MUH-Or-ei2" secondAttribute="bottom" constant="10" id="hrW-uC-Cxx"/>
                             <constraint firstItem="CNw-m6-mVt" firstAttribute="bottom" secondItem="osk-4i-cJK" secondAttribute="bottom" id="vRB-bL-uk6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="k8D-EZ-avR" id="5OG-Gp-Ra6"/>
+                        <outlet property="deleteHistoryButton" destination="dcA-f7-8wp" id="NGo-2F-LrC"/>
+                        <outlet property="historyCollectionView" destination="osk-4i-cJK" id="eZm-i0-4PQ"/>
+                        <outlet property="historyLabel" destination="Smu-7h-yMm" id="TIY-XB-ldR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40k-aL-NMq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -23,6 +23,7 @@ class Constants {
     let walletPartTableViewCellIdentifier = "WalletTVCell"
     let sectionsPartTableViewCellIdentifier = "SectionTVCell"
     let categoryPartTableViewCellIdentifier = "CategoryTVCell"
+    let historyCollectionViewCellIdentifier = "HistoryCVCell"
     
     //Storyboard IDs
     let tabBarViewIdintifier = "TabBarStoryBoardID"

@@ -78,6 +78,8 @@
 		525464C3260DC92D0089B03A /* GetAllProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525464C2260DC92D0089B03A /* GetAllProjects.swift */; };
 		525464C6260DDDAB0089B03A /* AddingProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525464C5260DDDAB0089B03A /* AddingProjectVC.swift */; };
 		525464C9260DE0D10089B03A /* CreateProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525464C8260DE0D10089B03A /* CreateProject.swift */; };
+		52586CCC2615962A0065E5F3 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52586CCB2615962A0065E5F3 /* HistoryModel.swift */; };
+		52586CCF261596520065E5F3 /* FetchingAllActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52586CCE261596520065E5F3 /* FetchingAllActions.swift */; };
 		525C955F2608B2A400083965 /* TransferByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C955E2608B2A400083965 /* TransferByID.swift */; };
 		5262BDC22603605400709939 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5262BDC12603605400709939 /* CategoryModel.swift */; };
 		5262BDC52603628700709939 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5262BDC42603628700709939 /* ProjectModel.swift */; };
@@ -191,6 +193,8 @@
 		525464C2260DC92D0089B03A /* GetAllProjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllProjects.swift; sourceTree = "<group>"; };
 		525464C5260DDDAB0089B03A /* AddingProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingProjectVC.swift; sourceTree = "<group>"; };
 		525464C8260DE0D10089B03A /* CreateProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProject.swift; sourceTree = "<group>"; };
+		52586CCB2615962A0065E5F3 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
+		52586CCE261596520065E5F3 /* FetchingAllActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchingAllActions.swift; sourceTree = "<group>"; };
 		525C955E2608B2A400083965 /* TransferByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferByID.swift; sourceTree = "<group>"; };
 		5262BDC12603605400709939 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		5262BDC42603628700709939 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
@@ -884,6 +888,7 @@
 		52E9EC2F26145ED400E8E8F4 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				52586CCE261596520065E5F3 /* FetchingAllActions.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -891,6 +896,7 @@
 		52E9EC3026145EDA00E8E8F4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				52586CCB2615962A0065E5F3 /* HistoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1057,6 +1063,7 @@
 				527D60332608526F00620859 /* FetchingAndDeletingTransactions.swift in Sources */,
 				521132392614467800BE4592 /* GetSingleSection.swift in Sources */,
 				52CC2BB825F3656400DAA708 /* TabBarViewController.swift in Sources */,
+				52586CCC2615962A0065E5F3 /* HistoryModel.swift in Sources */,
 				52E5090725F212160086DF17 /* ForgotVC.swift in Sources */,
 				5295635B2614C9C8006A6162 /* EditingSectionVC.swift in Sources */,
 				52E9EC3426145F0500E8E8F4 /* HistoryVC.swift in Sources */,
@@ -1089,6 +1096,7 @@
 				52E8B6C025F9E199002D62A0 /* EditingTransactionsVC.swift in Sources */,
 				529B86F32614427E00979E1E /* AddingSectionVC.swift in Sources */,
 				5297CE8326118B9E002AFA1A /* AdapterAndRetrier.swift in Sources */,
+				52586CCF261596520065E5F3 /* FetchingAllActions.swift in Sources */,
 				525464B7260DC60C0089B03A /* ProjectTVCell.swift in Sources */,
 				5264509D2614D23D0007D86C /* UpdateSectionByID.swift in Sources */,
 				524CA55126131616006CFFF0 /* SectionTVCell.swift in Sources */,

@@ -81,33 +81,6 @@ class MainViewController: UIViewController {
         present(filterVC, animated: true, completion: nil)
     }
     
-    
-    
-    // MARK: Fetching Data first try
-    func fetchData () {
-        
-        fetchingTransactions.fetchingTransactions(url: constants.transitionsEndPoint) { (data) in
-            DispatchQueue.main.async {
-                self.mainVCData.removeAll()
-                self.mainVCData = data
-                self.mainScreenCollectionView.reloadData()
-                MBProgressHUD.hide(for: self.view, animated: true)
-            }
-            
-        }
-        
-        fetchingTransactions.fetchingIncomeOutcomeBalance(url: constants.mainScreenFetchIncOutBalance) { (data) in
-            
-            DispatchQueue.main.async {
-                self.incomeStateLabel.text = data.income
-                self.outcomeStateLabel.text = data.balance
-                self.transferStateLabel.text = data.outcome
-            }
-        }
-    }
-    
-    
-
     @IBAction func logOut(_ sender: UIButton) {
         let dialogMessage = UIAlertController(title: "Выход", message: "Вы уверены, что хотите выйти?", preferredStyle: .alert)
         let cancel = UIAlertAction(title: "Отмена", style: .cancel) { (action) -> Void in
@@ -133,6 +106,40 @@ class MainViewController: UIViewController {
         self.present(dialogMessage, animated: true, completion: nil)
     }
     
+    
+    @IBAction func historyButtonTapped(_ sender: UIButton) {
+        let historyVC = storyboard?.instantiateViewController(withIdentifier: constants.historyVC) as! HistoryVC
+        present(historyVC, animated: true, completion: nil)
+    }
+    
+    
+    
+}
+
+
+extension MainViewController{
+    // MARK: Fetching Data first try
+    func fetchData () {
+        
+        fetchingTransactions.fetchingTransactions(url: constants.transitionsEndPoint) { (data) in
+            DispatchQueue.main.async {
+                self.mainVCData.removeAll()
+                self.mainVCData = data
+                self.mainScreenCollectionView.reloadData()
+                MBProgressHUD.hide(for: self.view, animated: true)
+            }
+            
+        }
+        
+        fetchingTransactions.fetchingIncomeOutcomeBalance(url: constants.mainScreenFetchIncOutBalance) { (data) in
+            
+            DispatchQueue.main.async {
+                self.incomeStateLabel.text = data.income
+                self.outcomeStateLabel.text = data.balance
+                self.transferStateLabel.text = data.outcome
+            }
+        }
+    }
 }
 
 
