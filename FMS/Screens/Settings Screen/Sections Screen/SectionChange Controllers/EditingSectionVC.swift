@@ -63,6 +63,14 @@ class EditingSectionVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        DispatchQueue.main.async {
+            self.getSection()
+        }
+    }
 
     
     
@@ -92,6 +100,7 @@ extension EditingSectionVC{
         getSingleSectionByID.getSingleSectiontByID(id: id!) { (data) in
             DispatchQueue.main.async {
                 self.sectionNameTextField.text = data.name
+                self.categorys.removeAll()
                 self.categorys = data.category_set
                 self.categoryTableView.reloadData()
                 MBProgressHUD.hide(for: self.view, animated: true)
@@ -190,12 +199,12 @@ extension EditingSectionVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(categorys[indexPath.row].name)
-//        let counterPart = counterAgents[indexPath.row]
-//        let edititngCounterPart = storyboard?.instantiateViewController(withIdentifier: constants.counterPartEditingVC) as! EditingCounterPartVC
-//        edititngCounterPart.id = counterPart.id
-////        edititngUser.userEmail = user.email
-//        present(edititngCounterPart, animated: true, completion: nil)
+        
+        let category = categorys[indexPath.row]
+        let edititngCategory = storyboard?.instantiateViewController(withIdentifier: constants.categoryPartEditingVC) as! EditingCategoryVC
+        edititngCategory.id = category.id
+//        edititngUser.userEmail = user.email
+        present(edititngCategory, animated: true, completion: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

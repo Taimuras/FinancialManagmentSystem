@@ -4704,10 +4704,10 @@
             </objects>
             <point key="canvasLocation" x="-572" y="5313"/>
         </scene>
-        <!--View Controller-->
+        <!--Editing CategoryVC-->
         <scene sceneID="N6g-rE-iJu">
             <objects>
-                <viewController id="7f1-x7-Hch" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditingCategoryVC" id="7f1-x7-Hch" customClass="EditingCategoryVC" customModule="FMS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hWx-6J-jPz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4734,6 +4734,9 @@
                                         <state key="normal" title="Отмена">
                                             <color key="titleColor" name="Brand - Dark"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cancelButtonTapped:" destination="7f1-x7-Hch" eventType="touchUpInside" id="B8W-WD-upq"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="BrandColorGrey"/>
@@ -4775,6 +4778,9 @@
                                         <state key="normal" title="Сохранить">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveButtonTapped:" destination="7f1-x7-Hch" eventType="touchUpInside" id="Irh-8u-XPt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4792,13 +4798,56 @@
                                     <constraint firstAttribute="height" constant="1" id="bn1-Uo-YXm"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MP6-HT-wQw">
+                                <rect key="frame" x="0.0" y="605" width="414" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3c-qr-7wy">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="LYV-YH-sCc"/>
+                                        </constraints>
+                                        <state key="normal" image="Delete IconSVG"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Evg-xX-HwY">
+                                        <rect key="frame" x="50" y="0.0" width="70" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="g4k-c7-cMm"/>
+                                        </constraints>
+                                        <state key="normal" title="Удалить">
+                                            <color key="titleColor" name="Brand - Red"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDr-Ae-eQm">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <connections>
+                                            <action selector="deleteButtonTapped:" destination="7f1-x7-Hch" eventType="touchUpInside" id="ayN-7I-ZMY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="q3c-qr-7wy" secondAttribute="bottom" id="3Cs-f2-NnY"/>
+                                    <constraint firstAttribute="height" constant="50" id="7PG-2I-FzN"/>
+                                    <constraint firstItem="ZDr-Ae-eQm" firstAttribute="leading" secondItem="MP6-HT-wQw" secondAttribute="leading" id="9mq-V6-RIa"/>
+                                    <constraint firstItem="Evg-xX-HwY" firstAttribute="top" secondItem="MP6-HT-wQw" secondAttribute="top" id="AFj-Le-C6h"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZDr-Ae-eQm" secondAttribute="trailing" id="RC8-hF-GP8"/>
+                                    <constraint firstItem="Evg-xX-HwY" firstAttribute="leading" secondItem="q3c-qr-7wy" secondAttribute="trailing" id="Sb9-t1-8OJ"/>
+                                    <constraint firstItem="ZDr-Ae-eQm" firstAttribute="top" secondItem="MP6-HT-wQw" secondAttribute="top" id="Sy0-7Y-A5x"/>
+                                    <constraint firstAttribute="bottom" secondItem="Evg-xX-HwY" secondAttribute="bottom" id="W0g-nJ-icn"/>
+                                    <constraint firstItem="q3c-qr-7wy" firstAttribute="leading" secondItem="MP6-HT-wQw" secondAttribute="leading" id="Y91-9m-MgR"/>
+                                    <constraint firstItem="q3c-qr-7wy" firstAttribute="top" secondItem="MP6-HT-wQw" secondAttribute="top" id="r7K-dE-9vd"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZDr-Ae-eQm" secondAttribute="bottom" id="t2b-Gn-qSI"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Zk-l7-AYg"/>
                         <color key="backgroundColor" name="BrandColorGrey"/>
                         <constraints>
                             <constraint firstItem="6Zk-l7-AYg" firstAttribute="bottom" secondItem="iMc-0k-sX8" secondAttribute="bottom" id="77h-GF-mCw"/>
+                            <constraint firstItem="mFI-0N-4e1" firstAttribute="top" secondItem="MP6-HT-wQw" secondAttribute="bottom" id="8fZ-Up-VXU"/>
                             <constraint firstItem="iof-Po-PrE" firstAttribute="top" secondItem="6Zk-l7-AYg" secondAttribute="top" id="ECV-iR-GI2"/>
                             <constraint firstItem="mFI-0N-4e1" firstAttribute="leading" secondItem="hWx-6J-jPz" secondAttribute="leading" id="KhS-mS-M9e"/>
+                            <constraint firstItem="MP6-HT-wQw" firstAttribute="leading" secondItem="6Zk-l7-AYg" secondAttribute="leading" id="LVB-0i-xCP"/>
                             <constraint firstItem="6Zk-l7-AYg" firstAttribute="trailing" secondItem="iof-Po-PrE" secondAttribute="trailing" id="OSd-Zg-fCg"/>
                             <constraint firstItem="iMc-0k-sX8" firstAttribute="top" secondItem="mFI-0N-4e1" secondAttribute="bottom" id="PmT-PD-7Yw"/>
                             <constraint firstItem="iof-Po-PrE" firstAttribute="leading" secondItem="6Zk-l7-AYg" secondAttribute="leading" id="Rxz-tZ-xWQ"/>
@@ -4807,13 +4856,21 @@
                             <constraint firstItem="6Zk-l7-AYg" firstAttribute="trailing" secondItem="iMc-0k-sX8" secondAttribute="trailing" id="cGf-7h-dnv"/>
                             <constraint firstItem="6Zk-l7-AYg" firstAttribute="trailing" secondItem="UBd-v1-lqE" secondAttribute="trailing" id="kev-Ya-1Hj"/>
                             <constraint firstItem="UBd-v1-lqE" firstAttribute="leading" secondItem="6Zk-l7-AYg" secondAttribute="leading" id="nHR-i6-Pun"/>
+                            <constraint firstItem="6Zk-l7-AYg" firstAttribute="trailing" secondItem="MP6-HT-wQw" secondAttribute="trailing" id="nrF-gR-AE2"/>
                             <constraint firstAttribute="trailing" secondItem="mFI-0N-4e1" secondAttribute="trailing" id="saW-Km-SFA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="X2q-VG-lVz" id="Ph1-n9-z25"/>
+                        <outlet property="categoryLabel" destination="NAv-HS-llS" id="Eos-yl-yOy"/>
+                        <outlet property="categoryNameTextField" destination="3bX-LP-BlR" id="ltD-Fh-Poa"/>
+                        <outlet property="deleteSignButton" destination="Evg-xX-HwY" id="oN4-fI-7bd"/>
+                        <outlet property="saveButton" destination="Nms-Vs-xdc" id="gnK-5o-wYT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iPq-z1-9sa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="384" y="5313"/>
+            <point key="canvasLocation" x="382.60869565217394" y="5312.771739130435"/>
         </scene>
         <!--Editing SectionVC-->
         <scene sceneID="T9f-af-B7M">

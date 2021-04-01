@@ -26,7 +26,7 @@ class CreateCategory{
         ]
         
         
-        
+        print("Param: \(param)")
         
         let requestAPI = AF.request(constants.categoriesEndPoint, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         
@@ -34,8 +34,8 @@ class CreateCategory{
         requestAPI.responseJSON { (response) in
             
             let statusCode = response.response?.statusCode
-//            print(response.description)
-            print(response.response!)
+            print(response.result)
+//            print(response.response!)
 //            print(response.response?.statusCode)
             switch statusCode{
             case 200:

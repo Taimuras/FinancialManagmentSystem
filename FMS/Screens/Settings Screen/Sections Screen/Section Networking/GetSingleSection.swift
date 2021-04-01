@@ -20,14 +20,15 @@ class GetSingleSectionByID{
         ]
         
         let url = constants.directionsEndPoint + String(id)
-        print(url)
+        
         let requestAPI = AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         
         requestAPI.responseJSON { (response) in
             switch response.result{
             case .success(let data):
                 let json = JSON(data)
-                print("Sections: \(json)")
+//                print("Sections: \(json)")
+                self.category_set.removeAll()
                 for i in 0 ..< json["category_set"].count {
                     let category = CategoryModel(id: json["category_set"][i]["id"].intValue, name: json["category_set"][i]["name"].stringValue)
                     self.category_set.append(category)

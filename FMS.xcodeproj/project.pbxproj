@@ -10,6 +10,8 @@
 		053918DDE68C3F5481BB4782 /* Pods_FMS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1085DFD258C24FDF8B98CEA7 /* Pods_FMS.framework */; };
 		521132392614467800BE4592 /* GetSingleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521132382614467800BE4592 /* GetSingleSection.swift */; };
 		52178BA225F690ED001E9C14 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52178BA125F690ED001E9C14 /* TabBarController.swift */; };
+		521AD97126157F3F006E18FA /* EditingCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521AD97026157F3F006E18FA /* EditingCategoryVC.swift */; };
+		521AD974261581F5006E18FA /* CategoryByIDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521AD973261581F5006E18FA /* CategoryByIDModel.swift */; };
 		521F37A425F0B45D00B3E7D2 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 521F37A325F0B45D00B3E7D2 /* OpenSans-Bold.ttf */; };
 		521F37A725F0B69000B3E7D2 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 521F37A625F0B69000B3E7D2 /* OpenSans-Regular.ttf */; };
 		521F37AA25F0B6AB00B3E7D2 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 521F37A925F0B6AB00B3E7D2 /* OpenSans-SemiBold.ttf */; };
@@ -119,6 +121,8 @@
 		1085DFD258C24FDF8B98CEA7 /* Pods_FMS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FMS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		521132382614467800BE4592 /* GetSingleSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSingleSection.swift; sourceTree = "<group>"; };
 		52178BA125F690ED001E9C14 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		521AD97026157F3F006E18FA /* EditingCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingCategoryVC.swift; sourceTree = "<group>"; };
+		521AD973261581F5006E18FA /* CategoryByIDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryByIDModel.swift; sourceTree = "<group>"; };
 		521F37A325F0B45D00B3E7D2 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		521F37A625F0B69000B3E7D2 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		521F37A925F0B6AB00B3E7D2 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -426,6 +430,7 @@
 			isa = PBXGroup;
 			children = (
 				5264509F2614D47E0007D86C /* DirectionByIDModel.swift */,
+				521AD973261581F5006E18FA /* CategoryByIDModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -691,6 +696,7 @@
 			isa = PBXGroup;
 			children = (
 				526450AF2614DD970007D86C /* AddingCategoryVC.swift */,
+				521AD97026157F3F006E18FA /* EditingCategoryVC.swift */,
 			);
 			path = "CategoryChange Controllers";
 			sourceTree = "<group>";
@@ -1068,6 +1074,7 @@
 				52429983260F2CBD0081293C /* DeleteWalletByID.swift in Sources */,
 				52372772260EF34900FA6247 /* DeleteProject.swift in Sources */,
 				52E5090425F211F80086DF17 /* LoginVC.swift in Sources */,
+				521AD974261581F5006E18FA /* CategoryByIDModel.swift in Sources */,
 				5220E57C25EE2C470077EB07 /* MainCVC.swift in Sources */,
 				52372775260EF44500FA6247 /* UpdateProject.swift in Sources */,
 				526450B02614DD970007D86C /* AddingCategoryVC.swift in Sources */,
@@ -1077,6 +1084,7 @@
 				524365DE260C8260005A5D09 /* AddingCounterPartVC.swift in Sources */,
 				5284800B25FCBEB600D82D8F /* CounterAgentsModel.swift in Sources */,
 				52AE32BA260311490078D76F /* NetworkCreateUser.swift in Sources */,
+				521AD97126157F3F006E18FA /* EditingCategoryVC.swift in Sources */,
 				5244A6C7260C94A800F4C991 /* GetCounterPartByID.swift in Sources */,
 				52E8B6C025F9E199002D62A0 /* EditingTransactionsVC.swift in Sources */,
 				529B86F32614427E00979E1E /* AddingSectionVC.swift in Sources */,

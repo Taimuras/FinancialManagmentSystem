@@ -36,6 +36,7 @@ class Constants {
     let projectPartEditingVC = "EditingProjectsVC"
     let walletsPartEditingVC = "EditingWalletsVC"
     let sectionPartEditingVC = "EditingSectionVC"
+    let categoryPartEditingVC = "EditingCategoryVC"
     let historyVC = "HistoryVC"
     
     
