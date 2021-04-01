@@ -27,10 +27,10 @@ class AddingProjectVC: UIViewController {
         super.viewDidLoad()
 
         
+        
+        
+        
         design()
-        // Do any additional setup after loading the view.
-        
-        
         self.hideKeyboardWhenTappedAround()
 
     }

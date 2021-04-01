@@ -9,7 +9,7 @@ class GetSingleProjectByID{
     
     
     
-    func GetSingleProjectByID(url: String, completion: @escaping (ProjectModel) -> ()){
+    func getSingleProjectByID(url: String, completion: @escaping (ProjectModel) -> ()){
 
         let accessToken = userDefaults.string(forKey: "AccessToken")!
         

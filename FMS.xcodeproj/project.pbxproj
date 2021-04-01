@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		053918DDE68C3F5481BB4782 /* Pods_FMS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1085DFD258C24FDF8B98CEA7 /* Pods_FMS.framework */; };
+		521132392614467800BE4592 /* GetSingleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521132382614467800BE4592 /* GetSingleSection.swift */; };
 		52178BA225F690ED001E9C14 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52178BA125F690ED001E9C14 /* TabBarController.swift */; };
 		521F37A425F0B45D00B3E7D2 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 521F37A325F0B45D00B3E7D2 /* OpenSans-Bold.ttf */; };
 		521F37A725F0B69000B3E7D2 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 521F37A625F0B69000B3E7D2 /* OpenSans-Regular.ttf */; };
@@ -78,6 +79,13 @@
 		525C955F2608B2A400083965 /* TransferByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C955E2608B2A400083965 /* TransferByID.swift */; };
 		5262BDC22603605400709939 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5262BDC12603605400709939 /* CategoryModel.swift */; };
 		5262BDC52603628700709939 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5262BDC42603628700709939 /* ProjectModel.swift */; };
+		5264509D2614D23D0007D86C /* UpdateSectionByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264509C2614D23D0007D86C /* UpdateSectionByID.swift */; };
+		526450A02614D47E0007D86C /* DirectionByIDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264509F2614D47E0007D86C /* DirectionByIDModel.swift */; };
+		526450A32614D9140007D86C /* CreateCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526450A22614D9140007D86C /* CreateCategory.swift */; };
+		526450A62614D92F0007D86C /* GetSingleCategoryByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526450A52614D92F0007D86C /* GetSingleCategoryByID.swift */; };
+		526450A92614D93E0007D86C /* DeleteCategoryByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526450A82614D93E0007D86C /* DeleteCategoryByID.swift */; };
+		526450AC2614D9520007D86C /* UpdateCategoryByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526450AB2614D9520007D86C /* UpdateCategoryByID.swift */; };
+		526450B02614DD970007D86C /* AddingCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526450AF2614DD970007D86C /* AddingCategoryVC.swift */; };
 		5266437B25F5D69D0032499D /* AddingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266437A25F5D69D0032499D /* AddingVC.swift */; };
 		5266438525F5D72C0032499D /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266438425F5D72C0032499D /* SettingsVC.swift */; };
 		5266438925F5D78C0032499D /* UsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266438825F5D78C0032499D /* UsersVC.swift */; };
@@ -90,18 +98,26 @@
 		5284800525FCB91D00D82D8F /* FetchingDataFilterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284800425FCB91D00D82D8F /* FetchingDataFilterScreen.swift */; };
 		5284800825FCBB8100D82D8F /* WalletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284800725FCBB8100D82D8F /* WalletModel.swift */; };
 		5284800B25FCBEB600D82D8F /* CounterAgentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284800A25FCBEB600D82D8F /* CounterAgentsModel.swift */; };
+		5295635B2614C9C8006A6162 /* EditingSectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295635A2614C9C8006A6162 /* EditingSectionVC.swift */; };
+		5295635E2614CE22006A6162 /* DeleteSectionByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295635D2614CE22006A6162 /* DeleteSectionByID.swift */; };
 		5297CE8326118B9E002AFA1A /* AdapterAndRetrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297CE8226118B9E002AFA1A /* AdapterAndRetrier.swift */; };
+		529B86F32614427E00979E1E /* AddingSectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B86F22614427E00979E1E /* AddingSectionVC.swift */; };
+		529B86FC2614461700979E1E /* CreateSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B86FB2614461700979E1E /* CreateSection.swift */; };
 		52AE32BA260311490078D76F /* NetworkCreateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE32B9260311490078D76F /* NetworkCreateUser.swift */; };
 		52CC2BB825F3656400DAA708 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC2BB725F3656400DAA708 /* TabBarViewController.swift */; };
 		52E5090425F211F80086DF17 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5090325F211F80086DF17 /* LoginVC.swift */; };
 		52E5090725F212160086DF17 /* ForgotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5090625F212160086DF17 /* ForgotVC.swift */; };
 		52E8B6C025F9E199002D62A0 /* EditingTransactionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E8B6BF25F9E199002D62A0 /* EditingTransactionsVC.swift */; };
 		52E8B6C525F9E7C0002D62A0 /* EditingTransferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E8B6C425F9E7C0002D62A0 /* EditingTransferVC.swift */; };
+		52E9EC3426145F0500E8E8F4 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E9EC3326145F0500E8E8F4 /* HistoryVC.swift */; };
+		52E9EC392614740100E8E8F4 /* HistoryCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E9EC372614740100E8E8F4 /* HistoryCVCell.swift */; };
+		52E9EC3A2614740100E8E8F4 /* HistoryCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52E9EC382614740100E8E8F4 /* HistoryCVCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		03FF12DAF1FB29727092CC34 /* Pods-FMS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMS.debug.xcconfig"; path = "Target Support Files/Pods-FMS/Pods-FMS.debug.xcconfig"; sourceTree = "<group>"; };
 		1085DFD258C24FDF8B98CEA7 /* Pods_FMS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FMS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		521132382614467800BE4592 /* GetSingleSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSingleSection.swift; sourceTree = "<group>"; };
 		52178BA125F690ED001E9C14 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		521F37A325F0B45D00B3E7D2 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		521F37A625F0B69000B3E7D2 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
@@ -174,6 +190,13 @@
 		525C955E2608B2A400083965 /* TransferByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferByID.swift; sourceTree = "<group>"; };
 		5262BDC12603605400709939 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		5262BDC42603628700709939 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
+		5264509C2614D23D0007D86C /* UpdateSectionByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSectionByID.swift; sourceTree = "<group>"; };
+		5264509F2614D47E0007D86C /* DirectionByIDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionByIDModel.swift; sourceTree = "<group>"; };
+		526450A22614D9140007D86C /* CreateCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategory.swift; sourceTree = "<group>"; };
+		526450A52614D92F0007D86C /* GetSingleCategoryByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSingleCategoryByID.swift; sourceTree = "<group>"; };
+		526450A82614D93E0007D86C /* DeleteCategoryByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCategoryByID.swift; sourceTree = "<group>"; };
+		526450AB2614D9520007D86C /* UpdateCategoryByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCategoryByID.swift; sourceTree = "<group>"; };
+		526450AF2614DD970007D86C /* AddingCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingCategoryVC.swift; sourceTree = "<group>"; };
 		5266437A25F5D69D0032499D /* AddingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingVC.swift; sourceTree = "<group>"; };
 		5266438425F5D72C0032499D /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		5266438825F5D78C0032499D /* UsersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersVC.swift; sourceTree = "<group>"; };
@@ -186,13 +209,20 @@
 		5284800425FCB91D00D82D8F /* FetchingDataFilterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchingDataFilterScreen.swift; sourceTree = "<group>"; };
 		5284800725FCBB8100D82D8F /* WalletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletModel.swift; sourceTree = "<group>"; };
 		5284800A25FCBEB600D82D8F /* CounterAgentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAgentsModel.swift; sourceTree = "<group>"; };
+		5295635A2614C9C8006A6162 /* EditingSectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingSectionVC.swift; sourceTree = "<group>"; };
+		5295635D2614CE22006A6162 /* DeleteSectionByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteSectionByID.swift; sourceTree = "<group>"; };
 		5297CE8226118B9E002AFA1A /* AdapterAndRetrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterAndRetrier.swift; sourceTree = "<group>"; };
+		529B86F22614427E00979E1E /* AddingSectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingSectionVC.swift; sourceTree = "<group>"; };
+		529B86FB2614461700979E1E /* CreateSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSection.swift; sourceTree = "<group>"; };
 		52AE32B9260311490078D76F /* NetworkCreateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkCreateUser.swift; path = "FMS/Screens/Users Screen/Networking/NetworkCreateUser.swift"; sourceTree = SOURCE_ROOT; };
 		52CC2BB725F3656400DAA708 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		52E5090325F211F80086DF17 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		52E5090625F212160086DF17 /* ForgotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotVC.swift; sourceTree = "<group>"; };
 		52E8B6BF25F9E199002D62A0 /* EditingTransactionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingTransactionsVC.swift; sourceTree = "<group>"; };
 		52E8B6C425F9E7C0002D62A0 /* EditingTransferVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingTransferVC.swift; sourceTree = "<group>"; };
+		52E9EC3326145F0500E8E8F4 /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
+		52E9EC372614740100E8E8F4 /* HistoryCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCVCell.swift; sourceTree = "<group>"; };
+		52E9EC382614740100E8E8F4 /* HistoryCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCVCell.xib; sourceTree = "<group>"; };
 		C8ECD412727A2B75441A2A38 /* Pods-FMS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMS.release.xcconfig"; path = "Target Support Files/Pods-FMS/Pods-FMS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -372,9 +402,12 @@
 		524CA54626131344006CFFF0 /* Sections Screen */ = {
 			isa = PBXGroup;
 			children = (
+				526450AE2614DD870007D86C /* CategoryChange Controllers */,
+				529B86F12614425E00979E1E /* Category Networking */,
 				52433D2D2613276E00633AA1 /* CategoryTableViewCell */,
+				529B86F02614424300979E1E /* SectionChange Controllers */,
 				524CA54A26131366006CFFF0 /* SectionTableViewCell */,
-				524CA5492613135F006CFFF0 /* Networking */,
+				524CA5492613135F006CFFF0 /* Section Networking */,
 				524CA5482613135A006CFFF0 /* Models */,
 				524CA54726131353006CFFF0 /* Controllers */,
 			);
@@ -392,16 +425,21 @@
 		524CA5482613135A006CFFF0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5264509F2614D47E0007D86C /* DirectionByIDModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		524CA5492613135F006CFFF0 /* Networking */ = {
+		524CA5492613135F006CFFF0 /* Section Networking */ = {
 			isa = PBXGroup;
 			children = (
 				524CA5542613187A006CFFF0 /* GetAllSections.swift */,
+				529B86FB2614461700979E1E /* CreateSection.swift */,
+				521132382614467800BE4592 /* GetSingleSection.swift */,
+				5295635D2614CE22006A6162 /* DeleteSectionByID.swift */,
+				5264509C2614D23D0007D86C /* UpdateSectionByID.swift */,
 			);
-			path = Networking;
+			path = "Section Networking";
 			sourceTree = "<group>";
 		};
 		524CA54A26131366006CFFF0 /* SectionTableViewCell */ = {
@@ -544,6 +582,7 @@
 		5252798125EDFE8D001FF2CE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				52E9EC2E26145ECB00E8E8F4 /* History Screen */,
 				5251B42925FB7352008A2E22 /* Filter Screen */,
 				52E8B6BE25F9E177002D62A0 /* Edtiting Transactions Screens */,
 				5266437725F5D66C0032499D /* AddingScreen */,
@@ -646,6 +685,14 @@
 				524D6EFE260EEAFF0032CA07 /* EditingProjectsVC.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		526450AE2614DD870007D86C /* CategoryChange Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				526450AF2614DD970007D86C /* AddingCategoryVC.swift */,
+			);
+			path = "CategoryChange Controllers";
 			sourceTree = "<group>";
 		};
 		5266437725F5D66C0032499D /* AddingScreen */ = {
@@ -759,6 +806,26 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		529B86F02614424300979E1E /* SectionChange Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				529B86F22614427E00979E1E /* AddingSectionVC.swift */,
+				5295635A2614C9C8006A6162 /* EditingSectionVC.swift */,
+			);
+			path = "SectionChange Controllers";
+			sourceTree = "<group>";
+		};
+		529B86F12614425E00979E1E /* Category Networking */ = {
+			isa = PBXGroup;
+			children = (
+				526450A22614D9140007D86C /* CreateCategory.swift */,
+				526450A52614D92F0007D86C /* GetSingleCategoryByID.swift */,
+				526450A82614D93E0007D86C /* DeleteCategoryByID.swift */,
+				526450AB2614D9520007D86C /* UpdateCategoryByID.swift */,
+			);
+			path = "Category Networking";
+			sourceTree = "<group>";
+		};
 		52A3A4682604F243000EEF13 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -795,6 +862,48 @@
 				52E8B6C425F9E7C0002D62A0 /* EditingTransferVC.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		52E9EC2E26145ECB00E8E8F4 /* History Screen */ = {
+			isa = PBXGroup;
+			children = (
+				52E9EC3226145EE500E8E8F4 /* History CollViewCell */,
+				52E9EC3126145EE000E8E8F4 /* Controllers */,
+				52E9EC3026145EDA00E8E8F4 /* Model */,
+				52E9EC2F26145ED400E8E8F4 /* Networking */,
+			);
+			path = "History Screen";
+			sourceTree = "<group>";
+		};
+		52E9EC2F26145ED400E8E8F4 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		52E9EC3026145EDA00E8E8F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		52E9EC3126145EE000E8E8F4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				52E9EC3326145F0500E8E8F4 /* HistoryVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		52E9EC3226145EE500E8E8F4 /* History CollViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				52E9EC372614740100E8E8F4 /* HistoryCVCell.swift */,
+				52E9EC382614740100E8E8F4 /* HistoryCVCell.xib */,
+			);
+			path = "History CollViewCell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -865,6 +974,7 @@
 				521F37A425F0B45D00B3E7D2 /* OpenSans-Bold.ttf in Resources */,
 				52396F4D26006FA300562103 /* UserTBCell.xib in Resources */,
 				5253A97D25FF5EC300449916 /* Assets.xcassets in Resources */,
+				52E9EC3A2614740100E8E8F4 /* HistoryCVCell.xib in Resources */,
 				52433D31261327A900633AA1 /* CategoryTVCell.xib in Resources */,
 				524365D1260C75A2005A5D09 /* CounterPartTBCell.xib in Resources */,
 				521F37A725F0B69000B3E7D2 /* OpenSans-Regular.ttf in Resources */,
@@ -939,8 +1049,11 @@
 				5244A6C1260C896A00F4C991 /* CreateCounterPart.swift in Sources */,
 				5266438925F5D78C0032499D /* UsersVC.swift in Sources */,
 				527D60332608526F00620859 /* FetchingAndDeletingTransactions.swift in Sources */,
+				521132392614467800BE4592 /* GetSingleSection.swift in Sources */,
 				52CC2BB825F3656400DAA708 /* TabBarViewController.swift in Sources */,
 				52E5090725F212160086DF17 /* ForgotVC.swift in Sources */,
+				5295635B2614C9C8006A6162 /* EditingSectionVC.swift in Sources */,
+				52E9EC3426145F0500E8E8F4 /* HistoryVC.swift in Sources */,
 				5284800225FCACF900D82D8F /* FilterModel.swift in Sources */,
 				52178BA225F690ED001E9C14 /* TabBarController.swift in Sources */,
 				52201E032601D89500334E21 /* UserAddingVC.swift in Sources */,
@@ -957,6 +1070,7 @@
 				52E5090425F211F80086DF17 /* LoginVC.swift in Sources */,
 				5220E57C25EE2C470077EB07 /* MainCVC.swift in Sources */,
 				52372775260EF44500FA6247 /* UpdateProject.swift in Sources */,
+				526450B02614DD970007D86C /* AddingCategoryVC.swift in Sources */,
 				525464AB260DBE080089B03A /* UpdateCounterPartByID.swift in Sources */,
 				5244A6C4260C90D200F4C991 /* EditingCounterPartVC.swift in Sources */,
 				522B24EF2604575A005BBFFC /* AllUsersModel.swift in Sources */,
@@ -965,8 +1079,10 @@
 				52AE32BA260311490078D76F /* NetworkCreateUser.swift in Sources */,
 				5244A6C7260C94A800F4C991 /* GetCounterPartByID.swift in Sources */,
 				52E8B6C025F9E199002D62A0 /* EditingTransactionsVC.swift in Sources */,
+				529B86F32614427E00979E1E /* AddingSectionVC.swift in Sources */,
 				5297CE8326118B9E002AFA1A /* AdapterAndRetrier.swift in Sources */,
 				525464B7260DC60C0089B03A /* ProjectTVCell.swift in Sources */,
+				5264509D2614D23D0007D86C /* UpdateSectionByID.swift in Sources */,
 				524CA55126131616006CFFF0 /* SectionTVCell.swift in Sources */,
 				5284800525FCB91D00D82D8F /* FetchingDataFilterScreen.swift in Sources */,
 				52429973260F201F0081293C /* GetAllWallets.swift in Sources */,
@@ -974,7 +1090,9 @@
 				522A6ABA260507F000F638FB /* IncOutBalModel.swift in Sources */,
 				5242997F260F2A5A0081293C /* GetSingleWalletByID.swift in Sources */,
 				5252796925EDFE06001FF2CE /* AppDelegate.swift in Sources */,
+				526450A62614D92F0007D86C /* GetSingleCategoryByID.swift in Sources */,
 				525464C9260DE0D10089B03A /* CreateProject.swift in Sources */,
+				526450A92614D93E0007D86C /* DeleteCategoryByID.swift in Sources */,
 				524CF8112609B827000E3768 /* UpdatingTransaction.swift in Sources */,
 				524365D4260C77A2005A5D09 /* CounterPartModel.swift in Sources */,
 				5252796B25EDFE06001FF2CE /* SceneDelegate.swift in Sources */,
@@ -983,12 +1101,15 @@
 				52429976260F236B0081293C /* AddingWalletVC.swift in Sources */,
 				5251A55A25EF566E00546F71 /* MainViewController.swift in Sources */,
 				5251A55F25EF5C0A00546F71 /* Constants.swift in Sources */,
+				529B86FC2614461700979E1E /* CreateSection.swift in Sources */,
 				5284800825FCBB8100D82D8F /* WalletModel.swift in Sources */,
 				52E8B6C525F9E7C0002D62A0 /* EditingTransferVC.swift in Sources */,
+				52E9EC392614740100E8E8F4 /* HistoryCVCell.swift in Sources */,
 				524365D0260C75A2005A5D09 /* CounterPartTBCell.swift in Sources */,
 				525464C3260DC92D0089B03A /* GetAllProjects.swift in Sources */,
 				524CF8142609DB2C000E3768 /* GetAndUpdateUser.swift in Sources */,
 				524CA54D2613138C006CFFF0 /* SectionsVC.swift in Sources */,
+				526450A32614D9140007D86C /* CreateCategory.swift in Sources */,
 				524D6EFF260EEAFF0032CA07 /* EditingProjectsVC.swift in Sources */,
 				5242997C260F28FE0081293C /* EditingWalletsVC.swift in Sources */,
 				5262BDC22603605400709939 /* CategoryModel.swift in Sources */,
@@ -997,6 +1118,9 @@
 				524D6F02260EEE630032CA07 /* GetSingleProjectByID.swift in Sources */,
 				5262BDC52603628700709939 /* ProjectModel.swift in Sources */,
 				52433D30261327A900633AA1 /* CategoryTVCell.swift in Sources */,
+				526450A02614D47E0007D86C /* DirectionByIDModel.swift in Sources */,
+				5295635E2614CE22006A6162 /* DeleteSectionByID.swift in Sources */,
+				526450AC2614D9520007D86C /* UpdateCategoryByID.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

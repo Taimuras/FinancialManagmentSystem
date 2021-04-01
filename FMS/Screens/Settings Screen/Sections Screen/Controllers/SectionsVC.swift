@@ -112,11 +112,10 @@ extension SectionsVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let counterPart = counterAgents[indexPath.row]
-//        let edititngCounterPart = storyboard?.instantiateViewController(withIdentifier: constants.counterPartEditingVC) as! EditingCounterPartVC
-//        edititngCounterPart.id = counterPart.id
-////        edititngUser.userEmail = user.email
-//        present(edititngCounterPart, animated: true, completion: nil)
+        let section = sections[indexPath.row]
+        let editingSection = storyboard?.instantiateViewController(withIdentifier: constants.sectionPartEditingVC) as! EditingSectionVC
+        editingSection.id = section.id
+        present(editingSection, animated: true, completion: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

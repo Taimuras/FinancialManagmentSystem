@@ -24,18 +24,19 @@ class GetAllSections{
             "Authorization": "Bearer \(accessToken)"
         ]
         
-        
+
         let requestAPI = AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         
         requestAPI.responseJSON { (response) in
             switch response.result{
             case .success(let data):
                 let json = JSON(data)
-                
+
+  
                 self.sections.removeAll()
                 for i in 0 ..< json["count"].intValue{
                     let section: DirectionModel = DirectionModel(id: json["results"][i]["id"].intValue, name: json["results"][i]["name"].stringValue)
-                        
+
                     self.sections.append(section)
                 }
 

@@ -1,68 +1,62 @@
 //
-//  AddingCounterPartVC.swift
+//  AddingCategoryVC.swift
 //  FMS
 //
-//  Created by tami on 3/25/21.
+//  Created by tami on 3/31/21.
 //
 
 import UIKit
 import MBProgressHUD
 
-class AddingCounterPartVC: UIViewController {
+
+
+class AddingCategoryVC: UIViewController {
     let constants = Constants()
 
-    var counterPartID: Int?
+    let createCategory = CreateCategory()
+    var sectionID: Int?
     
-    let createCounterPartNetwork = CreateCounterPart()
     
-    @IBOutlet weak var counterPartLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
     
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     
-    
-    
-    @IBOutlet weak var surnameTextField: UITextField!
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var patronymicTextField: UITextField!
-    
-    
+    @IBOutlet weak var categoryNameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
-        
-        design()
         // Do any additional setup after loading the view.
         
         
+        print("section ID: \(sectionID!)")
         
-        self.hideKeyboardWhenTappedAround() 
         
-        
+        design()
+        self.hideKeyboardWhenTappedAround()
     }
     
-    
+
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
     
-    @IBAction func saveButtonTapped(_ sender: UIButton) {
-        createCounterPart()
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        create()
     }
     
-    
-    
-    func createCounterPart(){
 
+}
+
+extension AddingCategoryVC {
+    func create(){
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        let patronymic = patronymicTextField.text ?? ""
-        
-        if let name = nameTextField.text, let surname = surnameTextField.text{
-            createCounterPartNetwork.createCounterPart(name: name, surname: surname, patronymic: patronymic, completion: { (data) in
-                if data != 1 {
+        if let name = categoryNameTextField.text{
+            createCategory.createCategory(sectionID: sectionID!, name: name) { (response) in
+                if response != 1 {
                     let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так. Пользователь не был создан!", preferredStyle: .alert)
                     let cancel = UIAlertAction(title: "Ok", style: .cancel) { (action) -> Void in
                         //            print("Cancel button tapped")
@@ -74,12 +68,12 @@ class AddingCounterPartVC: UIViewController {
                     MBProgressHUD.hide(for: self.view, animated: true)
                     self.present(dialogMessage, animated: true, completion: nil)
                 } else {
-                    
+                    print(response)
                     self.dismiss(animated: true, completion: nil)
                 }
-            })
+            }
         } else {
-            let dialogMessage = UIAlertController(title: "Поля не заполнены", message: "Имя и Фамилия должны быть заполнены!", preferredStyle: .alert)
+            let dialogMessage = UIAlertController(title: "Поле не заполнено", message: "Название категории должно быть заполнено!", preferredStyle: .alert)
             let cancel = UIAlertAction(title: "Хорошо", style: .cancel) { (action) -> Void in
                 //            print("Cancel button tapped")
             }
@@ -91,29 +85,31 @@ class AddingCounterPartVC: UIViewController {
             self.present(dialogMessage, animated: true, completion: nil)
         }
     }
-    
 }
 
 
-extension AddingCounterPartVC{
+
+
+
+
+
+extension AddingCategoryVC{
     func design (){
+        
+        
+        //Fonts + sizes
+        categoryLabel.font = constants.fontSemiBold17
+        
+        
         
         
         saveButton.layer.cornerRadius = 10.0
         saveButton.layer.masksToBounds = true
-        saveButton.titleLabel?.font = constants.fontSemiBold17
+        
+        
         cancelButton.titleLabel?.font = constants.fontRegular17
-        
-        
-
-        //Fonts + sizes
-
-        surnameTextField.font = constants.fontRegular17
-        nameTextField.font = constants.fontRegular17
-        patronymicTextField.font = constants.fontRegular17
-        counterPartLabel.font = constants.fontSemiBold17
-       
-        
+        saveButton.titleLabel?.font = constants.fontSemiBold17
+        categoryNameTextField.font = constants.fontRegular17
         
     }
 }

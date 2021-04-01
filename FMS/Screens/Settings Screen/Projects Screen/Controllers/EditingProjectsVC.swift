@@ -64,7 +64,7 @@ extension EditingProjectsVC{
     
     func getSingleProject() {
         let url = constants.getAllProjects + String(id!)
-        getSingleProjectByID.GetSingleProjectByID(url: url) { (data) in
+        getSingleProjectByID.getSingleProjectByID(url: url) { (data) in
             DispatchQueue.main.async {
                 
                 self.nameTextField.text = data.name
