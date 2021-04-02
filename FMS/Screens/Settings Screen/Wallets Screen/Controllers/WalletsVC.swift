@@ -10,21 +10,33 @@ import UIKit
 class WalletsVC: UIViewController {
     
     let constants = Constants()
+    let userDefaults = UserDefaults.standard
     
     var wallets: [WalletModel] = []
     
     let getAllWallets = GetAllWallets()
     
     @IBOutlet weak var addLabel: UILabel!
-    
-    
-    
-    
     @IBOutlet weak var walletTableView: UITableView!
+    
+    
+    
+    @IBOutlet weak var plusSignButtonHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var addLabelHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var addViewHeight: NSLayoutConstraint!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if userDefaults.integer(forKey: "Admin") != 1 {
+            userOptions()
+        }
+        
+        
         
         walletTableView.register(UINib(nibName: "WalletTVCell", bundle: nil), forCellReuseIdentifier: constants.walletPartTableViewCellIdentifier)
         // Do any additional setup after loading the view.
@@ -55,6 +67,13 @@ class WalletsVC: UIViewController {
 
         // somewhere in your code you might need to call:
         refreshControl.endRefreshing()
+    }
+    
+    func userOptions(){
+        addLabelHeight.constant = 0
+        plusSignButtonHeight.constant = 0
+        addViewHeight.constant = 0
+        
     }
 
     
@@ -107,11 +126,15 @@ extension WalletsVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let wallet = wallets[indexPath.row]
-        let editingWallet = storyboard?.instantiateViewController(withIdentifier: constants.walletsPartEditingVC) as! EditingWalletsVC
-        editingWallet.id = wallet.id
-
-        present(editingWallet, animated: true, completion: nil)
+        
+        if userDefaults.integer(forKey: "Admin") == 1 {
+            let wallet = wallets[indexPath.row]
+            let editingWallet = storyboard?.instantiateViewController(withIdentifier: constants.walletsPartEditingVC) as! EditingWalletsVC
+            editingWallet.id = wallet.id
+            present(editingWallet, animated: true, completion: nil)
+        }
+        
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

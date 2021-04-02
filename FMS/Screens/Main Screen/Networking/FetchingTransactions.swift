@@ -75,12 +75,12 @@ class FetchingTransactions {
 //            print(response.result)
             switch response.result{
                 case .success(let data):
-//                    print(data)
+//                    print("INc Out: \(data)")
                     let json = JSON(data)
                     
-                    let profit = json["profit_sum"].stringValue
-                    let wallets_sum = json["wallets_sum"].stringValue
-                    let consumption_sum = json["consumption_sum"].stringValue
+                    let profit = json["profit_sum"]["sum__sum"].stringValue
+                    let wallets_sum = json["wallets_sum"]["balance__sum"].stringValue
+                    let consumption_sum = json["consumption_sum"]["sum__sum"].stringValue
                     self.incomeOutcomeBalance = IncOutBalModel(income: profit, outcome: wallets_sum, balance: consumption_sum)
                     
                     completion(self.incomeOutcomeBalance!)

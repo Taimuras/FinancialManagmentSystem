@@ -29,7 +29,7 @@ class NetworkGetAllUsers{
             case .success(let data):
                 let json = JSON(data)
 //                print("json count \(json["count"])")
-//                print(json)
+//                print("Users : \(json)")
                 
                 self.users.removeAll()
                 for i in 0 ..< json["count"].intValue{

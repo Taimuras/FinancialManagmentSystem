@@ -138,7 +138,7 @@ extension MainViewController{
         }
         
         fetchingTransactions.fetchingIncomeOutcomeBalance(url: constants.mainScreenFetchIncOutBalance) { (data) in
-            
+//            print(data)
             DispatchQueue.main.async {
                 self.incomeStateLabel.text = data.income
                 self.outcomeStateLabel.text = data.balance

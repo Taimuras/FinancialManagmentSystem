@@ -12,6 +12,7 @@ import MBProgressHUD
 
 class SectionsVC: UIViewController {
     let constants = Constants()
+    let userDefaults = UserDefaults.standard
     
     var sections: [DirectionModel] = []
     let getAllSections = GetAllSections()
@@ -20,6 +21,16 @@ class SectionsVC: UIViewController {
     
     
     @IBOutlet weak var sectionsTableView: UITableView!
+    
+    
+    @IBOutlet weak var plusSignButtonHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var addLabelHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var addViewHeight: NSLayoutConstraint!
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,10 +62,21 @@ class SectionsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if userDefaults.integer(forKey: "Admin") != 1 {
+            userOptions()
+        }
         MBProgressHUD.showAdded(to: self.view, animated: true)
         DispatchQueue.main.async {
             self.fetchData()
         }
+    }
+    
+    func userOptions(){
+        addLabelHeight.constant = 0
+        plusSignButtonHeight.constant = 0
+        addViewHeight.constant = 0
+        
     }
 
     
@@ -112,10 +134,14 @@ extension SectionsVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let section = sections[indexPath.row]
-        let editingSection = storyboard?.instantiateViewController(withIdentifier: constants.sectionPartEditingVC) as! EditingSectionVC
-        editingSection.id = section.id
-        present(editingSection, animated: true, completion: nil)
+        
+        if userDefaults.integer(forKey: "Admin") == 1 {
+            let section = sections[indexPath.row]
+            let editingSection = storyboard?.instantiateViewController(withIdentifier: constants.sectionPartEditingVC) as! EditingSectionVC
+            editingSection.id = section.id
+            present(editingSection, animated: true, completion: nil)
+        }
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

@@ -842,6 +842,9 @@
                                             <constraint firstAttribute="height" constant="24" id="ojz-dR-Eej"/>
                                         </constraints>
                                         <state key="normal" image="Nav Bar HistorySVG"/>
+                                        <connections>
+                                            <action selector="historyButtonTapped:" destination="Vu0-Lx-8cQ" eventType="touchUpInside" id="nZI-RB-AHF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="BrandColorGrey"/>
@@ -887,9 +890,9 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добавить" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmF-ZI-X0U">
-                                        <rect key="frame" x="76" y="23" width="298" height="22"/>
+                                        <rect key="frame" x="72" y="0.0" width="292" height="68"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="22" id="SAz-6N-QPP"/>
+                                            <constraint firstAttribute="height" constant="68" id="mKr-Vj-9fl"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <color key="textColor" name="Brand - Dark"/>
@@ -916,15 +919,16 @@
                                 <constraints>
                                     <constraint firstItem="ZLf-lx-BA8" firstAttribute="leading" secondItem="yo9-lt-Ess" secondAttribute="leading" id="3Le-Cu-GTc"/>
                                     <constraint firstItem="xZN-SZ-mVV" firstAttribute="centerY" secondItem="yo9-lt-Ess" secondAttribute="centerY" id="3rb-sQ-pUn"/>
+                                    <constraint firstItem="tmF-ZI-X0U" firstAttribute="top" secondItem="yo9-lt-Ess" secondAttribute="top" id="9rP-wW-JIV"/>
                                     <constraint firstItem="zFn-cb-f9f" firstAttribute="leading" secondItem="yo9-lt-Ess" secondAttribute="leading" constant="16" id="EIs-fJ-ha7"/>
-                                    <constraint firstItem="xZN-SZ-mVV" firstAttribute="leading" secondItem="tmF-ZI-X0U" secondAttribute="trailing" id="EzO-bN-ExQ"/>
+                                    <constraint firstItem="tmF-ZI-X0U" firstAttribute="leading" secondItem="zFn-cb-f9f" secondAttribute="trailing" constant="10" id="Hw3-2J-D9T"/>
                                     <constraint firstAttribute="height" constant="68" id="IW8-TO-Bn3"/>
-                                    <constraint firstItem="tmF-ZI-X0U" firstAttribute="leading" secondItem="zFn-cb-f9f" secondAttribute="trailing" constant="14" id="Obr-hz-AKx"/>
+                                    <constraint firstItem="xZN-SZ-mVV" firstAttribute="leading" secondItem="tmF-ZI-X0U" secondAttribute="trailing" constant="10" id="Soh-kP-o2B"/>
                                     <constraint firstAttribute="trailing" secondItem="ZLf-lx-BA8" secondAttribute="trailing" id="TDh-mS-CXW"/>
                                     <constraint firstAttribute="bottom" secondItem="ZLf-lx-BA8" secondAttribute="bottom" id="V5z-yE-U8b"/>
                                     <constraint firstAttribute="trailing" secondItem="xZN-SZ-mVV" secondAttribute="trailing" constant="16" id="W5k-os-KZ4"/>
                                     <constraint firstItem="ZLf-lx-BA8" firstAttribute="top" secondItem="yo9-lt-Ess" secondAttribute="top" id="dFe-GM-RdH"/>
-                                    <constraint firstItem="tmF-ZI-X0U" firstAttribute="centerY" secondItem="yo9-lt-Ess" secondAttribute="centerY" id="o79-Um-efe"/>
+                                    <constraint firstAttribute="bottom" secondItem="tmF-ZI-X0U" secondAttribute="bottom" id="nrt-cI-YgX"/>
                                     <constraint firstItem="zFn-cb-f9f" firstAttribute="centerY" secondItem="yo9-lt-Ess" secondAttribute="centerY" id="vwy-Kw-rnG"/>
                                 </constraints>
                             </view>
@@ -966,7 +970,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="addLabel" destination="tmF-ZI-X0U" id="ucv-lA-dtU"/>
-                        <outlet property="addLabelHeight" destination="SAz-6N-QPP" id="MjR-hm-eOo"/>
+                        <outlet property="addLabelHeight" destination="mKr-Vj-9fl" id="Ff8-QW-IVc"/>
                         <outlet property="addViewHeight" destination="IW8-TO-Bn3" id="zsQ-y2-qp5"/>
                         <outlet property="createUserButtonView" destination="yo9-lt-Ess" id="lm7-OP-0Bk"/>
                         <outlet property="plusSignButton" destination="xZN-SZ-mVV" id="XRk-WI-kwv"/>
@@ -1241,6 +1245,9 @@
                                             <constraint firstAttribute="height" constant="24" id="qDO-my-DrL"/>
                                         </constraints>
                                         <state key="normal" image="LogOutSVG"/>
+                                        <connections>
+                                            <action selector="logOutButtonTapped:" destination="GM5-9m-m2n" eventType="touchUpInside" id="4DY-51-uF9"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLx-Cc-EZf">
                                         <rect key="frame" x="300" y="8" width="24" height="24"/>
@@ -1249,6 +1256,9 @@
                                             <constraint firstAttribute="height" constant="24" id="QEd-YD-daP"/>
                                         </constraints>
                                         <state key="normal" image="Nav Bar HistorySVG"/>
+                                        <connections>
+                                            <action selector="historyButtonTapped:" destination="GM5-9m-m2n" eventType="touchUpInside" id="XUL-Ns-Ap1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3538,6 +3548,9 @@
                     </view>
                     <connections>
                         <outlet property="addLabel" destination="7YJ-gc-dS8" id="jHS-lh-8H5"/>
+                        <outlet property="addLabelHeight" destination="fVv-nP-xa4" id="Nsw-eR-3gG"/>
+                        <outlet property="addViewHeight" destination="PsD-9w-O9z" id="qfZ-R1-3YS"/>
+                        <outlet property="plusSignButtonHeight" destination="KAr-JU-HhL" id="HU4-XW-SQI"/>
                         <outlet property="sectionsTableView" destination="ROu-kC-jLO" id="h9P-Gq-5an"/>
                     </connections>
                 </viewController>
@@ -3942,6 +3955,9 @@
                     </view>
                     <connections>
                         <outlet property="addLabel" destination="BXG-6S-u3h" id="QFc-Y5-Pm4"/>
+                        <outlet property="addLabelHeight" destination="pv9-X7-uoI" id="30B-xB-tS1"/>
+                        <outlet property="addViewHeight" destination="39s-Dd-JsD" id="ydH-HT-h7P"/>
+                        <outlet property="plusSignButtonHeight" destination="L2a-j3-bfI" id="Wr4-zT-b7o"/>
                         <outlet property="walletTableView" destination="Ygw-Xo-7Ua" id="lWJ-jZ-erP"/>
                     </connections>
                 </viewController>

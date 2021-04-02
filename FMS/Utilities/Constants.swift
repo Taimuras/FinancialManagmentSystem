@@ -95,16 +95,7 @@ class Constants {
     let historyEndPoint = "https://neobis-finance-sistem.herokuapp.com/history/"
     
     
-    func updateAccessToken(){
-        let refreshToken = UserDefaults.standard.string(forKey: "RefreshToken")
-        let param = ["refresh" : refreshToken]
-        let requestTorefreshToken = AF.request(refreshTokenApi, method: .post, parameters: param as Parameters, encoding: JSONEncoding.default, headers: nil, interceptor: nil)
-        requestTorefreshToken.responseJSON { (response) in
-            let json = JSON(response.value!)
-            let accessToken = json["access"].stringValue
-            self.userDefaults.setValue(accessToken, forKey: "AccessToken")
-        }
-    }
+    
     
     func dateToString(date: Date) -> String{
         let loc = Locale(identifier: "ru_RU")

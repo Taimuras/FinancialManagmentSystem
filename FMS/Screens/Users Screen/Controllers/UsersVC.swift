@@ -36,7 +36,12 @@ class UsersVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        userOptions()
+
+        
+        
+//        print("Is Admin: ------------------>  \(userDefaults.integer(forKey: "Admin"))")
+        
+        
         
         
         userTableView.register(UINib(nibName: "UserTBCell", bundle: nil), forCellReuseIdentifier: constants.userScreenTableViewCellIdentifier)
@@ -63,6 +68,10 @@ class UsersVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if userDefaults.integer(forKey: "Admin") != 1 {
+            userOptions()
+        }
+        
         MBProgressHUD.showAdded(to: self.view, animated: true)
         DispatchQueue.main.async {
             self.getData()
@@ -70,17 +79,19 @@ class UsersVC: UIViewController {
     }
     
     func userOptions(){
-//        @IBOutlet weak var userImageHeight: NSLayoutConstraint!
-//        @IBOutlet weak var addLabelHeight: NSLayoutConstraint!
-//        @IBOutlet weak var plusSignButtonHeight: NSLayoutConstraint!
-//        @IBOutlet weak var addViewHeight: NSLayoutConstraint!
-        
-        userImageHeight.constant = 0
         addLabelHeight.constant = 0
+        userImageHeight.constant = 0
         plusSignButtonHeight.constant = 0
         addViewHeight.constant = 0
         
     }
+    
+    
+    @IBAction func historyButtonTapped(_ sender: UIButton) {
+        let historyVC = storyboard?.instantiateViewController(withIdentifier: constants.historyVC) as! HistoryVC
+        present(historyVC, animated: true, completion: nil)
+    }
+    
     
     @IBAction func logOutTapped(_ sender: UIButton) {
         let dialogMessage = UIAlertController(title: "Выход", message: "Вы уверены, что хотите выйти?", preferredStyle: .alert)
@@ -146,7 +157,7 @@ extension UsersVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: constants.userScreenTableViewCellIdentifier, for: indexPath) as! UserTBCell
-        cell.frame.size.width = tableView.frame.size.width
+        
         cell.nameLabel.text = users[indexPath.row].first_name
         cell.emailLabel.text = users[indexPath.row].email
         
@@ -162,11 +173,16 @@ extension UsersVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let user = users[indexPath.row]
-        let edititngUser = storyboard?.instantiateViewController(withIdentifier: constants.userEditingVC) as! UserEditingVC
-        edititngUser.userID = user.id
-        edititngUser.userEmail = user.email
-        present(edititngUser, animated: true, completion: nil)
+        
+        
+        if userDefaults.integer(forKey: "Admin") == 1 {
+            let user = users[indexPath.row]
+            let edititngUser = storyboard?.instantiateViewController(withIdentifier: constants.userEditingVC) as! UserEditingVC
+            edititngUser.userID = user.id
+            edititngUser.userEmail = user.email
+            present(edititngUser, animated: true, completion: nil)
+        }
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
