@@ -19,7 +19,7 @@ class GetSingleSectionByID{
             "Authorization": "Bearer \(accessToken)"
         ]
         
-        let url = constants.directionsEndPoint + String(id)
+        let url = constants.sectionEndPoint + String(id)
         
         let requestAPI = AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         

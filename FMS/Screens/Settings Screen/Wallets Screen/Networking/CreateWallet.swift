@@ -25,7 +25,7 @@ class CreateWallet{
         
         
         
-        let requestAPI = AF.request(constants.walletsEndPoint, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+        let requestAPI = AF.request(constants.walletEndPoint, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         
         
         requestAPI.responseJSON { (response) in

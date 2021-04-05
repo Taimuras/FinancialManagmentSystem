@@ -27,7 +27,7 @@ class CreateCounterPart{
         
         
         
-        let requestAPI = AF.request(constants.createCounterPartEndPoint, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+        let requestAPI = AF.request(constants.counterAgentEndPoint, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         
         
         requestAPI.responseJSON { (response) in

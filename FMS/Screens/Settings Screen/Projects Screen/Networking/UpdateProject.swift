@@ -33,7 +33,7 @@ class UpdateProjectByID{
         
         
         
-        let url = constants.projectsEndPoint + String(id)
+        let url = constants.projectEndPoint + String(id)
         
         let requestAPI = AF.request(url, method: .patch, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         

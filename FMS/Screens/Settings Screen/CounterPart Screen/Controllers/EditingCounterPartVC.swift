@@ -64,7 +64,7 @@ class EditingCounterPartVC: UIViewController {
     
     
     func getCounterPart() {
-        let url = constants.createCounterPartEndPoint + String(id!)
+        let url = constants.counterAgentEndPoint + String(id!)
         getCounterPartByID.getAllCounterParts(url: url) { (data) in
             DispatchQueue.main.async {
                 self.surnameTextField.text = data.surname

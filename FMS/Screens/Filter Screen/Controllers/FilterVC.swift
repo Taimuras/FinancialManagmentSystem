@@ -131,7 +131,7 @@ extension FilterVC{
             }
             
         }
-        fetchingData.fetchingDirections(url: constants.directionsEndPoint) { (data) in
+        fetchingData.fetchingDirections(url: constants.sectionEndPoint) { (data) in
             DispatchQueue.main.async {
                 self.directions = data
                 MBProgressHUD.hide(for: self.view, animated: true)
@@ -152,11 +152,11 @@ extension FilterVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch pickerView.tag {
         case 1:
-            return wallets.count
+            return wallets.count - 1
         case 2:
-            return counterAgents.count
+            return counterAgents.count - 1
         case 3:
-            return directions.count
+            return directions.count - 1
         case 4:
             return type.count
         default:

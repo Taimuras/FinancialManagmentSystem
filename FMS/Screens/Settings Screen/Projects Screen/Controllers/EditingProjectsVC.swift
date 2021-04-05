@@ -63,7 +63,7 @@ extension EditingProjectsVC{
     
     
     func getSingleProject() {
-        let url = constants.getAllProjects + String(id!)
+        let url = constants.projectEndPoint + String(id!)
         getSingleProjectByID.getSingleProjectByID(url: url) { (data) in
             DispatchQueue.main.async {
                 

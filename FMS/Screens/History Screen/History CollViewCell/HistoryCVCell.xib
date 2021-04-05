@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ai-ym-yxS">
-                        <rect key="frame" x="0.0" y="0.5" width="667" height="105"/>
+                        <rect key="frame" x="0.0" y="10.5" width="667" height="85"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spb-k4-chf">
                                 <rect key="frame" x="10" y="10" width="647" height="25"/>
@@ -31,7 +30,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wA-GX-v1r">
-                                <rect key="frame" x="10" y="40" width="647" height="25"/>
+                                <rect key="frame" x="10" y="35" width="647" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="FfQ-o7-vJz"/>
                                 </constraints>
@@ -40,13 +39,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIY-4H-Lyu">
-                                <rect key="frame" x="10" y="75" width="647" height="20"/>
+                                <rect key="frame" x="10" y="60" width="647" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3wA-GX-v1r" firstAttribute="leading" secondItem="1ai-ym-yxS" secondAttribute="leading" constant="10" id="0Mh-c1-Zj6"/>
                             <constraint firstItem="spb-k4-chf" firstAttribute="top" secondItem="1ai-ym-yxS" secondAttribute="top" constant="10" id="3Sy-bN-6gI"/>
@@ -55,12 +54,12 @@
                             <constraint firstItem="spb-k4-chf" firstAttribute="leading" secondItem="1ai-ym-yxS" secondAttribute="leading" constant="10" id="RJu-8t-OdU"/>
                             <constraint firstAttribute="trailing" secondItem="bIY-4H-Lyu" secondAttribute="trailing" constant="10" id="RaO-is-VAP"/>
                             <constraint firstAttribute="bottom" secondItem="bIY-4H-Lyu" secondAttribute="bottom" constant="10" id="a0g-OL-iki"/>
-                            <constraint firstItem="3wA-GX-v1r" firstAttribute="top" secondItem="spb-k4-chf" secondAttribute="bottom" constant="5" id="dA4-mA-Tc6"/>
+                            <constraint firstItem="3wA-GX-v1r" firstAttribute="top" secondItem="spb-k4-chf" secondAttribute="bottom" id="dA4-mA-Tc6"/>
                             <constraint firstItem="spb-k4-chf" firstAttribute="centerX" secondItem="1ai-ym-yxS" secondAttribute="centerX" id="iwO-3r-bD7"/>
                             <constraint firstAttribute="trailing" secondItem="3wA-GX-v1r" secondAttribute="trailing" constant="10" id="mH6-Cb-mxS"/>
                             <constraint firstAttribute="trailing" secondItem="spb-k4-chf" secondAttribute="trailing" constant="10" id="ufX-5z-dqr"/>
-                            <constraint firstAttribute="height" constant="105" id="uq9-5M-QLp"/>
-                            <constraint firstItem="bIY-4H-Lyu" firstAttribute="top" secondItem="3wA-GX-v1r" secondAttribute="bottom" constant="10" id="yeh-Xs-DZI"/>
+                            <constraint firstAttribute="height" constant="85" id="uq9-5M-QLp"/>
+                            <constraint firstItem="bIY-4H-Lyu" firstAttribute="top" secondItem="3wA-GX-v1r" secondAttribute="bottom" id="yeh-Xs-DZI"/>
                             <constraint firstItem="bIY-4H-Lyu" firstAttribute="centerX" secondItem="1ai-ym-yxS" secondAttribute="centerX" id="zf9-FR-rkE"/>
                         </constraints>
                     </view>
@@ -77,13 +76,9 @@
                 <outlet property="actionLabel" destination="3wA-GX-v1r" id="eRG-DF-zlT"/>
                 <outlet property="dateLabel" destination="bIY-4H-Lyu" id="2GD-oc-OKT"/>
                 <outlet property="userNameLabel" destination="spb-k4-chf" id="0kq-lE-TE6"/>
+                <outlet property="view" destination="1ai-ym-yxS" id="Dcn-Qr-Uos"/>
             </connections>
             <point key="canvasLocation" x="368.84057971014494" y="54.910714285714285"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

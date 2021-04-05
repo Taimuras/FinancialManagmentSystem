@@ -68,7 +68,7 @@ extension EditingWalletsVC{
     
     
     func get() {
-        let url = constants.walletsEndPoint + String(id!)
+        let url = constants.walletEndPoint + String(id!)
         getSingleWallet.getSinglewalletByID(url: url) { (data) in
             DispatchQueue.main.async {
                 

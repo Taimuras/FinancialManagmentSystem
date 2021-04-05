@@ -34,7 +34,7 @@ class UpdateWalletByID{
         
         
         
-        let url = constants.walletsEndPoint + String(id)
+        let url = constants.walletEndPoint + String(id)
         
         let requestAPI = AF.request(url, method: .patch, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         

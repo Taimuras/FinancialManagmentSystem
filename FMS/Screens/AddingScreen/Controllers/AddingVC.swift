@@ -103,7 +103,7 @@ class AddingVC: UIViewController {
             }
         }
         if segmentedOutler.selectedSegmentIndex == 0 {
-            createTransaction.createIncomeTransaction(url: constants.createTransactionEndPotin, date_join: date_join!, type: 1, section: sectionID, category: categoryID, project: projectID, sum: sum, wallet: walletID, contractor: contractorID, comment: comment) { (data) in
+            createTransaction.createIncomeTransaction(date_join: date_join!, type: 1, section: sectionID, category: categoryID, project: projectID, sum: sum, wallet: walletID, contractor: contractorID, comment: comment) { (data) in
                 
                 if data != 1 {
                     let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так. Транзакция не была создана!", preferredStyle: .alert)
@@ -120,7 +120,7 @@ class AddingVC: UIViewController {
                 }
             }
         } else if segmentedOutler.selectedSegmentIndex == 1 {
-            createTransaction.createOutComeTransaction(url: constants.createTransactionEndPotin, date_join: date_join!, type: 2, section: sectionID, category: categoryID, project: projectID, sum: sum, wallet: walletID, contractor: contractorID, comment: comment) { (data) in
+            createTransaction.createOutComeTransaction(date_join: date_join!, type: 2, section: sectionID, category: categoryID, project: projectID, sum: sum, wallet: walletID, contractor: contractorID, comment: comment) { (data) in
                 
                 if data != 1 {
                     let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так. Транзакция не была создана!", preferredStyle: .alert)
@@ -137,7 +137,7 @@ class AddingVC: UIViewController {
                 }
             }
         } else {
-            createTransaction.createTransferTransaction(url: constants.createTransactionEndPotin, date_join: date_join!, type: 3, sum: sum, wallet: walletID, wallet_to: wallet_toID,  comment: comment) { (data) in
+            createTransaction.createTransferTransaction(date_join: date_join!, type: 3, sum: sum, wallet: walletID, wallet_to: wallet_toID,  comment: comment) { (data) in
                 
                 if data != 1 {
                     let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так. Транзакция не была создана!", preferredStyle: .alert)
@@ -204,7 +204,7 @@ extension AddingVC{
             }
             
         }
-        fetchingData.fetchingDirections(url: constants.directionsEndPoint) { (data) in
+        fetchingData.fetchingDirections(url: constants.sectionEndPoint) { (data) in
             DispatchQueue.main.async {
                 self.directions.removeAll()
                 self.directions = data
@@ -222,7 +222,7 @@ extension AddingVC{
         }
         
         
-        fetchingData.fetchingProjects(url: constants.projectsEndPoint) { (data) in
+        fetchingData.fetchingProjects(url: constants.projectEndPoint) { (data) in
             DispatchQueue.main.async {
                 self.projects.removeAll()
                 self.projects = data

@@ -65,7 +65,7 @@ class EditingTransferVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
-        let urlToFetchTransaction = constants.transactionByIDEndPoint + String(idToUpdate!)
+        let urlToFetchTransaction = constants.transactionEndPoint + String(idToUpdate!)
         fetchingTransfer.deletingTransaction(url: urlToFetchTransaction, id: idToUpdate!) { (response) in
             if response{
                 self.dismiss(animated: true, completion: nil)
@@ -88,7 +88,7 @@ class EditingTransferVC: UIViewController {
     
     
     func updateTransferData() {
-        let urlToUpdateTransaction = constants.updateTransactionByIDEndPoint + String(idToUpdate!)
+        let urlToUpdateTransaction = constants.transactionEndPoint + String(idToUpdate!)
         
         updateTransaction.updateTransferTransaction(url: urlToUpdateTransaction, date_join: date_join!, type: 3, sum: Int(sumTextField.text!)!, wallet: walletID!, wallet_to: walletToID!, comment: comment) { (data) in
             if data != 1 {
@@ -129,7 +129,7 @@ extension EditingTransferVC{
     }
     
     func fetchTransaction(){
-        let urlToFetchTransaction = constants.transactionByIDEndPoint + String(idToUpdate!)
+        let urlToFetchTransaction = constants.transactionEndPoint + String(idToUpdate!)
         fetchingTransfer.fetchingTransfer(url: urlToFetchTransaction) { (data) in
             DispatchQueue.main.async {
                 

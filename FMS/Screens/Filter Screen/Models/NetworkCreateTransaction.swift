@@ -15,7 +15,7 @@ class NetworkCreateTransaction{
     let constants = Constants()
     
 //    date_Join:String,
-    func createIncomeTransaction(url: String, date_join:String, type: Int, section: Int, category: Int, project: Int, sum: Int, wallet: Int, contractor: Int, comment: String, completion: @escaping (Int) -> ()){
+    func createIncomeTransaction(date_join:String, type: Int, section: Int, category: Int, project: Int, sum: Int, wallet: Int, contractor: Int, comment: String, completion: @escaping (Int) -> ()){
 
         var param = [
             "date_join": date_join as Any,
@@ -44,7 +44,7 @@ class NetworkCreateTransaction{
         
         
         
-        let requestAPI = AF.request(constants.createTransactionEndPotin, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+        let requestAPI = AF.request(constants.transactionEndPoint, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         
         
         requestAPI.responseJSON { (response) in
@@ -69,7 +69,7 @@ class NetworkCreateTransaction{
     }
     
     
-    func createOutComeTransaction(url: String, date_join:String, type: Int, section: Int, category: Int, project: Int, sum: Int, wallet: Int, contractor: Int, comment: String, completion: @escaping (Int) -> ()){
+    func createOutComeTransaction(date_join:String, type: Int, section: Int, category: Int, project: Int, sum: Int, wallet: Int, contractor: Int, comment: String, completion: @escaping (Int) -> ()){
 
         var param = [
             "date_join": date_join as Any,
@@ -99,7 +99,7 @@ class NetworkCreateTransaction{
         
         
         
-        let requestAPI = AF.request(constants.createTransactionEndPotin, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+        let requestAPI = AF.request(constants.transactionEndPoint, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         
         
         requestAPI.responseJSON { (response) in
@@ -123,7 +123,7 @@ class NetworkCreateTransaction{
         }
     }
     
-    func createTransferTransaction(url: String, date_join:String, type: Int,  sum: Int, wallet: Int, wallet_to: Int, comment: String, completion: @escaping (Int) -> ()){
+    func createTransferTransaction(date_join:String, type: Int,  sum: Int, wallet: Int, wallet_to: Int, comment: String, completion: @escaping (Int) -> ()){
 
         let param = [
             "date_join": date_join as Any,
@@ -143,7 +143,7 @@ class NetworkCreateTransaction{
         
         
         
-        let requestAPI = AF.request(constants.createTransactionEndPotin, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+        let requestAPI = AF.request(constants.transactionEndPoint, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         
         
         requestAPI.responseJSON { (response) in

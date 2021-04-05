@@ -25,7 +25,7 @@ class GetAndUpdateUser {
         ]
         
         
-        let url = constants.getUserByEmailEndPoint + email
+        let url = constants.crudUserByEmail + email
         let requestAPI = AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         
         
@@ -55,7 +55,7 @@ class GetAndUpdateUser {
             "Authorization": "Bearer \(accessToken)"
         ]
         
-        let url = constants.deleteUserEndPoint + email
+        let url = constants.crudUserByEmail + email
         let requestAPI = AF.request(url, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         //responseJSON = responseString
         requestAPI.responseJSON { (response) in
@@ -97,7 +97,7 @@ class GetAndUpdateUser {
         ]
         
         
-        let url = constants.updateUserEndPoint + email
+        let url = constants.crudUserByEmail + email
         let requestAPI = AF.request(url, method: .patch, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         
         

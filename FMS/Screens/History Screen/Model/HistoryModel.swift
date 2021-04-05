@@ -9,8 +9,14 @@ import Foundation
 
 
 struct HistoryModel {
-    let id: Int
-    let name: String
-    let action: String
+    
+    
+    let who: String
+    let whatDid: String
     let date: String
+//    let last_name: String
+//    let first_name: String
+//    let action_flag: Int
+//    let action_time: String
+//    let content_type: String
 }

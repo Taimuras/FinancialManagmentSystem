@@ -71,7 +71,7 @@ class CounterPartVC: UIViewController {
     
     func fetchData(){
         
-        getAllCounterParts.getAllCounterParts(url: constants.getAllCounterPartsEndPoint, completion: { (data) in
+        getAllCounterParts.getAllCounterParts(url: constants.counterAgentEndPoint, completion: { (data) in
             DispatchQueue.main.async {
                 self.counterAgents.removeAll()
                 self.counterAgents = data

@@ -24,7 +24,7 @@ class CreateProject{
         
         
         
-        let requestAPI = AF.request(constants.getAllProjects, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+        let requestAPI = AF.request(constants.projectEndPoint, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         
         
         requestAPI.responseJSON { (response) in

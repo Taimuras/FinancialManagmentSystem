@@ -86,7 +86,7 @@ class WalletsVC: UIViewController {
 extension WalletsVC{
     
     func getAll() {
-        getAllWallets.getAllWallets(url: constants.walletsEndPoint) { (data) in
+        getAllWallets.getAllWallets(url: constants.walletEndPoint) { (data) in
             DispatchQueue.main.async {
 //                print("Wallets Data: \(data)")
                 self.wallets.removeAll()

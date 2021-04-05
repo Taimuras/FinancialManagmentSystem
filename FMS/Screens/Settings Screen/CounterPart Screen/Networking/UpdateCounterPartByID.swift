@@ -33,7 +33,7 @@ class UpdateCounterPartByID{
         
         
         
-        let url = constants.createCounterPartEndPoint + String(id)
+        let url = constants.counterAgentEndPoint + String(id)
         print("url to update: \(url)")
         let requestAPI = AF.request(url, method: .patch, parameters: param, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         

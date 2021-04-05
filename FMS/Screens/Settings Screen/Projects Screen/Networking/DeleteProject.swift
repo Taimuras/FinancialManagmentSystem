@@ -26,7 +26,7 @@ class DeleteProject{
             "Authorization": "Bearer \(accessToken)"
         ]
         
-        let url = constants.projectsEndPoint + String(id)
+        let url = constants.projectEndPoint + String(id)
         let requestAPI = AF.request(url, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         //responseJSON = responseString
         requestAPI.responseJSON { (response) in

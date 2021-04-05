@@ -104,7 +104,7 @@ class EditingTransactionsVC: UIViewController {
     }
     
     @IBAction func deleteIconButtonTapped(_ sender: UIButton) {
-        let urlToFetchTransaction = constants.transactionByIDEndPoint + String(idToUpdate!)
+        let urlToFetchTransaction = constants.transactionEndPoint + String(idToUpdate!)
         fetchingTransaction.deletingTransaction(url: urlToFetchTransaction, id: idToUpdate!) { (response) in
             if response{
                 self.dismiss(animated: true, completion: nil)
@@ -129,7 +129,7 @@ class EditingTransactionsVC: UIViewController {
     
     // MARK: Fetch Transaction
     func fetchTransaction(){
-        let urlToFetchTransaction = constants.transactionByIDEndPoint + String(idToUpdate!)
+        let urlToFetchTransaction = constants.transactionEndPoint + String(idToUpdate!)
         fetchingTransaction.fetchingTransactions(url: urlToFetchTransaction) { (data) in
             DispatchQueue.main.async {
                 
@@ -188,7 +188,7 @@ class EditingTransactionsVC: UIViewController {
     
     
     func updateTransactionData() {
-        let urlToUpdateTransaction = constants.updateTransactionByIDEndPoint + String(idToUpdate!)
+        let urlToUpdateTransaction = constants.transactionEndPoint + String(idToUpdate!)
         if segmentedOutlet.selectedSegmentIndex == 0 {
             updateTransaction.updateIncomeTransaction(url: urlToUpdateTransaction, date_join: date_join!, type: 1, section: sectionID!, category: categoryID!, project: projectID ?? 0, sum: Int(sumTextField.text!)!, wallet: walletID!, contractor: contractorID ?? 0, comment: comment) { (data) in
                 if data != 1 {
@@ -251,7 +251,7 @@ extension EditingTransactionsVC{
             }
             
         }
-        fetchingData.fetchingDirections(url: constants.directionsEndPoint) { (data) in
+        fetchingData.fetchingDirections(url: constants.sectionEndPoint) { (data) in
             DispatchQueue.main.async {
                 self.directions.removeAll()
                 self.directions = data
@@ -269,7 +269,7 @@ extension EditingTransactionsVC{
         }
         
         
-        fetchingData.fetchingProjects(url: constants.projectsEndPoint) { (data) in
+        fetchingData.fetchingProjects(url: constants.projectEndPoint) { (data) in
             DispatchQueue.main.async {
                 self.projects.removeAll()
                 self.projects = data

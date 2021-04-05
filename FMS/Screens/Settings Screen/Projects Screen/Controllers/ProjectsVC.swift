@@ -58,7 +58,7 @@ class ProjectsVC: UIViewController {
     
     
     func getAll() {
-        getAllProjects.getAllProjects(url: constants.getAllProjects) { (data) in
+        getAllProjects.getAllProjects(url: constants.projectEndPoint) { (data) in
             DispatchQueue.main.async {
                 self.projects.removeAll()
                 self.projects = data

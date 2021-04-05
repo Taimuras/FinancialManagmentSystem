@@ -127,7 +127,7 @@ extension MainViewController{
     // MARK: Fetching Data first try
     func fetchData () {
         
-        fetchingTransactions.fetchingTransactions(url: constants.transitionsEndPoint) { (data) in
+        fetchingTransactions.fetchingTransactions(url: constants.transactionEndPoint) { (data) in
             DispatchQueue.main.async {
                 self.mainVCData.removeAll()
                 self.mainVCData = data
@@ -179,7 +179,7 @@ extension MainViewController: FilterVCDelegate{
         
             
         
-        let endPoint = self.constants.transitionsEndPoint + url
+        let endPoint = self.constants.transactionEndPoint + url
         
 //        print("Filtered End Point: \(endPoint)")
         self.fetchingTransactions.fetchingFilteredTransactions(url: endPoint, dateFrom: dateFrom, dateTo: dateTo) { (responseData) in

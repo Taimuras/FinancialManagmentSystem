@@ -28,8 +28,8 @@ class HistoryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
+        registerCWCell()
+        collectionViewDelegates()
         fetchData()
         // Do any additional setup after loading the view.
     }
@@ -52,25 +52,20 @@ extension HistoryVC{
     // MARK: Fetching Data first try
     func fetchData () {
         fetchActions.fetchingActions { (data) in
-            print(data)
+            self.history = data
+            self.historyCollectionView.reloadData()
         }
         
         
-//        fetchingTransactions.fetchingTransactions(url: constants.transitionsEndPoint) { (data) in
-//            DispatchQueue.main.async {
-//                self.mainVCData.removeAll()
-//                self.mainVCData = data
-//                self.mainScreenCollectionView.reloadData()
-//                MBProgressHUD.hide(for: self.view, animated: true)
-//            }
-//            
-//        }
         
     }
     
     func updateNextSet(){
         fetchActions.fetchingMoreActions { (data) in
-            print(data)
+            for i in 0 ..< data.count {
+                self.history.append(data[i])
+            }
+            self.historyCollectionView.reloadData()
         }
     }
     
@@ -100,6 +95,9 @@ extension HistoryVC: UICollectionViewDelegate, UICollectionViewDataSource{
         
         let index = history[indexPath.row]
         
+        cell.userNameLabel.text = index.who
+        cell.actionLabel.text = index.whatDid
+        cell.dateLabel.text = index.date
         
         
         
@@ -119,6 +117,6 @@ extension HistoryVC: UICollectionViewDelegate, UICollectionViewDataSource{
 
 extension HistoryVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 105)
+        return CGSize(width: collectionView.frame.width, height: 85)
     }
 }

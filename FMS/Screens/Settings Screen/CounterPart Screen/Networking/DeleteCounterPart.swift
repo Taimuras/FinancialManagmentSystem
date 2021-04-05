@@ -24,7 +24,7 @@ class DeleteCounterPart{
             "Authorization": "Bearer \(accessToken)"
         ]
         
-        let url = constants.createCounterPartEndPoint + String(id)
+        let url = constants.counterAgentEndPoint + String(id)
         let requestAPI = AF.request(url, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         //responseJSON = responseString
         requestAPI.responseJSON { (response) in

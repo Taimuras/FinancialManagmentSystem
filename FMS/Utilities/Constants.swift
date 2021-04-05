@@ -15,6 +15,8 @@ import SwiftyJSON
 class Constants {
     let userDefaults = UserDefaults.standard
     
+    
+    //MARK: Cell's and Stroyboard's IDs
     //Cell's Identifier
     let userScreenTableViewCellIdentifier = "UserTVCell"
     let mainScreenCollectionViewCellIdentifier = "MainCVC"
@@ -45,10 +47,13 @@ class Constants {
     //Segues IDs
     let filterSegue = "FilterSegue"
     
+    
+    //MARK: Fonts
     //Font Bold size
     let fontBold34 = UIFont(name: "OpenSans-Bold", size: 34)
     let fontBold18 = UIFont(name: "OpenSans-Bold", size: 18)
     let fontBold16 = UIFont(name: "OpenSans-Bold", size: 16)
+    let fontBold14 = UIFont(name: "OpenSans-Bold", size: 14)
     
     //Font SemiBold size
     let fontSemiBold36 = UIFont(name: "OpenSans-SemiBold", size: 36)
@@ -67,36 +72,41 @@ class Constants {
     let fontRegular17 = UIFont(name: "OpenSans-Regular", size: 17)
     
     
-    
+    // MARK: EndPoints
+    // Server
     let server = "https://neobis-finance-sistem.herokuapp.com/"
+    
+    //Log In and Refersh Token
     let logInEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/token/"
     let refreshTokenApi = "https://neobis-finance-sistem.herokuapp.com/account/api/token/refresh/"
-    let transitionsEndPoint = "https://neobis-finance-sistem.herokuapp.com/transaction/"
-    let createTransactionEndPotin = "https://neobis-finance-sistem.herokuapp.com/transaction/"
+    
+    //Summary of pro, con and Total Balance
     let mainScreenFetchIncOutBalance = "https://neobis-finance-sistem.herokuapp.com/profit_consumption_balance/"
-    let walletEndPoint = "https://neobis-finance-sistem.herokuapp.com/wallet/"
-    let counterAgentEndPoint = "https://neobis-finance-sistem.herokuapp.com/contractor/"
-    let directionsEndPoint = "https://neobis-finance-sistem.herokuapp.com/section/"
-    let createUserEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/user/"
-    let categoriesEndPoint = "https://neobis-finance-sistem.herokuapp.com/category/"
-    let projectsEndPoint = "https://neobis-finance-sistem.herokuapp.com/project/"
-    let allUsersEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/user/"
-    let transactionByIDEndPoint = "https://neobis-finance-sistem.herokuapp.com/transaction/"
-    let deleteTransactionByIDEndPoint = "https://neobis-finance-sistem.herokuapp.com/transaction/"
-    let updateTransactionByIDEndPoint = "https://neobis-finance-sistem.herokuapp.com/transaction/"
-    let getUserByEmailEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/change/user/"  // \(email.gmail.com)
-    let getSessionUserEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/session-user/"  // .get
-    let deleteUserEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/change/user/" // \(email@gmail.com)
-    let updateUserEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/change/user/" // \(email@gmail.com)
-    let getAllCounterPartsEndPoint = "https://neobis-finance-sistem.herokuapp.com/contractor/"
-    let createCounterPartEndPoint = "https://neobis-finance-sistem.herokuapp.com/contractor/"
-    let getAllProjects = "https://neobis-finance-sistem.herokuapp.com/project/"
-    let walletsEndPoint = "https://neobis-finance-sistem.herokuapp.com/wallet/"
+    
+    //History End point
     let historyEndPoint = "https://neobis-finance-sistem.herokuapp.com/history/"
     
+    // All 6 needed end Point(CRUD). All changes Only by ID!
+    let transactionEndPoint = "https://neobis-finance-sistem.herokuapp.com/transaction/"
+    let sectionEndPoint = "https://neobis-finance-sistem.herokuapp.com/section/"
+    let counterAgentEndPoint = "https://neobis-finance-sistem.herokuapp.com/contractor/"
+    let walletEndPoint = "https://neobis-finance-sistem.herokuapp.com/wallet/"
+    let categoriesEndPoint = "https://neobis-finance-sistem.herokuapp.com/category/"
+    let projectEndPoint = "https://neobis-finance-sistem.herokuapp.com/project/"
+
+    //Create User and Get all Users
+    let createUserEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/user/"
+    let allUsersEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/user/"
     
+    // update delete User By Email
+    let crudUserByEmail = "https://neobis-finance-sistem.herokuapp.com/account/api/change/user/" 
     
+    // Get Session User
+    let getSessionUserEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/session-user/"
+ 
+   
     
+    // MARK: Date Formating Funcs
     func dateToString(date: Date) -> String{
         let loc = Locale(identifier: "ru_RU")
         let formatter = DateFormatter()
@@ -129,5 +139,19 @@ class Constants {
         form.locale = local
         return form.string(from: date)
     }
+    
+    func stringToDateHistory(dateString: String) -> String{
+        let array = dateString.split(separator: "T")
+        let day = array[0].split(separator: "-")
+        let time = array[1].split(separator: ":")
+        
+        var date = day[2] + "." + day[1] + "." + day[0] + " в "
+        date += time[0] + ":" + time[1]
+        
+        
+        return date
+    }
+    
+    
 }
 

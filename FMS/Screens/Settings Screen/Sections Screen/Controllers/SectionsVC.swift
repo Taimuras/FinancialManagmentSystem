@@ -90,7 +90,7 @@ class SectionsVC: UIViewController {
 extension SectionsVC{
     func fetchData(){
         
-        getAllSections.getAllSections(url: constants.directionsEndPoint, completion: { (data) in
+        getAllSections.getAllSections(url: constants.sectionEndPoint, completion: { (data) in
             DispatchQueue.main.async {
                 self.sections.removeAll()
                 self.sections = data
@@ -148,6 +148,8 @@ extension SectionsVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
+    
+
 }
 
 
@@ -156,7 +158,5 @@ extension SectionsVC{
         
         addLabel.font = constants.fontSemiBold16
        
-        
-        
     }
 }
