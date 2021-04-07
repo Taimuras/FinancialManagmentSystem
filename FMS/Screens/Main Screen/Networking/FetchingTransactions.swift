@@ -46,7 +46,7 @@ class FetchingTransactions {
                     let json = JSON(data)
                     
 //                    print(response.value!)
-                    print("Transaction Date:   \(json["results"][1]["date_join"].stringValue)")
+//                    print("Transaction Date:   \(json["results"][1]["date_join"].stringValue)")
                     
                     self.transitions.removeAll()
                     for i in 0 ..< json["count"].intValue{

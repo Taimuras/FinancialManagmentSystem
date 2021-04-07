@@ -41,17 +41,17 @@ class FetchingAllActions {
             switch response.result{
                 case .success(let data):
                     let json = JSON(data)
-//                    print("History Json: \(json)")
+                    print("History Json: \(json)")
                 
                     self.history.removeAll()
                     for i in 0 ..< json["results"].count {
                         let who = json["results"][i]["user"]["last_name"].stringValue + " " + json["results"][i]["user"]["first_name"].stringValue
                         let whatDid: String = self.action(action_flag: json["results"][i]["action_flag"].intValue) + self.section(section: json["results"][i]["content_type"]["model"].stringValue)
                         
-                        let whenDid = self.constants.stringToDateHistory(dateString: json["results"][i]["action_time"].stringValue)
+//                        let whenDid = self.constants.stringToDateHistory(dateString: json["results"][i]["action_time"].stringValue)
                         
                         
-                        let historyCell = HistoryModel(who: who, whatDid: whatDid, date: whenDid)
+                        let historyCell = HistoryModel(who: who, whatDid: whatDid) //
                         
                         
                         self.history.append(historyCell)
@@ -94,7 +94,7 @@ class FetchingAllActions {
                         let whenDid = self.constants.stringToDateHistory(dateString: json["results"][i]["action_time"].stringValue)
                         
                         
-                        let historyCell = HistoryModel(who: who, whatDid: whatDid, date: whenDid)
+                        let historyCell = HistoryModel(who: who, whatDid: whatDid) //, date: whenDid
                         
                         
                         self.history.append(historyCell)

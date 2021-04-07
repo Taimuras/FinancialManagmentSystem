@@ -238,27 +238,7 @@ extension FilterVC: UIPickerViewDelegate, UIPickerViewDataSource {
 }
 
 
-extension FilterVC{
-    func design (){
-        
-        
-        acceptButton.layer.cornerRadius = 10.0
-        acceptButton.layer.masksToBounds = true
-        acceptButton.titleLabel?.font = constants.fontSemiBold17
-        cancelButton.titleLabel?.font = constants.fontRegular17
-        
-        //Fonts + sizes
-        
-        typeTextField.font = constants.fontRegular17
-        dateToTextField.font = constants.fontRegular17
-        dateFromTextField.font = constants.fontRegular17
-        directionTextField.font = constants.fontRegular17
-        walletTextField.font = constants.fontRegular17
-        counterAgentTextField.font = constants.fontRegular17
-       
-        
-    }
-}
+
 
 extension FilterVC{
     func createDatePicker () {
@@ -373,4 +353,27 @@ extension FilterVC {
         self.view.frame.origin.y = 0
     }
     
+}
+
+
+extension FilterVC{
+    func design (){
+        
+        
+        acceptButton.layer.cornerRadius = 10.0
+        acceptButton.layer.masksToBounds = true
+        acceptButton.titleLabel?.font = constants.fontSemiBold17
+        cancelButton.titleLabel?.font = constants.fontRegular17
+        
+        //Fonts + sizes
+        
+        typeTextField.font = constants.fontRegular17
+        dateToTextField.font = constants.fontRegular17
+        dateFromTextField.font = constants.fontRegular17
+        directionTextField.font = constants.fontRegular17
+        walletTextField.font = constants.fontRegular17
+        counterAgentTextField.font = constants.fontRegular17
+       
+        
+    }
 }
