@@ -798,9 +798,9 @@
         <!--Analytics FiltrationVC-->
         <scene sceneID="VLj-I6-8qm">
             <objects>
-                <viewController id="5yJ-T8-AwW" customClass="AnalyticsFiltrationVC" customModule="FMS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AnalyticsFiltrationVC" id="5yJ-T8-AwW" customClass="AnalyticsFiltrationVC" customModule="FMS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pds-MJ-qBl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDR-Of-Geh" userLabel="Top Bar View">
@@ -934,7 +934,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZJF-Ju-K5E">
-                                <rect key="frame" x="0.0" y="636" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="656" width="414" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lcd-5t-iV5">
                                         <rect key="frame" x="16" y="15" width="382" height="50"/>
@@ -959,7 +959,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVr-Jh-fCZ" userLabel="Divider">
-                                <rect key="frame" x="0.0" y="635" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="655" width="414" height="1"/>
                                 <color key="backgroundColor" name="Dividers Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="PQo-M9-CNf"/>
@@ -1074,7 +1074,7 @@
                                         </constraints>
                                         <state key="normal" image="Main FilterSVG"/>
                                         <connections>
-                                            <segue destination="5yJ-T8-AwW" kind="show" id="m9j-9h-zkH"/>
+                                            <action selector="analFiltrButtonTapped:" destination="Ryn-BQ-VdD" eventType="touchUpInside" id="Btx-kb-lQc"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фильтрация" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1q-EG-4iY">
@@ -1097,39 +1097,27 @@
                                     <constraint firstAttribute="trailing" secondItem="g1q-EG-4iY" secondAttribute="trailing" constant="16" id="anV-0w-4cL"/>
                                 </constraints>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nPL-ln-vyx">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOj-oW-Oyj" customClass="PieChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="134" width="414" height="553"/>
-                                <connections>
-                                    <segue destination="lU1-Yb-RWA" kind="embed" id="va1-8D-aqh"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8s-Ip-hGV">
-                                <rect key="frame" x="0.0" y="134" width="414" height="553"/>
-                                <connections>
-                                    <segue destination="CXc-iQ-veZ" kind="embed" id="26h-tl-FsE"/>
-                                </connections>
-                            </containerView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="A4s-lP-YLw"/>
                         <color key="backgroundColor" name="BrandColorGrey"/>
                         <constraints>
                             <constraint firstItem="A4s-lP-YLw" firstAttribute="trailing" secondItem="nqr-iE-jyp" secondAttribute="trailing" constant="16" id="3Iw-vp-d5L"/>
                             <constraint firstItem="RFR-ym-oWe" firstAttribute="leading" secondItem="A4s-lP-YLw" secondAttribute="leading" constant="16" id="4Fe-12-QRB"/>
+                            <constraint firstItem="A4s-lP-YLw" firstAttribute="trailing" secondItem="yOj-oW-Oyj" secondAttribute="trailing" id="6Iu-7Q-yab"/>
+                            <constraint firstItem="yOj-oW-Oyj" firstAttribute="leading" secondItem="A4s-lP-YLw" secondAttribute="leading" id="948-jZ-s69"/>
                             <constraint firstItem="A4s-lP-YLw" firstAttribute="trailing" secondItem="xQv-8K-Zxg" secondAttribute="trailing" constant="16" id="9rv-6P-UQ8"/>
-                            <constraint firstItem="nPL-ln-vyx" firstAttribute="leading" secondItem="A4s-lP-YLw" secondAttribute="leading" id="CtH-ne-1zx"/>
                             <constraint firstItem="xQv-8K-Zxg" firstAttribute="leading" secondItem="A4s-lP-YLw" secondAttribute="leading" constant="16" id="Def-MA-kv4"/>
                             <constraint firstItem="RFR-ym-oWe" firstAttribute="top" secondItem="A4s-lP-YLw" secondAttribute="top" id="MOj-P9-eDl"/>
                             <constraint firstItem="nqr-iE-jyp" firstAttribute="top" secondItem="xQv-8K-Zxg" secondAttribute="bottom" id="MWg-2e-G0f"/>
-                            <constraint firstItem="nPL-ln-vyx" firstAttribute="top" secondItem="nqr-iE-jyp" secondAttribute="bottom" id="Sae-cf-ffy"/>
-                            <constraint firstItem="D8s-Ip-hGV" firstAttribute="bottom" secondItem="A4s-lP-YLw" secondAttribute="bottom" id="V4X-Qz-2sm"/>
                             <constraint firstItem="nqr-iE-jyp" firstAttribute="leading" secondItem="A4s-lP-YLw" secondAttribute="leading" constant="16" id="bvK-Re-d8f"/>
                             <constraint firstItem="A4s-lP-YLw" firstAttribute="trailing" secondItem="RFR-ym-oWe" secondAttribute="trailing" constant="16" id="bxc-Oe-qaN"/>
-                            <constraint firstItem="D8s-Ip-hGV" firstAttribute="trailing" secondItem="A4s-lP-YLw" secondAttribute="trailing" id="d4r-Rm-yJv"/>
                             <constraint firstItem="xQv-8K-Zxg" firstAttribute="top" secondItem="RFR-ym-oWe" secondAttribute="bottom" id="hpC-66-Z2J"/>
-                            <constraint firstItem="A4s-lP-YLw" firstAttribute="trailing" secondItem="nPL-ln-vyx" secondAttribute="trailing" id="ipC-Zn-wzb"/>
-                            <constraint firstItem="D8s-Ip-hGV" firstAttribute="top" secondItem="nqr-iE-jyp" secondAttribute="bottom" id="kTD-dw-M26"/>
-                            <constraint firstItem="D8s-Ip-hGV" firstAttribute="leading" secondItem="A4s-lP-YLw" secondAttribute="leading" id="nGp-Yx-fo8"/>
-                            <constraint firstItem="A4s-lP-YLw" firstAttribute="bottom" secondItem="nPL-ln-vyx" secondAttribute="bottom" id="s3G-hn-Quj"/>
+                            <constraint firstItem="yOj-oW-Oyj" firstAttribute="top" secondItem="nqr-iE-jyp" secondAttribute="bottom" id="lnt-27-i9s"/>
+                            <constraint firstItem="A4s-lP-YLw" firstAttribute="bottom" secondItem="yOj-oW-Oyj" secondAttribute="bottom" id="qIg-f1-xJu"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Аналитика" image="Analitics TB Dis IconSVG" selectedImage="Analitics TB Enab IconSVG" id="Bcu-te-avj">
@@ -1137,6 +1125,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="analyticsLabel" destination="saW-yN-Fel" id="I2x-Sy-RC5"/>
+                        <outlet property="anyChartView" destination="yOj-oW-Oyj" id="WPv-lz-7lf"/>
                         <outlet property="filtrationLabel" destination="g1q-EG-4iY" id="Jg8-wa-FtH"/>
                     </connections>
                 </viewController>
@@ -5528,36 +5517,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pJ4-24-H0E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1417.3913043478262" y="5312.771739130435"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="XrH-uh-gfJ">
-            <objects>
-                <viewController id="lU1-Yb-RWA" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mpQ-D0-M7n">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="553"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="z27-y9-RXH"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Nps-nh-Vwu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5983" y="-29"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="R1w-7d-oKC">
-            <objects>
-                <viewController id="CXc-iQ-veZ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lWC-QE-zXe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="553"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="46G-MC-qE2"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0UE-6i-XO4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5983" y="582"/>
         </scene>
     </scenes>
     <resources>

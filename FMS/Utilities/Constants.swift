@@ -105,7 +105,7 @@ class Constants {
     let getSessionUserEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/session-user/"
     
     //Analytics
-    let analyticsEndPoint = "https://neobis-finance-sistem.herokuapp.com/analytics/prjects/"
+    let analyticsProjectsEndPoint = "https://neobis-finance-sistem.herokuapp.com/analytics/prjects/"
  
    
     

@@ -97,7 +97,7 @@ extension HistoryVC: UICollectionViewDelegate, UICollectionViewDataSource{
         
         cell.userNameLabel.text = index.who
         cell.actionLabel.text = index.whatDid
-//        cell.dateLabel.text = index.date
+        cell.dateLabel.text = index.date
         
         
         
@@ -106,7 +106,7 @@ extension HistoryVC: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row == history.count - 5 {  //numberofitem count
-//            updateNextSet()
+            updateNextSet()
         }
     }
     

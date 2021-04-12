@@ -12,5 +12,8 @@ pod 'SwiftyJSON'
 pod 'ReachabilitySwift'
 pod 'MBProgressHUD'
 pod 'SDWebImage'
+pod 'AnyChartiOS'
+pod 'Charts'
+
 
 end

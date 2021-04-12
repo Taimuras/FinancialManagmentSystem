@@ -6,22 +6,37 @@
 //
 
 import UIKit
+import AnyChartiOS
+import Charts
 
-class AnaliticsVC: UIViewController {
+
+
+class AnaliticsVC: UIViewController, ChartViewDelegate{
     let constants = Constants()
     let getAnalytics = AnalyticsNetworking()
     let userDefaults = UserDefaults.standard
+    
+    
+    var dataEntry: [DataEntry]?
     
     
     @IBOutlet weak var analyticsLabel: UILabel!
     @IBOutlet weak var filtrationLabel: UILabel!
     
     
+    @IBOutlet weak var anyChartView: PieChartView!
+    var entries = [PieChartDataEntry]()
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        design()
         
+        
+        anyChartView.delegate = self
+        
+        design()
         
         
         get()
@@ -31,6 +46,12 @@ class AnaliticsVC: UIViewController {
     }
     
 
+    @IBAction func analFiltrButtonTapped(_ sender: UIButton) {
+        let analyticsFilterVC = storyboard?.instantiateViewController(withIdentifier: "AnalyticsFiltrationVC") as! AnalyticsFiltrationVC
+        analyticsFilterVC.delegate = self
+        present(analyticsFilterVC, animated: true, completion: nil)
+    }
+    
     @IBAction func logOut(_ sender: UIButton) {
         let dialogMessage = UIAlertController(title: "Выход", message: "Вы уверены, что хотите выйти?", preferredStyle: .alert)
         let cancel = UIAlertAction(title: "Отмена", style: .cancel) { (action) -> Void in
@@ -66,11 +87,49 @@ class AnaliticsVC: UIViewController {
     
     
     func get() {
-        getAnalytics.getAnalytics { (data) in
-            print(data)
+        getAnalytics.getDefaultProjects { (data) in
+            
+            DispatchQueue.main.async {
+                self.anyChartView.entryLabelColor = .black
+                
+                let set = PieChartDataSet(entries: data)
+                
+                set.useValueColorForLine = true
+                set.valueLineColor = .blue
+                
+                set.colors = ChartColorTemplates.material()
+                let data = PieChartData(dataSet: set)
+                self.anyChartView.data = data
+
+            }
+            
         }
     }
 }
+
+
+
+extension AnaliticsVC: AnalyticsFiltrationVCDelegate {
+    
+    func neededData(type: Int, section: String, dateFrom: String, dateTo: String) {
+        if section == "Проекты" {
+            getAnalytics.getFilteredProjects(type: type, dateFrom: dateFrom, dateTo: dateTo) { (data) in
+                
+                DispatchQueue.main.async {
+                    
+                    let set = PieChartDataSet(entries: data)
+                    set.colors = ChartColorTemplates.material()
+                    let data = PieChartData(dataSet: set)
+                    self.anyChartView.data = data
+                }
+            }
+        }
+        self.dismiss(animated: true,completion: nil) 
+    }
+}
+
+
+
 
 
 

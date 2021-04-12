@@ -13,7 +13,7 @@ struct HistoryModel {
     
     let who: String
     let whatDid: String
-//    let date: String
+    let date: String
 //    let last_name: String
 //    let first_name: String
 //    let action_flag: Int

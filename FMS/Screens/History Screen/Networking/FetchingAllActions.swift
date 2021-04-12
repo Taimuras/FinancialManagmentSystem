@@ -17,6 +17,8 @@ class FetchingAllActions {
     var limit = 20
     var offset = 20
     
+    var urlForNext: String?
+    
     
     let constants = Constants()
     let userDefaults = UserDefaults.standard
@@ -41,17 +43,20 @@ class FetchingAllActions {
             switch response.result{
                 case .success(let data):
                     let json = JSON(data)
-                    print("History Json: \(json)")
-                
+//                    print("History Json: \(json)")
+                    
+                    self.urlForNext = json["next"].stringValue
+//                    print("url    \(json["next"].stringValue)")
+                    
                     self.history.removeAll()
                     for i in 0 ..< json["results"].count {
                         let who = json["results"][i]["user"]["last_name"].stringValue + " " + json["results"][i]["user"]["first_name"].stringValue
                         let whatDid: String = self.action(action_flag: json["results"][i]["action_flag"].intValue) + self.section(section: json["results"][i]["content_type"]["model"].stringValue)
                         
-//                        let whenDid = self.constants.stringToDateHistory(dateString: json["results"][i]["action_time"].stringValue)
+                        let whenDid = self.constants.stringToDateHistory(dateString: json["results"][i]["action_time"].stringValue)
                         
                         
-                        let historyCell = HistoryModel(who: who, whatDid: whatDid) //
+                        let historyCell = HistoryModel(who: who, whatDid: whatDid, date: whenDid) //
                         
                         
                         self.history.append(historyCell)
@@ -74,7 +79,7 @@ class FetchingAllActions {
         
         let url = constants.historyEndPoint + "?limit=\(limit)&offset=\(offset)"
         
-        let requestAPI = AF.request(url, method: .get, encoding: JSONEncoding.default, interceptor: interceptor)
+        let requestAPI = AF.request(urlForNext ?? url, method: .get, encoding: JSONEncoding.default, interceptor: interceptor)
         
         
         requestAPI
@@ -86,7 +91,7 @@ class FetchingAllActions {
                 case .success(let data):
                     let json = JSON(data)
                     
-                    
+                   
                     for i in 0 ..< json["results"].count {
                         let who = json["results"][i]["user"]["last_name"].stringValue + " " + json["results"][i]["user"]["first_name"].stringValue
                         let whatDid: String = self.action(action_flag: json["results"][i]["action_flag"].intValue) + self.section(section: json["results"][i]["content_type"]["model"].stringValue)
@@ -94,7 +99,7 @@ class FetchingAllActions {
                         let whenDid = self.constants.stringToDateHistory(dateString: json["results"][i]["action_time"].stringValue)
                         
                         
-                        let historyCell = HistoryModel(who: who, whatDid: whatDid) //, date: whenDid
+                        let historyCell = HistoryModel(who: who, whatDid: whatDid, date: whenDid )
                         
                         
                         self.history.append(historyCell)
@@ -135,7 +140,7 @@ class FetchingAllActions {
             return "транзакция"
         case "wallet":
             return "кошелек"
-        case "projcet":
+        case "project":
             return "проект"
         case "contractor":
             return "контрагент"

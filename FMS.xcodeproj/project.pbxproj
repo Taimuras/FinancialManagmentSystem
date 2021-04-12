@@ -102,8 +102,8 @@
 		5284800525FCB91D00D82D8F /* FetchingDataFilterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284800425FCB91D00D82D8F /* FetchingDataFilterScreen.swift */; };
 		5284800825FCBB8100D82D8F /* WalletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284800725FCBB8100D82D8F /* WalletModel.swift */; };
 		5284800B25FCBEB600D82D8F /* CounterAgentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284800A25FCBEB600D82D8F /* CounterAgentsModel.swift */; };
+		528A70B5261ECEE50000B3AB /* AProjectsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A70B4261ECEE50000B3AB /* AProjectsModel.swift */; };
 		52927083261C15DC00252E22 /* AnalyticsNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52927082261C15DC00252E22 /* AnalyticsNetworking.swift */; };
-		52927087261C15F200252E22 /* AnalyticsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52927086261C15F200252E22 /* AnalyticsModel.swift */; };
 		5295635B2614C9C8006A6162 /* EditingSectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295635A2614C9C8006A6162 /* EditingSectionVC.swift */; };
 		5295635E2614CE22006A6162 /* DeleteSectionByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295635D2614CE22006A6162 /* DeleteSectionByID.swift */; };
 		5297CE8326118B9E002AFA1A /* AdapterAndRetrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297CE8226118B9E002AFA1A /* AdapterAndRetrier.swift */; };
@@ -111,6 +111,8 @@
 		529B86FC2614461700979E1E /* CreateSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B86FB2614461700979E1E /* CreateSection.swift */; };
 		52AE32BA260311490078D76F /* NetworkCreateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE32B9260311490078D76F /* NetworkCreateUser.swift */; };
 		52CC2BB825F3656400DAA708 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC2BB725F3656400DAA708 /* TabBarViewController.swift */; };
+		52E4B980261EE8FB00153A13 /* AProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4B97F261EE8FB00153A13 /* AProjectVC.swift */; };
+		52E4B983261EE93700153A13 /* AContrAndCatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4B982261EE93700153A13 /* AContrAndCatVC.swift */; };
 		52E5090425F211F80086DF17 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5090325F211F80086DF17 /* LoginVC.swift */; };
 		52E5090725F212160086DF17 /* ForgotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5090625F212160086DF17 /* ForgotVC.swift */; };
 		52E8B6C025F9E199002D62A0 /* EditingTransactionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E8B6BF25F9E199002D62A0 /* EditingTransactionsVC.swift */; };
@@ -220,8 +222,8 @@
 		5284800425FCB91D00D82D8F /* FetchingDataFilterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchingDataFilterScreen.swift; sourceTree = "<group>"; };
 		5284800725FCBB8100D82D8F /* WalletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletModel.swift; sourceTree = "<group>"; };
 		5284800A25FCBEB600D82D8F /* CounterAgentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAgentsModel.swift; sourceTree = "<group>"; };
+		528A70B4261ECEE50000B3AB /* AProjectsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AProjectsModel.swift; sourceTree = "<group>"; };
 		52927082261C15DC00252E22 /* AnalyticsNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsNetworking.swift; sourceTree = "<group>"; };
-		52927086261C15F200252E22 /* AnalyticsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsModel.swift; sourceTree = "<group>"; };
 		5295635A2614C9C8006A6162 /* EditingSectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingSectionVC.swift; sourceTree = "<group>"; };
 		5295635D2614CE22006A6162 /* DeleteSectionByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteSectionByID.swift; sourceTree = "<group>"; };
 		5297CE8226118B9E002AFA1A /* AdapterAndRetrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterAndRetrier.swift; sourceTree = "<group>"; };
@@ -229,6 +231,8 @@
 		529B86FB2614461700979E1E /* CreateSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSection.swift; sourceTree = "<group>"; };
 		52AE32B9260311490078D76F /* NetworkCreateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkCreateUser.swift; path = "FMS/Screens/Users Screen/Networking/NetworkCreateUser.swift"; sourceTree = SOURCE_ROOT; };
 		52CC2BB725F3656400DAA708 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		52E4B97F261EE8FB00153A13 /* AProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AProjectVC.swift; sourceTree = "<group>"; };
+		52E4B982261EE93700153A13 /* AContrAndCatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AContrAndCatVC.swift; sourceTree = "<group>"; };
 		52E5090325F211F80086DF17 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		52E5090625F212160086DF17 /* ForgotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotVC.swift; sourceTree = "<group>"; };
 		52E8B6BF25F9E199002D62A0 /* EditingTransactionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingTransactionsVC.swift; sourceTree = "<group>"; };
@@ -778,6 +782,8 @@
 			children = (
 				5266438C25F5D7C90032499D /* AnaliticsVC.swift */,
 				52F4BA60261D9FED00DFC1DF /* AnalyticsFiltrationVC.swift */,
+				52E4B97F261EE8FB00153A13 /* AProjectVC.swift */,
+				52E4B982261EE93700153A13 /* AContrAndCatVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -829,7 +835,7 @@
 		52927085261C15E000252E22 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				52927086261C15F200252E22 /* AnalyticsModel.swift */,
+				528A70B4261ECEE50000B3AB /* AProjectsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1080,6 +1086,7 @@
 				5266438925F5D78C0032499D /* UsersVC.swift in Sources */,
 				527D60332608526F00620859 /* FetchingAndDeletingTransactions.swift in Sources */,
 				521132392614467800BE4592 /* GetSingleSection.swift in Sources */,
+				52E4B980261EE8FB00153A13 /* AProjectVC.swift in Sources */,
 				52CC2BB825F3656400DAA708 /* TabBarViewController.swift in Sources */,
 				52586CCC2615962A0065E5F3 /* HistoryModel.swift in Sources */,
 				52E5090725F212160086DF17 /* ForgotVC.swift in Sources */,
@@ -1096,12 +1103,12 @@
 				5225FE4225F347D700CF4009 /* ApiCalling.swift in Sources */,
 				5253A97225FF2C5B00449916 /* DirectionModel.swift in Sources */,
 				5266437B25F5D69D0032499D /* AddingVC.swift in Sources */,
+				528A70B5261ECEE50000B3AB /* AProjectsModel.swift in Sources */,
 				52429983260F2CBD0081293C /* DeleteWalletByID.swift in Sources */,
 				52372772260EF34900FA6247 /* DeleteProject.swift in Sources */,
 				52E5090425F211F80086DF17 /* LoginVC.swift in Sources */,
 				521AD974261581F5006E18FA /* CategoryByIDModel.swift in Sources */,
 				5220E57C25EE2C470077EB07 /* MainCVC.swift in Sources */,
-				52927087261C15F200252E22 /* AnalyticsModel.swift in Sources */,
 				52372775260EF44500FA6247 /* UpdateProject.swift in Sources */,
 				526450B02614DD970007D86C /* AddingCategoryVC.swift in Sources */,
 				525464AB260DBE080089B03A /* UpdateCounterPartByID.swift in Sources */,
@@ -1121,6 +1128,7 @@
 				524CA55126131616006CFFF0 /* SectionTVCell.swift in Sources */,
 				5284800525FCB91D00D82D8F /* FetchingDataFilterScreen.swift in Sources */,
 				52429973260F201F0081293C /* GetAllWallets.swift in Sources */,
+				52E4B983261EE93700153A13 /* AContrAndCatVC.swift in Sources */,
 				5242996B260F1BE00081293C /* WalletsVC.swift in Sources */,
 				522A6ABA260507F000F638FB /* IncOutBalModel.swift in Sources */,
 				5242997F260F2A5A0081293C /* GetSingleWalletByID.swift in Sources */,
