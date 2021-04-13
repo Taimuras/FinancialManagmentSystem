@@ -24,6 +24,7 @@ class AnaliticsVC: UIViewController, ChartViewDelegate{
     @IBOutlet weak var filtrationLabel: UILabel!
     
     
+    @IBOutlet weak var horizontalChartView: HorizontalBarChartView!
     @IBOutlet weak var anyChartView: PieChartView!
     var entries = [PieChartDataEntry]()
     
@@ -33,6 +34,8 @@ class AnaliticsVC: UIViewController, ChartViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        horizontalChartView.alpha = 0
+        anyChartView.alpha = 1
         
         anyChartView.delegate = self
         
@@ -90,20 +93,35 @@ class AnaliticsVC: UIViewController, ChartViewDelegate{
         getAnalytics.getDefaultProjects { (data) in
             
             DispatchQueue.main.async {
-                self.anyChartView.entryLabelColor = .black
                 
-                let set = PieChartDataSet(entries: data)
-                
-                set.useValueColorForLine = true
-                set.valueLineColor = .blue
-                
-                set.colors = ChartColorTemplates.material()
-                let data = PieChartData(dataSet: set)
-                self.anyChartView.data = data
+                self.createPieChart(data: data)
 
             }
             
         }
+        
+    }
+    
+    func createPieChart(data: [PieChartDataEntry]) {
+        self.anyChartView.entryLabelColor = .black
+        self.anyChartView.animate(yAxisDuration: 1.5, easingOption: ChartEasingOption.easeInOutQuad)
+        
+        let set = PieChartDataSet(entries: data, label: "Проекты")
+        
+        set.useValueColorForLine = true
+        set.valueLineColor = .blue
+        
+        set.colors = ChartColorTemplates.material()
+        let data = PieChartData(dataSet: set)
+        self.anyChartView.data = data
+    }
+    
+    
+    func createBarChart(data: [BarChartDataEntry]) {
+        let set = BarChartDataSet(entries: data, label: "Contractors")
+        set.colors = ChartColorTemplates.colorful()
+        let data = BarChartData(dataSet: set)
+        horizontalChartView.data = data
     }
 }
 
@@ -113,14 +131,23 @@ extension AnaliticsVC: AnalyticsFiltrationVCDelegate {
     
     func neededData(type: Int, section: String, dateFrom: String, dateTo: String) {
         if section == "Проекты" {
+            horizontalChartView.alpha = 0
+            anyChartView.alpha = 1
             getAnalytics.getFilteredProjects(type: type, dateFrom: dateFrom, dateTo: dateTo) { (data) in
                 
                 DispatchQueue.main.async {
-                    
-                    let set = PieChartDataSet(entries: data)
-                    set.colors = ChartColorTemplates.material()
-                    let data = PieChartData(dataSet: set)
-                    self.anyChartView.data = data
+                    self.createPieChart(data: data)
+                }
+            }
+        } else {
+            horizontalChartView.alpha = 1
+            anyChartView.alpha = 0
+            
+            
+            getAnalytics.getContractors { (data) in
+                DispatchQueue.main.async {
+                    print(data)
+                    self.createBarChart(data: data)
                 }
             }
         }

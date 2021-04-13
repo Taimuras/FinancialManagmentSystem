@@ -106,6 +106,7 @@ class Constants {
     
     //Analytics
     let analyticsProjectsEndPoint = "https://neobis-finance-sistem.herokuapp.com/analytics/prjects/"
+    let analyticsContractorEndPoint = "https://neobis-finance-sistem.herokuapp.com/analytics/transaction/"
  
    
     

@@ -23,6 +23,7 @@ class AnalyticsNetworking{
 //    var projects: [DataEntry] = []
     var projects: [PieChartDataEntry] = []
     var filteredProjects: [PieChartDataEntry] = []
+    var contractors: [BarChartDataEntry] = []
     
     
     func getDefaultProjects(completion: @escaping ([PieChartDataEntry]) -> ()){
@@ -46,14 +47,13 @@ class AnalyticsNetworking{
                 
                 self.projects.removeAll()
                 
-                for (key, _) in json{
-//                    print("key: \(key)   value: \(value)")
-                    let project: PieChartDataEntry = PieChartDataEntry(value: json["\(key)"].doubleValue, label: key)
-                        
-                        
+                for i in 0 ..< json.count{
+//                    print("Value: \(json[i]["sum"].doubleValue) and Label: \(json[i]["name"].stringValue)")
+//                    let project: PieChartDataEntry = PieChartDataEntry(value: json[i]["sum"].doubleValue, label: json[i]["name"].stringValue)
+                    let project: PieChartDataEntry = PieChartDataEntry(value: Double(i + 2), label: "Let \(i)")
                     self.projects.append(project)
-                    
                 }
+
                 
                 
                 completion(self.projects)
@@ -78,14 +78,12 @@ class AnalyticsNetworking{
                 let json = JSON(data)
 
                 self.filteredProjects.removeAll()
-                for (key, _) in json{
-                    let project: PieChartDataEntry = PieChartDataEntry(value: json["\(key)"].doubleValue, label: key)
-                        
-                        
+                for i in 0 ..< json.count{
+//                    print("Value: \(json[i]["sum"].doubleValue) and Label: \(json[i]["name"].stringValue)")
+//                    let project: PieChartDataEntry = PieChartDataEntry(value: json[i]["sum"].doubleValue, label: json[i]["name"].stringValue)
+                    let project: PieChartDataEntry = PieChartDataEntry(value: Double(i + 10), label: "Let \(i)")
                     self.filteredProjects.append(project)
-                    
                 }
-                
                 
                 completion(self.filteredProjects)
                 
@@ -95,4 +93,54 @@ class AnalyticsNetworking{
             
         }
     }
+    
+    
+    
+    func getContractors(completion: @escaping ([BarChartDataEntry]) -> ()){
+        
+        let currentDate = Date()
+        let dateMonthAgo = Calendar.current.date(byAdding: .month, value: -5, to: currentDate)
+        
+        dateFrom = constants.filteredDateToServer(date: dateMonthAgo!)
+        dateTo = constants.filteredDateToServer(date: currentDate)
+
+        
+        let url = constants.analyticsContractorEndPoint + "?start_date=\(dateFrom!)&end_date=\(dateTo!)"
+
+
+        let requestAPI = AF.request(url, method: .get, encoding: JSONEncoding.default, interceptor: interceptor)
+    
+        requestAPI.responseJSON { (response) in
+            switch response.result{
+            case .success(let data):
+                let json = JSON(data)
+//                print("json count \(json["count"])")
+//                print("Contractors : \(json)")
+                
+                self.contractors.removeAll()
+
+                for i in 0 ..< json.count{
+
+//                    let contractor: BarChartDataEntry = BarChartDataEntry(x: json[i]["sum"].doubleValue, y: json[i]["date_join__month"].doubleValue)
+                    
+                    
+                    let contractor: BarChartDataEntry = BarChartDataEntry(x: Double(i + 10), y: Double(i + 10))
+                        
+                    self.contractors.append(contractor)
+                }
+
+
+
+                completion(self.contractors)
+                
+            default:
+                return print("Get Contractors Fail!!!")
+            }
+            
+        }
+    }
+    
+    
+    
+    
 }
