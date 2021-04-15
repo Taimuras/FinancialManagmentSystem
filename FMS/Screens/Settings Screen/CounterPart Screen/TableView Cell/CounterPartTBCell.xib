@@ -34,7 +34,7 @@
                             <constraint firstAttribute="height" constant="30" id="Dsp-sP-9hE"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                        <color key="textColor" name="BrandBlackTEXT"/>
+                        <color key="textColor" name="Brand - Dark"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -56,7 +56,7 @@
     </objects>
     <resources>
         <image name="Users Screen ArrowSVG" width="24" height="24"/>
-        <namedColor name="BrandBlackTEXT">
+        <namedColor name="Brand - Dark">
             <color red="0.23137254901960785" green="0.23921568627450981" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

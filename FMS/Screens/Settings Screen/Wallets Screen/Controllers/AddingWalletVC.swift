@@ -102,7 +102,7 @@ extension AddingWalletVC{
 
         
         nameTextField.font = constants.fontRegular17
-        
+        balanceTextField.font = constants.fontRegular17
         
         
         walletLabel.font = constants.fontSemiBold17

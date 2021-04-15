@@ -41,7 +41,7 @@ class ProjectsVC: UIViewController {
         // this is the replacement of implementing: "collectionView.addSubview(refreshControl)"
         projectTableView.refreshControl = refreshControl
         
-        
+        design()
         self.hideKeyboardWhenTappedAround()
     }
     
@@ -107,4 +107,13 @@ extension ProjectsVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     
+}
+
+
+extension ProjectsVC{
+    func design (){
+        
+        addLabel.font = constants.fontSemiBold16
+       
+    }
 }

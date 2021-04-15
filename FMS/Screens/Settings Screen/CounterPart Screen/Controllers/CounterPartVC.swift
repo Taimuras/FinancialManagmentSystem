@@ -41,7 +41,7 @@ class CounterPartVC: UIViewController {
         // this is the replacement of implementing: "collectionView.addSubview(refreshControl)"
         counterPartTableView.refreshControl = refreshControl
         
-        
+        design()
         self.hideKeyboardWhenTappedAround() 
         
     }
@@ -122,4 +122,13 @@ extension CounterPartVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     
+}
+
+
+extension CounterPartVC{
+    func design (){
+        
+        addButtonSignLabel.font = constants.fontSemiBold16
+       
+    }
 }

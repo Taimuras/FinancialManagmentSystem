@@ -13,16 +13,18 @@ class NetworkCreateUser{
     let userDefaults = UserDefaults.standard
     var userAuth: Int = 0
     let constants = Constants()
-    func createUser(email: String, first_name: String, last_name: String, password: String, completion: @escaping (Int) -> ()){
-        let isAdmin = false
-        let param = [
+    func createUser(email: String, first_name: String, last_name: String, password: String, patronymic: String, completion: @escaping (Int) -> ()){
+        
+        var param = [
             "email" : email as String,
             "first_name" : first_name as String,
             "last_name" : last_name as String,
-            "password" : password as String,
-            "is_admin" : isAdmin as Bool
+            "password" : password as String
         ] as [String : Any]
         
+        if patronymic != "" {
+            param["patronymic"] = patronymic
+        }
         
         let accessToken = userDefaults.string(forKey: "AccessToken")!
         let headers: HTTPHeaders = [
@@ -37,9 +39,9 @@ class NetworkCreateUser{
         
         requestAPI.responseJSON { (response) in
             let statusCode = response.response?.statusCode
-//            print(response.description)
+            print(response.description)
 //            print(response.response!)
-//            print(response.response?.statusCode)
+            print(response.response?.statusCode)
             switch statusCode{
             case 200:
                 self.userAuth = 1

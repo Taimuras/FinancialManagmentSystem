@@ -12,4 +12,5 @@ struct SingleUser {
     let email: String
     let first_name: String
     let last_name: String
+    let patronymic: String
 }

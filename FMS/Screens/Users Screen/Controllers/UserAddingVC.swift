@@ -47,9 +47,10 @@ class UserAddingVC: UIViewController {
         
         let name = nameTextField.text ?? ""
         let lastName = lastNameTextField.text ?? ""
+        let patronymic = patronimycTextField.text ?? ""
         
         if let email = emailTextField.text, let password = newPasswordTextField.text{
-            createUser.createUser(email: email, first_name: name, last_name: lastName, password: password) { (data) in
+            createUser.createUser(email: email, first_name: name, last_name: lastName, password: password, patronymic: patronymic) { (data) in
                 if data != 1 {
                     let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так. Пользователь не был создан!", preferredStyle: .alert)
                     let cancel = UIAlertAction(title: "Ok", style: .cancel) { (action) -> Void in
@@ -72,32 +73,7 @@ class UserAddingVC: UIViewController {
 }
 
 
-extension UserAddingVC{
-    func design (){
-        
-        
-        saveButton.layer.cornerRadius = 10.0
-        saveButton.layer.masksToBounds = true
-        saveButton.titleLabel?.font = constants.fontSemiBold17
-        cancelButton.titleLabel?.font = constants.fontRegular17
-        
-        photoImageButton.layer.cornerRadius = 24.0
-        photoImageButton.layer.masksToBounds = true
-//
-        //Fonts + sizes
 
-        lastNameTextField.font = constants.fontRegular17
-        nameTextField.font = constants.fontRegular17
-        patronimycTextField.font = constants.fontRegular17
-        emailTextField.font = constants.fontRegular17
-        newPasswordTextField.font = constants.fontRegular17
-        
-        userLabel.font = constants.fontSemiBold17
-       
-        
-        
-    }
-}
 
 extension UserAddingVC: UITextFieldDelegate{
     func tfDelegates(){
@@ -148,4 +124,31 @@ extension UserAddingVC {
         self.view.frame.origin.y = 0
     }
     
+}
+
+extension UserAddingVC{
+    func design (){
+        
+        
+        saveButton.layer.cornerRadius = 10.0
+        saveButton.layer.masksToBounds = true
+        saveButton.titleLabel?.font = constants.fontSemiBold17
+        cancelButton.titleLabel?.font = constants.fontRegular17
+        
+        photoImageButton.layer.cornerRadius = 24.0
+        photoImageButton.layer.masksToBounds = true
+//
+        //Fonts + sizes
+
+        lastNameTextField.font = constants.fontRegular17
+        nameTextField.font = constants.fontRegular17
+        patronimycTextField.font = constants.fontRegular17
+        emailTextField.font = constants.fontRegular17
+        newPasswordTextField.font = constants.fontRegular17
+        
+        userLabel.font = constants.fontSemiBold17
+       
+        
+        
+    }
 }

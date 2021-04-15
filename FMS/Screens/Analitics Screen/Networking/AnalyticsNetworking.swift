@@ -43,7 +43,7 @@ class AnalyticsNetworking{
             case .success(let data):
                 let json = JSON(data)
 //                print("json count \(json["count"])")
-//                print("Analytics : \(json)")
+//                print("Pie Chart: \(json)")
                 
                 self.projects.removeAll()
                 
@@ -76,7 +76,7 @@ class AnalyticsNetworking{
             switch response.result{
             case .success(let data):
                 let json = JSON(data)
-
+//                print("Filtered Pie Chart: \(json)")
                 self.filteredProjects.removeAll()
                 for i in 0 ..< json.count{
 //                    print("Value: \(json[i]["sum"].doubleValue) and Label: \(json[i]["name"].stringValue)")
@@ -119,7 +119,7 @@ class AnalyticsNetworking{
                 
                 self.contractors.removeAll()
 
-                for i in 0 ..< json.count{
+                for i in 0 ..< 10{   //json.count
 
 //                    let contractor: BarChartDataEntry = BarChartDataEntry(x: json[i]["sum"].doubleValue, y: json[i]["date_join__month"].doubleValue)
                     

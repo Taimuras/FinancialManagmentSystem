@@ -111,7 +111,7 @@ class AnaliticsVC: UIViewController, ChartViewDelegate{
         set.useValueColorForLine = true
         set.valueLineColor = .blue
         
-        set.colors = ChartColorTemplates.material()
+        set.colors = ChartColorTemplates.liberty()
         let data = PieChartData(dataSet: set)
         self.anyChartView.data = data
     }
@@ -119,7 +119,7 @@ class AnaliticsVC: UIViewController, ChartViewDelegate{
     
     func createBarChart(data: [BarChartDataEntry]) {
         let set = BarChartDataSet(entries: data, label: "Contractors")
-        set.colors = ChartColorTemplates.colorful()
+        set.colors = ChartColorTemplates.pastel()
         let data = BarChartData(dataSet: set)
         horizontalChartView.data = data
     }
@@ -146,7 +146,7 @@ extension AnaliticsVC: AnalyticsFiltrationVCDelegate {
             
             getAnalytics.getContractors { (data) in
                 DispatchQueue.main.async {
-                    print(data)
+                    
                     self.createBarChart(data: data)
                 }
             }

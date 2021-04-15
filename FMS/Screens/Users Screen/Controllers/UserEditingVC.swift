@@ -11,7 +11,7 @@ import MBProgressHUD
 
 
 class UserEditingVC: UIViewController {
-    
+    let constants = Constants()
     
     var userID: Int?
     var userEmail: String?
@@ -20,6 +20,7 @@ class UserEditingVC: UIViewController {
     var firstNameToServer: String?
     var lastNameToServer: String?
     var newPasswordToServer: String?
+    var patronymic: String?
     
     
     
@@ -33,6 +34,7 @@ class UserEditingVC: UIViewController {
     @IBOutlet weak var newPasswordTextField: UITextField!
     
     
+    @IBOutlet weak var photoImageButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var deleteSignButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
@@ -48,7 +50,7 @@ class UserEditingVC: UIViewController {
         
         
         
-        
+        design()
         self.hideKeyboardWhenTappedAround()
     }
     
@@ -81,8 +83,9 @@ class UserEditingVC: UIViewController {
         firstNameToServer = firstNameTextField.text ?? ""
         lastNameToServer = lastNameTextField.text ?? ""
         newPasswordToServer = newPasswordTextField.text ?? ""
+        patronymic = patronimycTextField.text ?? ""
         
-        getAndUpdateUser.updateUser(email: emailToServer!, first_name: firstNameToServer!, last_name: lastNameToServer!, password: newPasswordToServer!) { (response) in
+        getAndUpdateUser.updateUser(email: emailToServer!, first_name: firstNameToServer!, last_name: lastNameToServer!, password: newPasswordToServer!, patronymic: patronymic!) { (response) in
             if response == 1{
                 self.dismiss(animated: true, completion: nil)
             } else {
@@ -102,6 +105,7 @@ class UserEditingVC: UIViewController {
                 self.lastNameTextField.text = data.last_name
                 self.firstNameTextField.text = data.first_name
                 self.emailTextField.text = data.email
+                self.patronimycTextField.text = data.patronymic
                 MBProgressHUD.hide(for: self.view, animated: true)
             }
             
@@ -113,4 +117,30 @@ class UserEditingVC: UIViewController {
     
     
     
+}
+
+
+
+extension UserEditingVC{
+    func design (){
+        
+        
+        saveButton.layer.cornerRadius = 10.0
+        saveButton.layer.masksToBounds = true
+        saveButton.titleLabel?.font = constants.fontSemiBold17
+        cancelButton.titleLabel?.font = constants.fontRegular17
+        
+        photoImageButton.layer.cornerRadius = 24.0
+        photoImageButton.layer.masksToBounds = true
+//
+        //Fonts + sizes
+
+        lastNameTextField.font = constants.fontRegular17
+        firstNameTextField.font = constants.fontRegular17
+        patronimycTextField.font = constants.fontRegular17
+        emailTextField.font = constants.fontRegular17
+        newPasswordTextField.font = constants.fontRegular17
+        
+        userLabel.font = constants.fontSemiBold17
+    }
 }

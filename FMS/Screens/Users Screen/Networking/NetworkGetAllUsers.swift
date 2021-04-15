@@ -25,6 +25,8 @@ class NetworkGetAllUsers{
         let requestAPI = AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         
         requestAPI.responseJSON { (response) in
+            
+            
             switch response.result{
             case .success(let data):
                 let json = JSON(data)

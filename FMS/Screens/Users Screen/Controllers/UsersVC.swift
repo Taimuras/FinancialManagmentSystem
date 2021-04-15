@@ -158,7 +158,7 @@ extension UsersVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: constants.userScreenTableViewCellIdentifier, for: indexPath) as! UserTBCell
         
-        cell.nameLabel.text = users[indexPath.row].first_name
+        cell.nameLabel.text = users[indexPath.row].first_name + " " + users[indexPath.row].last_name
         cell.emailLabel.text = users[indexPath.row].email
         
         

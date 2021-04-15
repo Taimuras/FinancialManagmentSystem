@@ -57,7 +57,7 @@ class WalletsVC: UIViewController {
         // this is the replacement of implementing: "collectionView.addSubview(refreshControl)"
         walletTableView.refreshControl = refreshControl
         
-        
+        design()
         self.hideKeyboardWhenTappedAround()
     }
     
@@ -140,5 +140,14 @@ extension WalletsVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
+    }
+}
+
+
+extension WalletsVC{
+    func design (){
+        
+        addLabel.font = constants.fontSemiBold16
+       
     }
 }

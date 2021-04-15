@@ -33,12 +33,16 @@ class GetAndUpdateUser {
 //            let statusCode = response.response?.statusCode
 //            print(statusCode!)
 //            print(response.response!)
-//            print(response.result)
+            
 
             switch response.result{
             case .success(let data):
                 let json = JSON(data)
-                let user: SingleUser = SingleUser(email: json["email"].stringValue, first_name: json["first_name"].stringValue, last_name: json["last_name"].stringValue)
+                var patronymic = ""
+                if json["patronymic"].stringValue != "null"{
+                    patronymic = json["patronymic"].stringValue
+                }
+                let user: SingleUser = SingleUser(email: json["email"].stringValue, first_name: json["first_name"].stringValue, last_name: json["last_name"].stringValue, patronymic: patronymic)
                 completion(user)
             default:
                 print("default")
@@ -74,7 +78,7 @@ class GetAndUpdateUser {
     
     
     
-    func updateUser(email: String, first_name: String, last_name: String, password: String, completion: @escaping (Int) -> ()){
+    func updateUser(email: String, first_name: String, last_name: String, password: String, patronymic: String, completion: @escaping (Int) -> ()){
         
         var param = [
             "email" : email as String,

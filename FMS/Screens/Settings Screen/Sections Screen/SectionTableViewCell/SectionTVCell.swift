@@ -8,10 +8,11 @@
 import UIKit
 
 class SectionTVCell: UITableViewCell {
-
+    let constants = Constants()
     @IBOutlet weak var sectionNameLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        sectionNameLabel.font = constants.fontSemiBold16
         // Initialization code
     }
 

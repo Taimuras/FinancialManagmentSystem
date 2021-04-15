@@ -8,10 +8,11 @@
 import UIKit
 
 class CategoryTVCell: UITableViewCell {
-
+    let constants = Constants()
     @IBOutlet weak var categoryLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        categoryLabel.font = constants.fontSemiBold16
         // Initialization code
     }
 
