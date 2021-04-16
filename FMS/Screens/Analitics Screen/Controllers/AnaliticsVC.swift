@@ -103,21 +103,25 @@ class AnaliticsVC: UIViewController, ChartViewDelegate{
     }
     
     func createPieChart(data: [PieChartDataEntry]) {
-        self.anyChartView.entryLabelColor = .black
-        self.anyChartView.animate(yAxisDuration: 1.5, easingOption: ChartEasingOption.easeInOutQuad)
+        anyChartView.entryLabelColor = .black
+        anyChartView.animate(yAxisDuration: 1.5, easingOption: ChartEasingOption.easeInOutQuad)
         
         let set = PieChartDataSet(entries: data, label: "Проекты")
         
         set.useValueColorForLine = true
         set.valueLineColor = .blue
         
-        set.colors = ChartColorTemplates.liberty()
+        set.colors = ChartColorTemplates.material()
         let data = PieChartData(dataSet: set)
-        self.anyChartView.data = data
+        
+        anyChartView.data = data
+        anyChartView.centerText = "Проекты!"
     }
     
     
     func createBarChart(data: [BarChartDataEntry]) {
+        
+        horizontalChartView.animate(xAxisDuration: 3.0, easingOption: ChartEasingOption.easeInOutQuad)
         let set = BarChartDataSet(entries: data, label: "Contractors")
         set.colors = ChartColorTemplates.pastel()
         let data = BarChartData(dataSet: set)

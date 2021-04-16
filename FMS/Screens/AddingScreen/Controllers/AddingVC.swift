@@ -3,7 +3,7 @@ import MBProgressHUD
 
 class AddingVC: UIViewController {
     // Test Arrays
-    var directions: [DirectionModel] = []
+    var directions: [SectionModel] = []
     var categorys: [CategoryModel] = []
     var counterAgents: [CounterAgentsModel] = []
     var projects: [ProjectModel] = []
@@ -59,11 +59,12 @@ class AddingVC: UIViewController {
         
         
         
-//        MBProgressHUD.showAdded(to: self.view, animated: true)
-        
+
+        categoryTextField.isEnabled = false
         summTextField.delegate = self
         commentTextField.delegate = self
         transferCommentaryTextFiled.delegate = self
+        directionTextField.delegate = self
         
         fetchData()
         keyBoardShowAndHide()
@@ -208,18 +209,23 @@ extension AddingVC{
             DispatchQueue.main.async {
                 self.directions.removeAll()
                 self.directions = data
+                
+                
+                
+                
+                
                 self.checkData()
             }
             
         }
         
-        fetchingData.fetchingCategories(url: constants.categoriesEndPoint) { (data) in
-            DispatchQueue.main.async {
-                self.categorys.removeAll()
-                self.categorys = data
-                self.checkData()
-            }
-        }
+//        fetchingData.fetchingCategories(url: constants.categoriesEndPoint) { (data) in
+//            DispatchQueue.main.async {
+//                self.categorys.removeAll()
+//                self.categorys = data
+//                self.checkData()
+//            }
+//        }
         
         
         fetchingData.fetchingProjects(url: constants.projectEndPoint) { (data) in
@@ -233,7 +239,7 @@ extension AddingVC{
     }
     
     func checkData(){
-        if wallets.count != 0 && counterAgents.count != 0 && directions.count != 0 && categorys.count != 0 && projects.count != 0 {
+        if wallets.count != 0 && counterAgents.count != 0 && directions.count != 0 && projects.count != 0 {
             MBProgressHUD.hide(for: self.view, animated: true)
         }
     }
@@ -499,6 +505,23 @@ extension AddingVC: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if directionTextField.text == ""{
+            categoryTextField.isEnabled = false
+        } else {
+            categoryTextField.text = ""
+            categoryTextField.isEnabled = true
+            for i in self.directions{
+                if directionTextField.text == i.name{
+                    categorys = i.category_set
+                }
+            }
+        }
+    }
+    
+    
+    
 }
 
 

@@ -10,7 +10,7 @@ class FilterVC: UIViewController {
     var delegate: FilterVCDelegate?
     
     
-    var directions: [DirectionModel] = []
+    var directions: [SectionModel] = []
     var counterAgents: [CounterAgentsModel] = []
     var wallets: [WalletModel] = []
     let type: [String] = ["Все", "Доход", "Расход", "Перевод"]

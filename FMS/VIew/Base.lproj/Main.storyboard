@@ -2369,231 +2369,6 @@
                                     <constraint firstItem="B8V-a2-xfb" firstAttribute="centerY" secondItem="urQ-jT-Ati" secondAttribute="centerY" id="iER-zp-K1T"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qRL-mN-akN" userLabel="Central Part">
-                                <rect key="frame" x="0.0" y="100" width="414" height="408"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Дата" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ie-bd-oAa">
-                                        <rect key="frame" x="16" y="0.0" width="382" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="NJ2-Ta-0qP"/>
-                                        </constraints>
-                                        <color key="textColor" name="Brand - Dark"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kba-6I-Qoe" userLabel="Divider">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="1"/>
-                                        <color key="backgroundColor" name="Dividers Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="BHU-wP-aGV"/>
-                                            <constraint firstAttribute="height" constant="1" id="L2a-3k-tVP"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="Xio-Wp-jjg"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="ZLY-F3-M2L"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="vQS-UX-cgT"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="zs4-zb-gGr"/>
-                                        </constraints>
-                                    </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Сумма" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mOD-3r-dlq">
-                                        <rect key="frame" x="16" y="51" width="382" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="DqE-0i-q7V"/>
-                                        </constraints>
-                                        <color key="textColor" name="Brand - Dark"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
-                                    </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9L0-7D-Hq8" userLabel="Divider">
-                                        <rect key="frame" x="0.0" y="101" width="414" height="1"/>
-                                        <color key="backgroundColor" name="Dividers Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="5A5-Xe-UpX"/>
-                                            <constraint firstAttribute="height" constant="1" id="95F-xe-HQx"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="A71-0c-yeN"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="jlU-ev-X8u"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="kYt-Dg-fEc"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="lOY-Zy-W4c"/>
-                                        </constraints>
-                                    </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Направление" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P1Y-Xi-NlD">
-                                        <rect key="frame" x="16" y="102" width="382" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="JoZ-nR-p7p"/>
-                                        </constraints>
-                                        <color key="textColor" name="Brand - Dark"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="etg-TL-bt1" userLabel="Divider">
-                                        <rect key="frame" x="0.0" y="152" width="414" height="1"/>
-                                        <color key="backgroundColor" name="Dividers Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="BUS-P6-5rL"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="Cgh-n9-tat"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="Jm7-O3-Oi2"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="Q65-2H-93k"/>
-                                            <constraint firstAttribute="height" constant="1" id="jzR-kr-4zo"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="nZ1-2o-DYm"/>
-                                        </constraints>
-                                    </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Категория" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wrx-qF-eeO">
-                                        <rect key="frame" x="16" y="153" width="382" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="6oi-bt-z11"/>
-                                        </constraints>
-                                        <color key="textColor" name="Brand - Dark"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W0C-Rv-oK6" userLabel="Divider">
-                                        <rect key="frame" x="0.0" y="203" width="414" height="1"/>
-                                        <color key="backgroundColor" name="Dividers Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="28e-hN-BIl"/>
-                                            <constraint firstAttribute="height" constant="1" id="5rk-Nf-47e"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="Di1-c9-mXZ"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="IQN-az-Vch"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="P3m-aM-LOD"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="jS1-rn-0fz"/>
-                                        </constraints>
-                                    </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Контрагент" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ihW-ZU-8eD">
-                                        <rect key="frame" x="16" y="204" width="382" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="kh7-cy-rtU"/>
-                                        </constraints>
-                                        <color key="textColor" name="Brand - Dark"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RES-eF-s2e" userLabel="Divider">
-                                        <rect key="frame" x="0.0" y="254" width="414" height="1"/>
-                                        <color key="backgroundColor" name="Dividers Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="Cqu-2p-E7R"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="GQ2-g2-j4e"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="KvF-1p-jGJ"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="MEe-zO-qeU"/>
-                                            <constraint firstAttribute="height" constant="1" id="t87-BZ-Myq"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="xOf-dV-xFa"/>
-                                        </constraints>
-                                    </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Проект" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RRd-6b-akG">
-                                        <rect key="frame" x="16" y="255" width="382" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="AEi-x2-9dG"/>
-                                        </constraints>
-                                        <color key="textColor" name="Brand - Dark"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCN-7K-TRh" userLabel="Divider">
-                                        <rect key="frame" x="0.0" y="305" width="414" height="1"/>
-                                        <color key="backgroundColor" name="Dividers Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="Eh2-oE-IfT"/>
-                                            <constraint firstAttribute="height" constant="1" id="Sen-jS-9LR"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="ZJC-V8-gK4"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="dGk-8Q-tej"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="exa-iM-3hB"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="kfE-gi-XCb"/>
-                                        </constraints>
-                                    </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Кошелёк" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0pP-V3-Isg">
-                                        <rect key="frame" x="16" y="306" width="382" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="gTF-na-dEb"/>
-                                        </constraints>
-                                        <color key="textColor" name="Brand - Dark"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZ7-R0-YB6" userLabel="Divider">
-                                        <rect key="frame" x="0.0" y="356" width="414" height="1"/>
-                                        <color key="backgroundColor" name="Dividers Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="5c9-Pw-1mE"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="DLx-Yg-aYk"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="N2k-D5-aYk"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="PMe-yr-e52"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="qfP-7F-3mo"/>
-                                            <constraint firstAttribute="height" constant="1" id="udN-10-KT6"/>
-                                        </constraints>
-                                    </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="Комментарий" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Net-Bv-6wd">
-                                        <rect key="frame" x="16" y="357" width="382" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="Awv-ti-TT1"/>
-                                        </constraints>
-                                        <color key="textColor" name="Brand - Dark"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="30l-WF-GWg" userLabel="Divider">
-                                        <rect key="frame" x="0.0" y="407" width="414" height="1"/>
-                                        <color key="backgroundColor" name="Dividers Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="TDP-0F-Udp"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="a03-zH-tjt"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="gka-W5-6bQ"/>
-                                            <constraint firstAttribute="height" constant="1" id="rS0-QR-dAW"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="tUl-4X-Q0s"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="uq7-60-qBZ"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="30l-WF-GWg" secondAttribute="trailing" id="35A-Xa-IvD"/>
-                                    <constraint firstItem="Kba-6I-Qoe" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" id="5Dd-dG-XAC"/>
-                                    <constraint firstItem="ihW-ZU-8eD" firstAttribute="top" secondItem="W0C-Rv-oK6" secondAttribute="bottom" id="Bqq-yY-CWZ"/>
-                                    <constraint firstItem="9L0-7D-Hq8" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" id="EkZ-ev-elk"/>
-                                    <constraint firstItem="wrx-qF-eeO" firstAttribute="top" secondItem="etg-TL-bt1" secondAttribute="bottom" id="Er6-Gt-jNn"/>
-                                    <constraint firstItem="30l-WF-GWg" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" id="F5i-ni-lTM"/>
-                                    <constraint firstItem="Net-Bv-6wd" firstAttribute="top" secondItem="DZ7-R0-YB6" secondAttribute="bottom" id="FC7-7F-FSQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="Kba-6I-Qoe" secondAttribute="trailing" id="JPi-r4-FBy"/>
-                                    <constraint firstItem="RRd-6b-akG" firstAttribute="top" secondItem="RES-eF-s2e" secondAttribute="bottom" id="JaM-Ys-Yfg"/>
-                                    <constraint firstAttribute="trailing" secondItem="0pP-V3-Isg" secondAttribute="trailing" constant="16" id="MCc-ME-I11"/>
-                                    <constraint firstItem="ihW-ZU-8eD" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" constant="16" id="MGZ-Bb-Xat"/>
-                                    <constraint firstItem="RRd-6b-akG" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" constant="16" id="N6W-lL-g8T"/>
-                                    <constraint firstAttribute="trailing" secondItem="RRd-6b-akG" secondAttribute="trailing" constant="16" id="NVM-DG-jbE"/>
-                                    <constraint firstItem="etg-TL-bt1" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" id="Odg-FT-uCC"/>
-                                    <constraint firstAttribute="trailing" secondItem="RES-eF-s2e" secondAttribute="trailing" id="Opl-36-QnA"/>
-                                    <constraint firstItem="W0C-Rv-oK6" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" id="Ovf-Ft-3yS"/>
-                                    <constraint firstItem="Net-Bv-6wd" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" constant="16" id="Rdm-Gx-uaQ"/>
-                                    <constraint firstItem="30l-WF-GWg" firstAttribute="top" secondItem="Net-Bv-6wd" secondAttribute="bottom" id="TEG-uO-eJm"/>
-                                    <constraint firstItem="9L0-7D-Hq8" firstAttribute="top" secondItem="mOD-3r-dlq" secondAttribute="bottom" id="U49-bu-5XC"/>
-                                    <constraint firstItem="mOD-3r-dlq" firstAttribute="top" secondItem="Kba-6I-Qoe" secondAttribute="bottom" id="Uut-Y9-Vab"/>
-                                    <constraint firstAttribute="trailing" secondItem="wrx-qF-eeO" secondAttribute="trailing" constant="16" id="VPy-WH-eBJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="DZ7-R0-YB6" secondAttribute="trailing" id="VXH-95-y8f"/>
-                                    <constraint firstAttribute="trailing" secondItem="ihW-ZU-8eD" secondAttribute="trailing" constant="16" id="Wu3-4m-uTy"/>
-                                    <constraint firstItem="cCN-7K-TRh" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" id="XNx-l4-2gV"/>
-                                    <constraint firstItem="P1Y-Xi-NlD" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" constant="16" id="ZTR-3O-AoP"/>
-                                    <constraint firstItem="DZ7-R0-YB6" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" id="acd-u4-xkF"/>
-                                    <constraint firstItem="0pP-V3-Isg" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" constant="16" id="dV3-kG-tNb"/>
-                                    <constraint firstAttribute="trailing" secondItem="cCN-7K-TRh" secondAttribute="trailing" id="dp6-Va-npr"/>
-                                    <constraint firstItem="RES-eF-s2e" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" id="f8S-v3-wvr"/>
-                                    <constraint firstItem="W0C-Rv-oK6" firstAttribute="top" secondItem="wrx-qF-eeO" secondAttribute="bottom" id="gxg-U5-3FW"/>
-                                    <constraint firstItem="RES-eF-s2e" firstAttribute="top" secondItem="ihW-ZU-8eD" secondAttribute="bottom" id="iyb-9r-yt7"/>
-                                    <constraint firstAttribute="trailing" secondItem="mOD-3r-dlq" secondAttribute="trailing" constant="16" id="jMf-Km-hMG"/>
-                                    <constraint firstAttribute="height" constant="408" id="jdm-3Z-yL8"/>
-                                    <constraint firstItem="P1Y-Xi-NlD" firstAttribute="top" secondItem="9L0-7D-Hq8" secondAttribute="bottom" id="k2u-rI-TRe"/>
-                                    <constraint firstItem="4Ie-bd-oAa" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" constant="16" id="k8k-GV-0Lq"/>
-                                    <constraint firstItem="Kba-6I-Qoe" firstAttribute="top" secondItem="4Ie-bd-oAa" secondAttribute="bottom" id="l33-06-HQA"/>
-                                    <constraint firstItem="0pP-V3-Isg" firstAttribute="top" secondItem="cCN-7K-TRh" secondAttribute="bottom" id="o6w-nt-OsM"/>
-                                    <constraint firstAttribute="trailing" secondItem="Net-Bv-6wd" secondAttribute="trailing" constant="16" id="oDh-zh-fTc"/>
-                                    <constraint firstItem="DZ7-R0-YB6" firstAttribute="top" secondItem="0pP-V3-Isg" secondAttribute="bottom" id="qul-Pd-CjV"/>
-                                    <constraint firstAttribute="trailing" secondItem="4Ie-bd-oAa" secondAttribute="trailing" constant="16" id="rLd-IG-ERf"/>
-                                    <constraint firstItem="4Ie-bd-oAa" firstAttribute="top" secondItem="qRL-mN-akN" secondAttribute="top" id="rsr-JJ-AiN"/>
-                                    <constraint firstAttribute="trailing" secondItem="9L0-7D-Hq8" secondAttribute="trailing" id="s7v-K2-XbT"/>
-                                    <constraint firstItem="cCN-7K-TRh" firstAttribute="top" secondItem="RRd-6b-akG" secondAttribute="bottom" id="sUO-BH-Yk9"/>
-                                    <constraint firstItem="etg-TL-bt1" firstAttribute="top" secondItem="P1Y-Xi-NlD" secondAttribute="bottom" id="snq-lI-EnW"/>
-                                    <constraint firstAttribute="trailing" secondItem="W0C-Rv-oK6" secondAttribute="trailing" id="tCL-Yt-bDe"/>
-                                    <constraint firstAttribute="trailing" secondItem="P1Y-Xi-NlD" secondAttribute="trailing" constant="16" id="tGa-xN-LE4"/>
-                                    <constraint firstAttribute="trailing" secondItem="etg-TL-bt1" secondAttribute="trailing" id="vnu-rZ-vYu"/>
-                                    <constraint firstItem="mOD-3r-dlq" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" constant="16" id="wOz-Vw-s2H"/>
-                                    <constraint firstItem="wrx-qF-eeO" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" constant="16" id="y0P-7X-akR"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9br-to-Eo3" userLabel="Bottom Button View">
                                 <rect key="frame" x="0.0" y="666" width="414" height="70"/>
                                 <subviews>
@@ -2673,18 +2448,257 @@
                                     <constraint firstAttribute="height" constant="1" id="tsX-dW-wxg"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sip-au-Kld" userLabel="View for Scroll">
+                                <rect key="frame" x="0.0" y="100" width="414" height="514"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qRL-mN-akN" userLabel="Central Part">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="408"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Дата" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ie-bd-oAa">
+                                                <rect key="frame" x="16" y="0.0" width="382" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="NJ2-Ta-0qP"/>
+                                                </constraints>
+                                                <color key="textColor" name="Brand - Dark"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kba-6I-Qoe" userLabel="Divider">
+                                                <rect key="frame" x="0.0" y="50" width="414" height="1"/>
+                                                <color key="backgroundColor" name="Dividers Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="BHU-wP-aGV"/>
+                                                    <constraint firstAttribute="height" constant="1" id="L2a-3k-tVP"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="Xio-Wp-jjg"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="ZLY-F3-M2L"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="vQS-UX-cgT"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="zs4-zb-gGr"/>
+                                                </constraints>
+                                            </view>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Сумма" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mOD-3r-dlq">
+                                                <rect key="frame" x="16" y="51" width="382" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="DqE-0i-q7V"/>
+                                                </constraints>
+                                                <color key="textColor" name="Brand - Dark"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9L0-7D-Hq8" userLabel="Divider">
+                                                <rect key="frame" x="0.0" y="101" width="414" height="1"/>
+                                                <color key="backgroundColor" name="Dividers Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="5A5-Xe-UpX"/>
+                                                    <constraint firstAttribute="height" constant="1" id="95F-xe-HQx"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="A71-0c-yeN"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="jlU-ev-X8u"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="kYt-Dg-fEc"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="lOY-Zy-W4c"/>
+                                                </constraints>
+                                            </view>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Направление" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P1Y-Xi-NlD">
+                                                <rect key="frame" x="16" y="102" width="382" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="JoZ-nR-p7p"/>
+                                                </constraints>
+                                                <color key="textColor" name="Brand - Dark"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="etg-TL-bt1" userLabel="Divider">
+                                                <rect key="frame" x="0.0" y="152" width="414" height="1"/>
+                                                <color key="backgroundColor" name="Dividers Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="BUS-P6-5rL"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="Cgh-n9-tat"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="Jm7-O3-Oi2"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="Q65-2H-93k"/>
+                                                    <constraint firstAttribute="height" constant="1" id="jzR-kr-4zo"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="nZ1-2o-DYm"/>
+                                                </constraints>
+                                            </view>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Категория" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wrx-qF-eeO">
+                                                <rect key="frame" x="16" y="153" width="382" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="6oi-bt-z11"/>
+                                                </constraints>
+                                                <color key="textColor" name="Brand - Dark"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W0C-Rv-oK6" userLabel="Divider">
+                                                <rect key="frame" x="0.0" y="203" width="414" height="1"/>
+                                                <color key="backgroundColor" name="Dividers Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="28e-hN-BIl"/>
+                                                    <constraint firstAttribute="height" constant="1" id="5rk-Nf-47e"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="Di1-c9-mXZ"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="IQN-az-Vch"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="P3m-aM-LOD"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="jS1-rn-0fz"/>
+                                                </constraints>
+                                            </view>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Контрагент" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ihW-ZU-8eD">
+                                                <rect key="frame" x="16" y="204" width="382" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="kh7-cy-rtU"/>
+                                                </constraints>
+                                                <color key="textColor" name="Brand - Dark"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RES-eF-s2e" userLabel="Divider">
+                                                <rect key="frame" x="0.0" y="254" width="414" height="1"/>
+                                                <color key="backgroundColor" name="Dividers Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="Cqu-2p-E7R"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="GQ2-g2-j4e"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="KvF-1p-jGJ"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="MEe-zO-qeU"/>
+                                                    <constraint firstAttribute="height" constant="1" id="t87-BZ-Myq"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="xOf-dV-xFa"/>
+                                                </constraints>
+                                            </view>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Проект" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RRd-6b-akG">
+                                                <rect key="frame" x="16" y="255" width="382" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="AEi-x2-9dG"/>
+                                                </constraints>
+                                                <color key="textColor" name="Brand - Dark"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCN-7K-TRh" userLabel="Divider">
+                                                <rect key="frame" x="0.0" y="305" width="414" height="1"/>
+                                                <color key="backgroundColor" name="Dividers Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="Eh2-oE-IfT"/>
+                                                    <constraint firstAttribute="height" constant="1" id="Sen-jS-9LR"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="ZJC-V8-gK4"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="dGk-8Q-tej"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="exa-iM-3hB"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="kfE-gi-XCb"/>
+                                                </constraints>
+                                            </view>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Кошелёк" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0pP-V3-Isg">
+                                                <rect key="frame" x="16" y="306" width="382" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="gTF-na-dEb"/>
+                                                </constraints>
+                                                <color key="textColor" name="Brand - Dark"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZ7-R0-YB6" userLabel="Divider">
+                                                <rect key="frame" x="0.0" y="356" width="414" height="1"/>
+                                                <color key="backgroundColor" name="Dividers Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="5c9-Pw-1mE"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="DLx-Yg-aYk"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="N2k-D5-aYk"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="PMe-yr-e52"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="qfP-7F-3mo"/>
+                                                    <constraint firstAttribute="height" constant="1" id="udN-10-KT6"/>
+                                                </constraints>
+                                            </view>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="Комментарий" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Net-Bv-6wd">
+                                                <rect key="frame" x="16" y="357" width="382" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Awv-ti-TT1"/>
+                                                </constraints>
+                                                <color key="textColor" name="Brand - Dark"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="30l-WF-GWg" userLabel="Divider">
+                                                <rect key="frame" x="0.0" y="407" width="414" height="1"/>
+                                                <color key="backgroundColor" name="Dividers Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="TDP-0F-Udp"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="a03-zH-tjt"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="gka-W5-6bQ"/>
+                                                    <constraint firstAttribute="height" constant="1" id="rS0-QR-dAW"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="tUl-4X-Q0s"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="uq7-60-qBZ"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="30l-WF-GWg" secondAttribute="trailing" id="35A-Xa-IvD"/>
+                                            <constraint firstItem="Kba-6I-Qoe" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" id="5Dd-dG-XAC"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="408" id="6nm-wf-4ZI"/>
+                                            <constraint firstItem="ihW-ZU-8eD" firstAttribute="top" secondItem="W0C-Rv-oK6" secondAttribute="bottom" id="Bqq-yY-CWZ"/>
+                                            <constraint firstItem="9L0-7D-Hq8" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" id="EkZ-ev-elk"/>
+                                            <constraint firstItem="wrx-qF-eeO" firstAttribute="top" secondItem="etg-TL-bt1" secondAttribute="bottom" id="Er6-Gt-jNn"/>
+                                            <constraint firstItem="30l-WF-GWg" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" id="F5i-ni-lTM"/>
+                                            <constraint firstItem="Net-Bv-6wd" firstAttribute="top" secondItem="DZ7-R0-YB6" secondAttribute="bottom" id="FC7-7F-FSQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Kba-6I-Qoe" secondAttribute="trailing" id="JPi-r4-FBy"/>
+                                            <constraint firstItem="RRd-6b-akG" firstAttribute="top" secondItem="RES-eF-s2e" secondAttribute="bottom" id="JaM-Ys-Yfg"/>
+                                            <constraint firstAttribute="trailing" secondItem="0pP-V3-Isg" secondAttribute="trailing" constant="16" id="MCc-ME-I11"/>
+                                            <constraint firstItem="ihW-ZU-8eD" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" constant="16" id="MGZ-Bb-Xat"/>
+                                            <constraint firstItem="RRd-6b-akG" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" constant="16" id="N6W-lL-g8T"/>
+                                            <constraint firstAttribute="trailing" secondItem="RRd-6b-akG" secondAttribute="trailing" constant="16" id="NVM-DG-jbE"/>
+                                            <constraint firstItem="etg-TL-bt1" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" id="Odg-FT-uCC"/>
+                                            <constraint firstAttribute="trailing" secondItem="RES-eF-s2e" secondAttribute="trailing" id="Opl-36-QnA"/>
+                                            <constraint firstItem="W0C-Rv-oK6" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" id="Ovf-Ft-3yS"/>
+                                            <constraint firstItem="Net-Bv-6wd" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" constant="16" id="Rdm-Gx-uaQ"/>
+                                            <constraint firstItem="30l-WF-GWg" firstAttribute="top" secondItem="Net-Bv-6wd" secondAttribute="bottom" id="TEG-uO-eJm"/>
+                                            <constraint firstItem="9L0-7D-Hq8" firstAttribute="top" secondItem="mOD-3r-dlq" secondAttribute="bottom" id="U49-bu-5XC"/>
+                                            <constraint firstItem="mOD-3r-dlq" firstAttribute="top" secondItem="Kba-6I-Qoe" secondAttribute="bottom" id="Uut-Y9-Vab"/>
+                                            <constraint firstAttribute="trailing" secondItem="wrx-qF-eeO" secondAttribute="trailing" constant="16" id="VPy-WH-eBJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="DZ7-R0-YB6" secondAttribute="trailing" id="VXH-95-y8f"/>
+                                            <constraint firstAttribute="trailing" secondItem="ihW-ZU-8eD" secondAttribute="trailing" constant="16" id="Wu3-4m-uTy"/>
+                                            <constraint firstItem="cCN-7K-TRh" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" id="XNx-l4-2gV"/>
+                                            <constraint firstItem="P1Y-Xi-NlD" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" constant="16" id="ZTR-3O-AoP"/>
+                                            <constraint firstItem="DZ7-R0-YB6" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" id="acd-u4-xkF"/>
+                                            <constraint firstItem="0pP-V3-Isg" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" constant="16" id="dV3-kG-tNb"/>
+                                            <constraint firstAttribute="trailing" secondItem="cCN-7K-TRh" secondAttribute="trailing" id="dp6-Va-npr"/>
+                                            <constraint firstItem="RES-eF-s2e" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" id="f8S-v3-wvr"/>
+                                            <constraint firstItem="W0C-Rv-oK6" firstAttribute="top" secondItem="wrx-qF-eeO" secondAttribute="bottom" id="gxg-U5-3FW"/>
+                                            <constraint firstItem="RES-eF-s2e" firstAttribute="top" secondItem="ihW-ZU-8eD" secondAttribute="bottom" id="iyb-9r-yt7"/>
+                                            <constraint firstAttribute="trailing" secondItem="mOD-3r-dlq" secondAttribute="trailing" constant="16" id="jMf-Km-hMG"/>
+                                            <constraint firstAttribute="height" constant="408" id="jdm-3Z-yL8"/>
+                                            <constraint firstItem="P1Y-Xi-NlD" firstAttribute="top" secondItem="9L0-7D-Hq8" secondAttribute="bottom" id="k2u-rI-TRe"/>
+                                            <constraint firstItem="4Ie-bd-oAa" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" constant="16" id="k8k-GV-0Lq"/>
+                                            <constraint firstItem="Kba-6I-Qoe" firstAttribute="top" secondItem="4Ie-bd-oAa" secondAttribute="bottom" id="l33-06-HQA"/>
+                                            <constraint firstItem="0pP-V3-Isg" firstAttribute="top" secondItem="cCN-7K-TRh" secondAttribute="bottom" id="o6w-nt-OsM"/>
+                                            <constraint firstAttribute="trailing" secondItem="Net-Bv-6wd" secondAttribute="trailing" constant="16" id="oDh-zh-fTc"/>
+                                            <constraint firstItem="DZ7-R0-YB6" firstAttribute="top" secondItem="0pP-V3-Isg" secondAttribute="bottom" id="qul-Pd-CjV"/>
+                                            <constraint firstAttribute="trailing" secondItem="4Ie-bd-oAa" secondAttribute="trailing" constant="16" id="rLd-IG-ERf"/>
+                                            <constraint firstItem="4Ie-bd-oAa" firstAttribute="top" secondItem="qRL-mN-akN" secondAttribute="top" id="rsr-JJ-AiN"/>
+                                            <constraint firstAttribute="trailing" secondItem="9L0-7D-Hq8" secondAttribute="trailing" id="s7v-K2-XbT"/>
+                                            <constraint firstItem="cCN-7K-TRh" firstAttribute="top" secondItem="RRd-6b-akG" secondAttribute="bottom" id="sUO-BH-Yk9"/>
+                                            <constraint firstItem="etg-TL-bt1" firstAttribute="top" secondItem="P1Y-Xi-NlD" secondAttribute="bottom" id="snq-lI-EnW"/>
+                                            <constraint firstAttribute="trailing" secondItem="W0C-Rv-oK6" secondAttribute="trailing" id="tCL-Yt-bDe"/>
+                                            <constraint firstAttribute="trailing" secondItem="P1Y-Xi-NlD" secondAttribute="trailing" constant="16" id="tGa-xN-LE4"/>
+                                            <constraint firstAttribute="trailing" secondItem="etg-TL-bt1" secondAttribute="trailing" id="vnu-rZ-vYu"/>
+                                            <constraint firstItem="mOD-3r-dlq" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" constant="16" id="wOz-Vw-s2H"/>
+                                            <constraint firstItem="wrx-qF-eeO" firstAttribute="leading" secondItem="qRL-mN-akN" secondAttribute="leading" constant="16" id="y0P-7X-akR"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="BrandColorGrey"/>
+                                <constraints>
+                                    <constraint firstItem="qRL-mN-akN" firstAttribute="top" secondItem="Sip-au-Kld" secondAttribute="top" id="Qzt-95-sz2"/>
+                                    <constraint firstItem="qRL-mN-akN" firstAttribute="leading" secondItem="Sip-au-Kld" secondAttribute="leading" id="VSM-o3-Otd"/>
+                                    <constraint firstAttribute="trailing" secondItem="qRL-mN-akN" secondAttribute="trailing" id="dfB-U4-bux"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kA3-cd-0hQ"/>
                         <color key="backgroundColor" name="BrandColorGrey"/>
                         <constraints>
-                            <constraint firstItem="qRL-mN-akN" firstAttribute="top" secondItem="urQ-jT-Ati" secondAttribute="bottom" id="5mO-7f-sxM"/>
+                            <constraint firstItem="Sip-au-Kld" firstAttribute="top" secondItem="urQ-jT-Ati" secondAttribute="bottom" id="4qf-XQ-RXb"/>
                             <constraint firstItem="kA3-cd-0hQ" firstAttribute="bottom" secondItem="9br-to-Eo3" secondAttribute="bottom" id="6t4-Zz-jdt"/>
-                            <constraint firstItem="kA3-cd-0hQ" firstAttribute="trailing" secondItem="qRL-mN-akN" secondAttribute="trailing" id="A3u-Da-Xtu"/>
+                            <constraint firstItem="Sip-au-Kld" firstAttribute="leading" secondItem="kA3-cd-0hQ" secondAttribute="leading" id="Ako-ay-D0c"/>
                             <constraint firstAttribute="trailing" secondItem="miq-YN-LFH" secondAttribute="trailing" id="Boc-gn-lUg"/>
                             <constraint firstItem="L5Z-LM-x9V" firstAttribute="top" secondItem="kA3-cd-0hQ" secondAttribute="top" id="E3b-zK-8jb"/>
                             <constraint firstItem="L5Z-LM-x9V" firstAttribute="leading" secondItem="kA3-cd-0hQ" secondAttribute="leading" id="Gpk-pt-Umu"/>
                             <constraint firstItem="miq-YN-LFH" firstAttribute="leading" secondItem="RAo-6F-0Lb" secondAttribute="leading" id="HKW-H6-7fn"/>
                             <constraint firstItem="ZBS-yO-2cT" firstAttribute="leading" secondItem="LCh-N0-CFk" secondAttribute="trailing" id="HTY-0H-1Bm"/>
+                            <constraint firstAttribute="trailing" secondItem="Sip-au-Kld" secondAttribute="trailing" id="IA1-DC-XvF"/>
+                            <constraint firstItem="miq-YN-LFH" firstAttribute="top" secondItem="Sip-au-Kld" secondAttribute="bottom" id="NOs-FD-8ez"/>
                             <constraint firstItem="OJt-Yk-4sA" firstAttribute="leading" secondItem="ZBS-yO-2cT" secondAttribute="trailing" id="OUo-3Z-MSH"/>
                             <constraint firstItem="kA3-cd-0hQ" firstAttribute="trailing" secondItem="L5Z-LM-x9V" secondAttribute="trailing" id="R0J-al-e5o"/>
                             <constraint firstItem="kA3-cd-0hQ" firstAttribute="trailing" secondItem="OJt-Yk-4sA" secondAttribute="trailing" id="TN1-Fz-zq2"/>
@@ -2698,7 +2712,6 @@
                             <constraint firstItem="kA3-cd-0hQ" firstAttribute="trailing" secondItem="urQ-jT-Ati" secondAttribute="trailing" id="ctn-er-jsH"/>
                             <constraint firstItem="9br-to-Eo3" firstAttribute="leading" secondItem="kA3-cd-0hQ" secondAttribute="leading" id="erl-Cz-dgM"/>
                             <constraint firstItem="LCh-N0-CFk" firstAttribute="leading" secondItem="kA3-cd-0hQ" secondAttribute="leading" id="gEf-5p-ZGN"/>
-                            <constraint firstItem="qRL-mN-akN" firstAttribute="leading" secondItem="kA3-cd-0hQ" secondAttribute="leading" id="jNX-1M-ODi"/>
                             <constraint firstItem="aAd-Fr-4uA" firstAttribute="top" secondItem="ZBS-yO-2cT" secondAttribute="bottom" id="jWM-Mt-bhT"/>
                             <constraint firstItem="aAd-Fr-4uA" firstAttribute="leading" secondItem="RAo-6F-0Lb" secondAttribute="leading" id="kps-NM-BAT"/>
                             <constraint firstItem="urQ-jT-Ati" firstAttribute="top" secondItem="L5Z-LM-x9V" secondAttribute="bottom" id="riI-th-lHO"/>
@@ -2722,7 +2735,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ie2-0F-4wG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5820" y="234"/>
+            <point key="canvasLocation" x="-5820.289855072464" y="233.96739130434784"/>
         </scene>
         <!--Editing TransferVC-->
         <scene sceneID="PPs-5m-g9B">

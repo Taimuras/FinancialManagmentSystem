@@ -12,6 +12,7 @@ import Foundation
 struct DirectionModel {
     let id: Int
     let name: String
+    
 }
 
 

@@ -10,6 +10,8 @@ class FetchingDataFilterScreen{
     var wallets: [WalletModel] = []
     var counterAgents: [CounterAgentsModel] = []
     var directions: [DirectionModel] = []
+    var sections: [SectionModel] = []
+    var category_set: [CategoryModel] = []
     var categories: [CategoryModel] = []
     var projects: [ProjectModel] = []
     
@@ -96,7 +98,7 @@ class FetchingDataFilterScreen{
         }
     }
     
-    func fetchingDirections(url: String, completion: @escaping ([DirectionModel]) -> ()) {
+    func fetchingDirections(url: String, completion: @escaping ([SectionModel]) -> ()) {
         let accessToken = userDefaults.string(forKey: "AccessToken")!
         
         let headers: HTTPHeaders = [
@@ -106,7 +108,7 @@ class FetchingDataFilterScreen{
         
         requestAPI.responseJSON { (response) in
             
-//            print(response.value!)
+//            print("Sections in Adding Transaction: \(response.value!)")
             
 
             
@@ -116,19 +118,39 @@ class FetchingDataFilterScreen{
                 let json = JSON(data)
 //                print(json["results"].count)
                 if json["results"].count == 0 {
-                    let direction = DirectionModel(id: 0, name: "There is No Sections!")
-                    self.directions.append(direction)
-                    completion(self.directions)
+                    let section = SectionModel(id: 0, name: "There is No Sections!", category_set: [])
+                        
+                    self.sections.append(section)
+                    completion(self.sections)
                 } else {
+                    
+                    self.sections.removeAll()
                     for i in 0 ... json["results"].count{
-                        //                    let balance = json["results"][i]["balance"].intValue
-                        //                    let id = json["results"][i]["id"].intValue
+                        
+                        
                         let name = json["results"][i]["name"].stringValue
                         let id = json["results"][i]["id"].intValue
-                        let direction = DirectionModel(id: id, name: name)
-                        self.directions.append(direction)
-                        completion(self.directions)
+                        
+                        
+                        self.category_set.removeAll()
+                        for j in 0 ..< json["results"][i]["category_set"].count {
+                            let id = json["results"][i]["category_set"][j]["id"].intValue
+                            let name = json["results"][i]["category_set"][j]["name"].stringValue
+                            let category: CategoryModel = CategoryModel(id: id, name: name)
+                            self.category_set.append(category)
+                        }
+                        
+                        
+                        
+                        let section = SectionModel(id: id, name: name, category_set: self.category_set)
+                            
+                        self.sections.append(section)
+                        
+                        
                     }
+                    
+                    completion(self.sections)
+//                    print("Done sections: \(self.sections)")
                 }
                 
             default:

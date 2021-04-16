@@ -43,15 +43,17 @@ class AnalyticsNetworking{
             case .success(let data):
                 let json = JSON(data)
 //                print("json count \(json["count"])")
-//                print("Pie Chart: \(json)")
+                print("Pie Chart: \(json)")
                 
                 self.projects.removeAll()
                 
                 for i in 0 ..< json.count{
 //                    print("Value: \(json[i]["sum"].doubleValue) and Label: \(json[i]["name"].stringValue)")
-//                    let project: PieChartDataEntry = PieChartDataEntry(value: json[i]["sum"].doubleValue, label: json[i]["name"].stringValue)
-                    let project: PieChartDataEntry = PieChartDataEntry(value: Double(i + 2), label: "Let \(i)")
-                    self.projects.append(project)
+                    if json[i]["sum"].doubleValue != 0 {
+                        let project: PieChartDataEntry = PieChartDataEntry(value: json[i]["sum"].doubleValue, label: json[i]["name"].stringValue)
+    //                    let project: PieChartDataEntry = PieChartDataEntry(value: Double(i + 2), label: "Let \(i)")
+                        self.projects.append(project)
+                    }
                 }
 
                 
@@ -76,7 +78,7 @@ class AnalyticsNetworking{
             switch response.result{
             case .success(let data):
                 let json = JSON(data)
-//                print("Filtered Pie Chart: \(json)")
+                print("Filtered Pie Chart: \(json)")
                 self.filteredProjects.removeAll()
                 for i in 0 ..< json.count{
 //                    print("Value: \(json[i]["sum"].doubleValue) and Label: \(json[i]["name"].stringValue)")
@@ -99,7 +101,7 @@ class AnalyticsNetworking{
     func getContractors(completion: @escaping ([BarChartDataEntry]) -> ()){
         
         let currentDate = Date()
-        let dateMonthAgo = Calendar.current.date(byAdding: .month, value: -5, to: currentDate)
+        let dateMonthAgo = Calendar.current.date(byAdding: .month, value: -1, to: currentDate)
         
         dateFrom = constants.filteredDateToServer(date: dateMonthAgo!)
         dateTo = constants.filteredDateToServer(date: currentDate)
@@ -107,7 +109,7 @@ class AnalyticsNetworking{
         
         let url = constants.analyticsContractorEndPoint + "?start_date=\(dateFrom!)&end_date=\(dateTo!)"
 
-
+        print(url)
         let requestAPI = AF.request(url, method: .get, encoding: JSONEncoding.default, interceptor: interceptor)
     
         requestAPI.responseJSON { (response) in
@@ -115,7 +117,7 @@ class AnalyticsNetworking{
             case .success(let data):
                 let json = JSON(data)
 //                print("json count \(json["count"])")
-//                print("Contractors : \(json)")
+                print("Contractors : \(json)")
                 
                 self.contractors.removeAll()
 
@@ -124,7 +126,7 @@ class AnalyticsNetworking{
 //                    let contractor: BarChartDataEntry = BarChartDataEntry(x: json[i]["sum"].doubleValue, y: json[i]["date_join__month"].doubleValue)
                     
                     
-                    let contractor: BarChartDataEntry = BarChartDataEntry(x: Double(i + 10), y: Double(i + 10))
+                    let contractor: BarChartDataEntry = BarChartDataEntry(x: Double(i + 10), y: Double(i + 10), data: i)
                         
                     self.contractors.append(contractor)
                 }

@@ -23,7 +23,7 @@ class EditingTransactionsVC: UIViewController {
     var comment = ""
     
     
-    var directions: [DirectionModel] = []
+    var directions: [SectionModel] = []
     var categorys: [CategoryModel] = []
     var counterAgents: [CounterAgentsModel] = []
     var projects: [ProjectModel] = []
@@ -77,6 +77,8 @@ class EditingTransactionsVC: UIViewController {
         
         sumTextField.delegate = self
         commentTextField.delegate = self
+        directionTextField.delegate = self
+        
         
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
@@ -152,14 +154,18 @@ class EditingTransactionsVC: UIViewController {
                     if i.id == data.section {
                         self.directionTextField.text = i.name
                         self.sectionID = data.section
+                        self.categorys = i.category_set
+                        for i in self.categorys{
+                            if i.id == data.category {
+                                self.categoryTextField.text = i.name
+                                self.categoryID = data.category
+                            }
+                        }
                     }
                 }
-                for i in self.categorys{
-                    if i.id == data.category {
-                        self.categoryTextField.text = i.name
-                        self.categoryID = data.category
-                    }
-                }
+                
+                
+                
                 for i in self.counterAgents{
                     if i.id == data.contractor {
                         self.counterAgentTextField.text = i.name
@@ -255,18 +261,19 @@ extension EditingTransactionsVC{
             DispatchQueue.main.async {
                 self.directions.removeAll()
                 self.directions = data
+                
                 self.checkData()
             }
             
         }
         
-        fetchingData.fetchingCategories(url: constants.categoriesEndPoint) { (data) in
-            DispatchQueue.main.async {
-                self.categorys.removeAll()
-                self.categorys = data
-                self.checkData()
-            }
-        }
+//        fetchingData.fetchingCategories(url: constants.categoriesEndPoint) { (data) in
+//            DispatchQueue.main.async {
+//                self.categorys.removeAll()
+//                self.categorys = data
+//                self.checkData()
+//            }
+//        }
         
         
         fetchingData.fetchingProjects(url: constants.projectEndPoint) { (data) in
@@ -280,7 +287,7 @@ extension EditingTransactionsVC{
     }
     
     func checkData(){
-        if wallets.count != 0 && counterAgents.count != 0 && directions.count != 0 && categorys.count != 0 && projects.count != 0 {
+        if wallets.count != 0 && counterAgents.count != 0 && directions.count != 0 && projects.count != 0 {
             fetchTransaction()
 //            MBProgressHUD.hide(for: self.view, animated: true)
         }
@@ -441,6 +448,26 @@ extension EditingTransactionsVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }
+    
+    
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if directionTextField.text == ""{
+            categoryTextField.isEnabled = false
+        } else {
+            categoryTextField.text = ""
+            categoryTextField.isEnabled = true
+            for i in self.directions{
+                if directionTextField.text == i.name{
+                    categorys = i.category_set
+                }
+            }
+        }
+    }
+    
+    
+    
+    
 }
 
 extension EditingTransactionsVC{
