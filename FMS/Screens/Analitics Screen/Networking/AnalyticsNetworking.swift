@@ -23,7 +23,7 @@ class AnalyticsNetworking{
 //    var projects: [DataEntry] = []
     var projects: [PieChartDataEntry] = []
     var filteredProjects: [PieChartDataEntry] = []
-    var contractors: [BarChartDataEntry] = []
+    var contractors: [AContractorModel] = []
     
     
     func getDefaultProjects(completion: @escaping ([PieChartDataEntry]) -> ()){
@@ -43,7 +43,7 @@ class AnalyticsNetworking{
             case .success(let data):
                 let json = JSON(data)
 //                print("json count \(json["count"])")
-                print("Pie Chart: \(json)")
+//                print("Pie Chart: \(json)")
                 
                 self.projects.removeAll()
                 
@@ -78,13 +78,15 @@ class AnalyticsNetworking{
             switch response.result{
             case .success(let data):
                 let json = JSON(data)
-                print("Filtered Pie Chart: \(json)")
+//                print("Filtered Pie Chart: \(json)")
                 self.filteredProjects.removeAll()
                 for i in 0 ..< json.count{
 //                    print("Value: \(json[i]["sum"].doubleValue) and Label: \(json[i]["name"].stringValue)")
-//                    let project: PieChartDataEntry = PieChartDataEntry(value: json[i]["sum"].doubleValue, label: json[i]["name"].stringValue)
-                    let project: PieChartDataEntry = PieChartDataEntry(value: Double(i + 10), label: "Let \(i)")
-                    self.filteredProjects.append(project)
+                    if json[i]["sum"].doubleValue != 0 {
+                        let project: PieChartDataEntry = PieChartDataEntry(value: json[i]["sum"].doubleValue, label: json[i]["name"].stringValue)
+                        //                    let project: PieChartDataEntry = PieChartDataEntry(value: Double(i + 10), label: "Let \(i)")
+                        self.filteredProjects.append(project)
+                    }
                 }
                 
                 completion(self.filteredProjects)
@@ -98,35 +100,42 @@ class AnalyticsNetworking{
     
     
     
-    func getContractors(completion: @escaping ([BarChartDataEntry]) -> ()){
+    func getContractors(type: Int, dateFrom: String, dateTo: String, completion: @escaping ([AContractorModel]) -> ()){
         
-        let currentDate = Date()
-        let dateMonthAgo = Calendar.current.date(byAdding: .month, value: -1, to: currentDate)
+//        let currentDate = Date()
+//        let dateMonthAgo = Calendar.current.date(byAdding: .month, value: -1, to: currentDate)
         
-        dateFrom = constants.filteredDateToServer(date: dateMonthAgo!)
-        dateTo = constants.filteredDateToServer(date: currentDate)
+//        dateFrom = constants.filteredDateToServer(date: dateMonthAgo!)
+//        dateTo = constants.filteredDateToServer(date: currentDate)
 
         
-        let url = constants.analyticsContractorEndPoint + "?start_date=\(dateFrom!)&end_date=\(dateTo!)"
+        
+        let url = "https://neobis-finance-sistem.herokuapp.com/analytics/transaction/?type=Доход&start_date=2021-03-17&end_date=2021-04-17".encodeUrl
+//            constants.analyticsContractorEndPoint + "?type=Доход&start_date=2021-03-17&end_date=2021-04-17"
 
         print(url)
         let requestAPI = AF.request(url, method: .get, encoding: JSONEncoding.default, interceptor: interceptor)
     
         requestAPI.responseJSON { (response) in
+            
+//            print(response.result)
+            
             switch response.result{
             case .success(let data):
                 let json = JSON(data)
-//                print("json count \(json["count"])")
+
                 print("Contractors : \(json)")
                 
                 self.contractors.removeAll()
+                
+                for i in 0 ..< json.count{   //json.count
 
-                for i in 0 ..< 10{   //json.count
-
-//                    let contractor: BarChartDataEntry = BarChartDataEntry(x: json[i]["sum"].doubleValue, y: json[i]["date_join__month"].doubleValue)
+                    let contractor: AContractorModel = AContractorModel(contractorName: json[i]["contractor__name"].stringValue, sum: json[i]["sum"].doubleValue)
+                        
+                        
                     
                     
-                    let contractor: BarChartDataEntry = BarChartDataEntry(x: Double(i + 10), y: Double(i + 10), data: i)
+//                    let contractor: BarChartDataEntry = BarChartDataEntry(x: Double(i + 10), y: Double(i + 10), data: String(i))
                         
                     self.contractors.append(contractor)
                 }
@@ -145,4 +154,16 @@ class AnalyticsNetworking{
     
     
     
+}
+
+
+extension String{
+    var encodeUrl : String
+    {
+        return self.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
+    }
+    var decodeUrl : String
+    {
+        return self.removingPercentEncoding!
+    }
 }

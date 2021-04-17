@@ -29,6 +29,7 @@
 		52372775260EF44500FA6247 /* UpdateProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52372774260EF44500FA6247 /* UpdateProject.swift */; };
 		52396F4C26006FA300562103 /* UserTBCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52396F4A26006FA300562103 /* UserTBCell.swift */; };
 		52396F4D26006FA300562103 /* UserTBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52396F4B26006FA300562103 /* UserTBCell.xib */; };
+		523FDF31262B2AB70099F360 /* AContractorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523FDF30262B2AB70099F360 /* AContractorModel.swift */; };
 		5242996B260F1BE00081293C /* WalletsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242996A260F1BE00081293C /* WalletsVC.swift */; };
 		5242996F260F1D910081293C /* WalletTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242996D260F1D910081293C /* WalletTVCell.swift */; };
 		52429970260F1D910081293C /* WalletTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5242996E260F1D910081293C /* WalletTVCell.xib */; };
@@ -146,6 +147,7 @@
 		52372774260EF44500FA6247 /* UpdateProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProject.swift; sourceTree = "<group>"; };
 		52396F4A26006FA300562103 /* UserTBCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTBCell.swift; sourceTree = "<group>"; };
 		52396F4B26006FA300562103 /* UserTBCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTBCell.xib; sourceTree = "<group>"; };
+		523FDF30262B2AB70099F360 /* AContractorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AContractorModel.swift; sourceTree = "<group>"; };
 		5242996A260F1BE00081293C /* WalletsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsVC.swift; sourceTree = "<group>"; };
 		5242996D260F1D910081293C /* WalletTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTVCell.swift; sourceTree = "<group>"; };
 		5242996E260F1D910081293C /* WalletTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletTVCell.xib; sourceTree = "<group>"; };
@@ -833,6 +835,7 @@
 			isa = PBXGroup;
 			children = (
 				528A70B4261ECEE50000B3AB /* AProjectsModel.swift */,
+				523FDF30262B2AB70099F360 /* AContractorModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1157,6 +1160,7 @@
 				5266438D25F5D7C90032499D /* AnaliticsVC.swift in Sources */,
 				524D6F02260EEE630032CA07 /* GetSingleProjectByID.swift in Sources */,
 				5262BDC52603628700709939 /* ProjectModel.swift in Sources */,
+				523FDF31262B2AB70099F360 /* AContractorModel.swift in Sources */,
 				52433D30261327A900633AA1 /* CategoryTVCell.swift in Sources */,
 				526450A02614D47E0007D86C /* DirectionByIDModel.swift in Sources */,
 				5295635E2614CE22006A6162 /* DeleteSectionByID.swift in Sources */,

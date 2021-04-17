@@ -27,7 +27,10 @@ class AnaliticsVC: UIViewController, ChartViewDelegate{
     @IBOutlet weak var horizontalChartView: HorizontalBarChartView!
     @IBOutlet weak var anyChartView: PieChartView!
     var entries = [PieChartDataEntry]()
-    
+    var dataEntries: [BarChartDataEntry] = []
+    var names: [String] = []
+    var sum: [Double] = []
+    var legendEntries: [LegendEntry] = []
     
     
     
@@ -38,7 +41,7 @@ class AnaliticsVC: UIViewController, ChartViewDelegate{
         anyChartView.alpha = 1
         
         anyChartView.delegate = self
-        
+        horizontalChartView.delegate = self
         design()
         
         
@@ -119,14 +122,38 @@ class AnaliticsVC: UIViewController, ChartViewDelegate{
     }
     
     
-    func createBarChart(data: [BarChartDataEntry]) {
+    
+    func setHorizontalChart(dataPoints: [String], values: [Double]) {
+        horizontalChartView.noDataText = "You need to provide data for the chart."
         
-        horizontalChartView.animate(xAxisDuration: 3.0, easingOption: ChartEasingOption.easeInOutQuad)
-        let set = BarChartDataSet(entries: data, label: "Contractors")
-        set.colors = ChartColorTemplates.pastel()
-        let data = BarChartData(dataSet: set)
-        horizontalChartView.data = data
+        horizontalChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values:dataPoints)
+        horizontalChartView.xAxis.granularity = 1
+        horizontalChartView.xAxis.avoidFirstLastClippingEnabled = true
+        
+        
+        horizontalChartView.xAxis.labelPosition = XAxis.LabelPosition.bottom
+        horizontalChartView.xAxis.labelRotationAngle = -45.0
+        horizontalChartView.xAxis.labelTextColor = .black
+        horizontalChartView.xAxis.labelFont = constants.fontSemiBold10!
+                
+        for i in 0 ..< dataPoints.count {
+            let dataEntry = BarChartDataEntry(x: Double(i), y: values[i], data: dataPoints[i])
+            
+            
+            dataEntries.append(dataEntry)
+        }
+                
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Контрагенты")
+        chartDataSet.colors = ChartColorTemplates.vordiplom()
+        let chartData = BarChartData(dataSet: chartDataSet)
+        
+        
+        horizontalChartView.data = chartData
     }
+    
+
+    
+    
 }
 
 
@@ -148,10 +175,14 @@ extension AnaliticsVC: AnalyticsFiltrationVCDelegate {
             anyChartView.alpha = 0
             
             
-            getAnalytics.getContractors { (data) in
+            getAnalytics.getContractors(type: type, dateFrom: dateFrom, dateTo: dateTo) { (data) in
                 DispatchQueue.main.async {
+                    for i in data{
+                        self.names.append(i.contractorName)
+                        self.sum.append(i.sum)
+                    }
+                    self.setHorizontalChart(dataPoints: self.names, values: self.sum)
                     
-                    self.createBarChart(data: data)
                 }
             }
         }
