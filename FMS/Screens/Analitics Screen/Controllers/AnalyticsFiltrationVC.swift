@@ -236,6 +236,7 @@ extension AnalyticsFiltrationVC{
         //Fonts + sizes
         dateToTextField.font = constants.fontRegular17
         dateFromTextField.font = constants.fontRegular17
+        analysisTextField.font = constants.fontRegular17
         filtrationLabel.font = constants.fontSemiBold17
         
         

@@ -252,7 +252,7 @@ extension EditingTransferVC{
     @objc func donePressed() {
         dateTextField.text = constants.dateToString(date: datePicker.date)
         date_join = constants.dateToServer(date: datePicker.date)
-        print(date_join)
+//        print(date_join)
         self.view.endEditing(true)
     }
 }

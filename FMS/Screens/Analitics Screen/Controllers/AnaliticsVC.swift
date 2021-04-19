@@ -124,6 +124,7 @@ class AnaliticsVC: UIViewController, ChartViewDelegate{
     
     
     func setHorizontalChart(dataPoints: [String], values: [Double]) {
+        horizontalChartView.clearValues()
         horizontalChartView.noDataText = "You need to provide data for the chart."
         
         horizontalChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values:dataPoints)
@@ -151,9 +152,6 @@ class AnaliticsVC: UIViewController, ChartViewDelegate{
         horizontalChartView.data = chartData
     }
     
-
-    
-    
 }
 
 
@@ -176,7 +174,10 @@ extension AnaliticsVC: AnalyticsFiltrationVCDelegate {
             
             
             getAnalytics.getContractors(type: type, dateFrom: dateFrom, dateTo: dateTo) { (data) in
+                self.sum.removeAll()
+                self.names.removeAll()
                 DispatchQueue.main.async {
+                    
                     for i in data{
                         self.names.append(i.contractorName)
                         self.sum.append(i.sum)

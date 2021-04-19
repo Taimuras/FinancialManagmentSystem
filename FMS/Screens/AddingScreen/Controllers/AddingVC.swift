@@ -576,17 +576,7 @@ extension AddingVC {
         }
         
         // move the root view up by the distance of keyboard height
-        if datePickTextField.isEditing {
-//            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3 + 50
-        } else if summTextField.isEditing {
-//            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3
-        } else if directionTextField.isEditing {
-//            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3
-        }else if categoryTextField.isEditing {
-//            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3
-        }else if counterAgentTextField.isEditing  || transferCommentaryTextFiled.isEditing{
-//            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3 - 50
-        }else if projectTextField.isEditing {
+        if projectTextField.isEditing {
             self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3 - 51
         }else if walletTextField.isEditing {
             self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3 - 102

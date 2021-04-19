@@ -511,10 +511,12 @@ extension EditingTransactionsVC {
         }
         
         // move the root view up by the distance of keyboard height
-        if sumTextField.isEditing {
-            self.view.frame.origin.y = 0 - keyboardSize.height + 200
-        } else {
-            self.view.frame.origin.y = 0 - keyboardSize.height
+        if projectTextField.isEditing {
+            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3 - 51
+        }else if walletTextField.isEditing {
+            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3 - 102
+        }else if commentTextField.isEditing {
+            self.view.frame.origin.y = 0 - keyboardSize.height / 3
         }
         
     }

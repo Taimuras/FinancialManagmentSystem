@@ -41,7 +41,7 @@ class NetworkCreateUser{
             let statusCode = response.response?.statusCode
             print(response.description)
 //            print(response.response!)
-            print(response.response?.statusCode)
+//            print(response.response?.statusCode)
             switch statusCode{
             case 200:
                 self.userAuth = 1

@@ -19,6 +19,7 @@ class AnalyticsNetworking{
     let constants = Constants()
     var dateFrom: String?
     var dateTo: String?
+    var contractor: AContractorModel?
     
 //    var projects: [DataEntry] = []
     var projects: [PieChartDataEntry] = []
@@ -101,19 +102,13 @@ class AnalyticsNetworking{
     
     
     func getContractors(type: Int, dateFrom: String, dateTo: String, completion: @escaping ([AContractorModel]) -> ()){
+        var url = ""
+        if type == 1 {
+            url = constants.analyticsContractorEndPoint + "?type=Доход&start_date=\(dateFrom)&end_date=\(dateTo)".encodeUrl
+        } else if type == 2 {
+            url = constants.analyticsContractorEndPoint + "?type=Расход&start_date=\(dateFrom)&end_date=\(dateTo)".encodeUrl
+        }
         
-//        let currentDate = Date()
-//        let dateMonthAgo = Calendar.current.date(byAdding: .month, value: -1, to: currentDate)
-        
-//        dateFrom = constants.filteredDateToServer(date: dateMonthAgo!)
-//        dateTo = constants.filteredDateToServer(date: currentDate)
-
-        
-        
-        let url = "https://neobis-finance-sistem.herokuapp.com/analytics/transaction/?type=Доход&start_date=2021-03-17&end_date=2021-04-17".encodeUrl
-//            constants.analyticsContractorEndPoint + "?type=Доход&start_date=2021-03-17&end_date=2021-04-17"
-
-        print(url)
         let requestAPI = AF.request(url, method: .get, encoding: JSONEncoding.default, interceptor: interceptor)
     
         requestAPI.responseJSON { (response) in
@@ -124,25 +119,26 @@ class AnalyticsNetworking{
             case .success(let data):
                 let json = JSON(data)
 
-                print("Contractors : \(json)")
+//                print("Contractors : \(json)")
                 
                 self.contractors.removeAll()
                 
                 for i in 0 ..< json.count{   //json.count
-
-                    let contractor: AContractorModel = AContractorModel(contractorName: json[i]["contractor__name"].stringValue, sum: json[i]["sum"].doubleValue)
-                        
-                        
+                    
+                    if json[i]["contractor__name"].stringValue != "" {
+                        self.contractor = AContractorModel(contractorName: json[i]["contractor__name"].stringValue, sum: json[i]["sum"].doubleValue)
+                    } else {
+                        self.contractor = AContractorModel(contractorName: "Без Контрагента", sum: json[i]["sum"].doubleValue)
+                    }
                     
                     
-//                    let contractor: BarChartDataEntry = BarChartDataEntry(x: Double(i + 10), y: Double(i + 10), data: String(i))
-                        
-                    self.contractors.append(contractor)
+                    self.contractors.append(self.contractor!)
                 }
 
 
 
                 completion(self.contractors)
+                
                 
             default:
                 return print("Get Contractors Fail!!!")
