@@ -172,7 +172,7 @@ extension MainViewController{
 // MARK: Fetching Filtered Data
 extension MainViewController: FilterVCDelegate{
     func getFilteredUrl(url: String, dateFrom: String, dateTo: String) {
-        let endPoint = self.constants.transactionEndPoint + url
+        let endPoint = constants.transactionEndPoint + url
         
 //        print("Filtered End Point: \(endPoint)")
         self.fetchingTransactions.fetchingFilteredTransactions(url: endPoint, dateFrom: dateFrom, dateTo: dateTo) { (responseData) in

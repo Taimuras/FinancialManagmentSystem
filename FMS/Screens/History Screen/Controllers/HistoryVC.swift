@@ -14,6 +14,7 @@ class HistoryVC: UIViewController {
     let constants = Constants()
     var history: [HistoryModel] = []
     let fetchActions = FetchingAllActions()
+    let deletingActions = DeletingHistory()
     
     
     @IBOutlet weak var cancelButton: UIButton!
@@ -42,6 +43,33 @@ class HistoryVC: UIViewController {
     
     
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
+        let dialogMessage = UIAlertController(title: "Выход", message: "Вы уверены, что хотите удалить всю историю?", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Отмена", style: .cancel) { (action) -> Void in
+//            print("Cancel button tapped")
+        }
+        let ok = UIAlertAction(title: "Да", style: .destructive, handler: { (action) -> Void in
+//             print("Ok button tapped")
+            self.deletingActions.deletingHistrory() { (response) in
+                if response == 1{
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так!", preferredStyle: .alert)
+                    let cancel = UIAlertAction(title: "Хорошо", style: .cancel) { (action) -> Void in
+            //            print("Cancel button tapped")
+                    }
+                    dialogMessage.addAction(cancel)
+                    self.present(dialogMessage, animated: true, completion: nil)
+                }
+            }
+        })
+        
+        //Add OK and Cancel button to dialog message
+        dialogMessage.addAction(ok)
+        dialogMessage.addAction(cancel)
+        
+        
+        // Present dialog message to user
+        self.present(dialogMessage, animated: true, completion: nil)
     }
     
     
@@ -52,6 +80,7 @@ extension HistoryVC{
     // MARK: Fetching Data first try
     func fetchData () {
         fetchActions.fetchingActions { (data) in
+            
             self.history = data
             self.historyCollectionView.reloadData()
         }
@@ -62,6 +91,7 @@ extension HistoryVC{
     
     func updateNextSet(){
         fetchActions.fetchingMoreActions { (data) in
+            
             for i in 0 ..< data.count {
                 self.history.append(data[i])
             }

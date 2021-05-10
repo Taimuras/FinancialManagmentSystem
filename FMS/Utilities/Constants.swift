@@ -85,6 +85,7 @@ class Constants {
     
     //History End point
     let historyEndPoint = "https://neobis-finance-sistem.herokuapp.com/history/"
+    let deletingHistoryEndPoint = "https://neobis-finance-sistem.herokuapp.com/delete-history/"
     
     // All 6 needed end Point(CRUD). All changes Only by ID!
     let transactionEndPoint = "https://neobis-finance-sistem.herokuapp.com/transaction/"
@@ -99,7 +100,8 @@ class Constants {
     let allUsersEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/user/"
     
     // update delete User By Email
-    let crudUserByEmail = "https://neobis-finance-sistem.herokuapp.com/account/api/change/user/" 
+    let crudUserByEmail = "https://neobis-finance-sistem.herokuapp.com/account/api/change/user/"
+    
     
     // Get Session User
     let getSessionUserEndPoint = "https://neobis-finance-sistem.herokuapp.com/account/api/session-user/"

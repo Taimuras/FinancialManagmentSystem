@@ -110,11 +110,14 @@ extension UserAddingVC {
         }
         
        
-
-        if emailTextField.isEditing {
-            self.view.frame.origin.y = 0 - keyboardSize.height / 3
-        } else if newPasswordTextField.isEditing {
-            self.view.frame.origin.y = 0 - keyboardSize.height / 1.8
+        
+        
+        if patronimycTextField.isEditing {
+            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3 - 51
+        }else if emailTextField.isEditing {
+            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3 - 51
+        }else if newPasswordTextField.isEditing {
+            self.view.frame.origin.y = 0 - keyboardSize.height / 3 - 51
         }
         
     }

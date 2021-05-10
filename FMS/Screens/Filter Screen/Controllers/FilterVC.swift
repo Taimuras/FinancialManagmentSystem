@@ -63,7 +63,7 @@ class FilterVC: UIViewController {
         
         fetchData()
         
-        
+        keyBoardShowAndHide()
         self.hideKeyboardWhenTappedAround() 
         
     }
@@ -332,16 +332,8 @@ extension FilterVC {
         }
         
         // move the root view up by the distance of keyboard height
-        if dateFromTextField.isEditing{
-            self.view.frame.origin.y = 0 - keyboardSize.height + 255
-        } else if dateToTextField.isEditing{
-            self.view.frame.origin.y = 0 - keyboardSize.height + 204
-        }else if walletTextField.isEditing{
-            self.view.frame.origin.y = 0 - keyboardSize.height + 153
-        }else if counterAgentTextField.isEditing{
-            self.view.frame.origin.y = 0 - keyboardSize.height + 102
-        }else if directionTextField.isEditing{
-            self.view.frame.origin.y = 0 - keyboardSize.height + 51
+        if directionTextField.isEditing {
+            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3 - 51
         }
         
         

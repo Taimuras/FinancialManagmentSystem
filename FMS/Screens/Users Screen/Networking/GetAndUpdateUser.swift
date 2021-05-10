@@ -26,6 +26,7 @@ class GetAndUpdateUser {
         
         
         let url = constants.crudUserByEmail + email
+//        print("User by Email: \(url)")
         let requestAPI = AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
         
         
@@ -33,7 +34,7 @@ class GetAndUpdateUser {
 //            let statusCode = response.response?.statusCode
 //            print(statusCode!)
 //            print(response.response!)
-            
+//            print("User Editing: \(response.result)")
 
             switch response.result{
             case .success(let data):

@@ -1,9 +1,3 @@
-//
-//  FetchingTransactions.swift
-//  FMS
-//
-//  Created by tami on 3/8/21.
-//
 
 import Foundation
 import Alamofire
@@ -20,6 +14,7 @@ class FetchingTransactions {
     
     
     var date: String?
+    var urlForNext: String?
     
     
     let constants = Constants()
@@ -44,18 +39,53 @@ class FetchingTransactions {
             switch response.result{
                 case .success(let data):
                     let json = JSON(data)
-                    
+                    self.urlForNext = json["next"].stringValue
 //                    print(response.value!)
 //                    print("Transaction Date:   \(json["results"][1]["date_join"].stringValue)")
                     
                     self.transitions.removeAll()
-                    for i in 0 ..< json["count"].intValue{
+                    for i in 0 ..< json["results"].count{
                         
                         let transition: TransactionModel = TransactionModel(section: json["results"][i]["section"].stringValue, wallet: json["results"][i]["wallet"].stringValue, date_join: json["results"][i]["date_join"].stringValue, type: json["results"][i]["type"].stringValue, sum: json["results"][i]["sum"].intValue, id: json["results"][i]["id"].intValue, wallet_to: json["results"][i]["wallet_to"].stringValue)
                         self.transitions.append(transition)
                     }
                     
                     completion(self.transitions)
+                    
+                default:
+                    return print("Fail")
+            }
+            
+        }
+    }
+    
+    func fetchingMoreTransactions(url: String, completion: @escaping ([TransactionModel]) -> ()){
+
+        
+        let requestAPI = AF.request(url, method: .get, encoding: JSONEncoding.default, interceptor: interceptor)
+        
+        
+        requestAPI
+            .validate()
+            .responseJSON { (response) in
+            
+            
+            switch response.result{
+                case .success(let data):
+                    let json = JSON(data)
+                    
+//                    print(response.value!)
+//                    print("Transaction Date:   \(json["results"][1]["date_join"].stringValue)")
+                    self.transitions.removeAll()
+                    if self.urlForNext != json["next"].stringValue {
+                        self.urlForNext = json["next"].stringValue
+                        for i in 0 ..< json["results"].count {
+                            let transition: TransactionModel = TransactionModel(section: json["results"][i]["section"].stringValue, wallet: json["results"][i]["wallet"].stringValue, date_join: json["results"][i]["date_join"].stringValue, type: json["results"][i]["type"].stringValue, sum: json["results"][i]["sum"].intValue, id: json["results"][i]["id"].intValue, wallet_to: json["results"][i]["wallet_to"].stringValue)
+                            self.transitions.append(transition)
+                            
+                        }
+                        completion(self.transitions)
+                    }
                     
                 default:
                     return print("Fail")
@@ -113,7 +143,7 @@ class FetchingTransactions {
                 
                 
                 self.transitions.removeAll()
-                for i in 0 ..< json["count"].intValue{
+                for i in 0 ..< json["results"].count{
                     let transition: TransactionModel = TransactionModel(section: json["results"][i]["section"].stringValue, wallet: json["results"][i]["wallet"].stringValue, date_join: json["results"][i]["date_join"].stringValue, type: json["results"][i]["type"].stringValue, sum: json["results"][i]["sum"].intValue, id: json["results"][i]["id"].intValue, wallet_to: json["results"][i]["wallet_to"].stringValue)
                     self.transitions.append(transition)
                     
@@ -128,4 +158,9 @@ class FetchingTransactions {
     }
     
     
+    
+    
 }
+
+
+

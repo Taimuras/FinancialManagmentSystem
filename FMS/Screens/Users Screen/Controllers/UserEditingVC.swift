@@ -51,6 +51,7 @@ class UserEditingVC: UIViewController {
         
         
         design()
+        keyBoardShowAndHide()
         self.hideKeyboardWhenTappedAround()
     }
     
@@ -62,18 +63,35 @@ class UserEditingVC: UIViewController {
     
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
         
-        getAndUpdateUser.deleteUserByEmail(email: emailTextField.text!) { (response) in
-            if response == 1{
-                self.dismiss(animated: true, completion: nil)
-            } else {
-                let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так!", preferredStyle: .alert)
-                let cancel = UIAlertAction(title: "Хорошо", style: .cancel) { (action) -> Void in
-        //            print("Cancel button tapped")
-                }
-                dialogMessage.addAction(cancel)
-                self.present(dialogMessage, animated: true, completion: nil)
-            }
+        
+        let dialogMessage = UIAlertController(title: "Выход", message: "Вы уверены, что хотите удалить данного пользователя?", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Отмена", style: .cancel) { (action) -> Void in
+//            print("Cancel button tapped")
         }
+        let ok = UIAlertAction(title: "Да", style: .destructive, handler: { (action) -> Void in
+//             print("Ok button tapped")
+            self.getAndUpdateUser.deleteUserByEmail(email: self.emailTextField.text!) { (response) in
+                if response == 1{
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    let dialogMessage = UIAlertController(title: "Упс", message: "Что-то пошло не так!", preferredStyle: .alert)
+                    let cancel = UIAlertAction(title: "Хорошо", style: .cancel) { (action) -> Void in
+            //            print("Cancel button tapped")
+                    }
+                    dialogMessage.addAction(cancel)
+                    self.present(dialogMessage, animated: true, completion: nil)
+                }
+            }
+        })
+        
+        //Add OK and Cancel button to dialog message
+        dialogMessage.addAction(ok)
+        dialogMessage.addAction(cancel)
+        
+        
+        // Present dialog message to user
+        self.present(dialogMessage, animated: true, completion: nil)
+        
     }
     
     
@@ -116,6 +134,45 @@ class UserEditingVC: UIViewController {
     
     
     
+    
+}
+
+extension UserEditingVC {
+    
+    
+    func keyBoardShowAndHide(){
+        NotificationCenter.default.addObserver(self, selector: #selector(UserAddingVC.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        // call the 'keyboardWillHide' function when the view controlelr receive notification that keyboard is going to be hidden
+        NotificationCenter.default.addObserver(self, selector: #selector(UserAddingVC.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            // if keyboard size is not available for some reason, dont do anything
+            return
+        }
+        
+       
+        
+        
+        if patronimycTextField.isEditing {
+            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3 - 51
+        }else if emailTextField.isEditing {
+            self.view.frame.origin.y = 0 - keyboardSize.height + view.frame.height / 3 - 51
+        }else if newPasswordTextField.isEditing {
+            self.view.frame.origin.y = 0 - keyboardSize.height / 3 - 51
+        }
+        
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        // move back the root view origin to zero
+        self.view.frame.origin.y = 0
+    }
     
 }
 

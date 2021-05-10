@@ -1441,7 +1441,7 @@
                                         </constraints>
                                         <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YDR-gx-x9u" userLabel="Divider">
                                         <rect key="frame" x="0.0" y="203" width="414" height="1"/>
@@ -3142,7 +3142,7 @@
                                         </constraints>
                                         <color key="textColor" name="Brand - Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IR4-YK-tsJ" userLabel="Divider">
                                         <rect key="frame" x="0.0" y="203" width="414" height="1"/>
